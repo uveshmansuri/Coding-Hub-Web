@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Algorithms and Flowcharts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20;
+            padding: 0;
+            line-height: 1.8;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0066cc;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0066cc;
+        }
+
+        h3 {
+            color: #0073e6;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .example {
+            background: #e6f7ff;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #b3e0ff;
+            border-radius: 5px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0066cc;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Introduction to Algorithms and Flowcharts</h1>
+    </header>
+
+    <section>
+        <h2>What is an Algorithm?</h2>
+        <p>An <strong>algorithm</strong> is a step-by-step procedure to solve a problem or perform a task. It is the backbone of problem-solving in computer science and forms the basis of program design.</p>
+
+        <h3>Characteristics of a Good Algorithm</h3>
+        <ul>
+            <li><strong>Finiteness:</strong> An algorithm must terminate after a finite number of steps.</li>
+            <li><strong>Definiteness:</strong> Every step of the algorithm should be clear and unambiguous.</li>
+            <li><strong>Input:</strong> An algorithm should accept zero or more inputs.</li>
+            <li><strong>Output:</strong> An algorithm must produce at least one output.</li>
+            <li><strong>Effectiveness:</strong> Each step should be simple enough to be performed mechanically.</li>
+        </ul>
+
+        <h3>Example: Algorithm to Calculate the Sum of Two Numbers</h3>
+        <div class="example">
+            <strong>Problem:</strong> Calculate the sum of two numbers, A and B.<br>
+            <strong>Steps:</strong>
+            <ol>
+                <li>Start</li>
+                <li>Input two numbers A and B</li>
+                <li>Calculate the sum: Sum = A + B</li>
+                <li>Output the result: Sum</li>
+                <li>Stop</li>
+            </ol>
+        </div>
+    </section>
+    <section>
+        <h2>What is a Flowchart?</h2>
+        <p>A <strong>flowchart</strong> is a visual representation of an algorithm. It uses symbols to depict processes, decisions, and flow in a sequential manner.</p>
+
+        <h3>Common Flowchart Symbols</h3>
+        <ul>
+            <li><strong>Oval:</strong> Indicates the start or end of a process.</li>
+            <li><strong>Rectangle:</strong> Represents a process or action.</li>
+            <li><strong>Diamond:</strong> Represents a decision point.</li>
+            <li><strong>Arrow:</strong> Indicates the direction of the flow.</li>
+        </ul>
+        <img src="fc.png" width="100%"/>
+
+        <h3>Example: Flowchart to Calculate the Sum of Two Numbers</h3>
+        <div class="image-container">
+            <img src="fc1.png" alt="Flowchart to Calculate Sum">
+        </div>
+
+        <h3>Advantages of Flowcharts</h3>
+        <ul>
+            <li>Helps in understanding and analyzing the process flow.</li>
+            <li>Improves communication within teams.</li>
+            <li>Serves as a reference for debugging and optimization.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Real-World Example: Find Whether a Number is Even or Odd</h2>
+        <h3>Algorithm</h3>
+        <div class="example">
+            <strong>Steps:</strong>
+            <ol>
+                <li>Start</li>
+                <li>Input the number N</li>
+                <li>If N % 2 == 0, then N is even</li>
+                <li>Else, N is odd</li>
+                <li>Output the result</li>
+                <li>Stop</li>
+            </ol>
+        </div>
+
+        <h3>Flowchart</h3>
+        <div class="image-container">
+            <img src="fc2.png" alt="Flowchart to Find Even or Odd">
+        </div>
+
+        <h2>Complex Example: Find the Factorial of a Number</h2>
+        <h3>Algorithm</h3>
+        <div class="example">
+            <strong>Steps:</strong>
+            <ol>
+                <li>Start</li>
+                <li>Input the number N</li>
+                <li>Set factorial = 1</li>
+                <li>For i = 1 to N, multiply factorial by i</li>
+                <li>Output the value of factorial</li>
+                <li>Stop</li>
+            </ol>
+        </div>
+
+        <h3>Flowchart</h3>
+        <div class="image-container">
+            <img src="fc3.png" alt="Flowchart for Factorial Calculation">
+        </div>
+
+        <h2>Key Differences Between Algorithms and Flowcharts</h2>
+        <ul>
+            <li>An algorithm is text-based, while a flowchart is graphical.</li>
+            <li>Algorithms provide detailed steps, while flowcharts offer an overview of the process.</li>
+            <li>Flowcharts are easier to visualize, while algorithms are more concise and detailed.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

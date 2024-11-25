@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking Fundamentals: LAN, WAN, MAN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            padding: 0;
+            line-height: 1.8;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #3498db;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #3498db;
+        }
+
+        h3 {
+            color: #2c3e50;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .example {
+            background: #ecf0f1;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #3498db;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Networking Fundamentals: LAN, WAN, MAN</h1>
+    </header>
+
+    <section>
+        <h2>What is Networking?</h2>
+        <p><strong>Networking</strong> refers to the interconnection of multiple devices (computers, servers, switches, routers) to share resources, exchange data, and enable communication. Networks can be classified based on their size, purpose, and geographical scope.</p>
+    </section>
+
+    <section>
+        <h2>Types of Networks</h2>
+
+        <h3>1. Local Area Network (LAN)</h3>
+        <p>A <strong>Local Area Network (LAN)</strong> is a network confined to a small geographic area, such as a home, office, or school. It connects devices like computers, printers, and servers to share resources such as files and internet access.</p>
+        <ul>
+            <li><strong>Speed:</strong> Typically high-speed (100 Mbps to 1 Gbps).</li>
+            <li><strong>Geographical Scope:</strong> Limited to a single building or campus.</li>
+            <li><strong>Examples:</strong> Office network, Wi-Fi at home.</li>
+        </ul>
+        <div class="example">
+            <strong>Example:</strong> A school uses a LAN to connect student computers to a central file server and printer.
+        </div>
+        <div class="image-container">
+            <img src="lan_img.jpg" alt="LAN Diagram">
+        </div>
+
+        <h3>2. Wide Area Network (WAN)</h3>
+        <p>A <strong>Wide Area Network (WAN)</strong> spans a large geographical area, often connecting multiple LANs. It uses public or private communication links like satellite, fiber optics, or leased lines.</p>
+        <ul>
+            <li><strong>Speed:</strong> Typically slower than LANs (10 Mbps to 100 Mbps or higher).</li>
+            <li><strong>Geographical Scope:</strong> Covers large regions, countries, or continents.</li>
+            <li><strong>Examples:</strong> The internet, corporate networks connecting offices worldwide.</li>
+        </ul>
+        <div class="example">
+            <strong>Example:</strong> A multinational company uses a WAN to connect its offices in New York, London, and Tokyo for secure data exchange.
+        </div>
+        <div class="image-container">
+            <img src="wan_img.jpeg" alt="WAN Diagram">
+        </div>
+
+        <h3>3. Metropolitan Area Network (MAN)</h3>
+        <p>A <strong>Metropolitan Area Network (MAN)</strong> is larger than a LAN but smaller than a WAN, typically covering a city or a large campus. It is often owned and operated by organizations or service providers.</p>
+        <ul>
+            <li><strong>Speed:</strong> Faster than WAN but similar to LAN speeds.</li>
+            <li><strong>Geographical Scope:</strong> Covers a city or metropolitan area.</li>
+            <li><strong>Examples:</strong> Cable TV networks, city-wide Wi-Fi networks.</li>
+        </ul>
+        <div class="example">
+            <strong>Example:</strong> A city government uses a MAN to connect public services like libraries, schools, and administrative offices.
+        </div>
+        <div class="image-container">
+            <img src="man_img.jpg" alt="MAN Diagram">
+        </div>
+    </section>
+    
+    <section>
+        <h2>Comparison Table: LAN, WAN, MAN</h2>
+        <table style="width:100%; border-collapse: collapse; margin: 20px 0; background: #ecf0f1; border: 1px solid #ddd;">
+            <thead>
+                <tr style="background: #3498db; color: white;">
+                    <th style="padding: 10px; border: 1px solid #ddd;">Feature</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">LAN</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">WAN</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">MAN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Geographical Scope</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Small (e.g., a building)</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Large (e.g., global)</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Medium (e.g., a city)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Speed</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">High</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Moderate</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Moderate to High</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Ownership</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Private</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Private or Public</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Private or Public</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>Understanding the differences between LAN, WAN, and MAN helps in designing and implementing networks suitable for specific needs. Each type of network plays a vital role in ensuring efficient communication and data sharing across devices.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Systems and Conversions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20;
+            padding: 0;
+            line-height: 1.8;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+        }
+
+        h3 {
+            color: #0078d7;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .code {
+            background: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #0078d7;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+
+        .example {
+            background: #e6f7ff;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #b3e0ff;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 10px;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Number Systems and Conversions</h1>
+    </header>
+    
+    <section>
+        <p>Number systems are methods of representing numbers using distinct symbols. These systems are essential in both theoretical mathematics and practical computer applications. The four primary number systems are:</p>
+
+        <ul>
+            <li><strong>Binary:</strong> Base 2 (0 and 1).</li>
+            <li><strong>Octal:</strong> Base 8 (0 to 7).</li>
+            <li><strong>Decimal:</strong> Base 10 (0 to 9).</li>
+            <li><strong>Hexadecimal:</strong> Base 16 (0 to 9 and A to F).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>1. Binary Number System</h2>
+        <p>The binary number system is the foundation of computer systems. It uses two digits: 0 and 1, corresponding to off and on states in electronic circuits.</p>
+
+        <ul>
+            <li><strong>Base:</strong> 2</li>
+            <li><strong>Digits:</strong> 0, 1</li>
+            <li><strong>Example:</strong> 1010<sub>2</sub></li>
+        </ul>
+
+        <h3>Applications:</h3>
+        <ul>
+            <li>Digital electronics and computer systems.</li>
+            <li>Data representation in machine-level programming.</li>
+        </ul>
+
+        <h3>Example Conversion: Binary to Decimal</h3>
+        <div class="example">
+            Convert 1010<sub>2</sub> to decimal:
+            <div class="code">
+            Step 1: Write the binary number and its positional values:<br>
+            (1 × 2<sup>3</sup>) + (0 × 2<sup>2</sup>) + (1 × 2<sup>1</sup>) + (0 × 2<sup>0</sup>)<br>
+            Step 2: Calculate each term:<br>
+            = (1 × 8) + (0 × 4) + (1 × 2) + (0 × 1)<br>
+            Step 3: Add the results:<br>
+            = 8 + 0 + 2 + 0 = 10<sub>10</sub>
+            </div>
+        </div>
+
+        <h3>Example Conversion: Decimal to Binary</h3>
+        <div class="example">
+            Convert 25<sub>10</sub> to binary:
+            <div class="code">
+            Step 1: Divide by 2 and record the remainders:<br>
+            25 ÷ 2 = 12 remainder 1<br>
+            12 ÷ 2 = 6 remainder 0<br>
+            6 ÷ 2 = 3 remainder 0<br>
+            3 ÷ 2 = 1 remainder 1<br>
+            1 ÷ 2 = 0 remainder 1<br>
+            Step 2: Write the remainders in reverse order:<br>
+            25<sub>10</sub> = 11001<sub>2</sub>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>2. Octal Number System</h2>    
+        <p>The octal number system uses eight digits, from 0 to 7. 
+            It is often used as a shorthand for binary numbers because each octal digit represents three binary bits.
+        </p>
+
+        <ul>
+            <li><strong>Base:</strong> 8</li>
+            <li><strong>Digits Used:</strong> 0 to 7</li>
+            <li><strong>Example:</strong> 17<sub>8</sub></li>
+        </ul>
+
+        <h3>Applications:</h3>
+        <ul>
+            <li>Efficient representation of binary numbers.</li>
+            <li>Used in computer programming for permissions (e.g., UNIX file permissions).</li>
+        </ul>
+
+        <h3>Example Conversion: Octal to Decimal</h3>
+        <div class="example">
+            Convert 57<sub>8</sub> to decimal:
+            <div class="code">
+            Step 1: Write the number with its positional values:<br>
+            (5 × 8<sup>1</sup>) + (7 × 8<sup>0</sup>)<br>
+            Step 2: Calculate each term:<br>
+            = (5 × 8) + (7 × 1)<br>
+            Step 3: Add the results:<br>
+            = 40 + 7 = 47<sub>10</sub>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Decimal Number System</h2>
+        <p>The decimal number system is the most familiar to humans, as it is used in everyday life. It uses ten digits, from 0 to 9.</p>
+
+        <ul>
+            <li><strong>Base:</strong> 10</li>
+            <li><strong>Digits Used:</strong> 0 to 9</li>
+            <li><strong>Example:</strong> 345<sub>10</sub></li>
+        </ul>
+
+        <h3>Applications:</h3>
+        <ul>
+            <li>Human-centric calculations and daily life use.</li>
+            <li>Serves as an intermediary in programming for conversions.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Hexadecimal Number System</h2>
+        <p>The hexadecimal number system uses 16 digits, from 0 to 9 and A to F (where A represents 10, B represents 11, and so on). It is widely used in computing for memory addressing and color codes.</p>
+
+        <ul>
+            <li><strong>Base:</strong> 16</li>
+            <li><strong>Digits Used:</strong> 0 to 9, A to F</li>
+            <li><strong>Example:</strong> 1A3<sub>16</sub></li>
+        </ul>
+
+        <h3>Applications:</h3>
+        <ul>
+            <li>Memory addresses and assembly-level programming.</li>
+            <li>Color representation in web design (e.g., #FFFFFF for white).</li>
+        </ul>
+
+        <h3>Example Conversion: Hexadecimal to Decimal</h3>
+        <div class="example">
+            Convert 2A<sub>16</sub> to decimal:
+            <div class="code">
+            Step 1: Write the number with its positional values:<br>
+            (2 × 16<sup>1</sup>) + (10 × 16<sup>0</sup>)<br>
+            Step 2: Calculate each term:<br>
+            = (2 × 16) + (10 × 1)<br>
+            Step 3: Add the results:<br>
+            = 32 + 10 = 42<sub>10</sub>
+            </div>
+        </div>
+
+        <h3>Example Conversion: Binary to Hexadecimal</h3>
+        <div class="example">
+            Convert 10110111<sub>2</sub> to hexadecimal:
+            <div class="code">
+            Step 1: Group binary digits in sets of 4 (from right):<br>
+            10110111 → 1011 0111<br>
+            Step 2: Convert each group to hexadecimal:<br>
+            1011 = B, 0111 = 7<br>
+            Step 3: Combine the results:<br>
+            10110111<sub>2</sub> = B7<sub>16</sub>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>Number systems are vital for data representation and computer operations. Understanding conversions between these systems enhances computational skills and programming efficiency.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

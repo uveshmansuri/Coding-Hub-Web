@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operating System Basics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+        }
+
+        h3 {
+            color: #0078d7;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .example {
+            background: #E8F5E9;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #C8E6C9;
+            border-radius: 5px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Operating System Basics</h1>
+    </header>
+
+    <section>
+        <h2>What is an Operating System (OS)?</h2>
+        <p>An <strong>Operating System (OS)</strong> is system software that acts as an intermediary between computer hardware and users. It provides a user interface and manages computer resources such as CPU, memory, storage, and peripherals.</p>
+
+        <h3>Key Functions of an Operating System</h3>
+        <ul>
+            <li><strong>Process Management:</strong> Handles the creation, scheduling, and termination of processes.</li>
+            <li><strong>Memory Management:</strong> Manages the allocation and deallocation of memory for programs.</li>
+            <li><strong>File System Management:</strong> Provides a structure for organizing, storing, and accessing data.</li>
+            <li><strong>Device Management:</strong> Manages hardware peripherals such as printers, scanners, and keyboards.</li>
+            <li><strong>Security:</strong> Protects data and resources from unauthorized access.</li>
+            <li><strong>User Interface:</strong> Provides a graphical or command-line interface for user interaction.</li>
+        </ul>
+
+        <h2>Types of Operating Systems</h2>
+        <h3>1. Single-User, Single-Task OS</h3>
+        <p>A system where one user can perform one task at a time. It is typically used in simple devices like old mobile phones or embedded systems.</p>
+        <div class="example">
+            <strong>Example:</strong> MS-DOS (Microsoft Disk Operating System)
+        </div>
+
+        <h3>2. Single-User, Multi-Tasking OS</h3>
+        <p>This OS allows a single user to perform multiple tasks simultaneously, such as browsing the internet while editing a document.</p>
+        <div class="example">
+            <strong>Example:</strong> Windows 10, macOS
+        </div>
+
+        <h3>3. Multi-User OS</h3>
+        <p>Allows multiple users to access the system resources simultaneously. It is common in server environments.</p>
+        <div class="example">
+            <strong>Example:</strong> UNIX, Linux
+        </div>
+
+        <h3>4. Real-Time OS (RTOS)</h3>
+        <p>Used in systems that require immediate response to external events. It is widely used in industrial and embedded systems.</p>
+        <div class="example">
+            <strong>Example:</strong> VxWorks, FreeRTOS
+        </div>
+
+        <h3>5. Distributed OS</h3>
+        <p>A system where a group of computers work together to appear as a single system to the user. It is often used in cloud computing environments.</p>
+        <div class="example">
+            <strong>Example:</strong> Apache Hadoop, Windows Server
+        </div>
+
+        <h3>6. Embedded OS</h3>
+        <p>Designed for embedded systems that are built into devices to perform specific tasks.</p>
+        <div class="example">
+            <strong>Example:</strong> Android for mobile phones, Embedded Linux
+        </div>
+
+        <h2>Operating System Architecture</h2>
+        <p>The architecture of an OS defines how the different components interact. The two main architectures are:</p>
+        <ul>
+            <li><strong>Monolithic Kernel:</strong> All OS services run in a single layer. 
+                <br>Example: Linux.
+                <div class="image-container">
+                    <img src="monolithic_os.jpeg" alt="Operating System Architecture">
+                </div>
+            </li>
+            <li><strong>Microkernel:</strong> 
+                Only the essential services run in the kernel space, with other services in the user space.
+                <br>Example: macOS, QNX.
+                <div class="image-container">
+                    <img src="microkernel_os.jpeg" alt="Operating System Architecture">
+                </div>
+            </li>
+        </ul>        
+
+        <h2>Real-World Example: How OS Manages a Task</h2>
+        <p>When you open a browser to visit a website:</p>
+        <ul>
+            <li>The OS allocates memory for the browser application.</li>
+            <li>It schedules CPU time for the browser process.</li>
+            <li>The file system retrieves the browser's program files.</li>
+            <li>The network management system connects to the internet to load the website.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>The operating system is the backbone of any computer system, managing hardware, software, and user interaction. Understanding its functions and types is crucial for utilizing technology effectively.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
