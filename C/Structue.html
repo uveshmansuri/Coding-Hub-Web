@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structures in C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Structures in C</h1>
+    </header>
+
+    <section>
+        <h2>What is a Structure?</h2>
+        <p>
+            A <strong>structure</strong> in C is a user-defined data type that groups related variables of different types into a single unit. It is defined using the <code>struct</code> keyword and allows the programmer to create complex data types for efficient handling of real-world entities.
+        </p>
+    </section>
+
+    <section>
+        <h2>Features of Structures</h2>
+        <ul>
+            <li>Allows grouping of variables of different types.</li>
+            <li>Supports hierarchical data representation.</li>
+            <li>Provides a way to store records and implement complex data structures like linked lists.</li>
+            <li>Can include arrays, pointers, and even other structures as members.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Defining and Using Structures</h2>
+        <p>The general syntax of defining a structure is:</p>
+        <pre>
+struct StructureName {
+    dataType member1;
+    dataType member2;
+    // Additional members
+};
+        </pre>
+        <p>To declare variables of a structure:</p>
+        <pre>
+struct StructureName variable1, variable2;
+        </pre>
+
+        <h2>Example: Defining and Using a Structure</h2>
+        <pre>
+#include &lt;stdio.h&gt;
+
+// Define a structure
+struct Student {
+    int id;
+    char name[50];
+    float marks;
+};
+
+int main() {
+    struct Student student1;
+
+    // Assign values to members
+    student1.id = 101;
+    strcpy(student1.name, "John Doe");
+    student1.marks = 87.5;
+
+    // Print details
+    printf("Student Details:\n");
+    printf("ID: %d\n", student1.id);
+    printf("Name: %s\n", student1.name);
+    printf("Marks: %.2f\n", student1.marks);
+
+    return 0;
+}
+        </pre>
+    </section>
+
+    <section>
+        <h2>Nested Structures</h2>
+        <p>
+            Structures can be nested, meaning one structure can include another structure as a member.
+        </p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+// Define a nested structure
+struct Date {
+    int day;
+    int month;
+    int year;
+};
+
+struct Student {
+    int id;
+    char name[50];
+    struct Date dob; // Nested structure
+};
+
+int main() {
+    struct Student student1;
+
+    // Assign values
+    student1.id = 101;
+    strcpy(student1.name, "Jane Doe");
+    student1.dob.day = 15;
+    student1.dob.month = 6;
+    student1.dob.year = 2000;
+
+    // Print details
+    printf("Student Details:\n");
+    printf("ID: %d\n", student1.id);
+    printf("Name: %s\n", student1.name);
+    printf("Date of Birth: %02d/%02d/%d\n", student1.dob.day, student1.dob.month, student1.dob.year);
+
+    return 0;
+}
+        </pre>
+    </section>
+
+    <section>
+        <h2>Array of Structures</h2>
+        <p>Structures can be organized into arrays to store multiple records efficiently.</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+struct Student {
+    int id;
+    char name[50];
+    float marks;
+};
+
+int main() {
+    struct Student students[3];
+
+    // Input data
+    for (int i = 0; i < 3; i++) {
+        printf("Enter details for student %d:\n", i + 1);
+        printf("ID: ");
+        scanf("%d", &students[i].id);
+        printf("Name: ");
+        scanf("%s", students[i].name);
+        printf("Marks: ");
+        scanf("%f", &students[i].marks);
+    }
+
+    // Display data
+    printf("\nStudent Details:\n");
+    for (int i = 0; i < 3; i++) {
+        printf("ID: %d, Name: %s, Marks: %.2f\n", students[i].id, students[i].name, students[i].marks);
+    }
+
+    return 0;
+}
+        </pre>
+    </section>
+
+    <section>
+        <h2>Key Applications of Structures</h2>
+        <ul>
+            <li>Storing records like employee details, student information, or product data.</li>
+            <li>Building data structures like linked lists, stacks, and queues.</li>
+            <li>Facilitating interaction with hardware components in system-level programming.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

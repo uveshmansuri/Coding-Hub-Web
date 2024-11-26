@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Dimensional Arrays in C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: monospace;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .comparison > div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Multi-Dimensional Arrays in C</h1>
+    </header>
+
+    <section>
+        <h2>What is a Multi-Dimensional Array?</h2>
+        <p>A <strong>multi-dimensional array</strong> in C is an array of arrays. It allows you to store data in a tabular form, such as rows and columns. The most commonly used multi-dimensional array is a two-dimensional array, but arrays with more than two dimensions are also supported.</p>
+        <p>Multi-dimensional arrays are especially useful for representing complex data structures such as matrices, tables, and grids.</p>
+    </section>
+
+    <section>
+        <h2>Declaration of Multi-Dimensional Arrays</h2>
+        <p>The general syntax for declaring a multi-dimensional array is:</p>
+        <pre>
+data_type array_name[size1][size2]...[sizeN];
+        </pre>
+        <p>For example, to declare a 2D array of integers with 3 rows and 4 columns:</p>
+        <pre>
+int matrix[3][4];
+        </pre>
+        <p>To declare a 3D array:</p>
+        <pre>
+int tensor[2][3][4];
+        </pre>
+    </section>
+
+    <section>
+        <h2>Initialization of Multi-Dimensional Arrays</h2>
+        <p>Multi-dimensional arrays can be initialized at the time of declaration. For example:</p>
+        <pre>
+int matrix[2][3] = {
+    {1, 2, 3},  // First row
+    {4, 5, 6}   // Second row
+};
+        </pre>
+        <p>You can also omit the inner curly braces, and the compiler will infer them:</p>
+        <pre>
+int matrix[2][3] = {1, 2, 3, 4, 5, 6};
+        </pre>
+        <p>If you don't specify all the values, the remaining elements will be initialized to 0:</p>
+        <pre>
+int matrix[2][3] = {{1, 2}, {4}};  // Remaining elements will be 0
+        </pre>
+    </section>
+
+    <section>
+        <h2>Accessing Elements of a Multi-Dimensional Array</h2>
+        <p>To access an element in a multi-dimensional array, specify the indices of each dimension in square brackets. For example:</p>
+        <pre>
+int matrix[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+
+printf("%d", matrix[1][2]);  // Access element at row 1, column 2 (Output: 6)
+        </pre>
+
+        <h2>Example: Two-Dimensional Array</h2>
+        <p>The following example demonstrates the use of a 2D array:</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int matrix[2][3] = {
+        {1, 2, 3},
+        {4, 5, 6}
+    };
+
+    // Display the array elements
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("matrix[%d][%d] = %d\n", i, j, matrix[i][j]);
+        }
+    }
+
+    return 0;
+}
+        </pre>
+        <p>Output:</p>
+        <pre>
+matrix[0][0] = 1
+matrix[0][1] = 2
+matrix[0][2] = 3
+matrix[1][0] = 4
+matrix[1][1] = 5
+matrix[1][2] = 6
+        </pre>
+    </section>
+
+    <section>
+        <h2>Example: Matrix Addition</h2>
+        <p>The following example demonstrates the addition of two 2D arrays:</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int matrix1[2][2] = {{1, 2}, {3, 4}};
+    int matrix2[2][2] = {{5, 6}, {7, 8}};
+    int result[2][2];
+
+    // Add the matrices
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            result[i][j] = matrix1[i][j] + matrix2[i][j];
+        }
+    }
+
+    // Display the result
+    printf("Resultant Matrix:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("%d ", result[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+        </pre>
+        <p>Output:</p>
+        <pre>
+Resultant Matrix:
+6 8
+10 12
+        </pre>
+    </section>
+
+    <section>
+        <h2>Higher-Dimensional Arrays</h2>
+        <p>While 2D arrays are the most common, you can define arrays with three or more dimensions. For example, a 3D array:</p>
+        <pre>
+int tensor[2][2][3] = {
+    {
+        {1, 2, 3}, {4, 5, 6}  // First layer
+    },
+    {
+        {7, 8, 9}, {10, 11, 12}  // Second layer
+    }
+};
+
+// Accessing an element
+printf("%d", tensor[1][0][2]);  // Output: 9
+        </pre>
+    </section>
+
+    <section>
+        <h2>Applications of Multi-Dimensional Arrays</h2>
+        <p>Multi-dimensional arrays are widely used in various applications, such as:</p>
+        <ul>
+            <li>Representing matrices in mathematical computations.</li>
+            <li>Storing tabular data, such as student marks or employee records.</li>
+            <li>Developing games that require grids (e.g., chess boards).</li>
+            <li>Handling multi-channel images in image processing.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>Multi-dimensional arrays in C provide a powerful way to store and manipulate structured data. Understanding how to declare, initialize, and use them is essential for solving complex programming problems.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

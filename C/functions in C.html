@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: monospace;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .comparison > div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Functions in C</h1>
+    </header>
+
+    <section>
+        <h2>Introduction to Functions</h2>
+        <p>In C programming, a function is a reusable block of code designed to perform a specific task. Functions help in modular programming by breaking down complex problems into smaller, manageable parts.</p>
+
+        <h3>Advantages of Using Functions</h3>
+        <ul>
+            <li>Code reusability</li>
+            <li>Improved readability and maintenance</li>
+            <li>Facilitates debugging</li>
+            <li>Reduces redundancy</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Function Declaration and Definition</h2>
+        <h3>Function Declaration</h3>
+        <p>A function declaration, also known as a prototype, specifies the function's name, return type, and parameters. It is usually placed at the top of the program or in a header file.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre>
+return_type function_name(parameter_list);
+        </pre>
+        <p><strong>Example:</strong></p>
+        <pre>
+int add(int a, int b);
+        </pre>
+
+        <h3>Function Definition</h3>
+        <p>The function definition contains the actual code that performs the task. It includes the function header and body.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre>
+return_type function_name(parameter_list) {
+    // Function body
+}
+        </pre>
+        <p><strong>Example:</strong></p>
+        <pre>
+int add(int a, int b) {
+    return a + b;
+}
+        </pre>
+</section>
+
+<section>
+        <h2>Calling Functions</h2>
+        <p>To execute a function, you need to call it in your program. A function call passes control to the function, executes it, and then returns control to the caller.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre>
+function_name(arguments);
+        </pre>
+        <p><strong>Example:</strong></p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int add(int a, int b);
+
+int main() {
+    int result = add(5, 10);
+    printf("Sum: %d\n", result);
+    return 0;
+}
+
+int add(int a, int b) {
+    return a + b;
+}
+        </pre>
+        <p><strong>Output:</strong></p>
+        <pre>
+Sum: 15
+        </pre>
+    </section>
+
+    <section>
+        <h2>Function Parameters and Return Values</h2>
+        <h3>1. Parameters</h3>
+        <p>Parameters are variables listed in the function declaration and definition to accept input values when the function is called.</p>
+        <ul>
+            <li><strong>Formal Parameters:</strong> Declared in the function header.</li>
+            <li><strong>Actual Parameters:</strong> Passed during the function call.</li>
+        </ul>
+        <p><strong>Example:</strong></p>
+        <pre>
+void displayMessage(char name[]) {
+    printf("Hello, %s!\n", name);
+}
+        </pre>
+
+        <h3>2. Return Values</h3>
+        <p>A function can return a value to the caller using the `return` statement.</p>
+        <p><strong>Example:</strong></p>
+        <pre>
+float multiply(float x, float y) {
+    return x * y;
+}
+        </pre>
+</section>
+
+<section>
+        <h2>Recursion</h2>
+        <p>Recursion is a programming technique where a function calls itself to solve a smaller instance of the problem.</p>
+        <h3>Characteristics of Recursion</h3>
+        <ul>
+            <li>Includes a base case to terminate recursion.</li>
+            <li>Breaks the problem into smaller instances.</li>
+        </ul>
+        <p><strong>Example: Factorial Calculation</strong></p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int factorial(int n) {
+    if (n == 0) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+int main() {
+    int num = 5;
+    printf("Factorial of %d is %d\n", num, factorial(num));
+    return 0;
+}
+        </pre>
+        <p><strong>Output:</strong></p>
+        <pre>
+Factorial of 5 is 120
+        </pre>
+
+        <h3>Advantages of Recursion</h3>
+        <ul>
+            <li>Simplifies code for problems like tree traversal and factorials.</li>
+            <li>Reduces the need for explicit loops.</li>
+        </ul>
+
+        <h3>Disadvantages of Recursion</h3>
+        <ul>
+            <li>Higher memory consumption due to stack usage.</li>
+            <li>Can lead to stack overflow if not terminated properly.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>Functions are fundamental building blocks of C programming. Understanding their declaration, definition, parameters, return values, and recursion is essential for writing efficient and modular code.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

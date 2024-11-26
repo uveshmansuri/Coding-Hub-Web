@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Statements in C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: monospace;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .comparison > div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Looping Statements in C</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>Looping is a programming concept that allows the execution of a set of instructions repeatedly until a certain condition is met. In C, loops are used to automate repetitive tasks. C provides three main types of looping statements: <code>for</code> loop, <code>while</code> loop, and <code>do-while</code> loop.</p>
+    </section>
+
+    <section>
+        <h2>Types of Looping Statements in C</h2>
+        <p>There are three primary looping statements in C:</p>
+        <ul>
+            <li><strong>For loop:</strong> It is used when the number of iterations is known beforehand.</li>
+            <li><strong>While loop:</strong> It is used when the number of iterations is not known and the condition is checked before each iteration.</li>
+            <li><strong>Do-while loop:</strong> It is similar to the while loop, but the condition is checked after each iteration, ensuring that the loop is executed at least once.</li>
+        </ul>
+
+        <h3>1. <code>For</code> Loop</h3>
+        <p>The <code>for</code> loop is generally used when the number of iterations is known or can be determined easily. It includes an initialization, a condition, and an increment or decrement expression.</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        printf("%d ", i);
+    }
+    return 0;
+}
+        </pre>
+        <p>Output:</p>
+        <pre>
+1 2 3 4 5
+        </pre>
+        <p>Explanation:</p>
+        <ul>
+            <li>The loop starts with <code>i = 1</code>.</li>
+            <li>The loop runs while <code>i <= 5</code>.</li>
+            <li>After each iteration, <code>i</code> is incremented by 1.</li>
+        </ul>
+
+        <h3>2. <code>While</code> Loop</h3>
+        <p>The <code>while</code> loop is used when the number of iterations is not known in advance. It checks the condition before executing the loop's body.</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int i = 1;
+    while (i <= 5) {
+        printf("%d ", i);
+        i++;
+    }
+    return 0;
+}
+        </pre>
+        <p>Output:</p>
+        <pre>
+1 2 3 4 5
+        </pre>
+        <p>Explanation:</p>
+        <ul>
+            <li>The loop starts with <code>i = 1</code>.</li>
+            <li>The condition <code>i <= 5</code> is checked before each iteration.</li>
+            <li>If the condition is true, the body of the loop is executed, and <code>i</code> is incremented.</li>
+        </ul>
+
+        <h3>3. <code>Do-while</code> Loop</h3>
+        <p>The <code>do-while</code> loop is similar to the <code>while</code> loop, but it guarantees that the loop is executed at least once. The condition is checked after the loop's body.</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int i = 1;
+    do {
+        printf("%d ", i);
+        i++;
+    } while (i <= 5);
+    return 0;
+}
+        </pre>
+        <p>Output:</p>
+        <pre>
+1 2 3 4 5
+        </pre>
+        <p>Explanation:</p>
+        <ul>
+            <li>The loop starts with <code>i = 1</code>.</li>
+            <li>The body of the loop is executed first, and then the condition <code>i <= 5</code> is checked.</li>
+            <li>The loop continues to execute as long as the condition is true.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Control Statements: <strong>break</strong>, <strong>continue</strong>, and <strong>goto</strong></h2>
+        <p>In C, the <strong>break</strong>, <strong>continue</strong>, and <strong>goto</strong> statements allow you to control the flow of a loop in a more flexible manner.</p>
+
+        <h3><strong>break</strong> Statement</h3>
+        <p>The <strong>break</strong> statement is used to exit a loop prematurely. It breaks out of the loop as soon as the condition is met, regardless of whether the loop's condition is still true.</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    for (int i = 1; i <= 10; i++) {
+        if (i == 5) {
+            break;  // Exits the loop when i equals 5
+        }
+        printf("%d ", i);
+    }
+    return 0;
+}
+        </pre>
+        <p>Output:</p>
+        <pre>
+1 2 3 4
+        </pre>
+        <p>Explanation:</p>
+        <ul>
+            <li>When <code>i == 5</code>, the <code>break</code> statement is executed, and the loop terminates.</li>
+        </ul>
+
+        <h3><strong>Continue</strong> Statement</h3>
+        <p>The <code>continue</code> statement skips the current iteration and moves to the next iteration of the loop. It is often used to skip specific conditions inside the loop body.</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        if (i == 3) {
+            continue;  // Skips printing 3
+        }
+        printf("%d ", i);
+    }
+    return 0;
+}
+        </pre>
+        <p>Output:</p>
+        <pre>
+1 2 4 5
+        </pre>
+        <p>Explanation:</p>
+        <ul>
+            <li>When <code>i == 3</code>, the <code>continue</code> statement is executed, skipping the <code>printf</code> statement for this iteration.</li>
+        </ul>
+
+        <h3><strong>Goto</strong> Statement</h3>
+        <p>The <code>goto</code> statement is used to transfer control to a specific label within the program. It is generally discouraged because it can make the code harder to understand and maintain.</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int i = 1;
+    start:
+    if (i > 5) {
+        return 0;
+    }
+    printf("%d ", i);
+    i++;
+    goto start;  // Jumps back to the 'start' label
+}
+        </pre>
+        <p>Output:</p>
+        <pre>
+1 2 3 4 5
+        </pre>
+        <p>Explanation:</p>
+        <ul>
+            <li>The <code>goto</code> statement transfers control to the <code>start</code> label, causing the loop to repeat until <code>i > 5</code>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>Looping statements in C are powerful tools for automating repetitive tasks. Understanding when and how to use each type of loop allows developers to write efficient and effective programs. By combining loops with conditional statements, you can create complex, dynamic programs that perform a wide variety of tasks.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

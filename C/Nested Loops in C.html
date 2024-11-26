@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Loops in C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: monospace;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .comparison > div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nested Loops in C</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>In C programming, a nested loop is a loop inside another loop. It is used when we need to perform a repetitive action multiple times within another repetitive action. Nested loops are particularly useful when working with multi-dimensional data structures like matrices or grids.</p>
+    </section>
+
+    <section>
+        <h2>Syntax of Nested Loops</h2>
+        <p>A nested loop is created by placing one loop inside another. The inner loop will complete all its iterations for every single iteration of the outer loop.</p>
+        <pre>
+<strong>
+for(initialization; condition; increment/decrement) {
+    // Outer loop body
+    for(initialization; condition; increment/decrement) {
+        // Inner loop body
+    }
+}
+</strong>
+        </pre>
+
+        <h2>Example: Nested For Loop</h2>
+        <p>Here’s an example of a nested <code>for</code> loop that prints a pattern of stars:</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+        </pre>
+        <p>Output:</p>
+        <pre>
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+        </pre>
+        <p>Explanation:</p>
+        <ul>
+            <li>The outer <code>for</code> loop controls the rows.</li>
+            <li>The inner <code>for</code> loop prints the stars in each row.</li>
+            <li>The number of stars printed in each row increases with each iteration of the outer loop.</li>
+        </ul>
+
+        <h2>Example: Nested While Loop</h2>
+        <p>Here's an example using nested <code>while</code> loops to print the same pattern:</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int i = 1;
+    while (i <= 5) {
+        int j = 1;
+        while (j <= i) {
+            printf("* ");
+            j++;
+        }
+        printf("\n");
+        i++;
+    }
+
+    return 0;
+}
+        </pre>
+        <p>Output:</p>
+        <pre>
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+        </pre>
+        <p>The logic is the same as the <code>for</code> loop example, but we’re using <code>while</code> loops instead.</p>
+
+    </section>
+
+    <section>
+        <h2>Applications of Nested Loops</h2>
+        <p>Nested loops are frequently used in the following cases:</p>
+        <ul>
+            <li><strong>Matrix Operations:</strong> When performing operations on 2D arrays or matrices.</li>
+            <li><strong>Nested Data Structures:</strong> When working with multi-dimensional arrays, tables, grids, etc.</li>
+            <li><strong>Pattern Printing:</strong> When creating complex patterns, like number patterns, star patterns, etc.</li>
+        </ul>
+
+        <h3>Example: Printing a Multiplication Table</h3>
+        <p>Let's see an example where we use a nested loop to print a multiplication table:</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    for (int i = 1; i <= 10; i++) {
+        for (int j = 1; j <= 10; j++) {
+            printf("%d\t", i * j);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+        </pre>
+        <p>Output:</p>
+        <pre>
+1	2	3	4	5	6	7	8	9	10	
+2	4	6	8	10	12	14	16	18	20	
+3	6	9	12	15	18	21	24	27	30	
+4	8	12	16	20	24	28	32	36	40	
+5	10	15	20	25	30	35	40	45	50	
+6	12	18	24	30	36	42	48	54	60	
+7	14	21	28	35	42	49	56	63	70	
+8	16	24	32	40	48	56	64	72	80	
+9	18	27	36	45	54	63	72	81	90	
+10	20	30	40	50	60	70	80	90	100	
+        </pre>
+        <p>Explanation:</p>
+        <ul>
+            <li>The outer loop controls the first number of the multiplication.</li>
+            <li>The inner loop controls the second number of the multiplication.</li>
+            <li>The result of multiplying the two numbers is printed on the same line, separated by tabs.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Limitations and Performance Considerations</h2>
+        <p>While nested loops are powerful, they can cause performance issues if overused or used inefficiently. The time complexity of a nested loop is proportional to the number of iterations, which can grow rapidly. For example, a nested loop with two loops of size <code>n</code> will have a time complexity of <code>O(n²)</code>.</p>
+        <p>For very large datasets or complex algorithms, it's important to consider optimizations, such as:</p>
+        <ul>
+            <li>Minimizing the number of iterations by breaking out of loops when possible.</li>
+            <li>Using more efficient data structures or algorithms to avoid unnecessary nested loops.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>Nested loops are essential tools for solving complex problems in programming, especially when dealing with multi-dimensional data structures or performing repetitive tasks within tasks. Understanding how to properly use nested loops will help you efficiently solve many types of problems in C programming.</p>
+    </section>
+
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

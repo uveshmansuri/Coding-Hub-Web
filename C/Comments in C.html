@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments in C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .comparison > div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Comments in C</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>In C programming, <strong>comments</strong> are used to explain the code and make it more readable. They are ignored by the compiler and have no effect on the execution of the program. Comments are crucial for documenting code and aiding other developers (or yourself) in understanding the program later.</p>
+    </section>
+
+    <section>
+        <h2>Types of Comments in C</h2>
+        <p>C supports two types of comments:</p>
+        <ol>
+            <li><strong>Single-line Comments</strong></li>
+            <li><strong>Multi-line Comments</strong></li>
+        </ol>
+
+        <h3>1. Single-line Comments</h3>
+        <p>Single-line comments start with <code>//</code>. Everything after <code>//</code> on the same line is treated as a comment.</p>
+
+        <h4>Example:</h4>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    // This is a single-line comment
+    printf("Hello, World!\\n"); // This prints a message
+    return 0;
+}
+        </pre>
+
+        <p>In this example:</p>
+        <ul>
+            <li>The first comment explains the program's purpose.</li>
+            <li>The second comment describes the <code>printf</code> statement.</li>
+        </ul>
+
+        <h3>2. Multi-line Comments</h3>
+        <p>Multi-line comments begin with <code>/*</code> and end with <code>*/</code>. They can span multiple lines.</p>
+
+        <h4>Example:</h4>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    /* This is a multi-line comment.
+       It can span multiple lines.
+       Use it for detailed explanations. */
+    printf("Hello, World!\\n");
+    return 0;
+}
+        </pre>
+
+        <p>In this example, the multi-line comment explains the program over several lines.</p>
+    </section>
+
+    <section>
+        <h2>Best Practices for Using Comments</h2>
+        <ul>
+            <li>Use comments to explain why a particular block of code is written, not how it works (the code should be self-explanatory).</li>
+            <li>Avoid overusing comments; keep them concise and relevant.</li>
+            <li>Use single-line comments for short notes and multi-line comments for detailed descriptions.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Examples</h2>
+        <h3>Example 1: Describing Variables</h3>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num = 10; // This variable stores a number
+    printf("Number: %d\\n", num);
+    return 0;
+}
+        </pre>
+
+        <h3>Example 2: Explaining a Loop</h3>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    /* Loop to print numbers from 1 to 5 */
+    for (int i = 1; i <= 5; i++) {
+        printf("%d\\n", i); // Print the current number
+    }
+    return 0;
+}
+        </pre>
+
+        <h3>Output for Example 2:</h3>
+        <pre>
+1
+2
+3
+4
+5
+        </pre>
+    </section>
+
+    <section>
+        <h2>Key Points</h2>
+        <ul>
+            <li>Comments improve code readability and maintainability.</li>
+            <li>They are ignored by the compiler, so they do not affect the program's performance.</li>
+            <li>Always ensure comments are meaningful and not redundant.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

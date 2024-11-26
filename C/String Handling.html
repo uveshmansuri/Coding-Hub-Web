@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings and String Handling in C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: monospace;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .comparison > div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>String Handling in C</h1>
+    </header>
+
+    <section>
+        <h2>Introduction to Strings in C</h2>
+        <p>In C, a string is a sequence of characters terminated with a special character called the null character (`\0`). Strings are stored in arrays of `char` type.</p>
+        <p>For example:</p>
+        <pre>
+char str[6] = "Hello";  // A string of 5 characters plus '\0' at the end
+        </pre>
+        <p>Alternatively, you can initialize a string using individual characters:</p>
+        <pre>
+char str[] = {'H', 'e', 'l', 'l', 'o', '\0'};
+        </pre>
+</section>
+
+<section>
+        <h2>String Handling Functions in C</h2>
+        <p>The `<string.h>` library provides several functions to manipulate strings. Below are some commonly used string handling functions with detailed explanations and examples.</p>
+
+        <section>
+        <h3>1. <code>strlen</code> - String Length</h3>
+        <p>The `strlen` function is used to calculate the length of a string (excluding the null character).</p>
+        <p><strong>Syntax:</strong></p>
+        <pre>
+size_t strlen(const char *str);
+        </pre>
+        <p><strong>Example:</strong></p>
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char str[] = "Hello, World!";
+    printf("Length of the string: %zu\n", strlen(str));
+    return 0;
+}
+        </pre>
+        <p><strong>Output:</strong></p>
+        <pre>
+Length of the string: 13
+        </pre>
+    </section>
+
+    <section>
+        <h3>2. <code>strcpy</code> - String Copy</h3>
+        <p>The `strcpy` function is used to copy the contents of one string into another.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre>
+char *strcpy(char *destination, const char *source);
+        </pre>
+        <p><strong>Example:</strong></p>
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char source[] = "Coding Hub";
+    char destination[50];
+
+    strcpy(destination, source);
+    printf("Source: %s\n", source);
+    printf("Destination: %s\n", destination);
+
+    return 0;
+}
+        </pre>
+        <p><strong>Output:</strong></p>
+        <pre>
+Source: Coding Hub
+Destination: Coding Hub
+        </pre>
+    </section>
+
+    <section>
+        <h3>3. <code>strcmp</code> - String Comparison</h3>
+        <p>The `strcmp` function is used to compare two strings lexicographically.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre>
+int strcmp(const char *str1, const char *str2);
+        </pre>
+        <p><strong>Return Values:</strong></p>
+        <ul>
+            <li>Returns <code>0</code> if both strings are equal.</li>
+            <li>Returns a negative value if <code>str1</code> is less than <code>str2</code>.</li>
+            <li>Returns a positive value if <code>str1</code> is greater than <code>str2</code>.</li>
+        </ul>
+        <p><strong>Example:</strong></p>
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char str1[] = "Hello";
+    char str2[] = "World";
+
+    int result = strcmp(str1, str2);
+    if (result == 0) {
+        printf("Strings are equal.\n");
+    } else if (result < 0) {
+        printf("String 1 is less than String 2.\n");
+    } else {
+        printf("String 1 is greater than String 2.\n");
+    }
+
+    return 0;
+}
+        </pre>
+        <p><strong>Output:</strong></p>
+        <pre>
+String 1 is less than String 2.
+        </pre>
+    </section>
+
+    <section>
+        <h3>4. <code>strcat</code> - String Concatenation</h3>
+        <p>The `strcat` function is used to concatenate (append) one string to another.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre>
+char *strcat(char *destination, const char *source);
+        </pre>
+        <p><strong>Example:</strong></p>
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char str1[50] = "Hello";
+    char str2[] = ", World!";
+
+    strcat(str1, str2);
+    printf("Concatenated String: %s\n", str1);
+
+    return 0;
+}
+        </pre>
+        <p><strong>Output:</strong></p>
+        <pre>
+Concatenated String: Hello, World!
+        </pre>
+    </section>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>String handling functions in C are powerful tools for manipulating strings efficiently. Understanding their syntax and usage is crucial for working with text-based data in C programs.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

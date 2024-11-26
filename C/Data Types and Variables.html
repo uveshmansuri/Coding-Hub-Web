@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types and Variables in C Language</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .comparison > div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Data Types and Variables in C Language</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>In C programming, <strong>data types</strong> define the type of data a variable can hold, while <strong>variables</strong> are used to store data values. Understanding these concepts is essential for efficient programming.</p>
+
+        <h2>Data Types in C</h2>
+        <p>C provides a variety of data types that are categorized into the following:</p>
+        <ul>
+            <li><strong>Primary Data Types:</strong> Basic types like <code>int</code>, <code>float</code>, <code>char</code>, and <code>void</code>.</li>
+            <li><strong>Derived Data Types:</strong> Arrays, pointers, structures, and unions.</li>
+            <li><strong>User-Defined Data Types:</strong> Created by the programmer using <code>typedef</code> or <code>enum</code>.</li>
+            <li><strong>Enumeration:</strong> A set of named integer constants.</li>
+        </ul>
+
+        <h3>Primary Data Types</h3>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Data Type</th>
+                    <th>Size (in bytes)</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>int</code></td>
+                    <td>4</td>
+                    <td>Stores integer values</td>
+                    <td><code>int num = 10;</code></td>
+                </tr>
+                <tr>
+                    <td><code>float</code></td>
+                    <td>4</td>
+                    <td>Stores floating-point numbers</td>
+                    <td><code>float pi = 3.14;</code></td>
+                </tr>
+                <tr>
+                    <td><code>char</code></td>
+                    <td>1</td>
+                    <td>Stores single characters</td>
+                    <td><code>char grade = 'A';</code></td>
+                </tr>
+                <tr>
+                    <td><code>void</code></td>
+                    <td>0</td>
+                    <td>Represents no value</td>
+                    <td><code>void function();</code></td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+<section>
+        <h2>Variables in C</h2>
+        <p>Variables are named storage locations in memory used to store data. Before using a variable, it must be declared with a specific data type.</p>
+
+        <h3>Declaration and Initialization</h3>
+        <p>A variable can be declared and initialized as follows:</p>
+        <pre>
+int age;          // Declaration
+age = 25;         // Initialization
+
+// Or both can be done simultaneously:
+int age = 25;
+        </pre>
+
+        <h3>Rules for Naming Variables</h3>
+        <ul>
+            <li>Variable names must start with a letter or underscore.</li>
+            <li>They can contain letters, digits, and underscores.</li>
+            <li>Cannot use C keywords as variable names.</li>
+            <li>Case-sensitive (e.g., <code>Var</code> and <code>var</code> are different).</li>
+        </ul>
+</section>
+
+<section>
+        <h2>Scope and Lifetime of Variables</h2>
+        <p>In C, variables have specific scopes and lifetimes:</p>
+        <ul>
+            <li><strong>Local Variables:</strong> Declared inside a function and accessible only within that function.</li>
+            <li><strong>Global Variables:</strong> Declared outside all functions and accessible throughout the program.</li>
+            <li><strong>Static Variables:</strong> Retain their value between function calls.</li>
+            <li><strong>Extern Variables:</strong> Used to declare variables globally, accessible across multiple files.</li>
+        </ul>
+
+        <h2>Example Program</h2>
+        <p>The following program demonstrates the use of variables and data types:</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num = 10;           // Integer variable
+    float pi = 3.14;        // Float variable
+    char grade = 'A';       // Character variable
+
+    printf("Number: %d\n", num);
+    printf("Value of Pi: %.2f\n", pi);
+    printf("Grade: %c\n", grade);
+
+    return 0;
+}
+        </pre>
+        <p><strong>Output:</strong></p>
+        <ul>
+            <li>Number: 10</li>
+            <li>Value of Pi: 3.14</li>
+            <li>Grade: A</li>
+        </ul>
+</section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>Data types and variables are the building blocks of any C program. Understanding their usage, declaration, and scope is essential for writing effective and efficient programs.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

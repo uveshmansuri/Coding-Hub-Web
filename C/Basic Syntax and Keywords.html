@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Syntax, Keywords, and Identifiers in C Language</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .comparison > div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Basic Syntax, Keywords, and Identifiers in C Language</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>The C programming language follows a specific syntax that dictates how programs should be written. 
+            These rules are essential to ensure that the code is correctly interpreted and executed by the compiler.
+        </p>
+    </section>
+
+    <section>
+        <h2>Basic Syntax of a C Program</h2>
+        <p>A simple C program consists of the following components:</p>
+        <ul>
+            <li>Preprocessor directives (e.g., `#include`).</li>
+            <li>The `main()` function, where the execution starts.</li>
+            <li>Statements and expressions within the `{}` braces.</li>
+            <li>Semicolon (`;`) at the end of every statement.</li>
+        </ul>
+
+        <h3>Example of a Basic C Program</h3>
+        <pre>
+#include &lt;stdio.h&gt;  // Preprocessor directive
+
+int main() {            // Start of the main function
+    printf("Hello, World!\n");  // Print statement
+    return 0;           // Return statement
+}                       // End of the main function
+        </pre>
+        <p><strong>Explanation:</strong> This program prints "Hello, World!" to the console.</p>
+</section>
+
+<section>
+        <h2>Keywords in C</h2>
+        <p>Keywords are reserved words in C that have predefined meanings. They cannot be used as identifiers or variable names. C has 32 standard keywords:</p>
+        <div>
+            <strong>Examples of Keywords:</strong>
+            <p><em>auto, break, case, char, const, continue, default, do, double, else, enum, extern, float, for, goto, if, int, long, register, return, short, signed, sizeof, static, struct, switch, typedef, union, unsigned, void, volatile, while</em></p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Identifiers in C</h2>
+        <p>Identifiers are the names used to identify variables, functions, or any user-defined element in a C program. They must follow specific rules:</p>
+        <ul>
+            <li>Must start with a letter (A-Z or a-z) or an underscore (_).</li>
+            <li>Can contain letters, digits (0-9), and underscores.</li>
+            <li>Cannot be a keyword.</li>
+            <li>Case-sensitive (e.g., `Variable` and `variable` are different).</li>
+        </ul>
+
+        <h3>Examples of Valid and Invalid Identifiers</h3>
+        <div>
+            <p><strong>Valid Identifiers:</strong></p>
+            <ul>
+                <li><code>myVariable</code></li>
+                <li><code>_temp</code></li>
+                <li><code>count123</code></li>
+            </ul>
+            <p><strong>Invalid Identifiers:</strong></p>
+            <ul>
+                <li><code>123count</code> (Cannot start with a digit)</li>
+                <li><code>for</code> (Keyword)</li>
+                <li><code>my-variable</code> (Contains a hyphen, which is not allowed)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Important Points to Remember</h2>
+        <ul>
+            <li>C is case-sensitive, so `Variable` and `variable` are treated as different identifiers.</li>
+            <li>Keywords cannot be redefined or used as identifiers.</li>
+            <li>Follow proper naming conventions to make the code more readable.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>Understanding the syntax, keywords, and identifiers is the foundation of programming in C. Following these rules ensures that your program compiles and runs correctly.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

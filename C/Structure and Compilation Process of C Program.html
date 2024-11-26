@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structure and Compilation Process of C Program</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+        }
+
+        h3 {
+            color: #2c3e50;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .example {
+            background: #ecf0f1;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Structure and Compilation Process of C Program</h1>
+    </header>
+
+    <section>
+        <h2>Structure of a C Program</h2>
+        <p>A C program is typically divided into several sections. Each section serves a specific purpose, making the code organized and easier to understand.</p>
+
+        <h3>Basic Structure of a C Program</h3>
+        <div class="example">
+            <pre>
+#include &lt;stdio.h&gt;  // Header file inclusion
+
+// Global variable declaration
+int globalVar = 10;
+
+// Function declaration
+void display();
+
+int main() {
+    // Local variable declaration
+    int num = 5;
+
+    // Function call
+    display();
+
+    // Print statement
+    printf("Value of num: %d\n", num);
+
+    return 0;  // Return statement
+}
+
+// Function definition
+void display() {
+    printf("Hello from display function!\n");
+}
+            </pre>
+        </div>
+
+        <h3>Components of the Structure</h3>
+        <ul>
+            <li><strong>Header Files:</strong> These are included at the beginning using `#include`. They provide declarations for standard functions and macros (e.g., `<stdio.h>`).</li>
+            <li><strong>Global Declarations:</strong> Variables and constants declared outside all functions are accessible throughout the program.</li>
+            <li><strong>main() Function:</strong> The entry point of the program where execution starts.</li>
+            <li><strong>Local Declarations:</strong> Variables declared within a function and accessible only in that scope.</li>
+            <li><strong>Statements and Expressions:</strong> Logic and instructions written to perform specific tasks.</li>
+            <li><strong>Functions:</strong> Reusable blocks of code written for specific purposes.</li>
+        </ul>
+
+    </section>
+
+    <section>
+        <h2>Compilation Process of a C Program</h2>
+        <p>The compilation process in C transforms the high-level source code into machine code. The process involves several stages:</p>
+
+        <h3>Stages of Compilation</h3>
+        <ol>
+            <li><strong>Preprocessing:</strong>
+                <p>The preprocessor processes the directives (e.g., `#include`, `#define`). It removes comments, expands macros, and includes header files.</p>
+            </li>
+            <li><strong>Compilation:</strong>
+                <p>The compiler translates the preprocessed code into assembly code. It checks the syntax and semantics of the code.</p>
+            </li>
+            <li><strong>Assembly:</strong>
+                <p>The assembler converts the assembly code into machine code, generating an object file (.o or .obj).</p>
+            </li>
+            <li><strong>Linking:</strong>
+                <p>The linker combines object files with libraries to produce an executable file. It resolves external references and ensures all functions are linked correctly.</p>
+            </li>
+        </ol>
+
+        <div class="image-container">
+            <img src="cp_compile.png" alt="C Program Compilation Process">
+        </div>
+
+        <h3>Compilation Process Overview</h3>
+        <p>Assume the source code is stored in a file named `program.c`:</p>
+        <div class="example">
+            <ul>
+                <li><strong>Step 1:</strong> Preprocessing - `gcc -E program.c -o program.i`</li>
+                <li><strong>Step 2:</strong> Compilation - `gcc -S program.i -o program.s`</li>
+                <li><strong>Step 3:</strong> Assembly - `gcc -c program.s -o program.o`</li>
+                <li><strong>Step 4:</strong> Linking - `gcc program.o -o program`</li>
+            </ul>
+        </div>
+
+        <h3>Example Compilation Command</h3>
+        <p>To compile and execute a simple program:</p>
+        <div class="example">
+            <pre>
+gcc program.c -o program  // Compiles the program
+./program                 // Executes the program
+            </pre>
+        </div>
+
+    </section>
+
+    <section>
+        <h2>Key Points to Remember</h2>
+        <ul>
+            <li>The `main()` function is mandatory for execution.</li>
+            <li>Comments are ignored during preprocessing.</li>
+            <li>Errors in any stage of compilation must be resolved to proceed to the next stage.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>The structure of a C program ensures readability and modularity, while the compilation process ensures the code is translated into an executable format. Understanding these concepts is essential for effective C programming.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

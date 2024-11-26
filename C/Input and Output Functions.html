@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input and Output Functions in C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .comparison > div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Input and Output Functions in C</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>The <strong>input and output functions            
+        </strong> are essential for interacting with users in a C program. 
+        These functions enable data input from the user and output of results. In C, the standard functions 
+        <strong>scanf</strong> and <strong>printf</strong> are used for these purposes.</p>
+    </section>
+
+    <section>
+        <h2>The <strong>printf</strong> Function</h2>
+        <p>The <strong>printf</strong> function is used to display information on the screen. It is part of the standard input-output library (<code>stdio.h</code>).</p>
+        
+        <h3>Syntax:</h3>
+        <pre>
+printf("format string", argument1, argument2, ...);
+        </pre>
+
+        <h3>Format Specifiers:</h3>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Specifier</th>
+                    <th>Data Type</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>%d</td>
+                    <td>Integer</td>
+                    <td>printf("Number: %d", 10);</td>
+                </tr>
+                <tr>
+                    <td>%f</td>
+                    <td>Floating-point</td>
+                    <td>printf("Value: %f", 3.14);</td>
+                </tr>
+                <tr>
+                    <td>%c</td>
+                    <td>Character</td>
+                    <td>printf("Grade: %c", 'A');</td>
+                </tr>
+                <tr>
+                    <td>%s</td>
+                    <td>String</td>
+                    <td>printf("Name: %s", "John");</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Example:</h3>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num = 10;
+    float pi = 3.14;
+    char grade = 'A';
+
+    printf("Number: %d\\n", num);
+    printf("Value of Pi: %.2f\\n", pi);
+    printf("Grade: %c\\n", grade);
+
+    return 0;
+}
+        </pre>
+
+        <h3>Output:</h3>
+        <ul>
+            <li>Number: 10</li>
+            <li>Value of Pi: 3.14</li>
+            <li>Grade: A</li>
+        </ul>
+</section>
+
+    <section>
+        <h2>The <code>scanf</code> Function</h2>
+        <p>The <code>scanf</code> function is used to read user input. It reads data from standard input (keyboard) and assigns it to the specified variables.</p>
+        
+        <h3>Syntax:</h3>
+        <pre>
+scanf("format string", &variable1, &variable2, ...);
+        </pre>
+        <p>Note: The <code>&</code> (address-of operator) is used to provide the address of the variable where the input value will be stored.</p>
+
+        <h3>Example:</h3>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int age;
+    float height;
+    char name[20];
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    printf("Enter your height: ");
+    scanf("%f", &height);
+
+    printf("Enter your name: ");
+    scanf("%s", name);
+
+    printf("\\nYour Details:\\n");
+    printf("Name: %s\\n", name);
+    printf("Age: %d\\n", age);
+    printf("Height: %.2f meters\\n", height);
+
+    return 0;
+}
+        </pre>
+
+        <h3>Sample Run:</h3>
+        <pre>
+Enter your age: 25
+Enter your height: 1.75
+Enter your name: Alice
+
+Your Details:
+Name: Alice
+Age: 25
+Height: 1.75 meters
+        </pre>
+
+        <h2>Combining <code>printf</code> and <code>scanf</code></h2>
+        <p>In most programs, <code>scanf</code> and <code>printf</code> are used together to interact with users. Here’s an example:</p>
+
+        <h3>Example:</h3>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num1, num2, sum;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    sum = num1 + num2;
+
+    printf("The sum of %d and %d is %d\\n", num1, num2, sum);
+
+    return 0;
+}
+        </pre>
+
+        <h3>Sample Run:</h3>
+        <pre>
+Enter two numbers: 15 25
+The sum of 15 and 25 is 40
+        </pre>
+    </section>
+
+    <section>
+        <h2>Key Points</h2>
+        <ul>
+            <li>Always match the format specifier with the data type of the variable.</li>
+            <li>Use <code>\\n</code> to move to a new line in <code>printf</code>.</li>
+            <li>Do not forget the <code>&</code> operator in <code>scanf</code> for non-array variables.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>The <code>scanf</code> and <code>printf</code> functions are powerful tools for input and output in C. They allow for dynamic interaction between the program and its users, making C programs versatile and functional.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

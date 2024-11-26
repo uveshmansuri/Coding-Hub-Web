@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statements in C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: monospace;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .comparison > div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Conditional Statements in C</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>Conditional statements in C are used to perform different actions based on different conditions. These allow your program to make decisions and execute different parts of the code depending on certain conditions.</p>
+    </section>  
+
+    <section>
+        <h2>Types of Conditional Statements</h2>
+        <p>C provides several types of conditional statements, including:</p>
+        <ol>
+            <li><strong>If Statement</strong></li>
+            <li><strong>If-Else Statement</strong></li>
+            <li><strong>Nested If-Else Statement</strong></li>
+            <li><strong>Switch Statement</strong></li>
+        </ol>
+
+        <h3>1. If Statement</h3>
+        <p>The simplest form of a conditional statement, it executes a block of code if a specified condition is true.</p>
+        <pre>
+if (condition) {
+    // code to be executed if condition is true
+}
+        </pre>
+        <p>Example:</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num = 10;
+    
+    if (num > 0) {
+        printf("Number is positive.\n");
+    }
+
+    return 0;
+}
+        </pre>
+        <p>In this example, the output will be "Number is positive." because the condition <code>num > 0</code> is true.</p>
+
+        <h3>2. If-Else Statement</h3>
+        <p>In an if-else statement, if the condition is true, the first block of code is executed, and if the condition is false, the second block of code is executed.</p>
+        <pre>
+if (condition) {
+    // code to be executed if condition is true
+} else {
+    // code to be executed if condition is false
+}
+        </pre>
+        <p>Example:</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num = -5;
+    
+    if (num > 0) {
+        printf("Number is positive.\n");
+    } else {
+        printf("Number is negative or zero.\n");
+    }
+
+    return 0;
+}
+        </pre>
+        <p>In this case, since <code>num</code> is less than 0, the output will be "Number is negative or zero."</p>
+
+        <h3>3. Nested If-Else Statement</h3>
+        <p>A nested if-else statement is an if-else statement within another if or else block. This allows for more complex decision-making logic.</p>
+        <pre>
+if (condition1) {
+    // code to be executed if condition1 is true
+    if (condition2) {
+        // code to be executed if condition2 is true
+    } else {
+        // code to be executed if condition2 is false
+    }
+} else {
+    // code to be executed if condition1 is false
+}
+        </pre>
+        <p>Example:</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num = 10;
+    
+    if (num > 0) {
+        if (num % 2 == 0) {
+            printf("Number is positive and even.\n");
+        } else {
+            printf("Number is positive and odd.\n");
+        }
+    } else {
+        printf("Number is non-positive.\n");
+    }
+
+    return 0;
+}
+        </pre>
+        <p>The output will be "Number is positive and even." because <code>num</code> is greater than 0 and divisible by 2.</p>
+
+        <h3>4. Switch Statement</h3>
+        <p>The switch statement provides an easy way to dispatch execution to different parts of code based on the value of an expression. It is often used when you need to compare a variable against multiple values.</p>
+        <pre>
+switch (variable) {
+    case value1:
+        // code to be executed if variable == value1
+        break;
+    case value2:
+        // code to be executed if variable == value2
+        break;
+    default:
+        // code to be executed if variable doesn't match any case
+}
+        </pre>
+        <p>Example:</p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int day = 3;
+    
+    switch (day) {
+        case 1:
+            printf("Monday\n");
+            break;
+        case 2:
+            printf("Tuesday\n");
+            break;
+        case 3:
+            printf("Wednesday\n");
+            break;
+        default:
+            printf("Invalid day\n");
+    }
+
+    return 0;
+}
+        </pre>
+        <p>The output will be "Wednesday" because the value of <code>day</code> is 3.</p>
+    </section>
+    
+    <section>
+        <h2>Conclusion</h2>
+        <p>Conditional statements are fundamental in C programming. They allow developers to control the flow of execution based on logical conditions, making programs more dynamic and flexible. Understanding how to use these statements efficiently is essential for writing effective C programs.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

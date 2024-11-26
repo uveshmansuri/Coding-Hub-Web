@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators in C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0078d7;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .comparison > div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Operators in C</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>Operators in C are special symbols or keywords used to perform operations on variables and values. They are the building blocks of any program and allow manipulation of data effectively. Operators are categorized based on their functionality.</p>
+    </section>
+
+    <section>
+        <h2>Types of Operators</h2>
+        <p>C supports a wide range of operators, grouped into the following categories:</p>
+        <ol>
+            <li><strong>Arithmetic Operators</strong></li>
+            <li><strong>Relational Operators</strong></li>
+            <li><strong>Logical Operators</strong></li>
+            <li><strong>Bitwise Operators</strong></li>
+            <li><strong>Assignment Operators</strong></li>
+            <li><strong>Increment and Decrement Operators</strong></li>
+            <li><strong>Conditional (Ternary) Operators</strong></li>
+            <li><strong>Special Operators</strong></li>
+        </ol>
+
+        <h3>1. Arithmetic Operators</h3>
+        <p>Used for mathematical calculations like addition, subtraction, multiplication, division, and modulus.</p>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Meaning</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td>Addition</td>
+                <td><code>int sum = a + b;</code></td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Subtraction</td>
+                <td><code>int diff = a - b;</code></td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>Multiplication</td>
+                <td><code>int prod = a * b;</code></td>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>Division</td>
+                <td><code>int quot = a / b;</code></td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Modulus (remainder)</td>
+                <td><code>int rem = a % b;</code></td>
+            </tr>
+        </table>
+
+        <h3>2. Relational Operators</h3>
+        <p>Used to compare two values.</p>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Meaning</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>==</td>
+                <td>Equal to</td>
+                <td><code>a == b</code></td>
+            </tr>
+            <tr>
+                <td>!=</td>
+                <td>Not equal to</td>
+                <td><code>a != b</code></td>
+            </tr>
+            <tr>
+                <td>&gt;</td>
+                <td>Greater than</td>
+                <td><code>a &gt; b</code></td>
+            </tr>
+            <tr>
+                <td>&lt;</td>
+                <td>Less than</td>
+                <td><code>a &lt; b</code></td>
+            </tr>
+            <tr>
+                <td>&gt;=</td>
+                <td>Greater than or equal to</td>
+                <td><code>a &gt;= b</code></td>
+            </tr>
+            <tr>
+                <td>&lt;=</td>
+                <td>Less than or equal to</td>
+                <td><code>a &lt;= b</code></td>
+            </tr>
+        </table>
+
+        <h3>3. Logical Operators</h3>
+        <p>Used to perform logical operations, primarily in decision-making.</p>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Meaning</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>&&</td>
+                <td>Logical AND</td>
+                <td><code>(a &gt; b) && (b &lt; c)</code></td>
+            </tr>
+            <tr>
+                <td>||</td>
+                <td>Logical OR</td>
+                <td><code>(a &gt; b) || (b &gt; c)</code></td>
+            </tr>
+            <tr>
+                <td>!</td>
+                <td>Logical NOT</td>
+                <td><code>!(a == b)</code></td>
+            </tr>
+        </table>
+
+        <h3>4. Bitwise Operators</h3>
+        <p>Operate on binary data at the bit level.</p>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Meaning</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>&</td>
+                <td>Bitwise AND</td>
+                <td><code>a & b</code></td>
+            </tr>
+            <tr>
+                <td>|</td>
+                <td>Bitwise OR</td>
+                <td><code>a | b</code></td>
+            </tr>
+            <tr>
+                <td>^</td>
+                <td>Bitwise XOR</td>
+                <td><code>a ^ b</code></td>
+            </tr>
+            <tr>
+                <td>&lt;&lt;</td>
+                <td>Left Shift</td>
+                <td><code>a &lt;&lt; 1</code></td>
+            </tr>
+            <tr>
+                <td>&gt;&gt;</td>
+                <td>Right Shift</td>
+                <td><code>a &gt;&gt; 1</code></td>
+            </tr>
+        </table>
+
+        <h3>5. Assignment Operators</h3>
+        <p>Used to assign values to variables.</p>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Meaning</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>=</td>
+                <td>Assign</td>
+                <td><code>a = b</code></td>
+            </tr>
+            <tr>
+                <td>+=</td>
+                <td>Add and assign</td>
+                <td><code>a += b</code></td>
+            </tr>
+            <tr>
+                <td>-=</td>
+                <td>Subtract and assign</td>
+                <td><code>a -= b</code></td>
+            </tr>
+            <tr>
+                <td>*=</td>
+                <td>Multiply and assign</td>
+                <td><code>a *= b</code></td>
+            </tr>
+            <tr>
+                <td>/=</td>
+                <td>Divide and assign</td>
+                <td><code>a /= b</code></td>
+            </tr>
+            <tr>
+                <td>%=</td>
+                <td>Modulus and assign</td>
+                <td><code>a %= b</code></td>
+            </tr>
+        </table>
+
+        <h3>6. Increment and Decrement Operators</h3>
+        <p>Used to increment or decrement the value of a variable.</p>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Meaning</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>++</td>
+                <td>Increment by 1</td>
+                <td><code>a++</code></td>
+            </tr>
+            <tr>
+                <td>--</td>
+                <td>Decrement by 1</td>
+                <td><code>a--</code></td>
+            </tr>
+        </table>
+
+        <h3>7. Conditional (Ternary) Operator</h3>
+        <p>The conditional operator evaluates a condition and returns one of two values based on the condition.</p>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Meaning</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>?:</td>
+                <td>Conditional (Ternary)</td>
+                <td><code>result = (a &gt; b) ? a : b;</code></td>
+            </tr>
+        </table>
+
+        <h3>8. Special Operators</h3>
+        <p>Some unique operators used in specific situations, such as sizeof or comma operators.</p>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Meaning</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>sizeof</td>
+                <td>Returns size of a data type or variable</td>
+                <td><code>sizeof(a)</code></td>
+            </tr>
+            <tr>
+                <td>,</td>
+                <td>Comma operator (used to separate multiple statements in one expression)</td>
+                <td><code>int a = 10, b = 20;</code></td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unions in C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Unions in C</h1>
+    </header>
+
+    <section>
+        <h2>What is a Union?</h2>
+        <p>
+            A <strong>union</strong> in C is a user-defined data type that allows storing different data types in the same memory location. Unlike structures, where each member has its own memory location, members of a union share the same memory location. This allows storing different types of data at different times but not simultaneously.
+        </p>
+    </section>
+
+    <section>
+        <h2>Key Features of Unions</h2>
+        <ul>
+            <li>All members of a union share the same memory space.</li>
+            <li>The size of a union is determined by the size of its largest member.</li>
+            <li>At any given time, only one member can hold a value.</li>
+            <li>Unions are useful when memory conservation is important, especially in embedded systems.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Defining and Using a Union</h2>
+        <p>The general syntax of defining a union is:</p>
+        <pre>
+union UnionName {
+    dataType member1;
+    dataType member2;
+    // Additional members
+};
+        </pre>
+        <p>To declare variables of a union:</p>
+        <pre>
+union UnionName variable1, variable2;
+        </pre>
+
+        <h2>Example: Defining and Using a Union</h2>
+        <pre>
+#include &lt;stdio.h&gt;
+
+// Define a union
+union Data {
+    int i;
+    float f;
+    char str[20];
+};
+
+int main() {
+    union Data data1;
+
+    // Assign values to members
+    data1.i = 10;
+    printf("Data as integer: %d\n", data1.i);
+
+    data1.f = 220.5;
+    printf("Data as float: %.2f\n", data1.f);
+
+    strcpy(data1.str, "Hello, Union!");
+    printf("Data as string: %s\n", data1.str);
+
+    // Note: Only the last assigned value will be stored
+    printf("After assigning string, integer: %d\n", data1.i);
+
+    return 0;
+}
+        </pre>
+    </section>
+
+    <section>
+        <h2>Memory Size of a Union</h2>
+        <p>
+            The size of a union is equal to the size of its largest member. This is different from a structure, where the total size is the sum of the sizes of all its members. In the following example, the union will take up the size of its largest member, <code>char str[20]</>, which is 20 bytes.
+        </p>
+        <pre>
+#include &lt;stdio.h&gt;
+
+// Define a union
+union Data {
+    int i;
+    float f;
+    char str[20];
+};
+
+int main() {
+    union Data data1;
+
+    printf("Size of union: %lu\n", sizeof(data1));  // Output will be the size of largest member
+
+    return 0;
+}
+        </pre>
+    </section>
+
+    <section>
+        <h2>Use Cases of Unions</h2>
+        <p>
+            Unions are particularly useful in applications where a variable may store multiple types of data, but only one type of data at a time. Common use cases include:
+        </p>
+        <ul>
+            <li>Memory-efficient applications where only one data type is used at a time, such as in embedded systems.</li>
+            <li>Implementing polymorphism in data storage.</li>
+            <li>Working with low-level hardware where a byte may represent different types of data at different times.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Difference Between Structure and Union</h2>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <th>Feature</th>
+                <th>Structure</th>
+                <th>Union</th>
+            </tr>
+            <tr>
+                <td>Memory Allocation</td>
+                <td>Each member has its own memory location.</td>
+                <td>All members share the same memory location.</td>
+            </tr>
+            <tr>
+                <td>Memory Size</td>
+                <td>The size of the structure is the sum of the sizes of all its members.</td>
+                <td>The size of the union is the size of its largest member.</td>
+            </tr>
+            <tr>
+                <td>Usage</td>
+                <td>Used when multiple pieces of data are stored simultaneously.</td>
+                <td>Used when only one of the data members is needed at any point in time.</td>
+            </tr>
+            <tr>
+                <td>Access to Members</td>
+                <td>All members can be accessed independently.</td>
+                <td>Only one member can hold a value at any time, and accessing other members overwrites the current value.</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Example to Compare Structure and Union</h2>
+        <pre>
+#include &lt;stdio.h&gt;
+
+struct Employee {
+    int id;
+    char name[50];
+    float salary;
+};
+
+union EmployeeUnion {
+    int id;
+    char name[50];
+    float salary;
+};
+
+int main() {
+    // Structure example
+    struct Employee emp1;
+    emp1.id = 101;
+    strcpy(emp1.name, "Alice");
+    emp1.salary = 25000.5;
+    
+    // Union example
+    union EmployeeUnion empUnion1;
+    empUnion1.id = 101;
+    strcpy(empUnion1.name, "Bob");
+    empUnion1.salary = 30000.5;
+
+    printf("Structure Employee - ID: %d, Name: %s, Salary: %.2f\n", emp1.id, emp1.name, emp1.salary);
+    printf("Union Employee - ID: %d, Name: %s, Salary: %.2f\n", empUnion1.id, empUnion1.name, empUnion1.salary);
+
+    return 0;
+}
+        </pre>
+
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
