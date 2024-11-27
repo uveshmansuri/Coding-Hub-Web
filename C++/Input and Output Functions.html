@@ -29,7 +29,7 @@
         section {
             padding: 20px;
             max-width: 1200px;
-            margin: 10px auto;
+            margin: 10px;
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -50,6 +50,10 @@
             padding: 10px;
             border-radius: 5px;
             overflow-x: auto;
+        }
+        code{
+            color: #000;
+            background-color: #f9f9f9;
         }
 
         footer {
@@ -79,7 +83,7 @@
     </section>
 
     <section>
-        <h2>1. Output in C++ with <code>cout</code></h2>
+        <h2>Output in C++ with <code>cout</code></h2>
         <p>The <code>cout</code> function is used to output data to the console in C++. It is a standard output stream, and you can display text, variables, and other values. You use the <code><<</code> operator to send data to the output stream.</p>
 
         <h3>Basic Syntax:</h3>
@@ -132,7 +136,7 @@ int main() {
     </section>
 
     <section>
-        <h2>2. Input in C++ with <code>cin</code></h2>
+        <h2>Input in C++ with <code>cin</code></h2>
         <p>The <code>cin</code> function is used to get input from the user. It reads data from the standard input (usually the keyboard) and stores it in a variable. The <code>>></code> operator is used to read data from the input stream.</p>
 
         <h3>Basic Syntax:</h3>
@@ -179,7 +183,7 @@ int main() {
     </section>
 
     <section>
-        <h2>3. Error Handling in Input</h2>
+        <h2>Error Handling in Input</h2>
         <p>When using <code>cin</code>, if the user enters incorrect data (e.g., entering text when an integer is expected), it can cause the program to behave unexpectedly. To handle input errors, we use functions like <code>cin.fail()</code>, <code>cin.clear()</code>, and <code>cin.ignore()</code> to recover from errors.</p>
 
         <h3>Handling Invalid Input:</h3>
@@ -207,7 +211,7 @@ int main() {
     </section>
 
     <section>
-        <h2>4. Formatting Output in C++</h2>
+        <h2>Formatting Output in C++</h2>
         <p>C++ provides several output formatting tools. You can set the width of the output, control precision for floating-point numbers, and use manipulators like <code>setw</code>, <code>fixed</code>, and <code>setprecision</code> to format your output.</p>
 
         <h3>Setting Output Width and Precision:</h3>

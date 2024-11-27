@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jump Statements in C++</title>
@@ -29,7 +30,7 @@
         section {
             padding: 20px;
             max-width: 1200px;
-            margin: 10px auto;
+            margin: 10px;
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -53,6 +54,10 @@
             padding: 10px;
             border-radius: 5px;
             overflow-x: auto;
+        }
+        code{
+            background-color: #f9f9f9;
+            color: #000;
         }
 
         @media (max-width: 768px) {
@@ -80,7 +85,7 @@
     </section>
 
     <section>
-        <h2>1. The <code>break</code> Statement</h2>
+        <h2>The <code>break</code> Statement</h2>
         <p>The `break` statement is used to exit a loop (like `for`, `while`, or `do-while`) or a `switch` case statement before it completes normally. This allows you to terminate the loop or switch early based on some condition.</p>
         
         <p><strong>Syntax:</strong></p>
@@ -145,7 +150,7 @@ Two
     </section>
 
     <section>
-        <h2>2. The <code>continue</code> Statement</h2>
+        <h2>The <code>continue</code> Statement</h2>
         <p>The `continue` statement is used to skip the current iteration of a loop and continue with the next iteration. It is often used when a specific condition occurs, and we want to skip the rest of the code inside the loop for that particular iteration.</p>
 
         <p><strong>Syntax:</strong></p>
@@ -207,7 +212,7 @@ Iteration: 5
     </section>
 
     <section>
-        <h2>3. The <code>goto</code> Statement</h2>
+        <h2>The <code>goto</code> Statement</h2>
         <p>The `goto` statement is a way to jump to a specific part of the program. This is done using a label, which is a user-defined identifier followed by a colon. Once the `goto` statement is encountered, the control jumps to the label location in the code.</p>
         
         <p><strong>Syntax:</strong></p>

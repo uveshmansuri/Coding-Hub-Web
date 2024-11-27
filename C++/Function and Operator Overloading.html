@@ -29,7 +29,7 @@
         section {
             padding: 20px;
             max-width: 1200px;
-            margin: 10px auto;
+            margin: 10px;
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -41,8 +41,9 @@
         }
 
         pre {
-            background-color: #f9f9f9;
+            background-color: #fff;
             padding: 10px;
+            color: #000;
             border-radius: 5px;
             overflow-x: auto;
         }
@@ -126,7 +127,9 @@ Addition of two integers: 15
 Addition of three integers: 30
 Addition of two doubles: 7.8
         </pre>
+    </section>
 
+    <section>
         <h2>What is Operator Overloading?</h2>
         <p><strong>Operator Overloading</strong> allows programmers to redefine the way operators work for user-defined types. This feature makes it possible to perform operations on objects as though they were primitive data types.</p>
 
@@ -191,26 +194,34 @@ Complex number 2: 1.5 + 3.5i
 Sum: 5.0 + 6.0i
 Product: -5.25 + 15.0i
         </pre>
+    </section>
 
+    <section>
         <h2>Rules for Operator Overloading:</h2>
         <ul>
             <li>Some operators (e.g., <code>::</code>, <code>sizeof</code>, and <code>.</code>) cannot be overloaded.</li>
             <li>Overloaded operators must have at least one operand of a user-defined type.</li>
             <li>Operators can be overloaded as member functions or friend functions.</li>
         </ul>
+    </section>
 
+        <section>
         <h2>Advantages of Operator Overloading:</h2>
         <ul>
             <li><strong>Intuitive Usage:</strong> Allows for natural and intuitive manipulation of objects.</li>
             <li><strong>Enhanced Readability:</strong> Simplifies the code by reducing the need for verbose function names.</li>
         </ul>
+</section>
 
+<section>
         <h2>Disadvantages:</h2>
         <ul>
             <li>Can lead to confusion if not implemented clearly.</li>
             <li>May obscure the original meaning of operators for developers unfamiliar with the code.</li>
         </ul>
+    </section>
 
+    <section>
         <h2>Conclusion:</h2>
         <p>Both function overloading and operator overloading are essential features of C++ that enhance flexibility, readability, and functionality. They allow developers to use familiar operations and interfaces while working with user-defined types, improving code efficiency and maintainability.</p>
     </section>

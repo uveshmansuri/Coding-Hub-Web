@@ -41,6 +41,10 @@
             border-radius: 5px;
             overflow-x: auto;
         }
+        code{
+            color: #000;
+            background-color: #f9f9f9;
+        }
         footer {
             text-align: center;
             padding: 10px;
@@ -57,10 +61,10 @@
     </header>
 
     <section>
-        <h2>1. What Are Pointers?</h2>
+        <h2>What Are Pointers?</h2>
         <p>A <strong>pointer</strong> is a variable that stores the memory address of another variable. In simpler terms, pointers allow us to directly access and manipulate the memory location of a variable. Understanding pointers is crucial for efficient memory management and dynamic memory allocation in C++.</p>
 
-        <h3>1.1 Understanding Memory Addresses</h3>
+        <h3>Understanding Memory Addresses</h3>
         <p>Each variable in C++ is stored in memory at a specific location, which is known as its memory address. A pointer holds the address of another variable, making it possible to indirectly access and manipulate that variable.</p>
 
         <p><strong>Example:</strong> If we have an integer variable <code>a</code>, a pointer can store its memory address:</p>
@@ -71,14 +75,14 @@ int *ptr = &a; // Declare a pointer and assign it the address of 'a'
 
         <p>The operator <code>&</code> is used to get the memory address of a variable, while the operator <code>*</code> is used to dereference the pointer (access the value at that memory address).</p>
 
-        <h3>1.2 Syntax and Declaration of Pointers</h3>
+        <h3>Syntax and Declaration of Pointers</h3>
         <p>The basic syntax for declaring a pointer is:</p>
         <pre><code>
 type *pointerName;
         </code></pre>
         <p>Where <code>type</code> is the type of the variable the pointer will point to, and <code>*</code> denotes that it is a pointer. For example, <code>int *ptr;</code> declares a pointer to an integer.</p>
 
-        <h3>1.3 Dereferencing a Pointer</h3>
+        <h3>Dereferencing a Pointer</h3>
         <p>The <strong>dereference operator</strong> (<code>*</code>) is used to access the value stored at the memory address the pointer is pointing to:</p>
         <pre><code>
 int a = 20;
@@ -95,10 +99,10 @@ Value of a using pointer: 20
     </section>
 
     <section>
-        <h2>2. Pointer Operations</h2>
+        <h2>Pointer Operations</h2>
         <p>Pointer operations enable powerful memory management features. The common pointer operations are:</p>
 
-        <h3>2.1 Pointer Arithmetic</h3>
+        <h3>Pointer Arithmetic</h3>
         <p>C++ allows arithmetic operations on pointers. Pointer arithmetic is based on the size of the type the pointer points to. For example, when incrementing a pointer of type <code>int*</code>, it moves by 4 bytes (on most systems) because an <code>int</code> typically occupies 4 bytes of memory.</p>
 
         <p><strong>Pointer Arithmetic Operations:</strong></p>
@@ -109,7 +113,7 @@ Value of a using pointer: 20
             <li><code>ptr - n</code>: Move pointer backward by <code>n</code> elements.</li>
         </ul>
 
-        <h3>2.2 Example: Pointer Arithmetic</h3>
+        <h3>Example: Pointer Arithmetic</h3>
         <p>The following example demonstrates pointer arithmetic:</p>
         <pre><code>
 #include <iostream>
@@ -137,7 +141,7 @@ Second element: 20
 Fourth element: 40
         </code></pre>
 
-        <h3>2.3 Null Pointer</h3>
+        <h3>Null Pointer</h3>
         <p>A <strong>null pointer</strong> is a pointer that does not point to any valid memory location. The <code>nullptr</code> keyword (introduced in C++11) is used to initialize a pointer to null.</p>
         <pre><code>
 int *ptr = nullptr; // Null pointer initialization
@@ -153,9 +157,9 @@ Pointer is null!
     </section>
 
     <section>
-        <h2>3. Advanced Pointer Topics</h2>
+        <h2>Advanced Pointer Topics</h2>
         
-        <h3>3.1 Pointer to Array</h3>
+        <h3>Pointer to Array</h3>
         <p>In C++, arrays and pointers are closely related. An array name is essentially a pointer to the first element of the array. You can treat arrays like pointers, and you can use pointer arithmetic to access elements of the array.</p>
 
         <p>Example of accessing array elements using pointers:</p>
@@ -180,7 +184,7 @@ int main() {
 10 20 30 40 50
         </code></pre>
 
-        <h3>3.2 Pointer to Function</h3>
+        <h3>Pointer to Function</h3>
         <p>Function pointers in C++ allow you to store the address of a function in a pointer variable. This allows functions to be passed as arguments and enables callback functions and dynamic function calling.</p>
 
         <pre><code>
@@ -209,7 +213,7 @@ void greet() {
 Hello, Pointer to Function!
         </code></pre>
 
-        <h3>3.3 Dynamic Memory Allocation</h3>
+        <h3>Dynamic Memory Allocation</h3>
         <p>C++ provides <code>new</code> and <code>delete</code> operators for dynamic memory allocation, allowing you to allocate memory at runtime and deallocate it when done.</p>
 
         <pre><code>

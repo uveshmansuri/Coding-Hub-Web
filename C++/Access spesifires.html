@@ -63,18 +63,20 @@
     </header>
 
     <section>
-        <h2>1. Introduction to Access Specifiers</h2>
+        <h2>Access Specifiers</h2>
         <p>In C++, access specifiers are used to control the accessibility of class members (data members and member functions). The primary goal is to achieve <strong>encapsulation</strong>, which is a fundamental concept of Object-Oriented Programming (OOP). Encapsulation ensures that the internal state of an object is protected from unintended or harmful changes and can only be accessed or modified through well-defined interfaces (i.e., public methods).</p>
         <p>The three main access specifiers are <strong>private</strong>, <strong>public</strong>, and <strong>protected</strong>.</p>
+    </section>
 
-        <h2>2. Types of Access Specifiers</h2>
+    <section>
+        <h2>Types of Access Specifiers</h2>
 
-        <h3>2.1 Private Access Specifier</h3>
+        <h3>Private Access Specifier</h3>
         <p>The <strong>private</strong> access specifier restricts access to members only within the class. These members cannot be accessed from outside the class, including derived classes, unless through a public or protected function.</p>
         <p>Private members are used to hide data and ensure that it is only modified through public or protected functions, enforcing data integrity and consistency.</p>
         
         <h4>Example of Private Access Specifier</h4>
-        <pre><code>
+        <pre>
 class BankAccount {
 private:
     double balance; // private data member
@@ -92,7 +94,7 @@ public:
         return balance;
     }
 };
-        </code></pre>
+        </pre>
 
         <h5>Explanation:</h5>
         <ul>
@@ -100,12 +102,12 @@ public:
             <li>The <code>setBalance()</code> and <code>getBalance()</code> functions are public, allowing controlled access to the private <code>balance</code>.</li>
         </ul>
 
-        <h3>2.2 Public Access Specifier</h3>
+        <h3>Public Access Specifier</h3>
         <p>The <strong>public</strong> access specifier allows class members to be accessed from anywhere, including outside the class. Any part of the program can use public members, making them available to users of the class.</p>
         <p>Public members are often used for functions that define the interface of the class, such as constructors, destructors, and methods that control object state.</p>
 
         <h4>Example of Public Access Specifier</h4>
-        <pre><code>
+        <pre>
 class Rectangle {
 public:
     double length;  // public data member
@@ -115,7 +117,7 @@ public:
         return length * width; // Public method to calculate area
     }
 };
-        </code></pre>
+        </pre>
 
         <h5>Explanation:</h5>
         <ul>
@@ -123,12 +125,12 @@ public:
             <li>The <code>area()</code> method is public, meaning it can be called from outside the class to calculate the area of a rectangle.</li>
         </ul>
 
-        <h3>2.3 Protected Access Specifier</h3>
+        <h3>Protected Access Specifier</h3>
         <p>The <strong>protected</strong> access specifier is a middle ground between private and public access. Protected members can be accessed within the class and by derived classes (i.e., subclasses), but they cannot be accessed from outside the class hierarchy.</p>
         <p>This access level is useful when you want to allow derived classes to access and modify base class members, but prevent external code from doing so.</p>
 
         <h4>Example of Protected Access Specifier</h4>
-        <pre><code>
+        <pre>
 class Shape {
 protected:
     double width;
@@ -146,8 +148,7 @@ public:
     double area() {
         return width * height; // Accessing protected members of the base class
     }
-};
-        </code></pre>
+</pre>
 
         <h5>Explanation:</h5>
         <ul>
@@ -156,12 +157,15 @@ public:
             <li>However, external code cannot directly access these protected members.</li>
         </ul>
 
-        <h2>3. Default Access Specifiers</h2>
-        <h3>3.1 Default Access for Classes</h3>
+        </section>
+
+        <section>
+        <h2>Default Access Specifiers</h2>
+        <h3>Default Access for Classes</h3>
         <p>If no access specifier is explicitly provided for members of a class, C++ uses the default access specifier. By default, members of a class are <strong>private</strong>, while members of a struct are <strong>public</strong>.</p>
 
         <h4>Example of Default Access</h4>
-        <pre><code>
+        <pre>
 class Car {
     string brand; // private by default
 public:
@@ -169,20 +173,22 @@ public:
         brand = b; // Accessing private member through a public function
     }
 };
-        </code></pre>
+        </pre>
 
         <h5>Explanation:</h5>
         <ul>
             <li>The <code>brand</code> variable is private by default, as no access specifier is specified.</li>
             <li>The <code>setBrand()</code> function is public and provides access to the private member <code>brand</code>.</li>
         </ul>
+    </section>
 
-        <h2>4. Inheritance and Access Specifiers</h2>
-        <h3>4.1 Inheritance and Access Levels</h3>
+    <section>
+        <h2>Inheritance and Access Specifiers</h2>
+        <h3>Inheritance and Access Levels</h3>
         <p>Access specifiers play a significant role when dealing with inheritance. The accessibility of base class members in derived classes depends on both the member's access specifier and the inheritance type.</p>
 
         <h4>Example of Inheritance and Access Specifiers</h4>
-        <pre><code>
+        <pre>
 class Base {
 private:
     int privateVar; // Private member
@@ -200,7 +206,7 @@ public:
         // publicVar is accessible here
     }
 };
-        </code></pre>
+        </pre>
 
         <h5>Explanation:</h5>
         <ul>
@@ -208,7 +214,10 @@ public:
             <li>The <code>protectedVar</code> and <code>publicVar</code> can be accessed in the derived class.</li>
         </ul>
 
-        <h2>5. Summary of Access Specifiers</h2>
+        </section>
+
+        <section>
+        <h2>Summary </h2>
         <table border="1">
             <tr>
                 <th>Access Specifier</th>

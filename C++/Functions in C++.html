@@ -41,6 +41,10 @@
             border-radius: 5px;
             overflow-x: auto;
         }
+        code{
+            color: #000;
+            background-color: #f9f9f9;
+        }
         footer {
             text-align: center;
             padding: 10px;
@@ -137,65 +141,6 @@ Hello, World!
         </code></pre>
     </section>
 
-    <section>
-        <h2>Function Overloading</h2>
-        <p>C++ allows multiple functions with the same name but different parameter types or number of parameters. This is called function overloading. The correct function is chosen based on the number and types of arguments passed during the function call.</p>
-
-        <h3>Example of Function Overloading</h3>
-        <pre><code>
-#include <iostream>
-using namespace std;
-
-int add(int a, int b) {
-    return a + b;
-}
-
-double add(double a, double b) {
-    return a + b;
-}
-
-int main() {
-    cout << "Sum of integers: " << add(10, 20) << endl;
-    cout << "Sum of doubles: " << add(10.5, 20.5) << endl;
-    return 0;
-}
-        </code></pre>
-        <p><strong>Output:</strong></p>
-        <pre><code>
-Sum of integers: 30
-Sum of doubles: 31
-        </code></pre>
-    </section>
-
-    <section>
-        <h2>Function Recursion</h2>
-        <p>A function that calls itself is called a <strong>recursive function</strong>. Recursion is a powerful technique that can simplify certain types of problems, such as computing factorials or solving the Fibonacci sequence.</p>
-
-        <h3>Example of Recursion</h3>
-        <p>Here’s an example of a recursive function to calculate the factorial of a number:</p>
-        <pre><code>
-#include <iostream>
-using namespace std;
-
-int factorial(int n) {
-    if (n == 0) {
-        return 1;  // Base case
-    } else {
-        return n * factorial(n - 1); // Recursive call
-    }
-}
-
-int main() {
-    int result = factorial(5);
-    cout << "Factorial of 5 is: " << result << endl;
-    return 0;
-}
-        </code></pre>
-        <p><strong>Output:</strong></p>
-        <pre><code>
-Factorial of 5 is: 120
-        </code></pre>
-    </section>
 
     <section>
         <h2>Function Parameters</h2>
@@ -243,6 +188,68 @@ int main() {
         <p><strong>Output:</strong></p>
         <pre><code>
 Value of num: 11
+        </code></pre>
+    </section>
+
+    
+    <section>
+        <h2>Function Overloading</h2>
+        <p>C++ allows multiple functions with the same name but different parameter types or number of parameters. This is called function overloading. The correct function is chosen based on the number and types of arguments passed during the function call.</p>
+
+        <h3>Example of Function Overloading</h3>
+        <pre><code>
+#include <iostream>
+using namespace std;
+
+int add(int a, int b) {
+    return a + b;
+}
+
+double add(double a, double b) {
+    return a + b;
+}
+
+int main() {
+    cout << "Sum of integers: " << add(10, 20) << endl;
+    cout << "Sum of doubles: " << add(10.5, 20.5) << endl;
+    return 0;
+}
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Sum of integers: 30
+Sum of doubles: 31
+        </code></pre>
+    </section>
+
+
+    <section>
+        <h2>Function Recursion</h2>
+        <p>A function that calls itself is called a <strong>recursive function</strong>. Recursion is a powerful technique that can simplify certain types of problems, such as computing factorials or solving the Fibonacci sequence.</p>
+
+        <h3>Example of Recursion</h3>
+        <p>Here’s an example of a recursive function to calculate the factorial of a number:</p>
+        <pre><code>
+#include <iostream>
+using namespace std;
+
+int factorial(int n) {
+    if (n == 0) {
+        return 1;  // Base case
+    } else {
+        return n * factorial(n - 1); // Recursive call
+    }
+}
+
+int main() {
+    int result = factorial(5);
+    cout << "Factorial of 5 is: " << result << endl;
+    return 0;
+}
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Factorial of 5 is: 120
         </code></pre>
     </section>
 

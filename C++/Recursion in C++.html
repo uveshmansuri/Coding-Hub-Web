@@ -31,6 +31,10 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+        code{
+            color: #000;
+            background-color: #f9f9f9;
+        }
         h2 {
             color: #0078d7;
             margin-top: 0;
@@ -57,7 +61,7 @@
     </header>
 
     <section>
-        <h2>1. Introduction to Recursion</h2>
+        <h2>Recursion</h2>
         <p>Recursion is a powerful technique in programming where a function calls itself in order to solve smaller instances of the same problem. It is widely used to solve problems that can be broken down into simpler sub-problems, such as calculating factorials, generating Fibonacci sequences, tree traversals, and many more.</p>
         <p>Recursion is based on two key concepts:</p>
         <ul>
@@ -65,13 +69,13 @@
             <li><strong>Recursive Case</strong>: The part where the function calls itself with modified arguments, breaking the problem into smaller sub-problems.</li>
         </ul>
 
-        <h2>2. Recursive Function Example: Factorial</h2>
+        <h2>Recursive Function Example: Factorial</h2>
         <p>The factorial of a number <code>n</code> is the product of all integers from 1 to <code>n</code>. In mathematical notation:</p>
         <pre><code>
 n! = n * (n - 1) * (n - 2) * ... * 1
         </code></pre>
 
-        <h3>2.1 Recursive Factorial Function</h3>
+        <h3>Recursive Factorial Function</h3>
         <pre><code>
 #include <iostream>
 using namespace std;
@@ -90,21 +94,21 @@ int main() {
 }
         </code></pre>
 
-        <h3>2.2 Explanation of the Code</h3>
+        <h3>Explanation of the Code</h3>
         <ul>
             <li>The function <code>factorial</code> checks if <code>n</code> is 1 or less (base case). If so, it returns 1, terminating the recursion.</li>
             <li>If the base case is not met, the function multiplies <code>n</code> by the result of <code>factorial(n - 1)</code>, which recursively calls the function until the base case is reached.</li>
         </ul>
 
-        <h3>2.3 Output</h3>
+        <h3>Output</h3>
         <pre><code>
 Factorial of 5 is 120
         </code></pre>
 
-        <h2>3. Visualizing Recursion: Recursion Tree</h2>
+        <h2>Visualizing Recursion: Recursion Tree</h2>
         <p>Recursion can be visualized as a tree structure, where each node represents a function call. The tree branches out, with each branch representing a recursive call. The depth of the tree increases with the number of recursive calls.</p>
 
-        <h3>3.1 Example of Recursion Tree for Factorial(5)</h3>
+        <h3>Example of Recursion Tree for Factorial(5)</h3>
         <p>For the function call <code>factorial(5)</code>, the recursion tree looks like this:</p>
         <pre><code>
 factorial(5)
@@ -119,8 +123,8 @@ factorial(1)  --> Base case (returns 1)
         </code></pre>
         <p>Each call waits for the result of the next function call until it reaches the base case.</p>
 
-        <h2>4. Types of Recursion</h2>
-        <h3>4.1 Direct Recursion</h3>
+        <h2>Types of Recursion</h2>
+        <h3>Direct Recursion</h3>
         <p>Direct recursion occurs when a function calls itself directly in its body.</p>
         <pre><code>
 int factorial(int n) {
@@ -129,7 +133,7 @@ int factorial(int n) {
 }
         </code></pre>
 
-        <h3>4.2 Indirect Recursion</h3>
+        <h3>Indirect Recursion</h3>
         <p>Indirect recursion happens when function A calls function B, and function B calls function A, leading to a recursive cycle between functions.</p>
         <pre><code>
 void functionA(int n);
@@ -155,30 +159,30 @@ int main() {
 }
         </code></pre>
 
-        <h3>4.3 Output of Indirect Recursion</h3>
+        <h3>Output of Indirect Recursion</h3>
         <pre><code>
 5 4 3 2 1 1 2 3 4 5
         </code></pre>
 
-        <h2>5. Advantages and Disadvantages of Recursion</h2>
-        <h3>5.1 Advantages</h3>
+        <h2>Advantages and Disadvantages of Recursion</h2>
+        <h3>Advantages</h3>
         <ul>
             <li>Recursion simplifies code for problems that can be broken down into similar sub-problems.</li>
             <li>It makes code more readable, especially for problems like tree traversal and dynamic programming.</li>
             <li>Recursion is easier to implement for problems with inherently recursive structures, like parsing and divide-and-conquer algorithms.</li>
         </ul>
 
-        <h3>5.2 Disadvantages</h3>
+        <h3>Disadvantages</h3>
         <ul>
             <li>Recursion can lead to high memory usage due to the stack overhead with each recursive call.</li>
             <li>Recursive functions can be less efficient compared to iterative solutions, especially for simple problems.</li>
             <li>Deep recursion can result in stack overflow if the recursion depth is too large.</li>
         </ul>
 
-        <h2>6. Recursion Depth and Stack Overflow</h2>
+        <h2>Recursion Depth and Stack Overflow</h2>
         <p>Every recursive call adds a new frame to the call stack. The maximum depth of recursion is limited by the available stack space. If a function calls itself too many times without reaching the base case, the stack will overflow, resulting in a runtime error.</p>
 
-        <h3>6.1 Example of Stack Overflow</h3>
+        <h3>Example of Stack Overflow</h3>
         <pre><code>
 #include <iostream>
 using namespace std;
@@ -193,15 +197,15 @@ int main() {
 }
         </code></pre>
 
-        <h3>6.2 Output</h3>
+        <h3>Output</h3>
         <pre><code>
 Stack overflow error
         </code></pre>
 
-        <h2>7. Tail Recursion and Optimization</h2>
+        <h2>Tail Recursion and Optimization</h2>
         <p>In tail recursion, the recursive call is the last operation in the function. This allows for an optimization called tail-call optimization (TCO), where the compiler reuses the current stack frame, preventing new stack frames from being created. This optimization avoids stack overflow and improves performance.</p>
 
-        <h3>7.1 Tail Recursion Example</h3>
+        <h3>Tail Recursion Example</h3>
         <pre><code>
 #include <iostream>
 using namespace std;
@@ -220,12 +224,12 @@ int main() {
 }
         </code></pre>
 
-        <h3>7.2 Output</h3>
+        <h3>Output</h3>
         <pre><code>
 Factorial of 5 using tail recursion is 120
         </code></pre>
 
-        <h2>8. Recursion vs Iteration</h2>
+        <h2>Recursion vs Iteration</h2>
         <p>While both recursion and iteration can solve the same types of problems, they do so in different ways. Recursion is elegant and easy to implement for problems with a recursive structure, like tree traversal or graph searching. However, recursion often uses more memory due to the call stack.</p>
         <p>Iteration, on the other hand, is often more efficient in terms of memory usage because it does not rely on the call stack. For problems that can be solved with loops, iteration is generally preferred.</p>        
     </section>

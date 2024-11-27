@@ -46,6 +46,10 @@
             border-radius: 5px;
             overflow-x: auto;
         }
+        code{
+            color: #000;
+            background-color: #f9f9f9;
+        }
 
         footer {
             text-align: center;
@@ -79,10 +83,10 @@
     </header>
 
     <section>
-        <h2>1. Introduction</h2>
+        <h2>Introduction</h2>
         <p>In C++, a member function is a function that is defined within a class and operates on data members of the class. These functions enable the class to perform operations on its data and manage its internal state. Member functions can be either regular functions, static functions, or const functions.</p>
 
-        <h2>2. Types of Member Functions</h2>
+        <h2>Types of Member Functions</h2>
         <p>There are several types of member functions in C++. Below are the main categories:</p>
 
         <ul>
@@ -92,10 +96,10 @@
             <li><strong>Friend Functions</strong>: Non-member functions that can access the private and protected members of the class.</li>
         </ul>
 
-        <h2>3. Regular Member Functions</h2>
+        <h2>Regular Member Functions</h2>
         <p>Regular member functions are the most common and operate on the instance-specific data members of a class. They can access both instance data and static members of the class.</p>
 
-        <h3>3.1 Example of Regular Member Functions</h3>
+        <h3>Example of Regular Member Functions</h3>
         <pre><code>
 class Box {
 public:
@@ -135,10 +139,10 @@ int main() {
             <li>All these functions operate on specific objects created from the class <code>Box</code>.</li>
         </ul>
 
-        <h2>4. Static Member Functions</h2>
+        <h2>Static Member Functions</h2>
         <p>Static member functions belong to the class itself, not to any specific instance of the class. They are used to access static data members and can be called without creating an object of the class.</p>
 
-        <h3>4.1 Example of Static Member Function</h3>
+        <h3>Example of Static Member Function</h3>
         <pre><code>
 class Box {
 public:
@@ -171,10 +175,10 @@ int main() {
             <li>The constructor <code>Box()</code> increments <code>objectCount</code> every time an object is created.</li>
         </ul>
 
-        <h2>5. Const Member Functions</h2>
+        <h2>Const Member Functions</h2>
         <p>Const member functions guarantee not to modify the state of the object. They can only read the data members, but cannot alter them. These functions are used when an object needs to maintain immutability in some operations.</p>
 
-        <h3>5.1 Example of Const Member Function</h3>
+        <h3>Example of Const Member Function</h3>
         <pre><code>
 class Box {
 public:
@@ -201,10 +205,10 @@ int main() {
             <li>This function only performs a read operation and returns the area of the box.</li>
         </ul>
 
-        <h2>6. Friend Functions</h2>
+        <h2>Friend Functions</h2>
         <p>Friend functions are not members of the class but have access to the private and protected members of the class. They are declared inside the class with the <code>friend</code> keyword.</p>
 
-        <h3>6.1 Example of Friend Function</h3>
+        <h3>Example of Friend Function</h3>
         <pre><code>
 class Box {
 private:
@@ -235,9 +239,16 @@ int main() {
             <li>Even though <code>displayBoxDetails()</code> is not a member of the class, it can still access private data due to the <code>friend</code> declaration.</li>
         </ul>
 
-        <h2>7. Conclusion</h2>
-        <p>Member functions in C++ are essential for implementing the behavior and functionality of classes. They can be regular functions that operate on specific object instances, static functions that operate on class-wide data, or const functions that guarantee no modification to the object’s state. Friend functions, though not members, are also powerful tools for interacting with the private and protected members of a class.</p>
-
+        <h2>Conclusion</h2>
+        <p>Member functions in C++ are essential for implementing the 
+            behavior and functionality of classes. <br>
+            They can be regular functions
+            that operate on specific object instances, static functions that 
+            operate on class-wide data, or const functions that guarantee no 
+            modification to the object’s state.<br> 
+            Friend functions, though not 
+            members, are also powerful tools for interacting with the private and
+            protected members of a class.</p>
     </section>
 
     <footer>

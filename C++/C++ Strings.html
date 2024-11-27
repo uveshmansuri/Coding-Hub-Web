@@ -41,6 +41,10 @@
             border-radius: 5px;
             overflow-x: auto;
         }
+        code{
+            background-color: #002aff;
+            color: #ffffff;
+        }
         footer {
             text-align: center;
             padding: 10px;
@@ -57,16 +61,16 @@
     </header>
 
     <section>
-        <h2>1. C++ Strings Overview</h2>
+        <h2>Overview</h2>
         <p>C++ strings are used to represent a sequence of characters. There are two main types of strings in C++:</p>
         <ul>
             <li><strong>C-style Strings (Character Arrays)</strong>: These are simple arrays of characters ending with a null character (`'\0'`).</li>
             <li><strong>std::string (C++ String Class)</strong>: This is a dynamic string representation provided by the C++ Standard Library, which is more flexible and easier to work with.</li>
         </ul>
 
-        <h3>1.1 C-style Strings</h3>
+        <h3>C-style Strings</h3>
         <p>C-style strings are arrays of characters, terminated with a null character `'\0'`. You have to manually manage memory when using them, and operations like string length or copying require specific functions from the `<cstring>` library.</p>
-        <pre><code>
+        <pre>
 #include <iostream>
 using namespace std;
 
@@ -79,16 +83,16 @@ int main() {
 
     return 0;
 }
-        </code></pre>
+        </pre>
 
         <p><strong>Output:</strong></p>
-        <pre><code>
+        <pre>
 C-style string: Hello, World!
-        </code></pre>
+        </pre>
 
-        <h3>1.2 C++ std::string</h3>
+        <h3>C++ std::string</h3>
         <p>The <code>std::string</code> class is a much more flexible and powerful way to work with strings in C++. It automatically handles memory allocation and provides many built-in methods to manipulate the string.</p>
-        <pre><code>
+        <pre>
 #include <iostream>
 #include <string>
 using namespace std;
@@ -101,25 +105,24 @@ int main() {
     cout << "C++ string: " << str << endl;
 
     return 0;
-}
-        </code></pre>
+}</pre>
 
         <p><strong>Output:</strong></p>
-        <pre><code>
+        <pre>
 C++ string: Hello, World!
         </code></pre>
 
     </section>
 
     <section>
-        <h2>2. String Functions in C++</h2>
+        <h2>String Functions in C++</h2>
         <p>C++ provides a rich set of functions to perform various operations on strings. The most important functions are included in the <code>std::string</code> class. These functions provide capabilities such as string length, concatenation, comparison, searching, and more.</p>
 
-        <h3>2.1 Length of String</h3>
+        <h3>Length of String</h3>
         <p>The <code>size()</code> or <code>length()</code> function returns the number of characters in a string, excluding the null terminator. Both functions work identically and can be used interchangeably.</p>
-        <pre><code>
-#include <iostream>
-#include <string>
+        <pre>
+#include &ltiostream&gt
+#include &ltstring&gt
 using namespace std;
 
 int main() {
@@ -130,18 +133,18 @@ int main() {
 
     return 0;
 }
-        </code></pre>
+        ></pre>
 
         <p><strong>Output:</strong></p>
-        <pre><code>
+        <pre>
 Length of string: 13
-        </code></pre>
+        </pre>
 
-        <h3>2.2 String Concatenation</h3>
+        <h3>String Concatenation</h3>
         <p>The <code>+</code> operator is used to concatenate two or more strings in C++.</p>
-        <pre><code>
-#include <iostream>
-#include <string>
+        <pre>
+#include &ltiostream&gt
+#include &ltstring&gt
 using namespace std;
 
 int main() {
@@ -155,16 +158,16 @@ int main() {
 
     return 0;
 }
-        </code></pre>
+        </pre>
 
         <p><strong>Output:</strong></p>
-        <pre><code>
+        <pre>
 Concatenated string: Hello, World!
-        </code></pre>
+        </pre>
 
-        <h3>2.3 Accessing Characters in a String</h3>
+        <h3>Accessing Characters in a String</h3>
         <p>You can access individual characters in a string using the array subscript operator (<code>[]</code>) or the <code>at()</code> method. The <code>at()</code> method provides bounds checking and throws an exception if the index is out of range.</p>
-        <pre><code>
+        <pre>
 #include <iostream>
 #include <string>
 using namespace std;
@@ -178,17 +181,17 @@ int main() {
 
     return 0;
 }
-        </code></pre>
+        </pre>
 
         <p><strong>Output:</strong></p>
-        <pre><code>
+        <pre>
 First character: H
 Last character: !
-        </code></pre>
+        </pre>
 
-        <h3>2.4 String Comparison</h3>
+        <h3>String Comparison</h3>
         <p>C++ allows you to compare strings using the <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, and <code>compare()</code> methods. You can also use the <code>compare()</code> method for case-sensitive comparisons.</p>
-        <pre><code>
+        <pre>
 #include <iostream>
 #include <string>
 using namespace std;
@@ -205,16 +208,16 @@ int main() {
 
     return 0;
 }
-        </code></pre>
+        </pre>
 
         <p><strong>Output:</strong></p>
-        <pre><code>
+        <pre>
 Strings are not equal.
-        </code></pre>
+        </pre>
 
-        <h3>2.5 Substring</h3>
+        <h3>Substring</h3>
         <p>The <code>substr()</code> function extracts a substring from a string. It takes two parameters: the starting index and the length of the substring.</p>
-        <pre><code>
+        <pre>
 #include <iostream>
 #include <string>
 using namespace std;
@@ -228,16 +231,16 @@ int main() {
 
     return 0;
 }
-        </code></pre>
+        </pre>
 
         <p><strong>Output:</strong></p>
-        <pre><code>
+        <pre>
 Substring: World
-        </code></pre>
+        </pre>
 
-        <h3>2.6 String Search</h3>
+        <h3>String Search</h3>
         <p>You can search for a substring within a string using the <code>find()</code> method. If the substring is found, it returns the index of the first occurrence, otherwise it returns <code>string::npos</code>.</p>
-        <pre><code>
+        <pre>
 #include <iostream>
 #include <string>
 using namespace std;
@@ -255,14 +258,16 @@ int main() {
 
     return 0;
 }
-        </code></pre>
+        </pre>
 
         <p><strong>Output:</strong></p>
-        <pre><code>
+        <pre>
 'World' found at index: 7
-        </code></pre>
+        </pre>
+    </section>
 
-        <h2>3. Other Useful String Functions</h2>
+    <section>
+        <h2>Other Useful String Functions</h2>
         <p>Here are some additional useful string functions in C++:</p>
         <ul>
             <li><code>empty()</code>: Checks if the string is empty.</li>
