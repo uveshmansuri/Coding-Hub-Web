@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-depth Comparison of C and C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #0078d7;
+            color: #fff;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .comparison > div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>In-depth Comparison of C and C++</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>C and C++ are two powerful programming languages that have stood the test of time. While C, developed in the early 1970s by Dennis Ritchie, is a procedural programming language focusing on efficient low-level programming, C++, introduced by Bjarne Stroustrup in 1983, builds on C's foundation and adds object-oriented programming (OOP) capabilities. Let's explore their features and differences in greater detail.</p>
+    </section>
+
+    <section>
+        <h2>Detailed Comparison of Features</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>C</th>
+                    <th>C++</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Programming Paradigm</strong></td>
+                    <td>
+                        <ul>
+                            <li>Procedural, focusing on functions and step-by-step instructions.</li>
+                            <li>Designed for low-level system programming.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Multi-paradigm: Supports procedural, object-oriented, and generic programming.</li>
+                            <li>Offers high-level abstractions for application development.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Data Handling</strong></td>
+                    <td>Functions and global variables handle data, often leading to less controlled access.</td>
+                    <td>Encapsulation through classes and objects allows secure and structured data handling.</td>
+                </tr>
+                <tr>
+                    <td><strong>Inheritance</strong></td>
+                    <td>Not supported.</td>
+                    <td>Supported, enabling reuse and extension of existing code through derived classes.</td>
+                </tr>
+                <tr>
+                    <td><strong>Encapsulation</strong></td>
+                    <td>Data and functions are separate, with no direct mechanism for bundling them together.</td>
+                    <td>Combines data and functions into classes, enhancing modularity and security.</td>
+                </tr>
+                <tr>
+                    <td><strong>Polymorphism</strong></td>
+                    <td>Not supported. Functions must have unique names to avoid conflicts.</td>
+                    <td>Supports function and operator overloading, enabling different behaviors for the same function/operator.</td>
+                </tr>
+                <tr>
+                    <td><strong>Memory Management</strong></td>
+                    <td>
+                        <ul>
+                            <li>Uses <code>malloc()</code> and <code>free()</code> for dynamic memory allocation.</li>
+                            <li>Requires manual management with less type safety.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Uses <code>new</code> and <code>delete</code> for dynamic memory allocation and deallocation.</li>
+                            <li>Offers better type safety and abstraction.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Standard Input/Output</strong></td>
+                    <td>
+                        <ul>
+                            <li>Uses <code>printf()</code> and <code>scanf()</code> for formatted I/O.</li>
+                            <li>Requires explicit format specifiers (e.g., <code>%d</code> for integers).</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Uses <code>cin</code> and <code>cout</code> for type-safe, object-oriented I/O.</li>
+                            <li>Automatically handles formatting based on variable type.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Application Areas</strong></td>
+                    <td>System programming, embedded systems, device drivers, and operating systems.</td>
+                    <td>Application development, GUI programming, game development, and complex software systems.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Code Examples</h2>
+        <h3>C Code Example</h3>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World from C!");
+    return 0;
+}
+        </pre>
+
+        <h3>C++ Code Example</h3>
+        <pre>
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello, World from C++!" &lt;&lt; endl;
+    return 0;
+}
+        </pre>
+    </section>
+
+    <section>
+        <h2>Advantages and Limitations</h2>
+        <h3>C Advantages</h3>
+        <ul>
+            <li>Lightweight and efficient for system-level programming.</li>
+            <li>Direct access to hardware-level resources.</li>
+            <li>Smaller memory footprint.</li>
+        </ul>
+        <h3>C Limitations</h3>
+        <ul>
+            <li>Lacks object-oriented features.</li>
+            <li>Manual memory management increases complexity.</li>
+            <li>Limited modularity and code reusability.</li>
+        </ul>
+        <h3>C++ Advantages</h3>
+        <ul>
+            <li>Supports object-oriented programming for better modularity.</li>
+            <li>Enhanced code reusability through inheritance and polymorphism.</li>
+            <li>Rich standard library simplifies common tasks.</li>
+        </ul>
+        <h3>C++ Limitations</h3>
+        <ul>
+            <li>More complex syntax compared to C.</li>
+            <li>Larger memory footprint due to OOP overhead.</li>
+            <li>Potentially slower for system-level programming.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>C and C++ both have unique strengths and applications. C is best suited for low-level, system-oriented tasks, while C++ is ideal for building larger, high-level applications with its support for OOP and abstraction. Choosing between the two depends on the project requirements and the programmer’s preferences.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

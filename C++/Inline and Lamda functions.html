@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline and Lambda Functions in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Inline and Lambda Functions in C++</h1>
+    </header>
+
+    <section>
+        <h2>1. Introduction to Inline Functions</h2>
+        <p>Inline functions in C++ are a way to ask the compiler to insert the function’s code directly in place of where it is called. This avoids the overhead associated with a normal function call (such as pushing arguments onto the stack and transferring control to the function).</p>
+
+        <h3>1.1 Syntax of Inline Functions</h3>
+        <p>The syntax of an inline function is straightforward. Use the <code>inline</code> keyword before the function declaration or definition.</p>
+        <pre><code>
+inline return_type function_name(parameters) {
+    // body of the function
+}
+        </code></pre>
+
+        <h3>1.2 Example of Inline Function</h3>
+        <pre><code>
+#include <iostream>
+using namespace std;
+
+// Inline function definition
+inline int square(int x) {
+    return x * x;
+}
+
+int main() {
+    int num = 4;
+    cout << "Square of " << num << " is " << square(num) << endl;  // function call
+    return 0;
+}
+        </code></pre>
+
+        <h3>1.3 Explanation of Example</h3>
+        <ul>
+            <li>The <code>square</code> function is defined as inline.</li>
+            <li>When <code>square(num)</code> is called, the compiler directly substitutes <code>num * num</code> in place of the function call, effectively eliminating the function call overhead.</li>
+        </ul>
+
+        <h3>1.4 Advantages of Inline Functions</h3>
+        <ul>
+            <li>Increased performance by eliminating function call overhead for small functions.</li>
+            <li>Improved readability as the function definition is available directly at the call site.</li>
+            <li>Allows optimization by the compiler for very small functions that are frequently called.</li>
+        </ul>
+
+        <h3>1.5 Disadvantages of Inline Functions</h3>
+        <ul>
+            <li>Code bloat: If the function is too large or used excessively, it can increase the size of the binary, leading to inefficiency.</li>
+            <li>May not always be inlined: The compiler might ignore the <code>inline</code> keyword if it deems the function too complex to inline.</li>
+            <li>Increased memory usage, particularly when the inline function is large or used many times in different places.</li>
+        </ul>
+
+        <h3>1.6 Important Considerations</h3>
+        <ul>
+            <li>Inlining is most beneficial for small, frequently called functions.</li>
+            <li>For large functions, inlining can be counterproductive, and the function may not be inlined anyway.</li>
+        </ul>
+
+        <h2>2. Introduction to Lambda Functions</h2>
+        <p>Lambda functions in C++ are anonymous, or unnamed, functions that allow you to define functionality inline without having to declare a function beforehand. They are extremely useful when passing functions as arguments to algorithms, for example.</p>
+
+        <h3>2.1 Syntax of Lambda Functions</h3>
+        <p>Lambda functions are defined using the following syntax:</p>
+        <pre><code>
+[ capture_clause ] ( parameter_list ) -> return_type { function_body }
+        </code></pre>
+
+        <h3>2.2 Components of a Lambda Function</h3>
+        <ul>
+            <li><strong>Capture Clause</strong>: Allows variables from the surrounding scope to be captured by the lambda, either by value or reference. Example: <code>[x, &y]</code> captures <code>x</code> by value and <code>y</code> by reference.</li>
+            <li><strong>Parameter List</strong>: Like a normal function, you can define parameters for the lambda. It can be empty if no parameters are needed.</li>
+            <li><strong>Return Type</strong>: Optional in many cases, and can be inferred by the compiler. If needed, it can be specified using the <code>-></code> operator.</li>
+            <li><strong>Function Body</strong>: Contains the logic that the lambda will execute when called.</li>
+        </ul>
+
+        <h3>2.3 Example of Lambda Function</h3>
+        <pre><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Lambda function that adds two numbers
+    auto add = [](int a, int b) -> int {
+        return a + b;
+    };
+
+    int result = add(5, 10);
+    cout << "Sum: " << result << endl;
+    return 0;
+}
+        </code></pre>
+
+        <h3>2.4 Explanation of Example</h3>
+        <ul>
+            <li>The lambda <code>add</code> is defined to take two parameters <code>a</code> and <code>b</code>, and return their sum.</li>
+            <li>The <code>auto</code> keyword allows the compiler to deduce the lambda’s type.</li>
+            <li>The lambda is invoked by calling <code>add(5, 10)</code> and the result is displayed.</li>
+        </ul>
+
+        <h3>2.5 Capturing Variables in Lambda Functions</h3>
+        <p>Lambda functions can capture variables from the surrounding scope. You can capture variables either by value or by reference.</p>
+
+        <pre><code>
+int a = 5, b = 10;
+
+// Lambda capturing variables by value
+auto add_by_value = [a, b]() -> int {
+    return a + b;
+};
+
+// Lambda capturing variables by reference
+auto add_by_ref = [&a, &b]() -> int {
+    return a + b;
+};
+        </code></pre>
+
+        <h3>2.6 Explanation of Capturing</h3>
+        <ul>
+            <li><strong>By Value</strong>: The lambda captures the variables by making copies of them. If the original values of <code>a</code> and <code>b</code> change, the lambda's captured values remain the same.</li>
+            <li><strong>By Reference</strong>: The lambda captures the variables by reference. Any changes to <code>a</code> and <code>b</code> outside the lambda will reflect inside the lambda as well.</li>
+        </ul>
+
+        <h3>2.7 Advanced Lambda Features</h3>
+        <ul>
+            <li><strong>Default Captures</strong>: If you don’t explicitly specify captures, you can use <code>[=]</code> to capture all variables by value, or <code>[&]</code> to capture them by reference.</li>
+            <pre><code>
+auto add_all = [=]() -> int {
+    return x + y + z;
+};
+            </code></pre>
+            <li><strong>Mutable Lambdas</strong>: You can specify that a lambda may modify its captured variables even if they are captured by value, by adding the <code>mutable</code> keyword.</li>
+            <pre><code>
+auto increment = [a]() mutable -> int {
+    a++;
+    return a;
+};
+            </code></pre>
+        </ul>
+
+        <h3>2.8 Advantages of Lambda Functions</h3>
+        <ul>
+            <li>Concise syntax for defining temporary functions, especially useful in algorithms.</li>
+            <li>Ability to capture variables from the surrounding scope without needing to explicitly pass them as arguments.</li>
+            <li>Supports mutable captures, allowing modification of captured values.</li>
+        </ul>
+
+        <h3>2.9 Disadvantages of Lambda Functions</h3>
+        <ul>
+            <li>May lead to harder-to-understand code if used excessively or inappropriately.</li>
+            <li>Lambda functions are anonymous, which can sometimes make debugging difficult.</li>
+        </ul>
+
+        <h2>3. Inline vs Lambda Functions</h2>
+        <p>While both inline and lambda functions offer advantages in performance and flexibility, they are used in different contexts:</p>
+        <ul>
+            <li><strong>Inline Functions</strong> are mainly used to eliminate the overhead of function calls for simple functions.</li>
+            <li><strong>Lambda Functions</strong> are used for defining anonymous functions, especially in situations where functions are needed temporarily (e.g., in algorithms, event handling).</li>
+        </ul>
+
+        <h3>3.1 When to Use Inline Functions</h3>
+        <ul>
+            <li>For small, frequently used functions.</li>
+            <li>Where the overhead of function calls is significant compared to the function execution time.</li>
+        </ul>
+
+        <h3>3.2 When to Use Lambda Functions</h3>
+        <ul>
+            <li>When you need a small function for short-term use, often inside algorithms or callbacks.</li>
+            <li>When the function requires access to local variables from the surrounding scope.</li>
+        </ul>
+
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defining and Creating Classes and Objects in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Defining and Creating Classes and Objects in C++</h1>
+    </header>
+
+    <section>
+        <h2>1. Introduction to Classes and Objects in C++</h2>
+        <p>C++ is an object-oriented programming (OOP) language, and understanding classes and objects is essential to mastering the language. A <strong>class</strong> is a blueprint for creating objects, which are instances of the class. A class encapsulates data for the object and functions to manipulate that data.</p>
+
+        <h3>1.1 Class Structure</h3>
+        <p>A class in C++ is a collection of data members (variables) and member functions (methods) grouped together. The data members represent the attributes of an object, and the member functions define the behavior or actions of that object.</p>
+
+        <h3>1.2 Object Creation</h3>
+        <p>An object is created by instantiating a class. Each object holds its own copy of the class’s data members but shares the same functions. Objects are the living instances of the blueprint defined by the class.</p>
+
+        <h2>2. Defining a Class in C++</h2>
+        <p>In C++, a class is defined using the <code>class</code> keyword, followed by the class name. The body of the class is enclosed within curly braces. You can specify <strong>access specifiers</strong> (private, public, protected) to control access to the members of the class.</p>
+
+        <h3>2.1 Class Syntax</h3>
+        <pre><code>
+class ClassName {
+    private:
+        // Data members (variables)
+
+    public:
+        // Member functions (methods)
+};
+        </code></pre>
+
+        <h3>2.2 Example of Defining a Class</h3>
+        <pre><code>
+#include <iostream>
+using namespace std;
+
+class Car {
+    private:
+        string brand;  // Data member
+        int year;      // Data member
+
+    public:
+        // Member function to set values
+        void setCarInfo(string b, int y) {
+            brand = b;
+            year = y;
+        }
+
+        // Member function to display car information
+        void displayInfo() {
+            cout << "Car Brand: " << brand << endl;
+            cout << "Car Year: " << year << endl;
+        }
+};
+        </code></pre>
+
+        <h3>2.3 Explanation of the Class Definition</h3>
+        <ul>
+            <li><strong>Data Members:</strong> The class has two private data members, <code>brand</code> and <code>year</code>. These variables hold information specific to each object of the class.</li>
+            <li><strong>Member Functions:</strong> The class has two public member functions: <code>setCarInfo</code> (which sets the values for the car's brand and year) and <code>displayInfo</code> (which displays these values).</li>
+            <li><strong>Access Specifiers:</strong> The members are divided into two sections: <code>private</code> (accessible only within the class) and <code>public</code> (accessible from outside the class).</li>
+        </ul>
+
+        <h2>3. Creating Objects in C++</h2>
+        <p>Once a class is defined, objects can be created using the class as a blueprint. An object represents an instance of a class. When creating an object, memory is allocated for its data members, and the class’s member functions can be invoked using the object.</p>
+
+        <h3>3.1 Object Creation Syntax</h3>
+        <pre><code>
+ClassName objectName;
+        </code></pre>
+
+        <h3>3.2 Example of Object Creation</h3>
+        <pre><code>
+int main() {
+    // Creating an object of the Car class
+    Car myCar;
+
+    // Setting values for the object using member functions
+    myCar.setCarInfo("Toyota", 2022);
+
+    // Displaying information using member function
+    myCar.displayInfo();
+
+    return 0;
+}
+        </code></pre>
+
+        <h3>3.3 Explanation of Object Creation</h3>
+        <ul>
+            <li><strong>Creating an Object:</strong> We create an object of the class <code>Car</code> using the syntax <code>Car myCar;</code>.</li>
+            <li><strong>Accessing Member Functions:</strong> The member function <code>setCarInfo</code> is called to initialize the object's attributes. Then, the <code>displayInfo</code> function is used to display those attributes.</li>
+        </ul>
+
+        <h2>4. Access Specifiers in C++</h2>
+        <p>Access specifiers in C++ are used to control the visibility of class members. The three main access specifiers are:</p>
+        <ul>
+            <li><strong>private:</strong> Members are accessible only within the class and not from outside.</li>
+            <li><strong>public:</strong> Members can be accessed from anywhere, both inside and outside the class.</li>
+            <li><strong>protected:</strong> Members can be accessed within the class and by derived classes (in case of inheritance).</li>
+        </ul>
+
+        <h2>5. Constructors and Destructors in C++</h2>
+        <p>In C++, classes can have special member functions known as constructors and destructors.</p>
+
+        <h3>5.1 Constructor</h3>
+        <p>A constructor is a special member function that initializes objects when they are created. It has the same name as the class and does not have a return type.</p>
+
+        <h3>5.2 Destructor</h3>
+        <p>A destructor is a special member function that is invoked when an object is destroyed. It is used to clean up resources that were allocated during the lifetime of the object.</p>
+
+        <h3>5.3 Example with Constructor and Destructor</h3>
+        <pre><code>
+class Car {
+    private:
+        string brand;
+        int year;
+
+    public:
+        // Constructor to initialize data members
+        Car(string b, int y) {
+            brand = b;
+            year = y;
+        }
+
+        // Destructor
+        ~Car() {
+            cout << "The " << brand << " car is being destroyed." << endl;
+        }
+
+        // Function to display car details
+        void displayInfo() {
+            cout << "Car Brand: " << brand << endl;
+            cout << "Car Year: " << year << endl;
+        }
+};
+
+int main() {
+    // Creating an object of Car, which calls the constructor
+    Car myCar("Ford", 2021);
+    myCar.displayInfo(); // Displaying car information
+    
+    return 0; // Destructor will be automatically called here
+}
+        </code></pre>
+
+        <h3>5.4 Explanation of Constructor and Destructor</h3>
+        <ul>
+            <li><strong>Constructor:</strong> The constructor <code>Car(string b, int y)</code> is used to initialize the data members of the object when it is created. It is called automatically when the object <code>myCar</code> is created in <code>main()</code>.</li>
+            <li><strong>Destructor:</strong> The destructor <code>~Car()</code> is invoked when the object is destroyed. It is called automatically when the program ends or the object goes out of scope. The destructor message is displayed as part of cleanup.</li>
+        </ul>
+
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

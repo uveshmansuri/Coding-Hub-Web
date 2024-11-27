@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Structure of a C++ Program</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Detailed Structure of a C++ Program</h1>
+    </header>
+
+    <section>
+        <h2>Overview of C++ Program Structure</h2>
+        <p>The structure of a C++ program is organized in such a way that it separates different tasks into distinct parts. This ensures modularity, readability, and maintainability. Understanding the structure will help you write clean and efficient code. Here, we’ll explore each part in great detail.</p>
+    </section>
+
+    <section>
+        <h2>Basic Structure of a C++ Program</h2>
+        <p>At a high level, a typical C++ program consists of the following parts:</p>
+        <ul>
+            <li><strong>Preprocessor Directives</strong>: These lines begin with a `#` symbol and are used to include libraries or define macros.</li>
+            <li><strong>Global Declarations</strong>: Variables, constants, and function declarations can be defined globally to make them accessible throughout the program.</li>
+            <li><strong>Main Function</strong>: This is the entry point of every C++ program. The execution starts here.</li>
+            <li><strong>Function Definitions</strong>: Functions contain code that defines specific tasks or logic. These can be called from the main function or other functions.</li>
+        </ul>
+
+        <h3>Example Program:</h3>
+        <pre>
+#include &lt;iostream&gt;  // Preprocessor directive for I/O
+
+using namespace std;     // Using standard library components
+
+// Function Declarations
+int multiply(int, int);
+int subtract(int, int);
+
+// Main Function
+int main() {
+    int num1 = 8, num2 = 3;  // Declare variables
+
+    // Function calls and output
+    cout &lt;&lt; "Multiplication: " &lt;&lt; multiply(num1, num2) &lt;&lt; endl;
+    cout &lt;&lt; "Subtraction: " &lt;&lt; subtract(num1, num2) &lt;&lt; endl;
+
+    return 0;
+}
+
+// Function Definitions
+int multiply(int a, int b) {
+    return a * b;
+}
+
+int subtract(int a, int b) {
+    return a - b;
+}
+        </pre>
+    </section>
+
+    <section>
+        <h2>Detailed Explanation of Each Component</h2>
+        <ul>
+            <li><strong>Preprocessor Directives:</strong>
+                <p>The preprocessor is a tool that processes your code before it is compiled. For example, the directive <code>#include &lt;iostream&gt;</code> includes the standard input/output stream library, which is required to perform input and output operations in C++.</p>
+                <pre>#include &lt;iostream&gt;</pre>
+            </li>
+            <li><strong>Namespace:</strong>
+                <p>The line <code>using namespace std;</code> allows us to access the functions in the C++ standard library, like <code>cout</code> and <code>cin</code>, without needing to prefix them with <code>std::</code>.</p>
+            </li>
+            <li><strong>Global Declarations:</strong>
+                <p>Global declarations can be placed outside of any function and are accessible throughout the program. In the example, the function prototypes for <code>multiply</code> and <code>subtract</code> are declared globally so that they can be used inside the main function.</p>
+                <pre>int multiply(int, int);</pre>
+            </li>
+            <li><strong>Main Function:</strong>
+                <p>The <code>main()</code> function is the heart of a C++ program. This is where program execution begins. The return value of <code>main()</code> is an integer that typically indicates success (0) or failure (non-zero).</p>
+                <pre>
+int main() {
+    int num1 = 8, num2 = 3;
+    cout &lt;&lt; "Multiplication: " &lt;&lt; multiply(num1, num2) &lt;&lt; endl;
+    return 0;
+}
+                </pre>
+            </li>
+            <li><strong>Function Definitions:</strong>
+                <p>Functions define specific tasks that can be reused throughout the program. A function is declared (with a prototype) and then defined (with logic). In the example, the functions <code>multiply</code> and <code>subtract</code> are defined to perform arithmetic operations.</p>
+                <pre>
+int multiply(int a, int b) {
+    return a * b;
+}
+                </pre>
+            </li>
+            <li><strong>Variables and Data Types:</strong>
+                <p>In C++, variables need to be declared with a specific data type (e.g., <code>int</code>, <code>float</code>, <code>double</code>, <code>char</code>). Here, <code>int num1 = 8</code> and <code>int num2 = 3</code> are integer variables.</p>
+                <pre>int num1 = 8;</pre>
+            </li>
+            <li><strong>Comments:</strong>
+                <p>Comments are essential for documentation purposes and are ignored by the compiler. There are two types of comments:</p>
+                <ul>
+                    <li><strong>Single-line comments:</strong> Start with <code>//</code> and extend to the end of the line.</li>
+                    <li><strong>Multi-line comments:</strong> Start with <code>/*</code> and end with <code>*/</code>.</li>
+                </ul>
+                <pre>
+// This is a single-line comment
+/* This is a multi-line
+   comment */
+                </pre>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Advanced Concepts in C++ Program Structure</h2>
+        <p>As programs grow in complexity, it’s important to understand more advanced concepts in the structure of C++ programs. Here are some additional features:</p>
+        <ul>
+            <li><strong>Function Overloading:</strong> The ability to define multiple functions with the same name but different parameter types or numbers.</li>
+            <li><strong>Inline Functions:</strong> Functions that are expanded in place where they are called, improving performance for small functions.</li>
+            <li><strong>Classes and Objects:</strong> C++ is object-oriented, so programs can be structured around classes and objects, which represent real-world entities.</li>
+            <li><strong>Constructor and Destructor:</strong> Special member functions used to initialize objects and clean up before they are destroyed.</li>
+            <li><strong>Exception Handling:</strong> Using <code>try</code>, <code>catch</code>, and <code>throw</code> to handle errors and exceptions in a controlled way.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Comments in C++</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>In C++, comments are used to provide explanations, annotations, or descriptions in the code. These comments are ignored by the compiler and do not affect the program's execution. They are crucial for making code more understandable to other developers or even to your future self. Comments can explain the logic, provide information about variables or functions, and temporarily disable parts of the code during testing.</p>
+    </section>
+
+    <section>
+        <h2>Types of Comments in C++</h2>
+        <p>C++ supports two types of comments:</p>
+        <ul>
+            <li><strong>Single-line Comments</strong>: Used for short explanations or notes.</li>
+            <li><strong>Multi-line Comments</strong>: Useful for longer explanations or commenting out blocks of code.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>1. Single-line Comments</h2>
+        <p>Single-line comments begin with two forward slashes <code>//</code> and extend to the end of the line. They are used to add a brief explanation or comment on a single line of code.</p>
+
+        <h3>Example:</h3>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    // This is a single-line comment
+    cout << "Hello, World!";  // Print a greeting message
+    return 0;
+}
+        </pre>
+        <p>In the above example, the text after <code>//</code> is a comment and is ignored by the compiler. It provides additional context or description about the line of code.</p>
+    </section>
+
+    <section>
+        <h2>2. Multi-line Comments</h2>
+        <p>Multi-line comments can span multiple lines. They begin with <code>/*</code> and end with <code>*/</code>. Anything between these markers is considered a comment, making them suitable for longer explanations or commenting out multiple lines of code.</p>
+
+        <h3>Example:</h3>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    /* This is a multi-line comment.
+       It can span multiple lines, which is
+       useful when you want to explain more
+       complex logic or temporarily disable
+       parts of the code. */
+    cout << "Hello, World!";
+    return 0;
+}
+        </pre>
+        <p>In this example, the multi-line comment explains the purpose of a block of code. It can be as long as necessary, spanning several lines if needed.</p>
+    </section>
+
+    <section>
+        <h2>3. Nested Comments</h2>
+        <p>C++ does not support nested comments. This means you cannot have a multi-line comment inside another multi-line comment. If you attempt to do so, the compiler will misinterpret the comment structure, leading to errors.</p>
+
+        <h3>Incorrect Example of Nested Comments:</h3>
+        <pre>
+/* This is a comment
+   /* This is a nested comment */
+   This will cause an error */
+        </pre>
+        <p>In the above code, the nested comment inside the first <code>/*</code> and <code>*/</code> will result in a compilation error. To comment out a block of code, you should use individual comments for each block.</p>
+    </section>
+
+    <section>
+        <h2>4. Best Practices for Using Comments</h2>
+        <p>Here are some tips for using comments effectively in your C++ code:</p>
+        <ul>
+            <li><strong>Be concise:</strong> Write comments that are brief and to the point. Avoid unnecessary explanations for simple or obvious code.</li>
+            <li><strong>Explain why, not what:</strong> Avoid repeating what the code does. Instead, explain why a particular approach was chosen or what the purpose of a block of code is.</li>
+            <li><strong>Use comments to clarify complex logic:</strong> If your code contains complex logic, use comments to explain the reasoning behind it.</li>
+            <li><strong>Comment out code for debugging:</strong> Use comments to temporarily disable code that you don't want to execute, especially during debugging.</li>
+            <li><strong>Don't over-comment:</strong> If the code is self-explanatory, there is no need to add comments. Over-commenting can clutter the code and make it harder to read.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

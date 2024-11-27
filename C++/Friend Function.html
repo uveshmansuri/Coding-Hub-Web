@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Functions in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Friend Functions in C++</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>A friend function is a function that is not a member of a class but has access to its private and protected members. Friend functions are used when an external function (i.e., a function that is not part of the class) needs to access the class’s private members. This feature allows greater flexibility in C++ while maintaining the core principle of encapsulation.</p>
+
+        <h2>Declaring Friend Functions</h2>
+        <p>To declare a friend function, the <code>friend</code> keyword is used within the class. The function can either be a global function or a member of another class, but it must be declared within the class whose members it will access. Friend functions are not member functions and do not have a <code>this</code> pointer, but they can access private and protected data members.</p>
+
+        <h2>Syntax of Friend Function</h2>
+        <pre>
+class ClassName {
+private:
+    // private members
+public:
+    // public members
+    friend returnType functionName(parameters);  // friend function declaration
+};
+        </pre>
+        <p>In the syntax above, <code>functionName</code> is the name of the function that is being declared as a friend function. It has the same access rights as member functions when it comes to accessing private and protected members of the class.</p>
+
+        <h2>Example 1: Friend Function Accessing Private Members</h2>
+        <p>In this example, we will declare a function that is a friend of the class <code>Box</code> and allows it to access the private members <code>length</code> and <code>width</code> of the class:</p>
+        
+        <pre>
+#include <iostream>
+using namespace std;
+
+class Box {
+private:
+    int length, width;
+public:
+    // Constructor to initialize Box
+    Box(int l, int w) : length(l), width(w) {}
+
+    // Declaring a friend function
+    friend void displayBoxDetails(Box b); 
+};
+
+// Friend function definition
+void displayBoxDetails(Box b) {
+    cout << "Length: " << b.length << ", Width: " << b.width << endl;
+}
+
+int main() {
+    Box box1(5, 10);
+    displayBoxDetails(box1);  // Calling the friend function
+    return 0;
+}
+        </pre>
+        <h3>Explanation:</h3>
+        <p>The class <code>Box</code> has two private members, <code>length</code> and <code>width</code>. The function <code>displayBoxDetails()</code> is declared as a friend function of the <code>Box</code> class. As a friend, it can access the private data members directly, even though it is not a member function of the class.</p>
+        
+        <h3>Output:</h3>
+        <pre>
+Length: 5, Width: 10
+        </pre>
+
+        <h2>Example 2: Friend Function Used for Operator Overloading</h2>
+        <p>Friend functions are commonly used for overloading operators. This allows external functions to perform operations on objects of the class. In this example, we will overload the <code>+</code> operator to add two <code>Box</code> objects:</p>
+        
+        <pre>
+#include <iostream>
+using namespace std;
+
+class Box {
+private:
+    int length;
+public:
+    Box(int l) : length(l) {}
+
+    // Declare friend function for operator overloading
+    friend Box operator + (Box &b1, Box &b2);
+    
+    void displayLength() {
+        cout << "Length: " << length << endl;
+    }
+};
+
+// Friend function to overload the "+" operator
+Box operator + (Box &b1, Box &b2) {
+    return Box(b1.length + b2.length);  // Adding lengths of two boxes
+}
+
+int main() {
+    Box box1(5), box2(10);
+    Box box3 = box1 + box2;  // Using overloaded "+" operator
+    box3.displayLength();     // Displaying the result
+    return 0;
+}
+        </pre>
+
+        <h3>Explanation:</h3>
+        <p>The friend function <code>operator +</code> allows the addition of the <code>length</code> of two <code>Box</code> objects. The operator is overloaded to add the private <code>length</code> members of the objects and return a new <code>Box</code> object containing the sum.</p>
+        
+        <h3>Output:</h3>
+        <pre>
+Length: 15
+        </pre>
+
+        <h2>Benefits of Using Friend Functions</h2>
+        <ul>
+            <li><strong>Encapsulation Flexibility:</strong> Friend functions provide a way to access private members while keeping the core principle of encapsulation intact. This allows external functions to interact with the internal state of the class.</li>
+            <li><strong>Operator Overloading:</strong> Friend functions are used for operator overloading to give external functions access to private data members, enabling intuitive interactions between objects of a class.</li>
+            <li><strong>Helper Functions:</strong> Sometimes, a function that is logically not a member of the class needs access to its private data. Friend functions allow such functions to operate on internal data.</li>
+        </ul>
+
+        <h2>Important Considerations</h2>
+        <ul>
+            <li>Friend functions are not member functions, so they do not have a <code>this</code> pointer.</li>
+            <li>Friend functions can be declared for specific functions or even classes. This provides selective access to class members.</li>
+            <li>The <code>friend</code> keyword does not grant inheritance of access rights. A derived class does not automatically inherit the friendship status.</li>
+            <li>Friend functions should be used judiciously, as they break the encapsulation principle by allowing external functions to access private and protected members.</li>
+        </ul>
+
+        <h2>Examples of Real-World Applications of Friend Functions</h2>
+        <p>Friend functions are particularly useful in situations like:</p>
+        <ul>
+            <li><strong>Complex Number Operations:</strong> For adding, subtracting, or multiplying complex numbers, you might use friend functions to access the real and imaginary parts.</li>
+            <li><strong>Operator Overloading:</strong> As shown in the previous example, friend functions are often used to overload operators like <code>+</code>, <code>-</code>, or <code<<</code> for user-defined types.</li>
+            <li><strong>Stream Insertion and Extraction:</strong> Friend functions can be used to overload the <code>&lt;&lt;</code> and <code>&gt;&gt;</code> operators for custom input/output operations, such as reading and writing data to streams.</li>
+        </ul>
+
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

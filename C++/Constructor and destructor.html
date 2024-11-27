@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor and Destructor in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Constructor and Destructor in C++</h1>
+    </header>
+
+    <section>
+        <h2>1. Introduction to Constructors and Destructors</h2>
+        <p>In C++, a constructor and a destructor are special member functions of a class. A constructor is used to initialize objects of a class, while a destructor is used to clean up resources when an object is destroyed. These functions help manage the object's lifecycle and ensure proper memory and resource management.</p>
+
+        <h2>2. Constructor in C++</h2>
+        <p>A <strong>constructor</strong> is a special function that is automatically called when an object of the class is created. It is primarily used to initialize the object's data members and allocate resources as needed.</p>
+
+        <h3>2.1 Features of Constructors</h3>
+        <ul>
+            <li>Constructor name is the same as the class name.</li>
+            <li>Constructors do not have a return type.</li>
+            <li>They are automatically called when an object is instantiated.</li>
+            <li>Constructors can be overloaded (i.e., multiple constructors with different parameters).</li>
+            <li>Constructors can have default arguments, making them versatile in object creation.</li>
+        </ul>
+
+        <h3>2.2 Types of Constructors</h3>
+        <p>There are three types of constructors in C++:</p>
+        <ul>
+            <li><strong>Default Constructor</strong>: A constructor that takes no arguments and initializes the object with default values.</li>
+            <li><strong>Parameterized Constructor</strong>: A constructor that takes parameters and uses them to initialize object data members.</li>
+            <li><strong>Copy Constructor</strong>: A constructor that creates a new object as a copy of an existing object of the same class.</li>
+        </ul>
+
+        <h3>2.3 Default Constructor Example</h3>
+        <pre><code>
+class Box {
+public:
+    int length, width;
+
+    // Default Constructor
+    Box() {
+        length = 0;
+        width = 0;
+    }
+
+    // Function to display values
+    void display() {
+        cout << "Length: " << length << ", Width: " << width << endl;
+    }
+};
+
+int main() {
+    Box box1;           // Default constructor called
+    box1.display();     // Displays Length: 0, Width: 0
+    return 0;
+}
+        </code></pre>
+        <h5>Explanation:</h5>
+        <ul>
+            <li>The default constructor is invoked when the object <code>box1</code> is created.</li>
+            <li>The constructor sets the object's <code>length</code> and <code>width</code> to 0.</li>
+            <li>The <code>display()</code> function shows these values when called.</li>
+        </ul>
+
+        <h3>2.4 Parameterized Constructor Example</h3>
+        <pre><code>
+class Box {
+public:
+    int length, width;
+
+    // Parameterized Constructor
+    Box(int l, int w) {
+        length = l;
+        width = w;
+    }
+
+    void display() {
+        cout << "Length: " << length << ", Width: " << width << endl;
+    }
+};
+
+int main() {
+    Box box2(10, 20);  // Parameterized constructor called
+    box2.display();    // Displays Length: 10, Width: 20
+    return 0;
+}
+        </code></pre>
+
+        <h5>Explanation:</h5>
+        <ul>
+            <li>The parameterized constructor initializes <code>box2</code> with values 10 and 20 for <code>length</code> and <code>width</code>, respectively.</li>
+            <li>The values are displayed when <code>display()</code> is called.</li>
+        </ul>
+
+        <h3>2.5 Copy Constructor Example</h3>
+        <pre><code>
+class Box {
+public:
+    int length, width;
+
+    // Parameterized Constructor
+    Box(int l, int w) {
+        length = l;
+        width = w;
+    }
+
+    // Copy Constructor
+    Box(const Box &b) {
+        length = b.length;
+        width = b.width;
+    }
+
+    void display() {
+        cout << "Length: " << length << ", Width: " << width << endl;
+    }
+};
+
+int main() {
+    Box box1(10, 20);  // Parameterized constructor called
+    Box box2 = box1;   // Copy constructor called
+    box2.display();    // Displays Length: 10, Width: 20
+    return 0;
+}
+        </code></pre>
+
+        <h5>Explanation:</h5>
+        <ul>
+            <li>The copy constructor is called when <code>box2</code> is created as a copy of <code>box1</code>.</li>
+            <li>It initializes the new object with the values from the existing one, which are 10 and 20 for <code>length</code> and <code>width</code>.</li>
+        </ul>
+
+        <h2>3. Destructor in C++</h2>
+        <p>A <strong>destructor</strong> is a special member function that is automatically called when an object goes out of scope or is explicitly deleted. The destructor is used to release resources that were allocated by the constructor or during the object's lifetime.</p>
+
+        <h3>3.1 Features of Destructors</h3>
+        <ul>
+            <li>The destructor name is the same as the class name, preceded by a tilde (~).</li>
+            <li>Destructors do not take any parameters and cannot be overloaded.</li>
+            <li>A class can only have one destructor.</li>
+            <li>Destructors are called automatically when an object is destroyed (either goes out of scope or is explicitly deleted).</li>
+        </ul>
+
+        <h3>3.2 Example of Destructor</h3>
+        <pre><code>
+class Box {
+public:
+    int* ptr;
+
+    // Constructor that allocates memory
+    Box() {
+        ptr = new int; // Dynamically allocated memory
+        *ptr = 10;     // Assigning value
+    }
+
+    // Destructor to free dynamically allocated memory
+    ~Box() {
+        delete ptr; // Free memory when object is destroyed
+    }
+
+    void display() {
+        cout << "Value: " << *ptr << endl;
+    }
+};
+
+int main() {
+    Box box1;           // Constructor called, memory allocated
+    box1.display();     // Displays Value: 10
+    // Destructor called when box1 goes out of scope
+    return 0;
+}
+        </code></pre>
+
+        <h5>Explanation:</h5>
+        <ul>
+            <li>The constructor dynamically allocates memory for an integer using <code>new</code>.</li>
+            <li>The destructor ensures that the dynamically allocated memory is properly freed using <code>delete</code> when the object is destroyed, preventing memory leaks.</li>
+        </ul>
+
+        <h2>4. Constructor and Destructor with Objects</h2>
+        <p>Constructors and destructors are called automatically when an object is created or destroyed. Here's how these special functions work in practice:</p>
+
+        <h3>4.1 Example of Constructor and Destructor in Action</h3>
+        <pre><code>
+int main() {
+    Box box1;           // Default constructor called
+    Box box2(5, 10);    // Parameterized constructor called
+
+    box1.display();
+    box2.display();
+
+    return 0;
+} // Destructor automatically called here when box1 and box2 go out of scope
+        </code></pre>
+
+        <h5>Explanation:</h5>
+        <ul>
+            <li>When <code>box1</code> is created, the default constructor is called, initializing <code>length</code> and <code>width</code> to zero.</li>
+            <li>When <code>box2</code> is created, the parameterized constructor is called, initializing the object with the specified values.</li>
+            <li>As the function <code>main()</code> finishes, destructors for both <code>box1</code> and <code>box2</code> are called automatically, cleaning up any resources if needed.</li>
+        </ul>
+
+        <h2>5. Destructor and Dynamic Memory Allocation</h2>
+        <p>Destructors are especially useful when working with dynamic memory allocation. If an object creates resources such as dynamically allocated memory or file handles, the destructor is responsible for releasing them before the object is destroyed.</p>
+
+        <h3>5.1 Example of Destructor Handling Dynamic Memory</h3>
+        <pre><code>
+class Data {
+public:
+    int* arr;
+    int size;
+
+    Data(int s) {
+        size = s;
+        arr = new int[size];  // Dynamically allocating memory
+    }
+
+    ~Data() {
+        delete[] arr;  // Releasing memory when the object is destroyed
+    }
+
+    void fillData() {
+        for (int i = 0; i < size; i++) {
+            arr[i] = i * 10;
+        }
+    }
+
+    void display() {
+        for (int i = 0; i < size; i++) {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
+    }
+};
+        </code></pre>
+
+        <h5>Explanation:</h5>
+        <ul>
+            <li>The constructor dynamically allocates an array of integers based on the specified size.</li>
+            <li>The destructor ensures that the allocated memory is properly freed when the object is destroyed, preventing memory leaks.</li>
+        </ul>
+
+        <h2>6. Conclusion</h2>
+        <p>Constructors and destructors are essential components of C++ classes. They play a key role in object initialization and cleanup. By using constructors to initialize objects and destructors to release resources, C++ developers can create more robust and efficient code that manages resources effectively. Properly handling memory allocation and deallocation in destructors helps prevent memory leaks and ensures the proper functioning of programs.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

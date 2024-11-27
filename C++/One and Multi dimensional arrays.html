@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One and Multi-dimensional Arrays in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>One and Multi-dimensional Arrays in C++</h1>
+    </header>
+
+    <section>
+        <h2>Introduction to Arrays in C++</h2>
+        <p>Arrays in C++ are a way to store multiple values of the same type in a single, contiguous block of memory. This allows you to efficiently handle large amounts of data without the need to declare individual variables for each item. Arrays can be one-dimensional (a single list) or multi-dimensional (like matrices or higher-dimensional grids). Understanding how to use arrays is essential for solving problems that involve manipulating large datasets.</p>
+    </section>
+
+    <section>
+        <h2>1. One-dimensional Array</h2>
+        <p>A one-dimensional array in C++ is essentially a list of values, all of the same type, stored in consecutive memory locations. It allows you to store and retrieve data efficiently using an index. The array elements are accessed using a zero-based index, meaning the first element has index 0.</p>
+
+        <h3>Syntax of One-dimensional Array</h3>
+        <pre><code>
+data_type array_name[size];
+        </code></pre>
+
+        <p>Where:
+            <ul>
+                <li><strong>data_type</strong>: Specifies the type of data (e.g., <code>int</code>, <code>float</code>, <code>char</code>).</li>
+                <li><strong>array_name</strong>: The name of the array.</li>
+                <li><strong>size</strong>: The number of elements the array can hold.</li>
+            </ul>
+        </p>
+
+        <h3>Example: One-dimensional Array</h3>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    // Declaring a one-dimensional array with 5 elements
+    int numbers[5] = {10, 20, 30, 40, 50};
+    
+    // Accessing and printing each element
+    for(int i = 0; i < 5; i++) {
+        cout &lt;&lt; "Element at index " &lt;&lt; i &lt;&lt; ": " &lt;&lt; numbers[i] &lt;&lt; endl;
+    }
+    
+    return 0;
+}
+        </code></pre>
+
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Element at index 0: 10
+Element at index 1: 20
+Element at index 2: 30
+Element at index 3: 40
+Element at index 4: 50
+        </code></pre>
+
+        <p>In this example, we have a one-dimensional array called <code>numbers</code> with 5 elements. The array is initialized with values, and each element is accessed by its index and printed using a <code>for</code> loop.</p>
+
+        <h3>Important Notes</h3>
+        <ul>
+            <li>The array size is fixed at compile-time.</li>
+            <li>Accessing an array element outside its bounds (e.g., <code>numbers[5]</code> in this case) leads to undefined behavior.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Multi-dimensional Arrays</h2>
+        <p>Multi-dimensional arrays in C++ are arrays of arrays. They allow you to represent more complex data structures, such as matrices, tables, or 3D grids. The most common form of multi-dimensional arrays is the two-dimensional array (2D array), but C++ also supports arrays with more than two dimensions.</p>
+
+        <h3>Syntax of Multi-dimensional Array</h3>
+        <pre><code>
+data_type array_name[rows][columns];
+        </code></pre>
+
+        <p>Where:
+            <ul>
+                <li><strong>data_type</strong>: Specifies the type of data (e.g., <code>int</code>, <code>float</code>, <code>char</code>).</li>
+                <li><strong>array_name</strong>: The name of the array.</li>
+                <li><strong>rows</strong>: The number of rows (or layers) in the array.</li>
+                <li><strong>columns</strong>: The number of columns in the array.</li>
+            </ul>
+        </p>
+
+        <h3>Example: Two-dimensional Array</h3>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    // Declaring a 2D array (2 rows and 3 columns)
+    int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    
+    // Accessing and printing each element using indices
+    for(int i = 0; i < 2; i++) {
+        for(int j = 0; j < 3; j++) {
+            cout &lt;&lt; "Element at [" &lt;&lt; i &lt;&lt; "][" &lt;&lt; j &lt;&lt; "]: " &lt;&lt; matrix[i][j] &lt;&lt; endl;
+        }
+    }
+    
+    return 0;
+}
+        </code></pre>
+
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Element at [0][0]: 1
+Element at [0][1]: 2
+Element at [0][2]: 3
+Element at [1][0]: 4
+Element at [1][1]: 5
+Element at [1][2]: 6
+        </code></pre>
+
+        <p>In this example, we declared a 2D array <code>matrix</code> with 2 rows and 3 columns. The array elements are accessed using two indices, where <code>i</code> refers to the row and <code>j</code> refers to the column.</p>
+
+        <h3>Important Notes on 2D Arrays</h3>
+        <ul>
+            <li>The elements of a 2D array are stored in contiguous memory locations. When accessing them, the program looks for the appropriate memory address based on the row and column indices.</li>
+            <li>You can initialize a 2D array row-wise or column-wise, but you must define the number of rows and columns.</li>
+        </ul>
+
+        <h3>Example: Three-dimensional Array</h3>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    // Declaring a 3D array with 2 layers, 2 rows, and 3 columns
+    int array[2][2][3] = {
+        {{1, 2, 3}, {4, 5, 6}},
+        {{7, 8, 9}, {10, 11, 12}}
+    };
+    
+    // Accessing and printing each element using three indices
+    for(int i = 0; i < 2; i++) {
+        for(int j = 0; j < 2; j++) {
+            for(int k = 0; k < 3; k++) {
+                cout &lt;&lt; "Element at [" &lt;&lt; i &lt;&lt; "][" &lt;&lt; j &lt;&lt; "][" &lt;&lt; k &lt;&lt; "]: " &lt;&lt; array[i][j][k] &lt;&lt; endl;
+            }
+        }
+    }
+    
+    return 0;
+}
+        </code></pre>
+
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Element at [0][0][0]: 1
+Element at [0][0][1]: 2
+Element at [0][0][2]: 3
+Element at [0][1][0]: 4
+Element at [0][1][1]: 5
+Element at [0][1][2]: 6
+Element at [1][0][0]: 7
+Element at [1][0][1]: 8
+Element at [1][0][2]: 9
+Element at [1][1][0]: 10
+Element at [1][1][1]: 11
+Element at [1][1][2]: 12
+        </code></pre>
+
+        <p>This example demonstrates a 3D array <code>array</code> with 2 layers, 2 rows, and 3 columns. The array is initialized in a nested manner, and each element is accessed using three indices: layer, row, and column.</p>
+
+        <h3>Multi-dimensional Arrays in Practice</h3>
+        <p>Multi-dimensional arrays are commonly used in various applications such as:</p>
+        <ul>
+            <li>Representing matrices for mathematical computations.</li>
+            <li>Storing multi-layered data, such as images (where each layer is a color channel).</li>
+            <li>Modeling grids in simulations, like 3D environments or spatial data.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

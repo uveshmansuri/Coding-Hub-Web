@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Explanation of Member Functions in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        .code-example {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        h3 {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Detailed Explanation of Member Functions in C++</h1>
+    </header>
+
+    <section>
+        <h2>1. Introduction</h2>
+        <p>In C++, a member function is a function that is defined within a class and operates on data members of the class. These functions enable the class to perform operations on its data and manage its internal state. Member functions can be either regular functions, static functions, or const functions.</p>
+
+        <h2>2. Types of Member Functions</h2>
+        <p>There are several types of member functions in C++. Below are the main categories:</p>
+
+        <ul>
+            <li><strong>Regular Member Functions</strong>: Functions that operate on instance data members and can access both static and non-static members.</li>
+            <li><strong>Static Member Functions</strong>: Functions that belong to the class itself rather than to any specific object and can only access static data members.</li>
+            <li><strong>Const Member Functions</strong>: Functions that guarantee not to modify the object.</li>
+            <li><strong>Friend Functions</strong>: Non-member functions that can access the private and protected members of the class.</li>
+        </ul>
+
+        <h2>3. Regular Member Functions</h2>
+        <p>Regular member functions are the most common and operate on the instance-specific data members of a class. They can access both instance data and static members of the class.</p>
+
+        <h3>3.1 Example of Regular Member Functions</h3>
+        <pre><code>
+class Box {
+public:
+    int length, width;
+
+    // Regular member function to set dimensions
+    void setDimensions(int l, int w) {
+        length = l;
+        width = w;
+    }
+
+    // Regular member function to display dimensions
+    void displayDimensions() const {
+        cout << "Length: " << length << ", Width: " << width << endl;
+    }
+
+    // Member function to calculate the area
+    int getArea() const {
+        return length * width;
+    }
+};
+
+int main() {
+    Box box1;
+    box1.setDimensions(5, 10);  // Setting dimensions using member function
+    box1.displayDimensions();    // Displaying the dimensions
+    cout << "Area: " << box1.getArea() << endl; // Displaying area using member function
+    return 0;
+}
+        </code></pre>
+
+        <h5>Explanation:</h5>
+        <ul>
+            <li>The member function <code>setDimensions()</code> sets the values of the object's data members.</li>
+            <li>The <code>displayDimensions()</code> function prints the object's data members.</li>
+            <li><code>getArea()</code> calculates and returns the area of the box.</li>
+            <li>All these functions operate on specific objects created from the class <code>Box</code>.</li>
+        </ul>
+
+        <h2>4. Static Member Functions</h2>
+        <p>Static member functions belong to the class itself, not to any specific instance of the class. They are used to access static data members and can be called without creating an object of the class.</p>
+
+        <h3>4.1 Example of Static Member Function</h3>
+        <pre><code>
+class Box {
+public:
+    static int objectCount; // Static data member
+
+    // Static member function to display the object count
+    static void displayObjectCount() {
+        cout << "Number of objects created: " << objectCount << endl;
+    }
+
+    Box() {
+        objectCount++;  // Increment the count every time a new object is created
+    }
+};
+
+// Initialize static member
+int Box::objectCount = 0;
+
+int main() {
+    Box box1, box2;
+    Box::displayObjectCount(); // Accessing static function without an object
+    return 0;
+}
+        </code></pre>
+
+        <h5>Explanation:</h5>
+        <ul>
+            <li>The static data member <code>objectCount</code> is shared across all objects of the class.</li>
+            <li>The static member function <code>displayObjectCount()</code> can be called without creating an object and outputs the number of objects created.</li>
+            <li>The constructor <code>Box()</code> increments <code>objectCount</code> every time an object is created.</li>
+        </ul>
+
+        <h2>5. Const Member Functions</h2>
+        <p>Const member functions guarantee not to modify the state of the object. They can only read the data members, but cannot alter them. These functions are used when an object needs to maintain immutability in some operations.</p>
+
+        <h3>5.1 Example of Const Member Function</h3>
+        <pre><code>
+class Box {
+public:
+    int length, width;
+
+    Box(int l, int w) : length(l), width(w) {}
+
+    // Const member function to calculate the area
+    int getArea() const {
+        return length * width;
+    }
+};
+
+int main() {
+    Box box1(5, 10);
+    cout << "Area of box: " << box1.getArea() << endl;  // Calling const member function
+    return 0;
+}
+        </code></pre>
+
+        <h5>Explanation:</h5>
+        <ul>
+            <li>The <code>getArea()</code> function is a const member function, meaning it guarantees not to modify any data members of the class.</li>
+            <li>This function only performs a read operation and returns the area of the box.</li>
+        </ul>
+
+        <h2>6. Friend Functions</h2>
+        <p>Friend functions are not members of the class but have access to the private and protected members of the class. They are declared inside the class with the <code>friend</code> keyword.</p>
+
+        <h3>6.1 Example of Friend Function</h3>
+        <pre><code>
+class Box {
+private:
+    int length, width;
+
+public:
+    Box(int l, int w) : length(l), width(w) {}
+
+    // Declaring a friend function
+    friend void displayBoxDetails(Box b);
+};
+
+// Friend function definition
+void displayBoxDetails(Box b) {
+    cout << "Length: " << b.length << ", Width: " << b.width << endl;
+}
+
+int main() {
+    Box box1(5, 10);
+    displayBoxDetails(box1);  // Calling the friend function
+    return 0;
+}
+        </code></pre>
+
+        <h5>Explanation:</h5>
+        <ul>
+            <li>Friend function <code>displayBoxDetails()</code> is able to access the private members <code>length</code> and <code>width</code> of the class <code>Box</code>.</li>
+            <li>Even though <code>displayBoxDetails()</code> is not a member of the class, it can still access private data due to the <code>friend</code> declaration.</li>
+        </ul>
+
+        <h2>7. Conclusion</h2>
+        <p>Member functions in C++ are essential for implementing the behavior and functionality of classes. They can be regular functions that operate on specific object instances, static functions that operate on class-wide data, or const functions that guarantee no modification to the object’s state. Friend functions, though not members, are also powerful tools for interacting with the private and protected members of a class.</p>
+
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

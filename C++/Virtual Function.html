@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Functions in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        table th {
+            background-color: #0078d7;
+            color: white;
+            text-align: left;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Virtual Functions in C++</h1>
+    </header>
+
+    <section>
+        <h2>What is a Virtual Function?</h2>
+        <p>
+            A <strong>virtual function</strong> in C++ is a member function in a base class that you expect to override in derived classes. 
+            When a function is declared as virtual, C++ determines the function to be called at runtime, enabling <strong>runtime polymorphism</strong>.
+        </p>
+
+        <h3>Key Features:</h3>
+        <ul>
+            <li>Declared using the <code>virtual</code> keyword in the base class.</li>
+            <li>Allows dynamic dispatch of function calls during runtime.</li>
+            <li>Base class pointers or references can invoke derived class implementations of virtual functions.</li>
+            <li>Used to implement runtime polymorphism in object-oriented programming.</li>
+        </ul>
+
+        <h2>Syntax</h2>
+        <pre>
+class Base {
+public:
+    virtual void display() {
+        cout << "Base class display function" << endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void display() override {
+        cout << "Derived class display function" << endl;
+    }
+};
+        </pre>
+
+        <h2>Example of Virtual Function</h2>
+        <p>This example demonstrates how a virtual function works in C++:</p>
+        <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+class Base {
+public:
+    virtual void show() {  // Virtual function
+        cout << "Base class show() function" << endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override {  // Overrides the base class function
+        cout << "Derived class show() function" << endl;
+    }
+};
+
+int main() {
+    Base* basePtr;  // Pointer to base class
+    Derived derivedObj;
+
+    basePtr = &derivedObj;
+    basePtr->show();  // Calls Derived's show() function because of virtual keyword
+
+    return 0;
+}
+        </pre>
+
+        <h3>Output:</h3>
+        <pre>
+Derived class show() function
+        </pre>
+
+        <h2>How Virtual Functions Work</h2>
+        <p>
+            When a class has virtual functions, a mechanism called the <strong>virtual table (vtable)</strong> is used. 
+            The vtable is a table of function pointers maintained per class. 
+            At runtime, the vtable is consulted to determine the correct function to call.
+        </p>
+
+        <h3>Steps:</h3>
+        <ol>
+            <li>A vtable is created for the class with all its virtual functions.</li>
+            <li>Each object of the class contains a hidden pointer to the vtable.</li>
+            <li>When a virtual function is called, the vtable determines the function to execute.</li>
+        </ol>
+
+        <h2>Pure Virtual Functions and Abstract Classes</h2>
+        <p>
+            A <strong>pure virtual function</strong> is a virtual function that must be overridden by derived classes. 
+            Declared using <code>= 0</code>, it makes the class an <strong>abstract class</strong>, which cannot be instantiated.
+        </p>
+
+        <h3>Example:</h3>
+        <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+class Shape {
+public:
+    virtual void draw() = 0;  // Pure virtual function
+};
+
+class Circle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing Circle" << endl;
+    }
+};
+
+class Rectangle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing Rectangle" << endl;
+    }
+};
+
+int main() {
+    Shape* shape;  // Pointer to base class
+    Circle circle;
+    Rectangle rectangle;
+
+    shape = &circle;
+    shape->draw();  // Calls Circle's draw()
+
+    shape = &rectangle;
+    shape->draw();  // Calls Rectangle's draw()
+
+    return 0;
+}
+        </pre>
+
+        <h3>Output:</h3>
+        <pre>
+Drawing Circle
+Drawing Rectangle
+        </pre>
+
+        <h2>Rules for Virtual Functions</h2>
+        <ul>
+            <li>Must be a member of a class.</li>
+            <li>Cannot be static or a friend function.</li>
+            <li>A class with a pure virtual function is abstract and cannot be instantiated.</li>
+            <li>Can have a definition in the base class but can be overridden in derived classes.</li>
+            <li>Calls are resolved dynamically using the vtable.</li>
+        </ul>
+
+        <h2>Advantages</h2>
+        <ul>
+            <li>Enables runtime polymorphism.</li>
+            <li>Promotes code reusability and extensibility.</li>
+            <li>Allows the use of base class pointers to handle derived class objects.</li>
+        </ul>
+
+        <h2>Disadvantages</h2>
+        <ul>
+            <li>Introduces a slight performance overhead due to dynamic dispatch.</li>
+            <li>Increases memory usage because of the vtable.</li>
+            <li>Can make debugging slightly more complex.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

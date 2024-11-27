@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types and Variables in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Data Types and Variables in C++</h1>
+    </header>
+
+    <section>
+        <h2>Introduction to Data Types and Variables</h2>
+        <p>In C++, data types and variables are key components in creating a program that works with different types of data. Data types define what kind of data can be stored in variables, and variables act as containers to hold data. Understanding how to use data types effectively is critical for writing optimized, bug-free code.</p>
+    </section>
+
+    <section>
+        <h2>1. Data Types in C++</h2>
+        <p>C++ provides a variety of built-in data types that are used to define the type of data stored in variables. These data types can be broadly categorized into the following groups:</p>
+
+        <ul>
+            <li><strong>Primitive Data Types</strong>: These are the basic types provided by C++. Examples include integers, floating-point numbers, and characters.
+                <ul>
+                    <li><strong>int</strong>: Used to store integer values (whole numbers). The size of an <code>int</code> is usually 4 bytes on most systems.</li>
+                    <li><strong>char</strong>: Used to store a single character. It takes 1 byte of memory. Example: <code>char letter = 'A';</code></li>
+                    <li><strong>float</strong>: Used for single-precision floating-point numbers. A <code>float</code> typically takes 4 bytes of memory.</li>
+                    <li><strong>double</strong>: Used for double-precision floating-point numbers, which offer higher precision than <code>float</code>. <code>double</code> takes 8 bytes of memory.</li>
+                    <li><strong>bool</strong>: Represents a boolean value which can either be <code>true</code> or <code>false</code>. <code>bool</code> usually takes 1 byte of memory.</li>
+                </ul>
+            </li>
+            <li><strong>Derived Data Types</strong>: Derived from the basic data types. They allow us to define more complex data structures.
+                <ul>
+                    <li><strong>Array</strong>: A collection of elements of the same type stored in a contiguous block of memory. Example: <code>int arr[5] = {1, 2, 3, 4, 5};</code></li>
+                    <li><strong>Pointer</strong>: A variable that stores the memory address of another variable. Example: <code>int* ptr = &num;</code></li>
+                    <li><strong>Reference</strong>: A reference variable acts as an alias to another variable. Example: <code>int& ref = num;</code></li>
+                </ul>
+            </li>
+            <li><strong>Abstract Data Types</strong>: These are user-defined data types like structures and classes.
+                <ul>
+                    <li><strong>struct</strong>: A structure is a collection of different types of data stored together. Example: <code>struct Person { int age; char name[30]; };</code></li>
+                    <li><strong>class</strong>: A class is a blueprint for creating objects, defining properties and behaviors. Example: <code>class Car { public: int speed; void drive(); }</code></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Memory Sizes of Common Data Types</h3>
+        <p>The size of each data type depends on the system architecture and the compiler. However, on most systems, the sizes are as follows:</p>
+        <ul>
+            <li><strong>int</strong>: 4 bytes</li>
+            <li><strong>char</strong>: 1 byte</li>
+            <li><strong>float</strong>: 4 bytes</li>
+            <li><strong>double</strong>: 8 bytes</li>
+            <li><strong>bool</strong>: 1 byte</li>
+        </ul>
+
+        <h3>Example of Using Different Data Types:</h3>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age = 25;  // Integer data type
+    char grade = 'A';  // Character data type
+    float height = 5.9;  // Floating point data type
+    double pi = 3.14159;  // Double precision floating point data type
+    bool isStudent = true;  // Boolean data type
+
+    cout << "Age: " << age << endl;
+    cout << "Grade: " << grade << endl;
+    cout << "Height: " << height << endl;
+    cout << "Pi: " << pi << endl;
+    cout << "Is student: " << isStudent << endl;
+
+    return 0;
+}
+        </pre>
+    </section>
+
+    <section>
+        <h2>2. Variables in C++</h2>
+        <p>A variable is a named memory location used to store data that can be changed during the program's execution. In C++, variables are declared with a specific data type, followed by the variable name.</p>
+
+        <h3>Declaring and Initializing Variables</h3>
+        <p>The syntax for declaring and initializing variables is straightforward. You specify the type, followed by the name of the variable. You can also initialize the variable at the time of declaration.</p>
+
+        <ul>
+            <li><strong>Declaration without Initialization:</strong> A variable is declared but not assigned a value initially. Example: <code>int num;</code></li>
+            <li><strong>Declaration with Initialization:</strong> A variable is declared and initialized at the same time. Example: <code>int num = 10;</code></li>
+        </ul>
+
+        <h3>Example of Declaring and Using Variables:</h3>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1 = 10;  // Declare and initialize an integer
+    int num2 = 20;  // Declare and initialize another integer
+    int sum = num1 + num2;  // Add the two variables
+
+    cout << "The sum of " << num1 << " and " << num2 << " is " << sum << endl;
+
+    return 0;
+}
+        </pre>
+
+        <h3>Variable Scope</h3>
+        <p>The scope of a variable determines where it can be accessed in the program. Variables in C++ can be of two types based on scope:</p>
+        <ul>
+            <li><strong>Local Variables:</strong> These are declared inside a function or a block of code and can only be accessed within that function/block.</li>
+            <li><strong>Global Variables:</strong> These are declared outside any function and are accessible from any function in the program.</li>
+        </ul>
+
+        <h3>Constant Variables</h3>
+        <p>In C++, constant variables are declared using the <code>const</code> keyword. Once a constant is assigned a value, it cannot be changed. Constants are often used for values that should not change throughout the program.</p>
+        <pre>
+const int MAX_VALUE = 100;  // Declare a constant variable
+cout << "The maximum value is " << MAX_VALUE << endl;
+        </pre>
+    </section>
+
+    <section>
+        <h2>3. Type Modifiers in C++</h2>
+        <p>Type modifiers are keywords that alter the size and behavior of a basic data type. Common type modifiers include:</p>
+        <ul>
+            <li><strong>signed</strong>: Used to allow both positive and negative values for integer data types. Example: <code>signed int num = -5;</code></li>
+            <li><strong>unsigned</strong>: Used to store only positive values. Example: <code>unsigned int num = 5;</code></li>
+            <li><strong>short</strong>: Reduces the size of an integer. Typically uses 2 bytes of memory.</li>
+            <li><strong>long</strong>: Increases the size of an integer. It typically uses 8 bytes of memory on most systems.</li>
+        </ul>
+
+        <h3>Example of Type Modifiers:</h3>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    short int num1 = 1000;
+    long int num2 = 1234567890;
+    unsigned int num3 = 5000;
+
+    cout << "Short: " << num1 << endl;
+    cout << "Long: " << num2 << endl;
+    cout << "Unsigned: " << num3 << endl;
+
+    return 0;
+}
+        </pre>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

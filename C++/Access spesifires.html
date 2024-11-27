@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Specifiers in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Access Specifiers in C++</h1>
+    </header>
+
+    <section>
+        <h2>1. Introduction to Access Specifiers</h2>
+        <p>In C++, access specifiers are used to control the accessibility of class members (data members and member functions). The primary goal is to achieve <strong>encapsulation</strong>, which is a fundamental concept of Object-Oriented Programming (OOP). Encapsulation ensures that the internal state of an object is protected from unintended or harmful changes and can only be accessed or modified through well-defined interfaces (i.e., public methods).</p>
+        <p>The three main access specifiers are <strong>private</strong>, <strong>public</strong>, and <strong>protected</strong>.</p>
+
+        <h2>2. Types of Access Specifiers</h2>
+
+        <h3>2.1 Private Access Specifier</h3>
+        <p>The <strong>private</strong> access specifier restricts access to members only within the class. These members cannot be accessed from outside the class, including derived classes, unless through a public or protected function.</p>
+        <p>Private members are used to hide data and ensure that it is only modified through public or protected functions, enforcing data integrity and consistency.</p>
+        
+        <h4>Example of Private Access Specifier</h4>
+        <pre><code>
+class BankAccount {
+private:
+    double balance; // private data member
+
+public:
+    // Public member function to set balance
+    void setBalance(double bal) {
+        if (bal >= 0) {
+            balance = bal;
+        }
+    }
+
+    // Public member function to get balance
+    double getBalance() {
+        return balance;
+    }
+};
+        </code></pre>
+
+        <h5>Explanation:</h5>
+        <ul>
+            <li>The <code>balance</code> variable is private, meaning it cannot be accessed directly from outside the class.</li>
+            <li>The <code>setBalance()</code> and <code>getBalance()</code> functions are public, allowing controlled access to the private <code>balance</code>.</li>
+        </ul>
+
+        <h3>2.2 Public Access Specifier</h3>
+        <p>The <strong>public</strong> access specifier allows class members to be accessed from anywhere, including outside the class. Any part of the program can use public members, making them available to users of the class.</p>
+        <p>Public members are often used for functions that define the interface of the class, such as constructors, destructors, and methods that control object state.</p>
+
+        <h4>Example of Public Access Specifier</h4>
+        <pre><code>
+class Rectangle {
+public:
+    double length;  // public data member
+    double width;   // public data member
+
+    double area() {
+        return length * width; // Public method to calculate area
+    }
+};
+        </code></pre>
+
+        <h5>Explanation:</h5>
+        <ul>
+            <li>The variables <code>length</code> and <code>width</code> are declared public, so they can be accessed and modified directly from outside the class.</li>
+            <li>The <code>area()</code> method is public, meaning it can be called from outside the class to calculate the area of a rectangle.</li>
+        </ul>
+
+        <h3>2.3 Protected Access Specifier</h3>
+        <p>The <strong>protected</strong> access specifier is a middle ground between private and public access. Protected members can be accessed within the class and by derived classes (i.e., subclasses), but they cannot be accessed from outside the class hierarchy.</p>
+        <p>This access level is useful when you want to allow derived classes to access and modify base class members, but prevent external code from doing so.</p>
+
+        <h4>Example of Protected Access Specifier</h4>
+        <pre><code>
+class Shape {
+protected:
+    double width;
+    double height;
+
+public:
+    void setDimensions(double w, double h) {
+        width = w;
+        height = h;
+    }
+};
+
+class Rectangle : public Shape {
+public:
+    double area() {
+        return width * height; // Accessing protected members of the base class
+    }
+};
+        </code></pre>
+
+        <h5>Explanation:</h5>
+        <ul>
+            <li>The variables <code>width</code> and <code>height</code> are declared protected in the base class <code>Shape</code>.</li>
+            <li>The derived class <code>Rectangle</code> has access to these protected members and can directly use them to calculate the area.</li>
+            <li>However, external code cannot directly access these protected members.</li>
+        </ul>
+
+        <h2>3. Default Access Specifiers</h2>
+        <h3>3.1 Default Access for Classes</h3>
+        <p>If no access specifier is explicitly provided for members of a class, C++ uses the default access specifier. By default, members of a class are <strong>private</strong>, while members of a struct are <strong>public</strong>.</p>
+
+        <h4>Example of Default Access</h4>
+        <pre><code>
+class Car {
+    string brand; // private by default
+public:
+    void setBrand(string b) {
+        brand = b; // Accessing private member through a public function
+    }
+};
+        </code></pre>
+
+        <h5>Explanation:</h5>
+        <ul>
+            <li>The <code>brand</code> variable is private by default, as no access specifier is specified.</li>
+            <li>The <code>setBrand()</code> function is public and provides access to the private member <code>brand</code>.</li>
+        </ul>
+
+        <h2>4. Inheritance and Access Specifiers</h2>
+        <h3>4.1 Inheritance and Access Levels</h3>
+        <p>Access specifiers play a significant role when dealing with inheritance. The accessibility of base class members in derived classes depends on both the member's access specifier and the inheritance type.</p>
+
+        <h4>Example of Inheritance and Access Specifiers</h4>
+        <pre><code>
+class Base {
+private:
+    int privateVar; // Private member
+protected:
+    int protectedVar; // Protected member
+public:
+    int publicVar; // Public member
+};
+
+class Derived : public Base {
+public:
+    void accessMembers() {
+        // privateVar is not accessible here, causes error
+        // protectedVar is accessible here
+        // publicVar is accessible here
+    }
+};
+        </code></pre>
+
+        <h5>Explanation:</h5>
+        <ul>
+            <li>The <code>privateVar</code> is not accessible in the derived class.</li>
+            <li>The <code>protectedVar</code> and <code>publicVar</code> can be accessed in the derived class.</li>
+        </ul>
+
+        <h2>5. Summary of Access Specifiers</h2>
+        <table border="1">
+            <tr>
+                <th>Access Specifier</th>
+                <th>Accessibility</th>
+                <th>Default for Class Members</th>
+            </tr>
+            <tr>
+                <td>Private</td>
+                <td>Accessible only within the class and its member functions</td>
+                <td>Yes (default for class members)</td>
+            </tr>
+            <tr>
+                <td>Public</td>
+                <td>Accessible from anywhere</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Protected</td>
+                <td>Accessible within the class and by derived classes</td>
+                <td>No</td>
+            </tr>
+        </table>
+
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

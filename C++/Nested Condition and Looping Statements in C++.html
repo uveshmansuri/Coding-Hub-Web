@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Conditionals and Looping Statements in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Nested Conditionals and Looping Statements in C++</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>In C++, both conditional statements and loops are fundamental building blocks of any program. However, these control structures can be nested to handle more complex problems. Nesting allows us to put one conditional or looping structure inside another, giving us more flexibility and power in program logic. In this section, we will look at how nested conditionals and loops work and how they can be used together to solve complex problems.</p>
+        <p>While nested structures are useful, they should be used with care. Excessive nesting can lead to less readable code, so it is important to use these structures judiciously.</p>
+    </section>
+
+    <section>
+        <h2>1. Nested Conditional Statements</h2>
+        <p>Conditional statements control the flow of execution based on conditions. When one conditional statement is placed inside another, it is called a "nested conditional." This is useful when we need to make multiple, dependent decisions based on a set of conditions.</p>
+
+        <h3>Nested `if` Statements</h3>
+        <p>Nested `if` statements occur when you have an `if` statement inside another `if` block. This is often used when checking multiple conditions that depend on each other.</p>
+
+        <h4>Syntax</h4>
+        <pre><code>
+if (condition1) {
+    if (condition2) {
+        // Code block executed when both conditions are true
+    }
+}
+        </code></pre>
+
+        <h4>Example: Checking Age and License</h4>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int age = 20;
+    bool hasLicense = false;
+
+    if (age >= 18) {
+        if (hasLicense) {
+            cout &lt;&lt; "You are eligible to drive!" &lt;&lt; endl;
+        } else {
+            cout &lt;&lt; "You need a driving license to drive!" &lt;&lt; endl;
+        }
+    } else {
+        cout &lt;&lt; "You are not old enough to drive!" &lt;&lt; endl;
+    }
+    return 0;
+}
+        </code></pre>
+
+        <p><strong>Output:</strong></p>
+        <pre><code>
+You need a driving license to drive!
+        </code></pre>
+
+        <p>In this example, the program first checks whether the person is old enough to drive. If true, it then checks whether the person has a license. This is an example of a nested `if` statement, where the second `if` only runs if the first `if` is true.</p>
+
+        <h3>Nested `else if` Statements</h3>
+        <p>We can also use `else if` to create a chain of conditional checks. A nested `else if` allows for multiple possible outcomes based on different conditions.</p>
+
+        <h4>Example: Grading System</h4>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int score = 85;
+
+    if (score >= 90) {
+        cout &lt;&lt; "Grade A" &lt;&lt; endl;
+    } else if (score >= 75) {
+        cout &lt;&lt; "Grade B" &lt;&lt; endl;
+    } else if (score >= 60) {
+        cout &lt;&lt; "Grade C" &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; "Grade F" &lt;&lt; endl;
+    }
+    return 0;
+}
+        </code></pre>
+
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Grade B
+        </code></pre>
+
+        <p>This example shows how multiple conditions are checked one by one. If the first condition is false, the program proceeds to the next `else if`, and so on.</p>
+    </section>
+
+    <section>
+        <h2>2. Nested Looping Statements</h2>
+        <p>In C++, loops can be nested within one another, which is known as a "nested loop." A nested loop allows you to perform iterations within iterations, such as printing out a table of values or traversing multi-dimensional arrays.</p>
+
+        <h3>Nested `for` Loops</h3>
+        <p>A nested `for` loop is commonly used when working with multi-dimensional data or needing to perform multiple iterations of a set of actions.</p>
+
+        <h4>Syntax</h4>
+        <pre><code>
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+        // Code to be executed
+    }
+}
+        </code></pre>
+
+        <h4>Example: Multiplication Table</h4>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 3; i++) {
+        for (int j = 1; j <= 3; j++) {
+            cout &lt;&lt; i * j &lt;&lt; "\t"; // Print multiplication result
+        }
+        cout &lt;&lt; endl; // Move to next line after inner loop
+    }
+    return 0;
+}
+        </code></pre>
+
+        <p><strong>Output:</strong></p>
+        <pre><code>
+1	2	3	
+2	4	6	
+3	6	9	
+        </code></pre>
+
+        <p>This code demonstrates how nested `for` loops are used to create a multiplication table. The outer loop controls the row, and the inner loop controls the column.</p>
+
+        <h3>Nested `while` Loops</h3>
+        <p>You can also nest `while` loops, where the outer loop condition controls the number of iterations of the inner `while` loop.</p>
+
+        <h4>Example: Counting Numbers in a Grid</h4>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int i = 1;
+    while (i <= 3) {
+        int j = 1;
+        while (j <= 3) {
+            cout &lt;&lt; "i = " &lt;&lt; i &lt;&lt; ", j = " &lt;&lt; j &lt;&lt; endl;
+            j++;
+        }
+        i++;
+    }
+    return 0;
+}
+        </code></pre>
+
+        <p><strong>Output:</strong></p>
+        <pre><code>
+i = 1, j = 1
+i = 1, j = 2
+i = 1, j = 3
+i = 2, j = 1
+i = 2, j = 2
+i = 2, j = 3
+i = 3, j = 1
+i = 3, j = 2
+i = 3, j = 3
+        </code></pre>
+
+        <p>This example uses nested `while` loops to print the combination of values from two variables `i` and `j` within the specified ranges.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

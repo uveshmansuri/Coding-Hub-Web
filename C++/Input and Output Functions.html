@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input and Output Functions in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Input and Output Functions in C++</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>C++ provides essential functions for input and output operations. The input is generally read from the user, and the output is typically displayed on the console or stored in a file. The primary functions for input and output in C++ are <code>cin</code> for reading input and <code>cout</code> for displaying output. Both of these functions are part of the <code>iostream</code> header file.</p>
+    </section>
+
+    <section>
+        <h2>1. Output in C++ with <code>cout</code></h2>
+        <p>The <code>cout</code> function is used to output data to the console in C++. It is a standard output stream, and you can display text, variables, and other values. You use the <code><<</code> operator to send data to the output stream.</p>
+
+        <h3>Basic Syntax:</h3>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, World!";  // Simple output statement
+    return 0;
+}
+        </pre>
+        <p>This is a simple C++ program where <code>cout</code> displays the message "Hello, World!" on the screen.</p>
+
+        <h3>Displaying Different Data Types:</h3>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age = 25;
+    double pi = 3.14159;
+    char grade = 'A';
+    bool isStudent = true;
+
+    cout << "Age: " << age << endl;
+    cout << "Pi: " << pi << endl;
+    cout << "Grade: " << grade << endl;
+    cout << "Is student: " << isStudent << endl;
+
+    return 0;
+}
+        </pre>
+        <p>In the example, <code>cout</code> is used to output variables of different types, such as <code>int</code>, <code>double</code>, <code>char</code>, and <code>bool</code>. The <code>endl</code> is used to insert a newline after each output to move to the next line.</p>
+
+        <h3>Multiple Outputs in One Line:</h3>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age = 30;
+    double height = 5.9;
+
+    cout << "Age: " << age << ", Height: " << height << endl;
+    return 0;
+}
+        </pre>
+        <p>You can also output multiple values in a single line by using multiple <code><<</code> operators. In this case, the age and height are displayed in the same line, separated by a comma.</p>
+    </section>
+
+    <section>
+        <h2>2. Input in C++ with <code>cin</code></h2>
+        <p>The <code>cin</code> function is used to get input from the user. It reads data from the standard input (usually the keyboard) and stores it in a variable. The <code>>></code> operator is used to read data from the input stream.</p>
+
+        <h3>Basic Syntax:</h3>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    cout << "Enter your age: ";
+    cin >> age;  // Input a value for the variable 'age'
+    cout << "You entered: " << age << endl;
+
+    return 0;
+}
+        </pre>
+        <p>This program prompts the user to enter their age, which is stored in the <code>age</code> variable. Then, the program outputs the entered age.</p>
+
+        <h3>Reading Multiple Inputs:</h3>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    double height;
+    char grade;
+    
+    cout << "Enter your age: ";
+    cin >> age;
+
+    cout << "Enter your height (in meters): ";
+    cin >> height;
+
+    cout << "Enter your grade: ";
+    cin >> grade;
+
+    cout << "Age: " << age << ", Height: " << height << ", Grade: " << grade << endl;
+
+    return 0;
+}
+        </pre>
+        <p>This example demonstrates how to input different types of data: an integer, a floating-point number, and a character. These are stored in the variables <code>age</code>, <code>height</code>, and <code>grade</code>, respectively.</p>
+    </section>
+
+    <section>
+        <h2>3. Error Handling in Input</h2>
+        <p>When using <code>cin</code>, if the user enters incorrect data (e.g., entering text when an integer is expected), it can cause the program to behave unexpectedly. To handle input errors, we use functions like <code>cin.fail()</code>, <code>cin.clear()</code>, and <code>cin.ignore()</code> to recover from errors.</p>
+
+        <h3>Handling Invalid Input:</h3>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    cout << "Enter your age: ";
+    cin >> age;
+
+    if (cin.fail()) {  // Check for invalid input
+        cout << "Invalid input! Please enter a valid integer." << endl;
+        cin.clear();  // Clear error flag
+        cin.ignore();  // Ignore incorrect input in the buffer
+    } else {
+        cout << "You entered: " << age << endl;
+    }
+
+    return 0;
+}
+        </pre>
+        <p>In the above example, if the user enters a non-integer, the program will output an error message and attempt to clear the input buffer using <code>cin.clear()</code> and <code>cin.ignore()</code>.</p>
+    </section>
+
+    <section>
+        <h2>4. Formatting Output in C++</h2>
+        <p>C++ provides several output formatting tools. You can set the width of the output, control precision for floating-point numbers, and use manipulators like <code>setw</code>, <code>fixed</code>, and <code>setprecision</code> to format your output.</p>
+
+        <h3>Setting Output Width and Precision:</h3>
+        <pre>
+#include <iostream>
+#include <iomanip>  // For output formatting manipulators
+using namespace std;
+
+int main() {
+    double pi = 3.14159265358979;
+
+    cout << "Pi with 2 decimal places: " << fixed << setprecision(2) << pi << endl;
+    cout << "Pi with 4 decimal places: " << fixed << setprecision(4) << pi << endl;
+
+    return 0;
+}
+        </pre>
+        <p>In the example, the <code>fixed</code> manipulator ensures that the floating-point number is displayed in fixed-point notation. The <code>setprecision</code> manipulator controls the number of digits displayed after the decimal point.</p>
+
+        <h3>Aligning Output:</h3>
+        <pre>
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    cout << setw(10) << "Hello" << endl;  // Set width to 10
+    cout << setw(10) << "World" << endl;  // Right align
+
+    return 0;
+}
+        </pre>
+        <p>The <code>setw</code> manipulator is used to set the width of the output. This is useful when you need to format tables or columns of data neatly aligned.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

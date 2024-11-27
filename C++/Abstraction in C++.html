@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstraction in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Abstraction in C++</h1>
+    </header>
+
+    <section>
+        <h2>What is Abstraction?</h2>
+        <p>
+            <strong>Abstraction</strong> in C++ is a core concept of object-oriented programming that focuses on hiding implementation details and showing only essential features to the user. It helps to manage complexity by segregating what an object does from how it does it.
+        </p>
+        <p>
+            For example, when using a car, we interact with the steering wheel, accelerator, and brakes without worrying about the internal mechanics of how they work.
+        </p>
+
+        <h2>How to Achieve Abstraction in C++?</h2>
+        <p>Abstraction in C++ is achieved using:</p>
+        <ul>
+            <li><strong>Abstract classes</strong> (classes containing pure virtual functions).</li>
+            <li><strong>Access specifiers</strong> like private, protected, and public to restrict access to certain parts of a class.</li>
+        </ul>
+
+        <h2>Example: Abstraction with Abstract Class</h2>
+        <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+// Abstract class
+class Shape {
+public:
+    // Pure virtual function
+    virtual void draw() = 0;
+
+    void setColor(string c) {
+        color = c;
+    }
+
+    string getColor() {
+        return color;
+    }
+
+private:
+    string color; // Hidden detail
+};
+
+class Circle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing a Circle" << endl;
+    }
+};
+
+class Rectangle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing a Rectangle" << endl;
+    }
+};
+
+int main() {
+    Shape* shape;
+
+    Circle circle;
+    shape = &circle;
+    shape->setColor("Red");
+    cout << "Circle Color: " << shape->getColor() << endl;
+    shape->draw();
+
+    Rectangle rectangle;
+    shape = &rectangle;
+    shape->setColor("Blue");
+    cout << "Rectangle Color: " << shape->getColor() << endl;
+    shape->draw();
+
+    return 0;
+}
+        </pre>
+
+        <h3>Output:</h3>
+        <pre>
+Circle Color: Red
+Drawing a Circle
+Rectangle Color: Blue
+Drawing a Rectangle
+        </pre>
+
+        <h2>Advantages of Abstraction</h2>
+        <ul>
+            <li>Reduces complexity by exposing only essential functionalities.</li>
+            <li>Improves code readability and maintainability.</li>
+            <li>Provides a clear separation between interface and implementation.</li>
+            <li>Helps in achieving modularity and reusability.</li>
+        </ul>
+
+        <h2>Abstraction vs Encapsulation</h2>
+        <p>Though closely related, abstraction and encapsulation are distinct concepts:</p>
+        <table style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+            <tr>
+                <th style="border: 1px solid #ddd; padding: 8px; background-color: #0078d7; color: white;">Aspect</th>
+                <th style="border: 1px solid #ddd; padding: 8px; background-color: #0078d7; color: white;">Abstraction</th>
+                <th style="border: 1px solid #ddd; padding: 8px; background-color: #0078d7; color: white;">Encapsulation</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Definition</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Hiding implementation details and showing only functionality.</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Wrapping data and functions into a single unit (class) and controlling access using access specifiers.</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Focus</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">On "what" an object does.</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">On "how" the data is protected.</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Mechanism</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Achieved using abstract classes and interfaces.</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Achieved using classes and access specifiers.</td>
+            </tr>
+        </table>
+
+        <h2>Conclusion</h2>
+        <p>
+            Abstraction is a powerful tool in C++ for managing complexity and focusing on the functionality provided by an object rather than its internal workings. By leveraging abstract classes and access specifiers, developers can create clean, modular, and maintainable code.
+        </p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

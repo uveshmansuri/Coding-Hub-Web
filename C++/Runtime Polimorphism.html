@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymorphism in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        table th {
+            background-color: #0078d7;
+            color: white;
+            text-align: left;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Polymorphism in C++</h1>
+    </header>
+
+    <section>
+        <h2>What is Polymorphism?</h2>
+        <p>
+            <strong>Polymorphism</strong> is one of the key concepts of Object-Oriented Programming (OOP) in C++. The term polymorphism is derived from Greek, 
+            meaning "many forms." In C++, polymorphism allows a single function, operator, or object to behave differently based on its context.
+        </p>
+
+        <h3>Types of Polymorphism:</h3>
+        <ul>
+            <li><strong>Compile-time Polymorphism:</strong> Also known as static polymorphism, it is resolved during compilation. Examples include function overloading and operator overloading.</li>
+            <li><strong>Runtime Polymorphism:</strong> Also known as dynamic polymorphism, it is resolved at runtime. It is implemented using inheritance and virtual functions.</li>
+        </ul>
+
+        <h2>Runtime Polymorphism in C++</h2>
+        <p>
+            Runtime polymorphism is achieved through the use of <strong>inheritance</strong> and <strong>virtual functions</strong>. It allows a base class pointer 
+            or reference to call a method of a derived class. This behavior is determined during runtime, enabling dynamic method dispatch.
+        </p>
+
+        <h3>Key Characteristics:</h3>
+        <ul>
+            <li>Uses <strong>virtual functions</strong> in the base class to achieve polymorphism.</li>
+            <li>Enables overriding of base class functions in derived classes.</li>
+            <li>Achieved using a <strong>pointer or reference</strong> to the base class.</li>
+            <li>Supports flexibility and extensibility in code.</li>
+        </ul>
+
+        <h3>Example of Runtime Polymorphism:</h3>
+        <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+// Base class
+class Shape {
+public:
+    virtual void draw() {
+        cout << "Drawing a generic shape" << endl;
+    }
+};
+
+// Derived class: Circle
+class Circle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing a circle" << endl;
+    }
+};
+
+// Derived class: Rectangle
+class Rectangle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing a rectangle" << endl;
+    }
+};
+
+int main() {
+    Shape* shapePtr;  // Base class pointer
+
+    Circle circle;
+    Rectangle rectangle;
+
+    shapePtr = &circle;
+    shapePtr->draw(); // Calls Circle's draw()
+
+    shapePtr = &rectangle;
+    shapePtr->draw(); // Calls Rectangle's draw()
+
+    return 0;
+}
+        </pre>
+
+        <h3>Output:</h3>
+        <pre>
+Drawing a circle
+Drawing a rectangle
+        </pre>
+
+        <h2>Compile-time Polymorphism in C++</h2>
+        <p>
+            Compile-time polymorphism occurs when the decision about which function to call is made at compile-time. 
+            It is achieved through <strong>function overloading</strong> and <strong>operator overloading</strong>.
+        </p>
+
+        <h3>Key Characteristics:</h3>
+        <ul>
+            <li>Does not involve inheritance or virtual functions.</li>
+            <li>Improves performance as decisions are made during compilation.</li>
+            <li>Allows multiple functions or operators to perform differently based on their input parameters.</li>
+        </ul>
+
+        <h3>Example of Function Overloading:</h3>
+        <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+class Math {
+public:
+    // Function to add two integers
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    // Function to add three integers
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+};
+
+int main() {
+    Math math;
+    cout << "Sum of 2 numbers: " << math.add(10, 20) << endl;
+    cout << "Sum of 3 numbers: " << math.add(10, 20, 30) << endl;
+    return 0;
+}
+        </pre>
+
+        <h3>Output:</h3>
+        <pre>
+Sum of 2 numbers: 30
+Sum of 3 numbers: 60
+        </pre>
+
+        <h2>Difference between Runtime and Compile-time Polymorphism:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>Compile-time Polymorphism</th>
+                    <th>Runtime Polymorphism</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Definition</strong></td>
+                    <td>Resolved at compile-time using function or operator overloading.</td>
+                    <td>Resolved at runtime using inheritance and virtual functions.</td>
+                </tr>
+                <tr>
+                    <td><strong>Mechanism</strong></td>
+                    <td>Function signature determines behavior at compile-time.</td>
+                    <td>Virtual table (vtable) and dynamic binding determine behavior at runtime.</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance</strong></td>
+                    <td>Faster due to compile-time resolution.</td>
+                    <td>Slower due to dynamic method dispatch.</td>
+                </tr>
+                <tr>
+                    <td><strong>Flexibility</strong></td>
+                    <td>Less flexible and limited to parameter variations.</td>
+                    <td>Highly flexible due to dynamic method overriding.</td>
+                </tr>
+                <tr>
+                    <td><strong>Use Cases</strong></td>
+                    <td>Function overloading, operator overloading.</td>
+                    <td>Inheritance and overriding virtual functions.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Conclusion:</h2>
+        <p>
+            Polymorphism is a powerful feature of C++ that enhances code reusability and flexibility. 
+            While <strong>compile-time polymorphism</strong> offers better performance, <strong>runtime polymorphism</strong> provides adaptability 
+            and is ideal for applications requiring dynamic behavior.
+        </p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Manipulation in C++: Searching and Sorting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Array Manipulation: Searching and Sorting in C++</h1>
+    </header>
+
+    <section>
+        <h2>Introduction to Array Manipulation</h2>
+        <p>In C++, arrays are a powerful way to store and manipulate data. Array manipulation refers to operations like searching, sorting, and modifying elements in an array. These operations are essential for solving problems that involve data organization, searching for elements, or arranging elements in a specific order.</p>
+    </section>
+
+    <section>
+        <h2>1. Searching in Arrays</h2>
+        <p>Searching in an array is a fundamental operation where we try to find the position of an element in the array. There are several types of searching algorithms, with the two most common being:</p>
+        <ul>
+            <li><strong>Linear Search</strong>: A simple method where we check each element of the array one by one until we find the target element or reach the end of the array.</li>
+            <li><strong>Binary Search</strong>: A more efficient method that works on sorted arrays. It repeatedly divides the search interval in half, reducing the search space.</li>
+        </ul>
+
+        <h3>Linear Search</h3>
+        <p>Linear search is the most basic searching algorithm. It works by iterating through each element of the array until it finds the target value.</p>
+
+        <h4>Example: Linear Search</h4>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int linearSearch(int arr[], int size, int target) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == target) {
+            return i; // Element found, return index
+        }
+    }
+    return -1; // Element not found
+}
+
+int main() {
+    int arr[] = {3, 5, 7, 9, 11, 13, 15};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int target = 9;
+    
+    int result = linearSearch(arr, size, target);
+    
+    if (result != -1) {
+        cout << "Element found at index: " << result << endl;
+    } else {
+        cout << "Element not found!" << endl;
+    }
+
+    return 0;
+}
+        </code></pre>
+
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Element found at index: 3
+        </code></pre>
+
+        <h3>Binary Search</h3>
+        <p>Binary search works on sorted arrays. It divides the array into two halves and compares the middle element with the target value. Based on the comparison, it either eliminates the left half or the right half of the array, repeatedly narrowing down the search space.</p>
+
+        <h4>Example: Binary Search</h4>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int binarySearch(int arr[], int size, int target) {
+    int left = 0, right = size - 1;
+    
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        
+        if (arr[mid] == target) {
+            return mid; // Element found
+        } else if (arr[mid] < target) {
+            left = mid + 1; // Ignore left half
+        } else {
+            right = mid - 1; // Ignore right half
+        }
+    }
+    return -1; // Element not found
+}
+
+int main() {
+    int arr[] = {3, 5, 7, 9, 11, 13, 15};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int target = 9;
+    
+    int result = binarySearch(arr, size, target);
+    
+    if (result != -1) {
+        cout << "Element found at index: " << result << endl;
+    } else {
+        cout << "Element not found!" << endl;
+    }
+
+    return 0;
+}
+        </code></pre>
+
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Element found at index: 3
+        </code></pre>
+
+    </section>
+
+    <section>
+        <h2>2. Sorting Arrays</h2>
+        <p>Sorting is the process of arranging elements in a specific order, either in ascending or descending order. Sorting is essential for various algorithms, such as searching and data analysis. There are many sorting algorithms, but some of the most commonly used ones are:</p>
+        <ul>
+            <li><strong>Bubble Sort</strong>: A simple algorithm where each pair of adjacent elements is compared and swapped if they are in the wrong order. This process repeats until the array is sorted.</li>
+            <li><strong>Selection Sort</strong>: An algorithm that repeatedly selects the smallest (or largest) element from the unsorted part of the array and places it in its correct position.</li>
+            <li><strong>Insertion Sort</strong>: A method that builds the sorted array one element at a time by inserting elements into their correct position.</li>
+            <li><strong>Quick Sort</strong>: A highly efficient divide-and-conquer algorithm that divides the array into smaller sub-arrays and sorts them.</li>
+        </ul>
+
+        <h3>Bubble Sort</h3>
+        <p>Bubble sort repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The process is repeated until the array is sorted.</p>
+
+        <h4>Example: Bubble Sort</h4>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+void bubbleSort(int arr[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Swap elements
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    int arr[] = {64, 34, 25, 12, 22, 11, 90};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    bubbleSort(arr, size);
+
+    cout << "Sorted array: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+        </code></pre>
+
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Sorted array: 11 12 22 25 34 64 90
+        </code></pre>
+
+        <h3>Selection Sort</h3>
+        <p>Selection sort works by finding the smallest element in the unsorted portion of the array and swapping it with the first unsorted element.</p>
+
+        <h4>Example: Selection Sort</h4>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+void selectionSort(int arr[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < size; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        // Swap elements
+        int temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+}
+
+int main() {
+    int arr[] = {64, 34, 25, 12, 22, 11, 90};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    selectionSort(arr, size);
+
+    cout << "Sorted array: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+        </code></pre>
+
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Sorted array: 11 12 22 25 34 64 90
+        </code></pre>
+
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

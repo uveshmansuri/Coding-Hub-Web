@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-Oriented Programming in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Object-Oriented Programming in C++ and Its Features</h1>
+</header>
+
+<section>
+    <h2>Introduction to Object-Oriented Programming (OOP)</h2>
+    <p>Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects," which can contain data and methods that manipulate the data. C++ is one of the most popular programming languages that supports OOP, providing features that allow developers to design programs using real-world models. OOP is especially useful for organizing complex systems and creating reusable, maintainable code.</p>
+    
+    <h3>What Makes C++ an Object-Oriented Language?</h3>
+    <p>C++ is an object-oriented language because it allows developers to define classes and create objects. It supports the core principles of OOP, which help in better code organization, reduced redundancy, and increased flexibility.</p>
+    
+    <h2>Key Concepts of OOP in C++</h2>
+    <p>The core principles of Object-Oriented Programming are:</p>
+    
+    <ul>
+        <li><strong>Encapsulation</strong>: Protects the data inside the object and provides a controlled way to access and modify it through methods.</li>
+        <li><strong>Abstraction</strong>: Hides the complex implementation details and only exposes the essential features of an object.</li>
+        <li><strong>Inheritance</strong>: Allows a new class to inherit properties and methods from an existing class.</li>
+        <li><strong>Polymorphism</strong>: Enables methods to be used in different ways depending on the object type.</li>
+    </ul>
+
+    <h3>1. Encapsulation in C++</h3>
+    <p>Encapsulation refers to the bundling of data (attributes) and the methods that operate on the data into a single unit known as a class. It also helps in restricting the access to some of the object's components. This is done through access modifiers: <code>private</code>, <code>protected</code>, and <code>public</code>.</p>
+    
+    <p>In C++, we often use <code>private</code> to restrict access to the data and use <code>public</code> to provide methods that allow controlled access to that data.</p>
+    
+    <h4>Example of Encapsulation:</h4>
+    <pre>
+#include <iostream>
+using namespace std;
+
+class BankAccount {
+private:
+    double balance;  // Private variable
+
+public:
+    BankAccount(double initial_balance) { 
+        balance = initial_balance;
+    }
+
+    // Public method to deposit money
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    // Public method to get the balance
+    double getBalance() {
+        return balance;
+    }
+};
+
+int main() {
+    BankAccount account(1000.0);  // Initializing account with a balance of 1000
+    account.deposit(500.0);       // Depositing 500
+    cout << "Balance: $" << account.getBalance() << endl;  // Accessing balance
+    return 0;
+}
+    </pre>
+    <p>The <code>BankAccount</code> class encapsulates the data (balance) and provides methods like <code>deposit</code> and <code>getBalance</code> to interact with that data, ensuring that direct access to <code>balance</code> is restricted.</p>
+
+    <h3>2. Abstraction in C++</h3>
+    <p>Abstraction hides the internal details of an object and shows only the relevant functionality. In C++, abstraction is typically implemented using abstract classes and pure virtual functions.</p>
+    
+    <p>An abstract class cannot be instantiated directly and must be inherited by other classes that implement its pure virtual functions.</p>
+    
+    <h4>Example of Abstraction:</h4>
+    <pre>
+#include <iostream>
+using namespace std;
+
+// Abstract base class
+class Shape {
+public:
+    virtual void draw() = 0;  // Pure virtual function
+};
+
+class Circle : public Shape {
+public:
+    void draw() {
+        cout << "Drawing a circle" << endl;
+    }
+};
+
+class Square : public Shape {
+public:
+    void draw() {
+        cout << "Drawing a square" << endl;
+    }
+};
+
+int main() {
+    Shape* shape1 = new Circle();
+    Shape* shape2 = new Square();
+    
+    shape1->draw();  // Output: Drawing a circle
+    shape2->draw();  // Output: Drawing a square
+    
+    delete shape1;
+    delete shape2;
+
+    return 0;
+}
+    </pre>
+    <p>In this example, the <code>Shape</code> class is abstract, and it declares a pure virtual function <code>draw()</code>. The derived classes <code>Circle</code> and <code>Square</code> implement the <code>draw()</code> method, allowing polymorphic behavior.</p>
+
+    <h3>3. Inheritance in C++</h3>
+    <p>Inheritance is the mechanism where a new class (derived class) inherits attributes and behaviors (methods) from an existing class (base class). This allows the reuse of code, making it easier to maintain and extend.</p>
+
+    <h4>Example of Inheritance:</h4>
+    <pre>
+#include <iostream>
+using namespace std;
+
+// Base class
+class Animal {
+public:
+    void eat() {
+        cout << "Eating..." << endl;
+    }
+};
+
+// Derived class
+class Dog : public Animal {
+public:
+    void bark() {
+        cout << "Barking..." << endl;
+    }
+};
+
+int main() {
+    Dog myDog;
+    myDog.eat();  // Inherited method
+    myDog.bark(); // Dog-specific method
+    
+    return 0;
+}
+    </pre>
+    <p>The <code>Dog</code> class inherits from the <code>Animal</code> class and can access its <code>eat()</code> method, while also adding its own specific behavior with the <code>bark()</code> method.</p>
+
+    <h3>4. Polymorphism in C++</h3>
+    <p>Polymorphism allows methods to have different implementations depending on the type of object that invokes them. There are two types of polymorphism in C++:</p>
+    <ul>
+        <li><strong>Compile-time Polymorphism:</strong> Achieved through function overloading or operator overloading.</li>
+        <li><strong>Run-time Polymorphism:</strong> Achieved through method overriding and virtual functions.</li>
+    </ul>
+
+    <h4>Example of Compile-time Polymorphism (Method Overloading):</h4>
+    <pre>
+#include <iostream>
+using namespace std;
+
+class Printer {
+public:
+    void print(int i) {
+        cout << "Printing integer: " << i << endl;
+    }
+
+    void print(double d) {
+        cout << "Printing double: " << d << endl;
+    }
+};
+
+int main() {
+    Printer printer;
+    printer.print(5);        // Output: Printing integer: 5
+    printer.print(3.14);     // Output: Printing double: 3.14
+    
+    return 0;
+}
+    </pre>
+
+    <h4>Example of Run-time Polymorphism (Method Overriding):</h4>
+    <pre>
+#include <iostream>
+using namespace std;
+
+class Animal {
+public:
+    virtual void sound() {
+        cout << "Animal makes a sound" << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void sound() override {
+        cout << "Dog barks" << endl;
+    }
+};
+
+int main() {
+    Animal* animal = new Dog();
+    animal->sound();  // Output: Dog barks
+    
+    delete animal;
+    return 0;
+}
+    </pre>
+    <p>In the example above, the <code>sound()</code> method is overridden in the <code>Dog</code> class, and the method call is resolved at runtime based on the object type.</p>
+
+    <h2>Features of C++ as an Object-Oriented Language</h2>
+    <ul>
+        <li><strong>Classes and Objects:</strong> C++ uses classes to define types and objects as instances of those types.</li>
+        <li><strong>Encapsulation:</strong> C++ encapsulates the data within classes and restricts direct access to it through access specifiers.</li>
+        <li><strong>Abstraction:</strong> C++ allows abstraction using abstract classes and interfaces to hide implementation details.</li>
+        <li><strong>Inheritance:</strong> C++ supports single and multiple inheritance, allowing the reuse of code.</li>
+        <li><strong>Polymorphism:</strong> C++ allows methods to take different forms based on the object calling them.</li>
+        <li><strong>Data Hiding:</strong> The use of private and protected access specifiers in C++ ensures that critical data is hidden and can only be accessed in a controlled manner.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Object-Oriented Programming in C++ provides a powerful way to organize and manage software projects. By employing the principles of OOP—encapsulation, abstraction, inheritance, and polymorphism—C++ developers can write modular, reusable, and maintainable code. These features make C++ ideal for building large-scale systems, game engines, GUI applications, and much more. Mastering OOP concepts in C++ leads to more structured and efficient software design, enabling developers to solve real-world problems in an object-oriented manner.</p>
+
+</section>
+
+<footer>
+    <p>© 2024 Coding Hub. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

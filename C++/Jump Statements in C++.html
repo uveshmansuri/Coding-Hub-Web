@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump Statements in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jump Statements in C++</h1>
+    </header>
+
+    <section>
+        <h2>Introduction to Jump Statements</h2>
+        <p>Jump statements in C++ provide control over the flow of execution within a program. These statements are powerful tools used to alter the normal sequence of operations in loops, conditionals, and even functions. In C++, there are three main jump statements:</p>
+        <ul>
+            <li><strong>break:</strong> Exits from a loop or switch statement prematurely.</li>
+            <li><strong>continue:</strong> Skips the current iteration of a loop and proceeds with the next iteration.</li>
+            <li><strong>goto:</strong> Jumps to a specified label in the program, transferring control to that location.</li>
+        </ul>
+        <p>While these statements are useful in some scenarios, they should be used carefully to avoid making the code harder to read and maintain.</p>
+    </section>
+
+    <section>
+        <h2>1. The <code>break</code> Statement</h2>
+        <p>The `break` statement is used to exit a loop (like `for`, `while`, or `do-while`) or a `switch` case statement before it completes normally. This allows you to terminate the loop or switch early based on some condition.</p>
+        
+        <p><strong>Syntax:</strong></p>
+        <pre><code>break;</code></pre>
+        
+        <p><strong>Example 1: Using <code>break</code> in a <code>for</code> loop</strong></p>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 10; i++) {
+        if (i == 5) {
+            break; // Exit the loop when i is 5
+        }
+        cout &lt;&lt; "Iteration: " &lt;&lt; i &lt;&lt; endl;
+    }
+    return 0;
+}
+        </code></pre>
+        
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Iteration: 1
+Iteration: 2
+Iteration: 3
+Iteration: 4
+        </code></pre>
+
+        <p>In this example, the loop stops executing when the value of <code>i</code> reaches 5 because the <code>break</code> statement is encountered.</p>
+
+        <p><strong>Example 2: Using <code>break</code> in a <code>switch</code> statement</strong></p>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int number = 2;
+    switch (number) {
+        case 1:
+            cout &lt;&lt; "One" &lt;&lt; endl;
+            break;
+        case 2:
+            cout &lt;&lt; "Two" &lt;&lt; endl;
+            break;
+        case 3:
+            cout &lt;&lt; "Three" &lt;&lt; endl;
+            break;
+        default:
+            cout &lt;&lt; "Default" &lt;&lt; endl;
+    }
+    return 0;
+}
+        </code></pre>
+
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Two
+        </code></pre>
+
+        <p>In the `switch` statement example, the `break` ensures that the program exits the switch statement after the matching case has executed. Without it, the program would "fall through" to the next case.</p>
+    </section>
+
+    <section>
+        <h2>2. The <code>continue</code> Statement</h2>
+        <p>The `continue` statement is used to skip the current iteration of a loop and continue with the next iteration. It is often used when a specific condition occurs, and we want to skip the rest of the code inside the loop for that particular iteration.</p>
+
+        <p><strong>Syntax:</strong></p>
+        <pre><code>continue;</code></pre>
+        
+        <p><strong>Example 1: Using <code>continue</code> in a <code>for</code> loop</strong></p>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        if (i == 3) {
+            continue; // Skip iteration when i is 3
+        }
+        cout &lt;&lt; "Iteration: " &lt;&lt; i &lt;&lt; endl;
+    }
+    return 0;
+}
+        </code></pre>
+        
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Iteration: 1
+Iteration: 2
+Iteration: 4
+Iteration: 5
+        </code></pre>
+
+        <p>The iteration for <code>i = 3</code> is skipped due to the <code>continue</code> statement. The loop continues for the remaining values of <code>i</code>.</p>
+
+        <p><strong>Example 2: Using <code>continue</code> in a <code>while</code> loop</strong></p>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int i = 0;
+    while (i < 5) {
+        i++;
+        if (i == 3) {
+            continue; // Skip iteration when i is 3
+        }
+        cout &lt;&lt; "Iteration: " &lt;&lt; i &lt;&lt; endl;
+    }
+    return 0;
+}
+        </code></pre>
+        
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Iteration: 1
+Iteration: 2
+Iteration: 4
+Iteration: 5
+        </code></pre>
+
+        <p>The <code>continue</code> statement skips printing when <code>i</code> equals 3 in the loop.</p>
+    </section>
+
+    <section>
+        <h2>3. The <code>goto</code> Statement</h2>
+        <p>The `goto` statement is a way to jump to a specific part of the program. This is done using a label, which is a user-defined identifier followed by a colon. Once the `goto` statement is encountered, the control jumps to the label location in the code.</p>
+        
+        <p><strong>Syntax:</strong></p>
+        <pre><code>
+label_name:
+    // Code to be executed
+goto label_name;
+        </code></pre>
+
+        <p><strong>Example 1: Using <code>goto</code> to jump to a label</strong></p>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int i = 1;
+    if (i == 1) {
+        goto skip; // Jump to skip label
+    }
+    cout &lt;&lt; "This will be skipped." &lt;&lt; endl;
+
+skip:
+    cout &lt;&lt; "This will be printed." &lt;&lt; endl;
+    return 0;
+}
+        </code></pre>
+        
+        <p><strong>Output:</strong></p>
+        <pre><code>
+This will be printed.
+        </code></pre>
+
+        <p>In this example, the `goto` statement skips the `cout` statement before the label `skip` and jumps directly to the code after it.</p>
+
+        <p><strong>Example 2: Using <code>goto</code> in a nested loop</strong></p>
+        <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 3; i++) {
+        for (int j = 1; j <= 3; j++) {
+            if (i == 2 && j == 2) {
+                goto exitLoop; // Exit both loops when i is 2 and j is 2
+            }
+            cout &lt;&lt; "i: " &lt;&lt; i &lt;&lt; " j: " &lt;&lt; j &lt;&lt; endl;
+        }
+    }
+    
+exitLoop:
+    cout &lt;&lt; "Exited the loops." &lt;&lt; endl;
+    return 0;
+}
+        </code></pre>
+
+        <p><strong>Output:</strong></p>
+        <pre><code>
+i: 1 j: 1
+i: 1 j: 2
+i: 1 j: 3
+i: 2 j: 1
+Exited the loops.
+        </code></pre>
+
+        <p>In this example, the `goto` statement is used to exit both loops when <code>i = 2</code> and <code>j = 2</code>.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

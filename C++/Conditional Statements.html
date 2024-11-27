@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statements in C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Conditional Statements in C++</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>Conditional statements in C++ are used to execute a block of code based on whether a specific condition is true or false. They provide the ability to make decisions within your program. The decision-making statements in C++ are:</p>
+        <ul>
+            <li><strong>if statement</strong> - Executes a block of code if the condition is true.</li>
+            <li><strong>if-else statement</strong> - Executes one block of code if the condition is true, and another block if it is false.</li>
+            <li><strong>else-if ladder</strong> - Used for multiple conditions, where each condition is checked in sequence.</li>
+            <li><strong>switch-case statement</strong> - An alternative to the if-else chain, useful for selecting one out of many possible cases.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>1. if Statement</h2>
+        <p>The <code>if</code> statement checks a condition (expression). If the condition is true, the block of code inside the <code>if</code> statement is executed.</p>
+        <p>Example:</p>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num = 10;
+    if (num > 0) {  // Checks if num is greater than zero
+        cout << "The number is positive." << endl; // Executed if condition is true
+    }
+    return 0;
+}
+        </pre>
+        <p>In this example, the condition <code>num > 0</code> evaluates to true, so the output will be:</p>
+        <pre>The number is positive.</pre>
+    </section>
+
+    <section>
+        <h2>2. if-else Statement</h2>
+        <p>The <code>if-else</code> statement is an extension of the <code>if</code> statement. It executes one block of code if the condition is true and another block of code if the condition is false.</p>
+        <p>Example:</p>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num = -5;
+    if (num > 0) {
+        cout << "The number is positive." << endl;
+    } else {
+        cout << "The number is negative." << endl;
+    }
+    return 0;
+}
+        </pre>
+        <p>Here, the condition <code>num > 0</code> is false, so the program executes the <code>else</code> block, outputting:</p>
+        <pre>The number is negative.</pre>
+    </section>
+
+    <section>
+        <h2>3. else-if Ladder</h2>
+        <p>The <code>else-if ladder</code> allows you to check multiple conditions. If one condition is true, it executes that block of code and skips the others. It’s useful when there are several possible conditions to check.</p>
+        <p>Example:</p>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num = 0;
+    if (num > 0) {
+        cout << "The number is positive." << endl;
+    } else if (num < 0) {
+        cout << "The number is negative." << endl;
+    } else {
+        cout << "The number is zero." << endl;
+    }
+    return 0;
+}
+        </pre>
+        <p>In this example, since <code>num == 0</code>, the condition <code>num == 0</code> is true, so the output will be:</p>
+        <pre>The number is zero.</pre>
+    </section>
+
+    <section>
+        <h2>4. switch-case Statement</h2>
+        <p>The <code>switch-case</code> statement is an alternative to the if-else ladder, especially when dealing with multiple values of a single variable. It allows you to test a variable against a list of constants and execute the corresponding block of code for the first match. If no case matches, the <code>default</code> block is executed.</p>
+        <p>Example:</p>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int day = 3;  // day variable
+    switch (day) {
+        case 1:
+            cout << "Monday" << endl;
+            break;
+        case 2:
+            cout << "Tuesday" << endl;
+            break;
+        case 3:
+            cout << "Wednesday" << endl; // case 3
+            break;
+        case 4:
+            cout << "Thursday" << endl;
+            break;
+        case 5:
+            cout << "Friday" << endl;
+            break;
+        case 6:
+            cout << "Saturday" << endl;
+            break;
+        case 7:
+            cout << "Sunday" << endl;
+            break;
+        default:
+            cout << "Invalid day" << endl; // if no case matches
+    }
+    return 0;
+}
+        </pre>
+        <p>Here, the value of <code>day</code> is 3, so the program prints "Wednesday". If the value of <code>day</code> was not in the range 1-7, it would print "Invalid day".</p>
+        <p>Output:</p>
+        <pre>Wednesday</pre>
+    </section>
+
+    <section>
+        <h2>Understanding the Flow of Conditional Statements</h2>
+        <p>Conditional statements are key to controlling the flow of a program. Depending on the truth value of the expression in the conditional statement, the program will decide which set of instructions to follow.</p>
+        <p>For example:</p>
+        <ul>
+            <li>If you want to check if a user is eligible for a particular offer, you might use an <code>if</code> statement to check if their age is above a certain value.</li>
+            <li>For deciding between multiple choices, you might use an <code>else-if ladder</code> to evaluate each condition in sequence.</li>
+            <li>If you have many possible cases (e.g., days of the week or different types of fruits), the <code>switch-case</code> structure is ideal for readability and efficiency.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>Conditional statements are one of the fundamental building blocks in C++ programming, enabling you to create programs that can make decisions and react to different situations. By mastering <code>if</code>, <code>else</code>, <code>else-if</code>, and <code>switch-case</code>, you can control the flow of your program to handle different scenarios efficiently and effectively.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

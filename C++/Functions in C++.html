@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Functions - Detailed Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>C++ Functions - Detailed Guide</h1>
+    </header>
+
+    <section>
+        <h2>1. Introduction to Functions</h2>
+        <p>A <strong>function</strong> in C++ is a block of code that performs a specific task. Functions allow you to break your program into smaller, manageable parts, making it easier to write, read, and maintain. Functions can take inputs (parameters), perform operations, and return results.</p>
+
+        <h3>1.1 Syntax of a Function</h3>
+        <p>The general syntax of a function in C++ is as follows:</p>
+        <pre><code>
+return_type function_name(parameter_list) {
+    // function body
+}
+        </code></pre>
+        <p>Where:</p>
+        <ul>
+            <li><strong>return_type</strong>: The type of value the function will return (e.g., int, float, void for no return value).</li>
+            <li><strong>function_name</strong>: The name of the function.</li>
+            <li><strong>parameter_list</strong>: A list of input parameters (optional, can be empty).</li>
+        </ul>
+
+        <h3>1.2 Example of a Simple Function</h3>
+        <p>This is an example of a function that adds two integers:</p>
+        <pre><code>
+#include <iostream>
+using namespace std;
+
+// Function declaration
+int add(int a, int b);
+
+int main() {
+    int result = add(10, 20);  // Function call
+    cout << "The sum is: " << result << endl;
+    return 0;
+}
+
+// Function definition
+int add(int a, int b) {
+    return a + b;
+}
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code>
+The sum is: 30
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>2. Types of Functions</h2>
+        <p>C++ functions can be classified into the following types:</p>
+
+        <h3>2.1 Standard Functions</h3>
+        <p>These are functions that come with C++ libraries, such as <code>main()</code>, <code>printf()</code>, etc.</p>
+
+        <h3>2.2 User-Defined Functions</h3>
+        <p>Functions created by the user to perform specific tasks are called user-defined functions. These can be further classified based on their behavior:</p>
+        <ul>
+            <li><strong>Functions with arguments and return values</strong></li>
+            <li><strong>Functions with arguments but no return value (void functions)</strong></li>
+            <li><strong>Functions without arguments and return values</strong></li>
+            <li><strong>Functions without arguments and no return value (void functions)</strong></li>
+        </ul>
+
+        <h3>2.3 Void Functions</h3>
+        <p>A function with a return type of <code>void</code> does not return any value. These types of functions are useful when we need to perform an action but don’t require a result.</p>
+        <pre><code>
+#include <iostream>
+using namespace std;
+
+void greet() {
+    cout << "Hello, World!" << endl;
+}
+
+int main() {
+    greet(); // Function call
+    return 0;
+}
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Hello, World!
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>3. Function Overloading</h2>
+        <p>C++ allows multiple functions with the same name but different parameter types or number of parameters. This is called function overloading. The correct function is chosen based on the number and types of arguments passed during the function call.</p>
+
+        <h3>3.1 Example of Function Overloading</h3>
+        <pre><code>
+#include <iostream>
+using namespace std;
+
+int add(int a, int b) {
+    return a + b;
+}
+
+double add(double a, double b) {
+    return a + b;
+}
+
+int main() {
+    cout << "Sum of integers: " << add(10, 20) << endl;
+    cout << "Sum of doubles: " << add(10.5, 20.5) << endl;
+    return 0;
+}
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Sum of integers: 30
+Sum of doubles: 31
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>4. Function Recursion</h2>
+        <p>A function that calls itself is called a <strong>recursive function</strong>. Recursion is a powerful technique that can simplify certain types of problems, such as computing factorials or solving the Fibonacci sequence.</p>
+
+        <h3>4.1 Example of Recursion</h3>
+        <p>Here’s an example of a recursive function to calculate the factorial of a number:</p>
+        <pre><code>
+#include <iostream>
+using namespace std;
+
+int factorial(int n) {
+    if (n == 0) {
+        return 1;  // Base case
+    } else {
+        return n * factorial(n - 1); // Recursive call
+    }
+}
+
+int main() {
+    int result = factorial(5);
+    cout << "Factorial of 5 is: " << result << endl;
+    return 0;
+}
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Factorial of 5 is: 120
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>5. Function Parameters</h2>
+        <p>Functions can accept parameters, which are values passed into the function when it is called. C++ supports different types of parameters:</p>
+
+        <h3>5.1 Pass by Value</h3>
+        <p>In pass-by-value, the actual parameter is copied into the formal parameter. Changes made to the parameter do not affect the actual argument.</p>
+        <pre><code>
+#include <iostream>
+using namespace std;
+
+void increment(int x) {
+    x = x + 1;
+}
+
+int main() {
+    int num = 10;
+    increment(num);  // Pass by value
+    cout << "Value of num: " << num << endl; // Original value of num remains unchanged
+    return 0;
+}
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Value of num: 10
+        </code></pre>
+
+        <h3>5.2 Pass by Reference</h3>
+        <p>In pass-by-reference, the function works directly with the memory address of the argument, so changes made to the parameter will affect the actual argument.</p>
+        <pre><code>
+#include <iostream>
+using namespace std;
+
+void increment(int &x) {
+    x = x + 1;
+}
+
+int main() {
+    int num = 10;
+    increment(num);  // Pass by reference
+    cout << "Value of num: " << num << endl; // num is now modified
+    return 0;
+}
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code>
+Value of num: 11
+        </code></pre>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
