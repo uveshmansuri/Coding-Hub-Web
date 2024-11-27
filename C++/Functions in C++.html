@@ -53,11 +53,11 @@
 <body>
 
     <header>
-        <h1>C++ Functions - Detailed Guide</h1>
+        <h1>C++ Functions</h1>
     </header>
 
     <section>
-        <h2>1. Introduction to Functions</h2>
+        <h2>Introduction to Functions</h2>
         <p>A <strong>function</strong> in C++ is a block of code that performs a specific task. Functions allow you to break your program into smaller, manageable parts, making it easier to write, read, and maintain. Functions can take inputs (parameters), perform operations, and return results.</p>
 
         <h3>1.1 Syntax of a Function</h3>
@@ -101,13 +101,13 @@ The sum is: 30
     </section>
 
     <section>
-        <h2>2. Types of Functions</h2>
+        <h2>Types of Functions</h2>
         <p>C++ functions can be classified into the following types:</p>
 
-        <h3>2.1 Standard Functions</h3>
+        <h3>1. Standard Functions</h3>
         <p>These are functions that come with C++ libraries, such as <code>main()</code>, <code>printf()</code>, etc.</p>
 
-        <h3>2.2 User-Defined Functions</h3>
+        <h3>2. User-Defined Functions</h3>
         <p>Functions created by the user to perform specific tasks are called user-defined functions. These can be further classified based on their behavior:</p>
         <ul>
             <li><strong>Functions with arguments and return values</strong></li>
@@ -116,7 +116,7 @@ The sum is: 30
             <li><strong>Functions without arguments and no return value (void functions)</strong></li>
         </ul>
 
-        <h3>2.3 Void Functions</h3>
+        <h3>3. Void Functions</h3>
         <p>A function with a return type of <code>void</code> does not return any value. These types of functions are useful when we need to perform an action but don’t require a result.</p>
         <pre><code>
 #include <iostream>
@@ -138,10 +138,10 @@ Hello, World!
     </section>
 
     <section>
-        <h2>3. Function Overloading</h2>
+        <h2>Function Overloading</h2>
         <p>C++ allows multiple functions with the same name but different parameter types or number of parameters. This is called function overloading. The correct function is chosen based on the number and types of arguments passed during the function call.</p>
 
-        <h3>3.1 Example of Function Overloading</h3>
+        <h3>Example of Function Overloading</h3>
         <pre><code>
 #include <iostream>
 using namespace std;
@@ -168,10 +168,10 @@ Sum of doubles: 31
     </section>
 
     <section>
-        <h2>4. Function Recursion</h2>
+        <h2>Function Recursion</h2>
         <p>A function that calls itself is called a <strong>recursive function</strong>. Recursion is a powerful technique that can simplify certain types of problems, such as computing factorials or solving the Fibonacci sequence.</p>
 
-        <h3>4.1 Example of Recursion</h3>
+        <h3>Example of Recursion</h3>
         <p>Here’s an example of a recursive function to calculate the factorial of a number:</p>
         <pre><code>
 #include <iostream>
@@ -198,7 +198,7 @@ Factorial of 5 is: 120
     </section>
 
     <section>
-        <h2>5. Function Parameters</h2>
+        <h2>Function Parameters</h2>
         <p>Functions can accept parameters, which are values passed into the function when it is called. C++ supports different types of parameters:</p>
 
         <h3>5.1 Pass by Value</h3>
@@ -223,7 +223,7 @@ int main() {
 Value of num: 10
         </code></pre>
 
-        <h3>5.2 Pass by Reference</h3>
+        <h3>Pass by Reference</h3>
         <p>In pass-by-reference, the function works directly with the memory address of the argument, so changes made to the parameter will affect the actual argument.</p>
         <pre><code>
 #include <iostream>
