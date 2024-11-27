@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>In-depth C++ Compilation Process</title>
+    <title>C++ Compilation Process</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -69,7 +69,7 @@
 </head>
 <body>
     <header>
-        <h1>In-depth C++ Compilation Process</h1>
+        <h1>C++ Compilation Process</h1>
     </header>
 
     <section>
@@ -83,7 +83,7 @@
 
         <ol>
             <li>
-                <h3>1. Preprocessing</h3>
+                <h3>Preprocessing</h3>
                 <p>The preprocessing stage handles all the preprocessor directives in the C++ source code, such as <code>#include</code>, <code>#define</code>, and <code>#ifdef</code>. During this stage, the following steps are performed:</p>
                 <ul>
                     <li><strong>Inclusion of Header Files:</strong> The preprocessor looks for the <code>#include</code> directive, which tells it to insert the contents of specified header files into the source code. This allows the programmer to access libraries and functions that are defined elsewhere.</li>
@@ -95,7 +95,7 @@
             </li>
 
             <li>
-                <h3>2. Compilation</h3>
+                <h3>Compilation</h3>
                 <p>Once preprocessing is complete, the code enters the compilation stage. In this phase, the preprocessed code is converted into assembly language code. The compiler performs several tasks:</p>
                 <ul>
                     <li><strong>Lexical Analysis:</strong> The compiler breaks down the code into tokens—small units such as keywords, operators, identifiers, and symbols. This helps in parsing the code and understanding its structure.</li>
@@ -108,7 +108,7 @@
             </li>
 
             <li>
-                <h3>3. Assembly</h3>
+                <h3>Assembly</h3>
                 <p>In the assembly stage, the assembly code generated in the previous step is converted into machine code, which is a binary representation of the program. This process is performed by the assembler. The main steps include:</p>
                 <ul>
                     <li><strong>Translation to Machine Code:</strong> The assembler converts each assembly instruction into the corresponding machine code (binary instructions) that can be directly executed by the CPU.</li>
@@ -119,7 +119,7 @@
             </li>
 
             <li>
-                <h3>4. Linking</h3>
+                <h3>Linking</h3>
                 <p>The linking stage is responsible for combining the object files and libraries into a single executable file. There are two types of linking:</p>
                 <ul>
                     <li><strong>Static Linking:</strong> In static linking, all required libraries and object files are combined into one single executable. The linker includes copies of the library functions directly in the executable.</li>
