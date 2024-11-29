@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Input Types</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: grid;
+            grid-gap: 15px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input:focus {
+            border-color: #0078d7;
+            outline: none;
+        }
+
+        button {
+            background: #0078d7;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #005fa3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Input Types</h1>
+    </header>
+    <section>
+        <h2>Introduction</h2>
+        <p>HTML provides various input types to handle different kinds of user inputs. Below is a detailed explanation and examples of common input types.</p>
+
+        <h2>Common Input Types</h2>
+        <form>
+            <!-- Text -->
+            <label for="text">Text:</label>
+            <input type="text" id="text" name="text" placeholder="Enter text here">
+            <p><strong>Type:</strong> <code>text</code> — Used for single-line text input.</p>
+
+            <!-- Password -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+            <p><strong>Type:</strong> <code>password</code> — Masks the input for sensitive information like passwords.</p>
+
+            <!-- Email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+            <p><strong>Type:</strong> <code>email</code> — Ensures the entered value is a valid email address.</p>
+
+            <!-- Number -->
+            <label for="number">Number:</label>
+            <input type="number" id="number" name="number" placeholder="Enter a number" min="1" max="10">
+            <p><strong>Type:</strong> <code>number</code> — Used for numeric input with optional range limits.</p>
+
+            <!-- Date -->
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+            <p><strong>Type:</strong> <code>date</code> — Allows selection of a specific date.</p>
+
+            <!-- Time -->
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time">
+            <p><strong>Type:</strong> <code>time</code> — Allows input of a specific time.</p>
+
+            <!-- File -->
+            <label for="file">File:</label>
+            <input type="file" id="file" name="file">
+            <p><strong>Type:</strong> <code>file</code> — Used to upload files.</p>
+
+            <!-- Color -->
+            <label for="color">Color:</label>
+            <input type="color" id="color" name="color">
+            <p><strong>Type:</strong> <code>color</code> — Allows selection of a color.</p>
+
+            <!-- Range -->
+            <label for="range">Range:</label>
+            <input type="range" id="range" name="range" min="0" max="100">
+            <p><strong>Type:</strong> <code>range</code> — Displays a slider to select a value within a range.</p>
+
+            <!-- Search -->
+            <label for="search">Search:</label>
+            <input type="search" id="search" name="search" placeholder="Search here">
+            <p><strong>Type:</strong> <code>search</code> — Used for search input fields.</p>
+
+            <!-- URL -->
+            <label for="url">URL:</label>
+            <input type="url" id="url" name="url" placeholder="Enter a URL">
+            <p><strong>Type:</strong> <code>url</code> — Ensures the entered value is a valid URL.</p>
+
+            <!-- Telephone -->
+            <label for="tel">Telephone:</label>
+            <input type="tel" id="tel" name="tel" placeholder="Enter your phone number">
+            <p><strong>Type:</strong> <code>tel</code> — Used for entering phone numbers.</p>
+
+            <!-- Submit -->
+            <button type="submit">Submit</button>
+            <p><strong>Type:</strong> <code>submit</code> — Submits the form data.</p>
+        </form>
+    </section>
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

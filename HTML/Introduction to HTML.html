@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Introduction to HTML</h1>
+    </header>
+    <section>
+        <h2>What is HTML?</h2>
+        <p>HTML stands for <strong>HyperText Markup Language</strong>. It is the standard language used to create web pages and web applications. HTML structures the content of a website by using various tags and elements.</p>
+        <p>The term "HyperText" refers to the ability to link documents together, enabling navigation between pages via hyperlinks. "Markup Language" means that HTML uses tags to define elements within the document.</p>
+        
+        <h2>Basic Structure of an HTML Document</h2>
+        <p>Every HTML document follows a specific structure. Here's the basic template:</p>
+        <pre>
+&lt;!DOCTYPE html&gt; <!-- Defines the document type -->
+&lt;html&gt; <!-- Root element of the HTML document -->
+    &lt;head&gt; <!-- Contains metadata about the document -->
+        &lt;title&gt;Page Title&lt;/title&gt; <!-- Sets the title of the page -->
+    &lt;/head&gt;
+    &lt;body&gt; <!-- Main content of the document -->
+        &lt;h1&gt;Welcome to HTML&lt;/h1&gt;
+        &lt;p&gt;This is a simple paragraph.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+        <h2>Key Features of HTML</h2>
+        <p>HTML is a foundational technology for the web. Some of its key features include:</p>
+        <ul>
+            <li><strong>Tag-based Structure:</strong> HTML uses tags like &lt;h1&gt;, &lt;p&gt;, and &lt;div&gt; to structure content.</li>
+            <li><strong>Attributes:</strong> Tags can have attributes (e.g., <code>class</code>, <code>id</code>, <code>src</code>) to provide additional properties or styling hooks.</li>
+            <li><strong>Browser Compatibility:</strong> HTML works across all modern web browsers.</li>
+            <li><strong>Interoperability:</strong> HTML works seamlessly with CSS for styling and JavaScript for interactivity.</li>
+        </ul>
+
+        <h2>HTML Tags and Elements</h2>
+        <p>HTML documents are made up of various tags and elements. Here's an overview:</p>
+        <ul>
+            <li><strong>Headings:</strong> Used to define titles and subtitles. Tags range from &lt;h1&gt; (most important) to &lt;h6&gt; (least important).</li>
+            <li><strong>Paragraphs:</strong> The &lt;p&gt; tag defines blocks of text.</li>
+            <li><strong>Links:</strong> The &lt;a&gt; tag creates hyperlinks to other pages or resources. Example: &lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;.</li>
+            <li><strong>Images:</strong> The &lt;img&gt; tag embeds images. Example: &lt;img src="image.jpg" alt="Description"&gt;.</li>
+            <li><strong>Lists:</strong> 
+                <ul>
+                    <li>&lt;ul&gt;: Unordered list (bullets).</li>
+                    <li>&lt;ol&gt;: Ordered list (numbers).</li>
+                    <li>&lt;li&gt;: List item.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>HTML Attributes</h2>
+        <p>Attributes provide additional information about elements. Common attributes include:</p>
+        <ul>
+            <li><strong>class:</strong> Used to assign a CSS class for styling.</li>
+            <li><strong>id:</strong> Assigns a unique identifier to an element.</li>
+            <li><strong>href:</strong> Specifies the URL for a link.</li>
+            <li><strong>src:</strong> Specifies the source file for media elements like images and videos.</li>
+            <li><strong>alt:</strong> Provides alternative text for images.</li>
+        </ul>
+
+        <h2>Example: A Simple HTML Page</h2>
+        <p>Here's a complete example of a basic HTML page:</p>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My First Web Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+        &lt;p&gt;This is a paragraph about me.&lt;/p&gt;
+        &lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
+        &lt;img src="profile.jpg" alt="My Profile Photo"&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+    </section>
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

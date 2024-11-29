@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Responsive Design</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #0078d7;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0078d7;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Basic Grid Layout */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .box {
+            background-color: #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        /* For mobile devices */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* For small devices like smartphones */
+        @media (max-width: 480px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HTML Responsive Design</h1>
+    </header>
+
+    <section>
+        <h2>What is Responsive Design?</h2>
+        <p>Responsive Web Design (RWD) is a web design approach that ensures web pages look good on all devices (desktops, tablets, and mobile phones). With responsive design, the layout and content of a webpage adapt based on the size of the screen or viewport.</p>
+
+        <h2>Basic Responsive Layout</h2>
+        <p>In responsive design, CSS media queries are used to apply different styles based on the screen width. By using fluid layouts, flexible grids, and media queries, a website can be made responsive.</p>
+
+        <h3>Example: Simple Grid Layout</h3>
+        <div class="container">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+        </div>
+
+        <h2>CSS Media Queries</h2>
+        <p>CSS Media Queries allow the web page to be styled differently based on the characteristics of the device or viewport. They are commonly used to apply different layouts for mobile, tablet, and desktop screens.</p>
+
+        <h3>Example of Media Queries</h3>
+        <pre>
+        @media (max-width: 768px) {
+            /* Styles for tablets and below */
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Styles for smartphones */
+            .container {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+        </pre>
+
+        <h2>Responsive Images</h2>
+        <p>Images should also be responsive, meaning they should adjust their size based on the screen size. This can be achieved by using the CSS property <code>max-width: 100%</code>.</p>
+
+        <h3>Example of Responsive Image</h3>
+        <img src="https://via.placeholder.com/600x400" alt="Responsive Image" style="width: 100%; max-width: 100%; height: auto;" />
+
+        <h2>Viewport Meta Tag</h2>
+        <p>The viewport meta tag is essential for making your design responsive on mobile devices. It ensures that the page is scaled appropriately on different screen sizes.</p>
+
+        <h3>Example of Viewport Meta Tag</h3>
+        <pre>
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        </pre>
+
+        <p>This tag tells the browser to scale the page to match the width of the device's screen and sets the initial zoom level.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

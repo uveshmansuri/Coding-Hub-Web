@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Accessibility</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #0078d7;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0078d7;
+            color: white;
+            margin-top: 20px;
+        }
+
+        ul {
+            margin: 10px 0;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Accessibility</h1>
+    </header>
+
+    <section>
+        <h2>What is Web Accessibility?</h2>
+        <p>Web Accessibility refers to designing and developing websites in a way that enables people with disabilities to use them effectively. This includes users with visual impairments, auditory impairments, motor disabilities, and cognitive limitations.</p>
+
+        <h2>Importance of Accessibility</h2>
+        <p>Ensuring that websites are accessible is not only important for inclusivity but also for better SEO, user experience, and legal compliance (e.g., ADA, WCAG standards). Making a website accessible ensures that everyone, regardless of ability, can access the content and interact with the site.</p>
+
+        <h2>HTML Techniques to Improve Accessibility</h2>
+
+        <h3>1. Use Semantic HTML Elements</h3>
+        <p>Semantic HTML elements describe their meaning clearly to both the browser and the developer. Using proper semantic elements helps screen readers interpret content accurately, improving accessibility for users with disabilities.</p>
+
+        <ul>
+            <li><code>&lt;header&gt;</code>: Defines the header of a page.</li>
+            <li><code>&lt;nav&gt;</code>: Used to define a navigation section.</li>
+            <li><code>&lt;main&gt;</code>: Represents the main content of the document.</li>
+            <li><code>&lt;footer&gt;</code>: Defines the footer content.</li>
+        </ul>
+
+        <h3>Example of Semantic HTML</h3>
+        <pre>
+&lt;header&gt;
+    &lt;h1&gt;Welcome to Our Website&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#about"&gt;About Us&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+    &lt;h2&gt;Our Mission&lt;/h2&gt;
+    &lt;p&gt;We aim to provide the best service for our clients.&lt;/p&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;© 2024 Company Name. All Rights Reserved.&lt;/p&gt;
+&lt;/footer&gt;
+        </pre>
+
+        <h3>2. Provide Alt Text for Images</h3>
+        <p>Images should always have descriptive alternative text (alt text) so that screen readers can convey the image's meaning to users who are visually impaired.</p>
+
+        <h3>Example: Image with Alt Text</h3>
+        <pre>
+&lt;img src="logo.png" alt="Company logo, representing our brand identity"&gt;
+        </pre>
+
+        <h3>3. Use ARIA (Accessible Rich Internet Applications) Roles</h3>
+        <p>ARIA roles provide additional information to assistive technologies about the structure and behavior of elements. These roles are useful when using non-semantic elements like <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code> for layout or interactive elements.</p>
+
+        <h3>Example: ARIA Roles</h3>
+        <pre>
+&lt;div role="banner"&gt;Header content&lt;/div&gt;
+&lt;button role="button"&gt;Click Me&lt;/button&gt;
+        </pre>
+
+        <h3>4. Keyboard Navigation</h3>
+        <p>Ensure that all interactive elements, such as buttons and links, are navigable using the keyboard. Users with motor impairments rely on keyboard navigation or alternative input devices.</p>
+
+        <h3>5. Focus Management</h3>
+        <p>Ensure that focus is visible and logical as users navigate through the page. Use the <code>:focus</code> CSS selector to customize the appearance of focused elements, making it easier for keyboard and screen reader users to identify them.</p>
+
+        <h3>Example: CSS for Focus</h3>
+        <pre>
+button:focus {
+    outline: 3px solid blue;
+}
+        </pre>
+
+        <h3>6. Forms and Labels</h3>
+        <p>Forms should be labeled correctly to assist users with screen readers. The <code>label</code> element should be used to associate a label with a form control (input, select, etc.).</p>
+
+        <h3>Example: Form with Labels</h3>
+        <pre>
+&lt;form&gt;
+    &lt;label for="name"&gt;Full Name&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+
+    &lt;label for="email"&gt;Email Address&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+        </pre>
+
+        <h3>7. Color Contrast</h3>
+        <p>Ensure that there is sufficient contrast between text and background colors to aid users with visual impairments, including color blindness. Use tools to check contrast ratios to ensure compliance with WCAG guidelines.</p>
+
+        <h3>8. Skip Links</h3>
+        <p>Provide "skip to content" links that allow users to bypass repetitive navigation and go directly to the main content. This is particularly helpful for screen reader users and those navigating with keyboards.</p>
+
+        <h3>Example: Skip Link</h3>
+        <pre>
+&lt;a href="#main-content"&gt;Skip to main content&lt;/a&gt;
+
+&lt;main id="main-content"&gt;
+    &lt;h1&gt;Main Content&lt;/h1&gt;
+    &lt;p&gt;Here is the main content of the page.&lt;/p&gt;
+&lt;/main&gt;
+        </pre>
+
+        <h2>Testing for Accessibility</h2>
+        <p>To ensure that your website is accessible, you can use various tools such as:</p>
+        <ul>
+            <li><a href="https://wave.webaim.org/" target="_blank">WAVE (Web Accessibility Evaluation Tool)</a></li>
+            <li><a href="https://www.deque.com/axe/" target="_blank">Axe Accessibility Checker</a></li>
+            <li><a href="https://developer.paciellogroup.com/resources/contrastanalyser/" target="_blank">Contrast Analyzer</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

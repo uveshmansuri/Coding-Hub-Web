@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML SVG Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0078d7;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0078d7;
+            color: white;
+            margin-top: 20px;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML SVG (Scalable Vector Graphics)</h1>
+    </header>
+
+    <section>
+        <h2>What is SVG?</h2>
+        <p>SVG (Scalable Vector Graphics) is an XML-based format for vector graphics. It allows you to create high-quality graphics that are scalable without losing resolution. SVG is widely supported by modern browsers and is ideal for creating interactive graphics, illustrations, logos, and animations.</p>
+
+        <h2>Basic Structure of SVG</h2>
+        <p>SVG is embedded within an HTML document using the <code>&lt;svg&gt;</code> element. Within this element, you can define shapes like rectangles, circles, polygons, and paths, as well as style them with CSS or JavaScript.</p>
+
+        <h3>Example: A Simple SVG Shape</h3>
+        <p>Here is an example of an SVG rectangle:</p>
+
+        <svg width="200" height="200">
+            <rect x="50" y="50" width="150" height="100" fill="blue" />
+        </svg>
+
+        <h2>Common SVG Shapes</h2>
+        <p>SVG supports various shapes and graphical elements:</p>
+        <ul>
+            <li><strong>Rectangle (<code>&lt;rect&gt;</code>)</strong>: Used to create rectangles.</li>
+            <li><strong>Circle (<code>&lt;circle&gt;</code>)</strong>: Creates circles.</li>
+            <li><strong>Ellipse (<code>&lt;ellipse&gt;</code>)</strong>: Used for ellipses.</li>
+            <li><strong>Line (<code>&lt;line&gt;</code>)</strong>: Draws straight lines between two points.</li>
+            <li><strong>Polygon (<code>&lt;polygon&gt;</code>)</strong>: Draws a closed shape with multiple sides.</li>
+            <li><strong>Path (<code>&lt;path&gt;</code>)</strong>: Allows you to draw complex shapes and curves.</li>
+        </ul>
+
+        <h3>Example: Drawing a Circle</h3>
+        <p>Here's an example of drawing a circle with SVG:</p>
+
+        <svg width="200" height="200">
+            <circle cx="100" cy="100" r="50" fill="red" />
+        </svg>
+
+        <h2>SVG Path Element</h2>
+        <p>The <code>&lt;path&gt;</code> element is the most versatile element in SVG. It allows you to draw complex shapes by specifying a series of commands. The <code>d</code> attribute defines the path's instructions.</p>
+
+        <h3>Example: Using Path to Draw a Heart</h3>
+        <p>This example demonstrates how to draw a heart shape using the <code>&lt;path&gt;</code> element:</p>
+
+        <svg width="200" height="200">
+            <path d="M 10,30 
+                     C 40,5 65,5 90,30 
+                     C 115,55 145,55 170,30 
+                     C 195,5 220,5 250,30 
+                     C 270,50 270,80 250,110 
+                     C 230,140 190,160 170,150
+                     C 150,140 120,110 90,100
+                     C 60,90 30,110 10,130 Z"
+                  fill="pink" />
+        </svg>
+
+        <h2>SVG with CSS Styling</h2>
+        <p>Just like HTML elements, SVG shapes can be styled using CSS. You can style SVG directly using the <code>style</code> attribute or use external stylesheets.</p>
+
+        <h3>Example: Styling SVG with CSS</h3>
+        <svg width="200" height="200">
+            <rect x="50" y="50" width="100" height="100" class="myRect" />
+        </svg>
+
+        <style>
+            .myRect {
+                fill: green;
+                stroke: black;
+                stroke-width: 5;
+            }
+        </style>
+
+        <h2>Animating SVG with CSS</h2>
+        <p>SVG elements can also be animated using CSS animations. You can animate properties like fill color, stroke width, and transform properties.</p>
+
+        <h3>Example: Animating an SVG Shape</h3>
+        <svg width="200" height="200">
+            <circle cx="100" cy="100" r="50" class="animateCircle" />
+        </svg>
+
+        <style>
+            .animateCircle {
+                fill: blue;
+                transition: fill 0.5s ease;
+            }
+
+            .animateCircle:hover {
+                fill: orange;
+            }
+        </style>
+
+        <h2>SVG Filters</h2>
+        <p>SVG filters allow you to apply graphical effects such as blur, shadows, or lighting to your shapes.</p>
+
+        <h3>Example: Applying a Blur Filter</h3>
+        <svg width="200" height="200">
+            <defs>
+                <filter id="blur-effect" x="0" y="0" width="150%" height="150%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+                </filter>
+            </defs>
+
+            <circle cx="100" cy="100" r="50" fill="blue" filter="url(#blur-effect)" />
+        </svg>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

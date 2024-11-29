@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Web Storage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #0078d7;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0078d7;
+            color: white;
+            margin-top: 20px;
+        }
+
+        ul {
+            margin: 10px 0;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Web Storage</h1>
+    </header>
+
+    <section>
+        <h2>What is Web Storage?</h2>
+        <p>Web Storage is a feature provided by web browsers that allows websites to store data in the browser. It provides more storage capacity compared to cookies and allows for more efficient data management. There are two main types of Web Storage in HTML:</p>
+        <ul>
+            <li><strong>localStorage</strong>: Stores data with no expiration time, even when the browser is closed.</li>
+            <li><strong>sessionStorage</strong>: Stores data for the duration of the page session. The data is cleared when the browser tab is closed.</li>
+        </ul>
+
+        <h2>Why Use Web Storage?</h2>
+        <p>Web Storage allows you to store data on the client side, improving performance and reducing the need for constant server requests. It can be used to store user preferences, form data, or other temporary information that can be accessed later without needing to query the server.</p>
+
+        <h2>localStorage Example</h2>
+        <p>The <code>localStorage</code> object allows you to store key-value pairs persistently in the browser. Data saved in <code>localStorage</code> remains available across browser sessions, even when the page is reloaded or the browser is closed and reopened.</p>
+
+        <h3>Storing Data in localStorage</h3>
+        <pre>
+localStorage.setItem('username', 'JohnDoe');
+        </pre>
+
+        <h3>Retrieving Data from localStorage</h3>
+        <pre>
+let username = localStorage.getItem('username');
+console.log(username); // Output: JohnDoe
+        </pre>
+
+        <h3>Removing Data from localStorage</h3>
+        <pre>
+localStorage.removeItem('username');
+        </pre>
+
+        <h3>Clear All Data in localStorage</h3>
+        <pre>
+localStorage.clear();
+        </pre>
+
+        <h2>sessionStorage Example</h2>
+        <p>The <code>sessionStorage</code> object allows you to store key-value pairs for the duration of the page session. Data is cleared when the page session ends, such as when the browser tab is closed.</p>
+
+        <h3>Storing Data in sessionStorage</h3>
+        <pre>
+sessionStorage.setItem('theme', 'dark');
+        </pre>
+
+        <h3>Retrieving Data from sessionStorage</h3>
+        <pre>
+let theme = sessionStorage.getItem('theme');
+console.log(theme); // Output: dark
+        </pre>
+
+        <h3>Removing Data from sessionStorage</h3>
+        <pre>
+sessionStorage.removeItem('theme');
+        </pre>
+
+        <h3>Clear All Data in sessionStorage</h3>
+        <pre>
+sessionStorage.clear();
+        </pre>
+
+        <h2>Key Differences Between localStorage and sessionStorage</h2>
+        <ul>
+            <li><strong>Data Persistence:</strong> <code>localStorage</code> persists data even when the browser is closed and reopened, while <code>sessionStorage</code> only persists data for the current page session (until the tab is closed).</li>
+            <li><strong>Storage Capacity:</strong> Both <code>localStorage</code> and <code>sessionStorage</code> typically offer more storage capacity compared to cookies, with sizes ranging from 5MB to 10MB depending on the browser.</li>
+            <li><strong>Scope:</strong> <code>localStorage</code> data is shared across all tabs and windows of the same origin, while <code>sessionStorage</code> is specific to the tab or window in which the data was stored.</li>
+        </ul>
+
+        <h2>Browser Support for Web Storage</h2>
+        <p>Web Storage is widely supported across modern browsers, including Google Chrome, Firefox, Safari, and Edge. However, it’s essential to check for support before using it in production to ensure compatibility with older browsers.</p>
+
+        <h3>Example: Check for Web Storage Support</h3>
+        <pre>
+if (typeof(Storage) !== "undefined") {
+    console.log("Web Storage is supported.");
+} else {
+    console.log("Web Storage is not supported.");
+}
+        </pre>
+
+        <h2>Best Practices for Using Web Storage</h2>
+        <ul>
+            <li>Use <code>localStorage</code> for data that needs to persist across browser sessions, such as user preferences or login status.</li>
+            <li>Use <code>sessionStorage</code> for temporary data that is needed only during the current session, like a user's current shopping cart.</li>
+            <li>Always validate and sanitize any data stored in Web Storage to prevent security issues, such as XSS (Cross-site Scripting) attacks.</li>
+            <li>Clear sensitive or private data from Web Storage when it is no longer needed.</li>
+        </ul>
+
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

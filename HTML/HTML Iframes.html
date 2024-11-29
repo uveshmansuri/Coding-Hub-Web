@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Iframes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Iframes</h1>
+    </header>
+
+    <section>
+        <h2>What is an Iframe?</h2>
+        <p>An <code>&lt;iframe&gt;</code> (Inline Frame) is an HTML element used to embed another HTML document within the current page. It allows you to display content from another source, such as an external webpage, video, or document.</p>
+        
+        <p>It is commonly used for embedding content like Google Maps, videos from YouTube, advertisements, or other external resources into your webpage without redirecting the user.</p>
+
+        <h2>Basic Example of an Iframe</h2>
+        <p>The following example embeds an external website (e.g., "https://www.example.com") within an iframe on the current page:</p>
+
+        <iframe src="https://www.example.com" title="Example Website"></iframe>
+        <p>This is an iframe that loads the content of "https://www.example.com" within this webpage. The <code>src</code> attribute specifies the URL of the external content you want to embed.</p>
+
+        <h2>Attributes of the <code>&lt;iframe&gt;</code> Element</h2>
+        <p>The <code>&lt;iframe&gt;</code> element has several useful attributes:</p>
+        <ul>
+            <li><strong>src:</strong> The URL of the document to embed in the iframe. It can be any valid URL (HTTP, HTTPS, relative paths, etc.).</li>
+            <li><strong>width:</strong> Specifies the width of the iframe (can be set in pixels or percentage). If not specified, the default width is 300px.</li>
+            <li><strong>height:</strong> Specifies the height of the iframe (can be set in pixels or percentage). The default height is 150px.</li>
+            <li><strong>title:</strong> A description of the iframe content for accessibility. This is important for screen readers and helps users understand what the embedded content is.</li>
+            <li><strong>frameborder:</strong> Specifies whether or not to display a border around the iframe. Set to "0" for no border and "1" for a border. This attribute is deprecated in HTML5, so it's better to use CSS for styling borders.</li>
+            <li><strong>allowfullscreen:</strong> Allows the iframe content to go into fullscreen mode, typically used for video content.</li>
+            <li><strong>loading:</strong> Specifies if the iframe should be lazily loaded (using "lazy") or load immediately ("eager").</li>
+            <li><strong>sandbox:</strong> Enables an extra set of restrictions for the content within the iframe for security purposes. It can prevent the iframe content from running scripts, submitting forms, etc.</li>
+        </ul>
+
+        <h2>Advanced Example of an Iframe (Embedding a YouTube Video)</h2>
+        <p>Below is an example of embedding a YouTube video within an iframe:</p>
+
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube Video" allowfullscreen></iframe>
+        <p>This iframe embeds a YouTube video. The <code>allowfullscreen</code> attribute allows the video to go full screen when played.</p>
+
+        <h2>Iframe Security Considerations</h2>
+        <p>While iframes are powerful, they can also introduce security risks if misused. Here are some important security features to consider when working with iframes:</p>
+        <ul>
+            <li><strong>Sandboxing:</strong> The <code>sandbox</code> attribute provides a way to isolate iframe content. It restricts scripts from running, prevents form submissions, and blocks plugins. This is useful for embedding untrusted content.</li>
+            <li><strong>Cross-origin Resource Sharing (CORS):</strong> Iframes that load content from a different domain may face restrictions due to CORS policies. Ensure that the external source permits embedding.</li>
+            <li><strong>Clickjacking:</strong> Attackers can hide malicious content inside iframes, tricking users into clicking buttons or links unintentionally. Protect against this by using the <code>X-Frame-Options</code> HTTP header to prevent your website from being embedded in iframes.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Links - Comprehensive Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        footer {
+            background: #0078d7;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+        }
+
+        a {
+            color: #0078d7;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Links</h1>
+    </header>
+    <section>
+        <h2>Introduction</h2>
+        <p>Links in HTML, also known as **hyperlinks**, allow users to navigate between different pages, sections, or even websites. They are created using the <code>&lt;a&gt;</code> (anchor) tag.</p>
+    </section>
+    <section>
+        <h2>Basic Syntax</h2>
+        <p>The basic syntax for creating a hyperlink is:</p>
+        <pre>
+&lt;a href="URL"&gt;Link Text&lt;/a&gt;
+        </pre>
+        <p>Where:</p>
+        <ul>
+            <li><strong>href:</strong> Specifies the URL or location the link points to.</li>
+            <li><strong>Link Text:</strong> The clickable text displayed on the webpage.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Types of Links</h2>
+        <p>HTML links can point to various destinations:</p>
+        <h3>1. Links to External Websites</h3>
+        <pre>
+&lt;a href="https://www.google.com"&gt;Visit Google&lt;/a&gt;
+        </pre>
+        <p>Example: <a href="https://www.google.com" target="_blank">Visit Google</a></p>
+
+        <h3>2. Links to Internal Pages</h3>
+        <pre>
+&lt;a href="about.html"&gt;About Us&lt;/a&gt;
+        </pre>
+        <p>Example: <a href="about.html">About Us</a></p>
+
+        <h3>3. Links to Specific Sections (Anchor Links)</h3>
+        <p>Anchor links navigate to a specific section within the same page or another page.</p>
+        <pre>
+&lt;a href="#section1"&gt;Go to Section 1&lt;/a&gt;
+
+&lt;h2 id="section1"&gt;Section 1&lt;/h2&gt;
+        </pre>
+        <p>Example: <a href="#example-section">Go to Example Section</a></p>
+
+        <h3>4. Email Links</h3>
+        <p>Use the <code>mailto:</code> prefix to create an email link.</p>
+        <pre>
+&lt;a href="mailto:example@example.com"&gt;Email Us&lt;/a&gt;
+        </pre>
+        <p>Example: <a href="mailto:example@example.com">Email Us</a></p>
+
+        <h3>5. Links to Download Files</h3>
+        <p>Provide a direct link to a file for users to download.</p>
+        <pre>
+&lt;a href="file.pdf" download&gt;Download File&lt;/a&gt;
+        </pre>
+        <p>Example: <a href="file.pdf" download>Download File</a></p>
+    </section>
+    <section>
+        <h2>Attributes of the <code>&lt;a&gt;</code> Tag</h2>
+        <p>Additional attributes can modify the behavior of links:</p>
+        <ul>
+            <li><strong>target:</strong> Specifies where to open the linked document.
+                <ul>
+                    <li><code>_self</code> (default): Opens the link in the same tab.</li>
+                    <li><code>_blank</code>: Opens the link in a new tab.</li>
+                    <li><code>_parent</code>: Opens the link in the parent frame.</li>
+                    <li><code>_top</code>: Opens the link in the full body of the window.</li>
+                </ul>
+            </li>
+            <li><strong>rel:</strong> Specifies the relationship between the current page and the linked page (e.g., <code>nofollow</code>, <code>noopener</code>).</li>
+        </ul>
+        <p>Example:</p>
+        <pre>
+&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;Visit Example&lt;/a&gt;
+        </pre>
+    </section>
+    <section id="example-section">
+        <h2>Practical Examples</h2>
+        <p>Here’s how different types of links look:</p>
+        <ul>
+            <li>External Link: <a href="https://www.wikipedia.org" target="_blank">Visit Wikipedia</a></li>
+            <li>Internal Link: <a href="contact.html">Contact Us</a></li>
+            <li>Anchor Link: <a href="#top">Back to Top</a></li>
+            <li>Email Link: <a href="mailto:support@example.com">Contact Support</a></li>
+            <li>File Download: <a href="example.zip" download>Download Example.zip</a></li>
+        </ul>
+    </section>
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

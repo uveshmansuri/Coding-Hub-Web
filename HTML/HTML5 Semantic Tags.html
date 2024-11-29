@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Semantic Tags</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+            margin-top: 0;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML5 Semantic Tags</h1>
+    </header>
+    <section>
+        <h2>What Are Semantic Tags?</h2>
+        <p>HTML5 introduced semantic tags to improve the structure and meaning of web content. These tags describe the role of the content within them, making it easier for search engines and developers to understand the layout of a webpage.</p>
+
+        <h2>Benefits of Semantic Tags</h2>
+        <ul>
+            <li>Improves the readability of code.</li>
+            <li>Enhances SEO (Search Engine Optimization).</li>
+            <li>Facilitates better accessibility for assistive technologies.</li>
+            <li>Makes the structure of a webpage more meaningful.</li>
+        </ul>
+
+        <h2>Common HTML5 Semantic Tags</h2>
+
+        <!-- Header Section -->
+        <div>
+            <h3>&lt;header&gt;</h3>
+            <p>The <code>&lt;header&gt;</code> tag defines the header of a webpage or a section. It typically contains introductory content or navigation links.</p>
+        </div>
+
+        <!-- Nav Section -->
+        <nav>
+            <h3>&lt;nav&gt;</h3>
+            <p>The <code>&lt;nav&gt;</code> tag is used to define a block of navigation links.</p>
+            <p><strong>Example:</strong></p>
+            <pre>
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#services"&gt;Services&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+            </pre>
+        </nav>
+
+        <!-- Main Section -->
+        <main>
+            <h3>&lt;main&gt;</h3>
+            <p>The <code>&lt;main&gt;</code> tag is used to define the main content of a webpage. This section should contain the unique content relevant to the page.</p>
+        </main>
+
+        <!-- Section -->
+        <section>
+            <h3>&lt;section&gt;</h3>
+            <p>The <code>&lt;section&gt;</code> tag represents a thematic grouping of content, typically with its own heading.</p>
+            <p><strong>Example:</strong></p>
+            <pre>
+&lt;section&gt;
+    &lt;h2&gt;About Us&lt;/h2&gt;
+    &lt;p&gt;We provide the best services to our customers.&lt;/p&gt;
+&lt;/section&gt;
+            </pre>
+        </section>
+
+        <!-- Article Section -->
+        <article>
+            <h3>&lt;article&gt;</h3>
+            <p>The <code>&lt;article&gt;</code> tag represents a self-contained piece of content, such as a blog post, news article, or forum entry.</p>
+        </article>
+
+        <!-- Aside Section -->
+        <aside>
+            <h3>&lt;aside&gt;</h3>
+            <p>The <code>&lt;aside&gt;</code> tag is used for content that is related but separate from the main content, such as sidebars, quotes, or advertisements.</p>
+        </aside>
+
+        <!-- Footer Section -->
+        <footer>
+            <h3>&lt;footer&gt;</h3>
+            <p>The <code>&lt;footer&gt;</code> tag defines the footer for a section or a webpage. It usually contains information like copyright notices, contact info, or links.</p>
+        </footer>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

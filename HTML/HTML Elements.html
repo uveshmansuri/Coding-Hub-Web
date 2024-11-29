@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Elements and Attributes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Elements and Attributes</h1>
+    </header>
+    <section>
+        <h2>What are HTML Elements?</h2>
+        <p>An <strong>HTML element</strong> is the building block of HTML. It consists of a start tag, content, and an end tag.</p>
+        <p>The general syntax of an element is:</p>
+        <pre>
+&lt;tagname&gt;Content&lt;/tagname&gt;
+        </pre>
+        <p>For example:</p>
+        <pre>
+&lt;h1&gt;This is a heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+        </pre>
+
+        <h3>Types of HTML Elements</h3>
+        <ul>
+            <li><strong>Block-Level Elements:</strong> These elements start on a new line and take up the full width of the container. Examples include:
+                <ul>
+                    <li>&lt;div&gt;</li>
+                    <li>&lt;p&gt;</li>
+                    <li>&lt;h1&gt; to &lt;h6&gt;</li>
+                </ul>
+            </li>
+            <li><strong>Inline Elements:</strong> These elements do not start on a new line and only take up as much width as necessary. Examples include:
+                <ul>
+                    <li>&lt;span&gt;</li>
+                    <li>&lt;a&gt;</li>
+                    <li>&lt;img&gt;</li>
+                </ul>
+            </li>
+            <li><strong>Void Elements:</strong> These elements do not have closing tags. Examples include:
+                <ul>
+                    <li>&lt;br&gt; (line break)</li>
+                    <li>&lt;img&gt; (image)</li>
+                    <li>&lt;input&gt; (form input)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>What are HTML Attributes?</h2>
+        <p>An <strong>attribute</strong> provides additional information about an HTML element. Attributes are always specified in the opening tag and come in name-value pairs like this:</p>
+        <pre>
+&lt;tagname attribute="value"&gt;Content&lt;/tagname&gt;
+        </pre>
+        <p>For example:</p>
+        <pre>
+&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
+        </pre>
+
+        <h3>Commonly Used HTML Attributes</h3>
+        <ul>
+            <li><strong>href:</strong> Specifies the URL for a link (used with &lt;a&gt; tags).</li>
+            <li><strong>src:</strong> Specifies the source file for media (used with &lt;img&gt; and &lt;video&gt; tags).</li>
+            <li><strong>alt:</strong> Provides alternative text for images.</li>
+            <li><strong>id:</strong> Assigns a unique identifier to an element.</li>
+            <li><strong>class:</strong> Groups elements for CSS styling.</li>
+            <li><strong>style:</strong> Adds inline CSS to an element.</li>
+            <li><strong>target:</strong> Specifies how to open a link (e.g., "_blank" for a new tab).</li>
+        </ul>
+
+        <h3>Example with Multiple Attributes</h3>
+        <pre>
+&lt;img src="example.jpg" alt="An example image" width="300" height="200"&gt;
+        </pre>
+
+        <h2>HTML Nested Elements</h2>
+        <p>HTML allows nesting one element inside another to create a hierarchy. Example:</p>
+        <pre>
+&lt;div&gt;
+    &lt;h1&gt;Welcome to My Page&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph inside a &lt;strong&gt;div&lt;/strong&gt; element.&lt;/p&gt;
+&lt;/div&gt;
+        </pre>
+
+        <h2>HTML Global Attributes</h2>
+        <p>Global attributes can be used with any HTML element. Some common global attributes include:</p>
+        <ul>
+            <li><strong>id:</strong> Specifies a unique identifier for an element.</li>
+            <li><strong>class:</strong> Assigns one or more class names for styling.</li>
+            <li><strong>style:</strong> Adds inline styles to an element.</li>
+            <li><strong>title:</strong> Provides additional information when hovered over.</li>
+            <li><strong>lang:</strong> Declares the language of the element’s content.</li>
+        </ul>
+        <p>Example:</p>
+        <pre>
+&lt;p id="intro" class="highlight" style="color: blue;" title="Introduction"&gt;
+    This is an introductory paragraph.
+&lt;/p&gt;
+        </pre>
+    </section>
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

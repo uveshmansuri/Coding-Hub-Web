@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Styles</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0078d7;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 10px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+        }
+
+        p {
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        /* Styling for classes and IDs */
+        .highlight {
+            background-color: #ffeb3b;
+            font-weight: bold;
+        }
+
+        #important-text {
+            color: #e91e63;
+        }
+
+        /* Styling for links */
+        a {
+            color: #0078d7;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling a table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #0078d7;
+            color: white;
+        }
+
+        /* Styling form elements */
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #0078d7;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Styles Overview</h1>
+    </header>
+
+    <section>
+        <h2>What are HTML Styles?</h2>
+        <p>HTML styles allow you to control the appearance of elements in your webpage. Styling can be achieved through three main methods:</p>
+        <ul>
+            <li><strong>Inline Styles</strong>: Apply styles directly to an element using the <code>style</code> attribute.</li>
+            <li><strong>Internal CSS</strong>: Use the <code>&lt;style&gt;</code> element within the <code>&lt;head&gt;</code> section of your HTML document.</li>
+            <li><strong>External CSS</strong>: Link to an external stylesheet using the <code>&lt;link&gt;</code> element, which keeps the style separate from the HTML content.</li>
+        </ul>
+
+        <h2>Inline Styles</h2>
+        <p>Inline styles are used to apply CSS directly within an HTML tag using the <code>style</code> attribute.</p>
+        <p style="color: red;">This is a paragraph with inline styling.</p>
+
+        <h2>Internal CSS</h2>
+        <p>Internal CSS is defined within the <code>&lt;style&gt;</code> element, which is placed in the <code>&lt;head&gt;</code> section of the HTML document. It is best for small to medium-sized projects where styling is applied to a single page.</p>
+
+        <h2>External CSS</h2>
+        <p>External CSS is when the CSS rules are placed in a separate file with a .css extension. The external file is linked to the HTML file using the <code>&lt;link&gt;</code> element. This is the most efficient way to style multiple pages of a website.</p>
+        <p>For example, an external CSS file would look like this:</p>
+        <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+        
+        <h2>CSS Selectors</h2>
+        <p>CSS selectors are patterns used to select the elements to apply styles. Here are the common types:</p>
+        <ul>
+            <li><strong>Element Selector</strong>: Targets all elements of a given type (e.g., <code>p</code>, <code>h1</code>). Example: <code>p { color: blue; }</code></li>
+            <li><strong>Class Selector</strong>: Targets all elements with a specific class (e.g., <code>.highlight</code>). Example: <code>.highlight { background-color: yellow; }</code></li>
+            <li><strong>ID Selector</strong>: Targets a specific element with a given ID (e.g., <code>#important-text</code>). Example: <code>#important-text { font-size: 20px; }</code></li>
+            <li><strong>Attribute Selector</strong>: Targets elements based on their attributes (e.g., <code>input[type="text"]</code>).</li>
+        </ul>
+
+        <h2>Example: Styling a Table</h2>
+        <p>Here’s an example of styling a table:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                    <th>Header 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Row 1, Cell 1</td>
+                    <td>Row 1, Cell 2</td>
+                    <td>Row 1, Cell 3</td>
+                </tr>
+                <tr>
+                    <td>Row 2, Cell 1</td>
+                    <td>Row 2, Cell 2</td>
+                    <td>Row 2, Cell 3</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Styling Form Elements</h2>
+        <p>Form elements can also be styled using CSS. Here is an example:</p>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

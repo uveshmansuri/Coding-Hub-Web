@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Page Structure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: #0078d7;
+            border-radius: 5px;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0078d7;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        footer {
+            background: #0078d7;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Page Structure </h1>
+    </header>
+    <section id="intro">
+        <h2>Introduction</h2>
+        <p>An HTML page structure serves as the foundation of any web document. It organizes content and metadata, enabling browsers to display the page correctly. The structure follows a hierarchy, starting from the document type declaration to the arrangement of the <strong>head</strong> and <strong>body</strong> sections.</p>
+    </section>
+    <section id="basic-structure">
+        <h2>Basic Structure of an HTML Page</h2>
+        <p>The basic structure of an HTML page is standardized for consistency and readability. It includes:</p>
+        <ul>
+            <li><strong>Document Type Declaration (&lt;!DOCTYPE html&gt;):</strong> Defines the document as an HTML5 document.</li>
+            <li><strong>&lt;html&gt; Element:</strong> The root element that contains the entire HTML document.</li>
+            <li><strong>&lt;head&gt; Element:</strong> Contains metadata, styles, and links to external resources.</li>
+            <li><strong>&lt;body&gt; Element:</strong> Contains all the visible content displayed on the webpage.</li>
+        </ul>
+        <p>The general structure looks like this:</p>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;title&gt;Page Title&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        Content goes here
+    &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+    </section>
+    <section id="head-section">
+        <h2>Head Section</h2>
+        <p>The <strong>&lt;head&gt;</strong> section contains information about the document that is not displayed directly on the page. It typically includes:</p>
+        <ul>
+            <li><strong>&lt;title&gt;:</strong> Sets the title of the document, displayed in the browser's title bar or tab.</li>
+            <li><strong>&lt;meta&gt;:</strong> Provides metadata about the document, such as character encoding and author.</li>
+            <li><strong>&lt;link&gt;:</strong> Links to external stylesheets or resources.</li>
+            <li><strong>&lt;style&gt;:</strong> Adds internal CSS styles.</li>
+            <li><strong>&lt;script&gt;:</strong> Links or embeds JavaScript for interactivity.</li>
+        </ul>
+        <p>Example:</p>
+        <pre>
+&lt;head&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="description" content="An example webpage"&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+        </pre>
+    </section>
+    <section id="body-section">
+        <h2>Body Section</h2>
+        <p>The <strong>&lt;body&gt;</strong> section contains the visible content displayed to users, such as text, images, links, and other elements.</p>
+        <p>Common elements inside the <strong>&lt;body&gt;</strong> include:</p>
+        <ul>
+            <li><strong>&lt;header&gt;:</strong> Displays the header section, often containing navigation menus or logos.</li>
+            <li><strong>&lt;nav&gt;:</strong> Provides a navigation bar for linking to other sections or pages.</li>
+            <li><strong>&lt;section&gt;:</strong> Groups related content into blocks.</li>
+            <li><strong>&lt;article&gt;:</strong> Represents self-contained content, such as blog posts or news articles.</li>
+            <li><strong>&lt;footer&gt;:</strong> Displays footer information like copyright or contact details.</li>
+        </ul>
+        <p>Example of a simple <strong>&lt;body&gt;</strong> structure:</p>
+        <pre>
+&lt;body&gt;
+    &lt;header&gt;Welcome to My Website&lt;/header&gt;
+    &lt;nav&gt;
+        &lt;a href="#section1"&gt;Section 1&lt;/a&gt;
+        &lt;a href="#section2"&gt;Section 2&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;main&gt;
+        &lt;section id="section1"&gt;Content for Section 1&lt;/section&gt;
+        &lt;section id="section2"&gt;Content for Section 2&lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;Footer Content&lt;/footer&gt;
+&lt;/body&gt;
+        </pre>
+    </section>
+    <footer id="footer">
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

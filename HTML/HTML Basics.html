@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics: A Comprehensive Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3 {
+            color: #0078d7;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 30px;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        a {
+            color: #0078d7;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Basics</h1>
+    </header>
+    <section>
+        <h2>What is HTML?</h2>
+        <p>HTML, or <strong>HyperText Markup Language</strong>, is the foundation of web development. It is a markup language used to structure and display content on the web. HTML is not a programming language but a descriptive language that uses tags to define elements.</p>
+        <p>It works alongside <strong>CSS</strong> (for styling) and <strong>JavaScript</strong> (for interactivity) to create dynamic, user-friendly web pages.</p>
+
+        <h3>Key Features of HTML</h3>
+        <ul>
+            <li>Provides structure and layout to web pages.</li>
+            <li>Supports multimedia elements like images, videos, and audio.</li>
+            <li>Works across all browsers and devices.</li>
+            <li>Extensible with frameworks like Bootstrap for advanced features.</li>
+        </ul>
+
+        <h2>Basic HTML Document Structure</h2>
+        <p>An HTML document starts with a declaration and is divided into two main parts: <strong>head</strong> and <strong>body</strong>.</p>
+        <pre>
+&lt;!DOCTYPE html&gt; <!-- Declares document type as HTML5 -->
+&lt;html&gt; <!-- Root element -->
+    &lt;head&gt;
+        &lt;title&gt;My First Web Page&lt;/title&gt; <!-- Page title -->
+        &lt;meta charset="UTF-8"&gt; <!-- Character encoding -->
+    &lt;/head&gt;
+    &lt;body&gt; <!-- Visible content -->
+        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+        &lt;p&gt;This is a simple HTML document.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+        <h2>Common HTML Tags</h2>
+        <p>HTML uses a variety of tags to define elements. Here are some commonly used ones:</p>
+        <ul>
+            <li><strong>&lt;h1&gt; to &lt;h6&gt;:</strong> Defines headings, with &lt;h1&gt; being the largest and &lt;h6&gt; the smallest.</li>
+            <li><strong>&lt;p&gt;:</strong> Defines a paragraph.</li>
+            <li><strong>&lt;a&gt;:</strong> Creates hyperlinks. Example:
+                <pre>&lt;a href="https://example.com"&gt;Click Here&lt;/a&gt;</pre>
+            </li>
+            <li><strong>&lt;img&gt;:</strong> Embeds images. Example:
+                <pre>&lt;img src="image.jpg" alt="Description"&gt;</pre>
+            </li>
+            <li><strong>&lt;ul&gt; and &lt;ol&gt;:</strong> Define unordered and ordered lists. Example:
+                <pre>
+&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+                </pre>
+            </li>
+        </ul>
+
+        <h2>HTML Attributes</h2>
+        <p>Attributes add extra information to elements. They are written within the opening tag and usually come in key-value pairs.</p>
+        <ul>
+            <li><strong>href:</strong> Specifies the URL of a link (used with &lt;a&gt;).</li>
+            <li><strong>src:</strong> Specifies the source file (used with &lt;img&gt;, &lt;video&gt;, etc.).</li>
+            <li><strong>alt:</strong> Provides alternative text for an image.</li>
+            <li><strong>class:</strong> Assigns a class name for styling with CSS.</li>
+            <li><strong>id:</strong> Assigns a unique identifier to an element.</li>
+        </ul>
+        <pre>
+Example:
+&lt;a href="https://example.com" target="_blank"&gt;Visit Example&lt;/a&gt;
+        </pre>
+
+        <h2>HTML Media Elements</h2>
+        <p>HTML supports various media elements, such as:</p>
+        <ul>
+            <li><strong>&lt;audio&gt;:</strong> Embeds audio files. Example:
+                <pre>
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+                </pre>
+            </li>
+            <li><strong>&lt;video&gt;:</strong> Embeds video files. Example:
+                <pre>
+&lt;video controls width="640" height="360"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;
+                </pre>
+            </li>
+        </ul>
+
+        <h2>Semantic HTML</h2>
+        <p>Semantic HTML introduces meaningful tags to improve accessibility and SEO. Examples include:</p>
+        <ul>
+            <li><strong>&lt;header&gt;:</strong> Defines the header section.</li>
+            <li><strong>&lt;nav&gt;:</strong> Defines a navigation bar.</li>
+            <li><strong>&lt;article&gt;:</strong> Defines an article or piece of content.</li>
+            <li><strong>&lt;footer&gt;:</strong> Defines the footer section.</li>
+        </ul>
+        <p>Example:</p>
+        <pre>
+&lt;header&gt;
+    &lt;h1&gt;Welcome to My Blog&lt;/h1&gt;
+&lt;/header&gt;
+&lt;nav&gt;
+    &lt;a href="#home"&gt;Home&lt;/a&gt; | &lt;a href="#about"&gt;About&lt;/a&gt;
+&lt;/nav&gt;
+&lt;article&gt;
+    &lt;h2&gt;Blog Post Title&lt;/h2&gt;
+    &lt;p&gt;This is the content of the blog post.&lt;/p&gt;
+&lt;/article&gt;
+&lt;footer&gt;
+    &lt;p&gt;© 2024 My Blog. All rights reserved.&lt;/p&gt;
+&lt;/footer&gt;
+        </pre>
+
+        <h2>HTML Forms</h2>
+        <p>Forms are used to collect user input. Example:</p>
+        <pre>
+&lt;form action="submit.php" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+        </pre>
+    </section>
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
