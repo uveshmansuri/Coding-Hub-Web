@@ -4,81 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Hierarchy: RAM, ROM, Cache, and Secondary Storage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-
-        h3 {
-            color: #333;
-            margin-top: 15px;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-        }
-
-        .img-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .img-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 10px;
-                margin: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
@@ -202,7 +128,7 @@
     </section>
 
     <section>
-        <h2>Memory Hierarchy Overview</h2>
+        <h2>Overview</h2>
         <p>The memory hierarchy is structured in such a way that different types of memory provide varying speeds and capacities. At the top of the hierarchy, we have the fastest and most expensive types of memory, which are also the smallest in size. At the bottom, we have larger but slower forms of memory. Here's a summary:</p>
 
         <ul>
@@ -211,12 +137,17 @@
             <li><strong>Main Memory (RAM):</strong> Larger than cache, provides fast access but is still volatile.</li>
             <li><strong>Secondary Storage:</strong> Non-volatile, large storage for long-term data retention, such as HDDs and SSDs.</li>
         </ul>
+        
+        <div class="img-container">
+            <img src="Memory-Hierarchy-Design-img.png">
+        </div>
 
         <p>This hierarchy ensures that the computer can access the most frequently used data in the fastest possible time while still being able to handle large amounts of less frequently used data.</p>
 
-        <footer>
-            <p>© By Coding Hub. All Rights Reserved.</p>
-        </footer>
     </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
