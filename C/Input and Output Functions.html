@@ -4,66 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input and Output Functions in C</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 10px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-
-        pre {
-            background-color: #f4f4f4;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            font-family: monospace;
-            color: #333;
-            overflow-x: auto;
-        }
-        
-        @media (max-width: 768px) {
-            .comparison > div {
-                flex: 1 1 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
@@ -88,37 +29,40 @@ printf("format string", argument1, argument2, ...);
         </pre>
 
         <h3>Format Specifiers:</h3>
-        <table border="1" cellpadding="10" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Specifier</th>
-                    <th>Data Type</th>
-                    <th>Example</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>%d</td>
-                    <td>Integer</td>
-                    <td>printf("Number: %d", 10);</td>
-                </tr>
-                <tr>
-                    <td>%f</td>
-                    <td>Floating-point</td>
-                    <td>printf("Value: %f", 3.14);</td>
-                </tr>
-                <tr>
-                    <td>%c</td>
-                    <td>Character</td>
-                    <td>printf("Grade: %c", 'A');</td>
-                </tr>
-                <tr>
-                    <td>%s</td>
-                    <td>String</td>
-                    <td>printf("Name: %s", "John");</td>
-                </tr>
-            </tbody>
-        </table>
+
+        <section>
+            <table border="1" cellpadding="10" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Specifier</th>
+                        <th>Data Type</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>%d</td>
+                        <td>Integer</td>
+                        <td>printf("Number: %d", 10);</td>
+                    </tr>
+                    <tr>
+                        <td>%f</td>
+                        <td>Floating-point</td>
+                        <td>printf("Value: %f", 3.14);</td>
+                    </tr>
+                    <tr>
+                        <td>%c</td>
+                        <td>Character</td>
+                        <td>printf("Grade: %c", 'A');</td>
+                    </tr>
+                    <tr>
+                        <td>%s</td>
+                        <td>String</td>
+                        <td>printf("Name: %s", "John");</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
         <h3>Example:</h3>
         <pre>
