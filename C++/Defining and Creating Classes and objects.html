@@ -4,55 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Defining and Creating Classes and Objects in C++</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 10px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-        pre {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-        code{
-            background-color: #002aff;
-            color: #ffffff;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
@@ -65,6 +17,11 @@
         <p>C++ is an object-oriented programming (OOP) language, and 
             understanding classes and objects is essential to mastering the language.
             <br>A <strong>class</strong> is a blueprint for creating objects, which are instances of the class. A class encapsulates data for the object and functions to manipulate that data.</p>
+
+            <div class="img-container">
+                <img src="../class_obj_img.png" width="100%">
+                <p>Example of Class and Object</p>
+            </div>
 
         <h3>Class Structure</h3>
         <p>A class in C++ is a collection of data members (variables) and member functions (methods) grouped together. The data members represent the attributes of an object, and the member functions define the behavior or actions of that object.</p>
@@ -90,7 +47,7 @@ class ClassName {
 
         <h3>Example of Defining a Class</h3>
         <pre>
-#include <iostream>
+#include &lt;iostream&gt;
 using namespace std;
 
 class Car {
@@ -132,6 +89,7 @@ ClassName objectName;
 
         <h3>Example of Object Creation</h3>
         <pre>
+#include &lt;iostream&gt;
 int main() {
     // Creating an object of the Car class
     Car myCar;

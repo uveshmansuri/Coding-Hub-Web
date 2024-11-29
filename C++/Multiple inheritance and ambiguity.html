@@ -4,60 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiple Inheritance and Ambiguity Resolution in C++</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 10px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-
-        pre {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-        code{
-            color: #000;
-            background-color: #f9f9f9;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
@@ -67,7 +14,9 @@
     <section>
         <h2>What is Multiple Inheritance?</h2>
         <p>In C++, <strong>multiple inheritance</strong> refers to a scenario where a derived class inherits from more than one base class. It enables a derived class to combine the functionalities of multiple parent classes.</p>
+    </section>
 
+    <section>
         <h2>Basic Syntax of Multiple Inheritance</h2>
         <pre>
 class Base1 {
@@ -82,7 +31,9 @@ class Derived : public Base1, public Base2 {
     // Members of Derived
 };
         </pre>
+</section>
 
+<section>
         <h2>Example of Multiple Inheritance</h2>
         <p>Below is an example demonstrating multiple inheritance in C++:</p>
         <pre>
@@ -124,10 +75,16 @@ This is Base1 class.
 This is Base2 class.
 This is the Derived class.
         </pre>
+    </section>
 
+    <section>
         <h2>Ambiguity in Multiple Inheritance</h2>
         <p>Ambiguity arises in multiple inheritance when two or more base classes have member functions with the same name. The derived class cannot differentiate which base class method to call, leading to a compile-time error.</p>
 
+        <div class="img-container">
+            <img src="../Multi_ambi_img.png">
+        </div>
+        
         <h3>Example of Ambiguity</h3>
         <pre>
 #include &lt;iostream&gt;
@@ -221,7 +178,9 @@ int main() {
         <pre>
 This is the CommonBase class.
         </pre>
+    </section>
 
+    <section>
         <h2>Advantages of Multiple Inheritance</h2>
         <ul>
             <li><strong>Combines Features:</strong> Allows a derived class to inherit functionalities from multiple base classes.</li>
@@ -235,7 +194,9 @@ This is the CommonBase class.
             <li><strong>Ambiguity:</strong> Leads to ambiguity when member functions or properties with the same name exist in multiple base classes.</li>
             <li><strong>Performance:</strong> May slightly impact performance due to increased lookup overhead in virtual inheritance.</li>
         </ul>
+    </section>
 
+    <section>
         <h2>Conclusion</h2>
         <p>Multiple inheritance is a powerful feature of C++ that allows a class to inherit functionalities from multiple base classes. However, care must be taken to resolve ambiguities effectively using the scope resolution operator or virtual inheritance. Proper design and understanding are essential to leverage multiple inheritance efficiently.</p>
     </section>

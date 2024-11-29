@@ -4,81 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparison of C and C++</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 10px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            overflow: auto;
-        }
-
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-        }
-
-        table th, table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        table th {
-            background-color: #0078d7;
-            color: white;
-            text-align: left;
-        }
-
-        pre {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .comparison > div {
-                flex: 1 1 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
@@ -92,87 +18,89 @@
 
     <section>
         <h2>Detailed Comparison of Features</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th>C</th>
-                    <th>C++</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Programming Paradigm</strong></td>
-                    <td>
-                        <ul>
-                            <li>Procedural, focusing on functions and step-by-step instructions.</li>
-                            <li>Designed for low-level system programming.</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>Multi-paradigm: Supports procedural, object-oriented, and generic programming.</li>
-                            <li>Offers high-level abstractions for application development.</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>Data Handling</strong></td>
-                    <td>Functions and global variables handle data, often leading to less controlled access.</td>
-                    <td>Encapsulation through classes and objects allows secure and structured data handling.</td>
-                </tr>
-                <tr>
-                    <td><strong>Inheritance</strong></td>
-                    <td>Not supported.</td>
-                    <td>Supported, enabling reuse and extension of existing code through derived classes.</td>
-                </tr>
-                <tr>
-                    <td><strong>Encapsulation</strong></td>
-                    <td>Data and functions are separate, with no direct mechanism for bundling them together.</td>
-                    <td>Combines data and functions into classes, enhancing modularity and security.</td>
-                </tr>
-                <tr>
-                    <td><strong>Polymorphism</strong></td>
-                    <td>Not supported. Functions must have unique names to avoid conflicts.</td>
-                    <td>Supports function and operator overloading, enabling different behaviors for the same function/operator.</td>
-                </tr>
-                <tr>
-                    <td><strong>Memory Management</strong></td>
-                    <td>
-                        <ul>
-                            <li>Uses <code>malloc()</code> and <code>free()</code> for dynamic memory allocation.</li>
-                            <li>Requires manual management with less type safety.</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>Uses <code>new</code> and <code>delete</code> for dynamic memory allocation and deallocation.</li>
-                            <li>Offers better type safety and abstraction.</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>Standard Input/Output</strong></td>
-                    <td>
-                        <ul>
-                            <li>Uses <code>printf()</code> and <code>scanf()</code> for formatted I/O.</li>
-                            <li>Requires explicit format specifiers (e.g., <code>%d</code> for integers).</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>Uses <code>cin</code> and <code>cout</code> for type-safe, object-oriented I/O.</li>
-                            <li>Automatically handles formatting based on variable type.</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>Application Areas</strong></td>
-                    <td>System programming, embedded systems, device drivers, and operating systems.</td>
-                    <td>Application development, GUI programming, game development, and complex software systems.</td>
-                </tr>
-            </tbody>
-        </table>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>C</th>
+                        <th>C++</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Programming Paradigm</strong></td>
+                        <td>
+                            <ul>
+                                <li>Procedural, focusing on functions and step-by-step instructions.</li>
+                                <li>Designed for low-level system programming.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Multi-paradigm: Supports procedural, object-oriented, and generic programming.</li>
+                                <li>Offers high-level abstractions for application development.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Data Handling</strong></td>
+                        <td>Functions and global variables handle data, often leading to less controlled access.</td>
+                        <td>Encapsulation through classes and objects allows secure and structured data handling.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Inheritance</strong></td>
+                        <td>Not supported.</td>
+                        <td>Supported, enabling reuse and extension of existing code through derived classes.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Encapsulation</strong></td>
+                        <td>Data and functions are separate, with no direct mechanism for bundling them together.</td>
+                        <td>Combines data and functions into classes, enhancing modularity and security.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Polymorphism</strong></td>
+                        <td>Not supported. Functions must have unique names to avoid conflicts.</td>
+                        <td>Supports function and operator overloading, enabling different behaviors for the same function/operator.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Memory Management</strong></td>
+                        <td>
+                            <ul>
+                                <li>Uses <code>malloc()</code> and <code>free()</code> for dynamic memory allocation.</li>
+                                <li>Requires manual management with less type safety.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Uses <code>new</code> and <code>delete</code> for dynamic memory allocation and deallocation.</li>
+                                <li>Offers better type safety and abstraction.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Standard Input/Output</strong></td>
+                        <td>
+                            <ul>
+                                <li>Uses <code>printf()</code> and <code>scanf()</code> for formatted I/O.</li>
+                                <li>Requires explicit format specifiers (e.g., <code>%d</code> for integers).</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Uses <code>cin</code> and <code>cout</code> for type-safe, object-oriented I/O.</li>
+                                <li>Automatically handles formatting based on variable type.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Application Areas</strong></td>
+                        <td>System programming, embedded systems, device drivers, and operating systems.</td>
+                        <td>Application development, GUI programming, game development, and complex software systems.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </section>
 
     <section>

@@ -4,61 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abstraction in C++</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 10px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-
-        pre {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-
-        ul {
-            margin: 10px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
@@ -161,28 +107,30 @@ Drawing a Rectangle
     <section>
         <h2>Abstraction vs Encapsulation</h2>
         <p>Though closely related, abstraction and encapsulation are distinct concepts:</p>
-        <table style="width: 100%; border-collapse: collapse; margin: 10px 0;">
-            <tr>
-                <th style="border: 1px solid #ddd; padding: 8px; background-color: #0078d7; color: white;">Aspect</th>
-                <th style="border: 1px solid #ddd; padding: 8px; background-color: #0078d7; color: white;">Abstraction</th>
-                <th style="border: 1px solid #ddd; padding: 8px; background-color: #0078d7; color: white;">Encapsulation</th>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 8px;">Definition</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">Hiding implementation details and showing only functionality.</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">Wrapping data and functions into a single unit (class) and controlling access using access specifiers.</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 8px;">Focus</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">On "what" an object does.</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">On "how" the data is protected.</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 8px;">Mechanism</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">Achieved using abstract classes and interfaces.</td>
-                <td style="border: 1px solid #ddd; padding: 8px;">Achieved using classes and access specifiers.</td>
-            </tr>
-        </table>
+        <section>
+            <table style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+                <tr>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #0078d7; color: white;">Aspect</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #0078d7; color: white;">Abstraction</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #0078d7; color: white;">Encapsulation</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Definition</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Hiding implementation details and showing only functionality.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Wrapping data and functions into a single unit (class) and controlling access using access specifiers.</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Focus</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">On "what" an object does.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">On "how" the data is protected.</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Mechanism</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Achieved using abstract classes and interfaces.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Achieved using classes and access specifiers.</td>
+                </tr>
+            </table>
+        </section>
     </section>
 
     <section>

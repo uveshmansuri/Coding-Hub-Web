@@ -4,55 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C++ Strings and String Functions</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 10px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-        pre {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-        code{
-            background-color: #002aff;
-            color: #ffffff;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
@@ -71,7 +23,7 @@
         <h3>C-style Strings</h3>
         <p>C-style strings are arrays of characters, terminated with a null character `'\0'`. You have to manually manage memory when using them, and operations like string length or copying require specific functions from the `<cstring>` library.</p>
         <pre>
-#include <iostream>
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -93,8 +45,8 @@ C-style string: Hello, World!
         <h3>C++ std::string</h3>
         <p>The <code>std::string</code> class is a much more flexible and powerful way to work with strings in C++. It automatically handles memory allocation and provides many built-in methods to manipulate the string.</p>
         <pre>
-#include <iostream>
-#include <string>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
 using namespace std;
 
 int main() {
@@ -121,8 +73,8 @@ C++ string: Hello, World!
         <h3>Length of String</h3>
         <p>The <code>size()</code> or <code>length()</code> function returns the number of characters in a string, excluding the null terminator. Both functions work identically and can be used interchangeably.</p>
         <pre>
-#include &ltiostream&gt
-#include &ltstring&gt
+#include &lt;iostream&gt;
+#include &lt;string&gt;
 using namespace std;
 
 int main() {
@@ -168,8 +120,8 @@ Concatenated string: Hello, World!
         <h3>Accessing Characters in a String</h3>
         <p>You can access individual characters in a string using the array subscript operator (<code>[]</code>) or the <code>at()</code> method. The <code>at()</code> method provides bounds checking and throws an exception if the index is out of range.</p>
         <pre>
-#include <iostream>
-#include <string>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
 using namespace std;
 
 int main() {
@@ -192,8 +144,8 @@ Last character: !
         <h3>String Comparison</h3>
         <p>C++ allows you to compare strings using the <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, and <code>compare()</code> methods. You can also use the <code>compare()</code> method for case-sensitive comparisons.</p>
         <pre>
-#include <iostream>
-#include <string>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
 using namespace std;
 
 int main() {
@@ -218,8 +170,8 @@ Strings are not equal.
         <h3>Substring</h3>
         <p>The <code>substr()</code> function extracts a substring from a string. It takes two parameters: the starting index and the length of the substring.</p>
         <pre>
-#include <iostream>
-#include <string>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
 using namespace std;
 
 int main() {
@@ -241,8 +193,8 @@ Substring: World
         <h3>String Search</h3>
         <p>You can search for a substring within a string using the <code>find()</code> method. If the substring is found, it returns the index of the first occurrence, otherwise it returns <code>string::npos</code>.</p>
         <pre>
-#include <iostream>
-#include <string>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
 using namespace std;
 
 int main() {

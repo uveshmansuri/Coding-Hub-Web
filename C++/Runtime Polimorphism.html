@@ -4,84 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polymorphism in C++</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 10px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            overflow: auto;
-        }
-
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        table th, table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        table th {
-            background-color: #0078d7;
-            color: white;
-            text-align: left;
-        }
-
-        pre {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-
-        ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-
-        li {
-            margin: 8px 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
@@ -218,42 +141,44 @@ Sum of 3 numbers: 60
 
     <section>
         <h2>Difference between Runtime and Compile-time Polymorphism:</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspect</th>
-                    <th>Compile-time Polymorphism</th>
-                    <th>Runtime Polymorphism</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Definition</strong></td>
-                    <td>Resolved at compile-time using function or operator overloading.</td>
-                    <td>Resolved at runtime using inheritance and virtual functions.</td>
-                </tr>
-                <tr>
-                    <td><strong>Mechanism</strong></td>
-                    <td>Function signature determines behavior at compile-time.</td>
-                    <td>Virtual table (vtable) and dynamic binding determine behavior at runtime.</td>
-                </tr>
-                <tr>
-                    <td><strong>Performance</strong></td>
-                    <td>Faster due to compile-time resolution.</td>
-                    <td>Slower due to dynamic method dispatch.</td>
-                </tr>
-                <tr>
-                    <td><strong>Flexibility</strong></td>
-                    <td>Less flexible and limited to parameter variations.</td>
-                    <td>Highly flexible due to dynamic method overriding.</td>
-                </tr>
-                <tr>
-                    <td><strong>Use Cases</strong></td>
-                    <td>Function overloading, operator overloading.</td>
-                    <td>Inheritance and overriding virtual functions.</td>
-                </tr>
-            </tbody>
-        </table>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Compile-time Polymorphism</th>
+                        <th>Runtime Polymorphism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Definition</strong></td>
+                        <td>Resolved at compile-time using function or operator overloading.</td>
+                        <td>Resolved at runtime using inheritance and virtual functions.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mechanism</strong></td>
+                        <td>Function signature determines behavior at compile-time.</td>
+                        <td>Virtual table (vtable) and dynamic binding determine behavior at runtime.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Performance</strong></td>
+                        <td>Faster due to compile-time resolution.</td>
+                        <td>Slower due to dynamic method dispatch.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Flexibility</strong></td>
+                        <td>Less flexible and limited to parameter variations.</td>
+                        <td>Highly flexible due to dynamic method overriding.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Use Cases</strong></td>
+                        <td>Function overloading, operator overloading.</td>
+                        <td>Inheritance and overriding virtual functions.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </section>
 
     <section>

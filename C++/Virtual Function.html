@@ -4,74 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Functions in C++</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 10px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-
-        pre {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        table th, table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        table th {
-            background-color: #0078d7;
-            color: white;
-            text-align: left;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
@@ -93,7 +26,7 @@
             <li>Used to implement runtime polymorphism in object-oriented programming.</li>
         </ul>
 
-        <h2>Syntax</h2>
+        <h3>Syntax</h3>
         <pre>
 class Base {
 public:
@@ -109,7 +42,9 @@ public:
     }
 };
         </pre>
+    </section>
 
+    <section>
         <h2>Example of Virtual Function</h2>
         <p>This example demonstrates how a virtual function works in C++:</p>
         <pre>
@@ -145,7 +80,9 @@ int main() {
         <pre>
 Derived class show() function
         </pre>
+    </section>
 
+    <section>
         <h2>How Virtual Functions Work</h2>
         <p>
             When a class has virtual functions, a mechanism called the <strong>virtual table (vtable)</strong> is used. 
@@ -159,7 +96,9 @@ Derived class show() function
             <li>Each object of the class contains a hidden pointer to the vtable.</li>
             <li>When a virtual function is called, the vtable determines the function to execute.</li>
         </ol>
+    </section>
 
+    <section>
         <h2>Pure Virtual Functions and Abstract Classes</h2>
         <p>
             A <strong>pure virtual function</strong> is a virtual function that must be overridden by derived classes. 
@@ -210,7 +149,9 @@ int main() {
 Drawing Circle
 Drawing Rectangle
         </pre>
+    </section>
 
+    <section>
         <h2>Rules for Virtual Functions</h2>
         <ul>
             <li>Must be a member of a class.</li>
@@ -219,7 +160,9 @@ Drawing Rectangle
             <li>Can have a definition in the base class but can be overridden in derived classes.</li>
             <li>Calls are resolved dynamically using the vtable.</li>
         </ul>
+    </section>
 
+    <section>
         <h2>Advantages</h2>
         <ul>
             <li>Enables runtime polymorphism.</li>

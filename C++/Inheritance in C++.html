@@ -4,61 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inheritance in C++ and Its Types</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 10px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-
-        pre {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-        code{
-            color: #000;
-            background-color: #f9f9f9;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
@@ -68,7 +14,12 @@
     <section>
         <h2>What is Inheritance?</h2>
         <p>Inheritance is one of the core principles of Object-Oriented Programming (OOP) in C++. It allows a class (known as the derived class) to inherit the properties and behaviors (data members and member functions) of another class (known as the base class). This promotes code reusability, extensibility, and modularity in programs.</p>
+        <div class="img-container">
+            <img src="../inheritance_img.png">
+        </div>
+    </section>
 
+    <section>
         <h2>Key Features of Inheritance</h2>
         <ul>
             <li><strong>Code Reusability:</strong> The derived class can reuse the methods and properties of the base class.</li>
@@ -76,12 +27,19 @@
             <li><strong>Hierarchical Structure:</strong> Enables the creation of class hierarchies, which represent real-world relationships.</li>
             <li><strong>Polymorphism:</strong> Inheritance supports runtime polymorphism, allowing derived classes to override base class methods.</li>
         </ul>
+    </section>
 
+    <section>
         <h2>Types of Inheritance in C++</h2>
         <p>C++ supports the following types of inheritance:</p>
 
         <h3>1. Single Inheritance</h3>
         <p>In single inheritance, a derived class inherits from only one base class.</p>
+
+        <div class="img-container">
+            <img src="../single_inherit.png">
+        </div>
+
         <pre>
 #include &lt;iostream&gt;
 using namespace std;
@@ -115,6 +73,9 @@ This is the Derived class.
 
         <h3>2. Multiple Inheritance</h3>
         <p>In multiple inheritance, a derived class inherits from more than one base class.</p>
+        <div class="img-container">
+            <img src="../multipleinh_img.png">
+        </div>
         <pre>
 #include &lt;iostream&gt;
 using namespace std;
@@ -157,6 +118,9 @@ This is the Derived class.
 
         <h3>3. Hierarchical Inheritance</h3>
         <p>In hierarchical inheritance, multiple derived classes inherit from a single base class.</p>
+        <div class="img-container">
+            <img src="../hirearchical_img.png">
+        </div>
         <pre>
 #include &lt;iostream&gt;
 using namespace std;
@@ -205,6 +169,9 @@ This is the Derived2 class.
 
         <h3>4. Multilevel Inheritance</h3>
         <p>In multilevel inheritance, a derived class acts as a base class for another class.</p>
+        <div class="img-container">
+            <img src="../multi_inherit.jpg">
+        </div>
         <pre>
 #include &lt;iostream&gt;
 using namespace std;
@@ -248,6 +215,9 @@ This is the Derived class.
 
         <h3>5. Hybrid Inheritance</h3>
         <p>Hybrid inheritance is a combination of two or more types of inheritance. It usually involves the use of virtual base classes to avoid ambiguity caused by multiple inheritance.</p>
+        <div class="img-container">
+            <img src="../hybrid-inheritancepng.png">
+        </div>
         <pre>
 #include &lt;iostream&gt;
 using namespace std;
@@ -281,7 +251,9 @@ int main() {
 This is the Base class.
 This is the Derived3 class.
         </pre>
+    </section>
 
+    <section>
         <h2>Access Control in Inheritance</h2>
         <p>The access specifiers (public, protected, private) play a vital role in inheritance. They control how the members of the base class are inherited by the derived class.</p>
         <ul>
@@ -289,7 +261,9 @@ This is the Derived3 class.
             <li><strong>Protected Inheritance:</strong> Public and protected members of the base class become protected in the derived class.</li>
             <li><strong>Private Inheritance:</strong> Public and protected members of the base class become private in the derived class.</li>
         </ul>
+    </section>
 
+    <section>
         <h2>Conclusion</h2>
         <p>Inheritance is a powerful concept in C++ that allows for the reusability of code, improved maintainability, and the implementation of OOP principles. Understanding its types and proper usage can lead to more efficient and flexible programming.</p>
     </section>

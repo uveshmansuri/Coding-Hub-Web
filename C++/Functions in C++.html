@@ -3,56 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C++ Functions - Detailed Guide</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 10px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-        pre {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-        code{
-            color: #000;
-            background-color: #f9f9f9;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-    </style>
+    <title>C++ Functions</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
@@ -81,7 +33,7 @@ return_type function_name(parameter_list) {
         <h3>Example of a Simple Function</h3>
         <p>This is an example of a function that adds two integers:</p>
         <pre><code>
-#include <iostream>
+#include &lt;iostream&gt;            
 using namespace std;
 
 // Function declaration
@@ -123,7 +75,7 @@ The sum is: 30
         <h3>3. Void Functions</h3>
         <p>A function with a return type of <code>void</code> does not return any value. These types of functions are useful when we need to perform an action but don’t require a result.</p>
         <pre><code>
-#include <iostream>
+#include &lt;iostream&gt;
 using namespace std;
 
 void greet() {
@@ -149,7 +101,7 @@ Hello, World!
         <h3>Pass by Value</h3>
         <p>In pass-by-value, the actual parameter is copied into the formal parameter. Changes made to the parameter do not affect the actual argument.</p>
         <pre><code>
-#include <iostream>
+#include &lt;iostream&gt;
 using namespace std;
 
 void increment(int x) {
@@ -171,7 +123,7 @@ Value of num: 10
         <h3>Pass by Reference</h3>
         <p>In pass-by-reference, the function works directly with the memory address of the argument, so changes made to the parameter will affect the actual argument.</p>
         <pre><code>
-#include <iostream>
+#include &lt;iostream&gt;
 using namespace std;
 
 void increment(int &x) {
@@ -198,7 +150,7 @@ Value of num: 11
 
         <h3>Example of Function Overloading</h3>
         <pre><code>
-#include <iostream>
+#include &lt;iostream&gt;
 using namespace std;
 
 int add(int a, int b) {
@@ -230,7 +182,7 @@ Sum of doubles: 31
         <h3>Example of Recursion</h3>
         <p>Here’s an example of a recursive function to calculate the factorial of a number:</p>
         <pre><code>
-#include <iostream>
+#include &lt;iostream&gt;
 using namespace std;
 
 int factorial(int n) {
