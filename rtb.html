@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rich Text Editor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #444;
+    }
+    .toolbar {
+      margin-bottom: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .toolbar button, .toolbar select {
+      margin-right: 5px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .toolbar button.active, .toolbar select.active {
+      background-color: #0056b3;
+    }
+    .toolbar button:hover, .toolbar select:hover {
+      background-color: #0056b3;
+    }
+    .toolbar select {
+      color: #333;
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+    .editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      height: 250px;
+      overflow: auto;
+      resize: none;
+      white-space: nowrap;
+      word-wrap: break-word;
+      background-color: #fff;
+      border-radius: 5px;
+    }
+    .editor:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+    .editor::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    .editor::-webkit-scrollbar-thumb {
+      background-color: #007bff;
+      border-radius: 5px;
+    }
+    .editor::-webkit-scrollbar-thumb:hover {
+      background-color: #0056b3;
+    }
+    .editor::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <!--h1>Rich Text Editor</h1-->
+  <div class="toolbar">
+    <!-- Text Formatting Buttons -->
+    <button id="boldBtn" onclick="toggleAndApply('bold')">Bold</button>
+    <button id="italicBtn" onclick="toggleAndApply('italic')">Italic</button>
+    <button id="underlineBtn" onclick="toggleAndApply('underline')">Underline</button>
+    <button id="strikeBtn" onclick="toggleAndApply('strikeThrough')">Strikethrough</button>
+    <button id="orderedListBtn" onclick="toggleAndApply('insertOrderedList')">Ordered List</button>
+    <button id="unorderedListBtn" onclick="toggleAndApply('insertUnorderedList')">Unordered List</button>
+    <button id="linkBtn" onclick="addLink()">Add Link</button>
+    <button id="removeFormatBtn" onclick="toggleAndApply('removeFormat')">Remove Format</button>
+
+    <!-- Text Alignment -->
+    <button id="alignLeftBtn" onclick="toggleAndApply('justifyLeft')">Align Left</button>
+    <button id="alignCenterBtn" onclick="toggleAndApply('justifyCenter')">Align Center</button>
+    <button id="alignRightBtn" onclick="toggleAndApply('justifyRight')">Align Right</button>
+
+    <!-- Headings Dropdown -->
+    <select id="formatDropdown" onchange="applyHeading(this.value)">
+      <option value="p" selected>Normal Text</option>
+      <option value="h1">Heading 1</option>
+      <option value="h2">Heading 2</option>
+      <option value="h3">Heading 3</option>
+    </select>
+  </div>
+
+  <div class="editor" id="editor" contenteditable="true" onkeyup="updateToolbar()" onmouseup="updateToolbar()">
+    
+  </div>
+
+  <script>
+    // Toggles a format, applies it, and highlights/unhighlights the button
+    function toggleAndApply(command) {
+      const isActive = document.queryCommandState(command);
+      document.execCommand(command, false, '');
+      updateToolbar(); // Update toolbar states
+    }
+
+    // Add a hyperlink
+    function addLink() {
+      const url = prompt('Enter URL:');
+      if (url) document.execCommand('createLink', false, url);
+      updateToolbar();
+    }
+
+    // Apply headings and reset toolbar state
+    function applyHeading(tag) {
+      document.execCommand('formatBlock', false, tag);
+      document.getElementById('formatDropdown').classList.add('active');
+      updateToolbar();
+    }
+
+    // Update toolbar buttons based on selection
+    function updateToolbar() {
+      const commands = [
+        { command: 'bold', elementId: 'boldBtn' },
+        { command: 'italic', elementId: 'italicBtn' },
+        { command: 'underline', elementId: 'underlineBtn' },
+        { command: 'strikeThrough', elementId: 'strikeBtn' },
+        { command: 'insertOrderedList', elementId: 'orderedListBtn' },
+        { command: 'insertUnorderedList', elementId: 'unorderedListBtn' },
+        { command: 'justifyLeft', elementId: 'alignLeftBtn' },
+        { command: 'justifyCenter', elementId: 'alignCenterBtn' },
+        { command: 'justifyRight', elementId: 'alignRightBtn' }
+      ];
+
+      // Reset all buttons
+      document.querySelectorAll('.toolbar button').forEach(button => button.classList.remove('active'));
+
+      // Highlight active buttons
+      commands.forEach(({ command, elementId }) => {
+        if (document.queryCommandState(command)) {
+          document.getElementById(elementId).classList.add('active');
+        }
+      });
+
+      // Reset dropdown if no heading is selected
+      const dropdown = document.getElementById('formatDropdown');
+      const blockFormat = document.queryCommandValue('formatBlock').toLowerCase();
+      dropdown.value = ['h1', 'h2', 'h3'].includes(blockFormat) ? blockFormat : 'p';
+    }
+  </script>
+</body>
+</html>
