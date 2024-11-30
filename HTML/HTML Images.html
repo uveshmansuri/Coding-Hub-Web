@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Images in HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Adding Images in HTML</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>Images are an essential part of modern web design. They help convey information visually, enhance the user experience, and make websites more engaging. HTML provides several ways to add images to a webpage using the <code>&lt;img&gt;</code> tag.</p>
+    </section>
+
+    <section>
+        <h2>The &lt;img&gt; Tag</h2>
+        <p>The <code>&lt;img&gt;</code> tag is used to embed images in an HTML document. It is an empty tag, meaning it does not have a closing tag. The basic syntax is:</p>
+        <pre>
+<img src="url" alt="description" />
+        </pre>
+        <h3>Attributes of the &lt;img&gt; Tag</h3>
+        <ul>
+            <li><strong>src:</strong> Specifies the path to the image file. This can be a relative or absolute URL.</li>
+            <li><strong>alt:</strong> Provides alternative text if the image cannot be displayed. This is important for accessibility.</li>
+            <li><strong>width:</strong> Specifies the width of the image in pixels or as a percentage.</li>
+            <li><strong>height:</strong> Specifies the height of the image in pixels or as a percentage.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Examples</h2>
+        <div class="example">
+            <h3>Example 1: Adding a Basic Image</h3>
+            <div class="code">
+<code>&lt;img src="image.jpg" alt="A beautiful scenery" width="500"&gt;</code>
+            </div>
+            <p>This example displays an image with a specified width of 500 pixels.</p>
+            <div class="img-container">
+                <img src="https://via.placeholder.com/500" alt="A beautiful scenery">
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>Example 2: Adding an Image with a Relative Path</h3>
+            <p>To add an image stored in the same folder as your HTML file, use a relative path:</p>
+            <div class="code">
+<code>&lt;img src="images/photo.jpg" alt="Photo from folder"&gt;</code>
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>Example 3: Adding an Image with a Link</h3>
+            <p>Images can be wrapped in links to make them clickable:</p>
+            <div class="code">
+<code>&lt;a href="https://example.com"&gt;&lt;img src="image.jpg" alt="Clickable image"&gt;&lt;/a&gt;</code>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Responsive Images</h2>
+        <p>To make images responsive and adapt to different screen sizes, use CSS:</p>
+        <div class="code">
+<code>img { max-width: 100%; height: auto; }</code>
+        </div>
+        <p>This ensures the image scales proportionally to its container.</p>
+    </section>
+
+    <section>
+        <h2>Advanced Techniques</h2>
+        <h3>Using &lt;picture&gt; for Responsive Images</h3>
+        <p>The <code>&lt;picture&gt;</code> element allows you to define multiple image sources for different screen sizes:</p>
+        <div class="code">
+<code>
+&lt;picture&gt;
+    &lt;source srcset="image-large.jpg" media="(min-width: 1024px)"&gt;
+    &lt;source srcset="image-small.jpg" media="(max-width: 768px)"&gt;
+    &lt;img src="fallback.jpg" alt="Responsive image"&gt;
+&lt;/picture&gt;
+</code>
+        </div>
+        <p>This helps optimize loading by serving appropriately sized images based on the user's device.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Web Development Guide</p>
+    </footer>
+</body>
+</html>
