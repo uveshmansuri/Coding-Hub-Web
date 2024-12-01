@@ -4,86 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Forms and Validation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        input[type="text"], input[type="email"], input[type="password"], input[type="submit"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        input[type="submit"] {
-            background-color: #0078d7;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
-        .error {
-            color: red;
-            font-size: 0.875em;
-        }
-
-    </style>
+    <link rel="stylesheet" href="../styles.css" >
 </head>
 <body>
     <header>
@@ -91,7 +12,7 @@
     </header>
 
     <section>
-        <h2>What is a Form in HTML?</h2>
+        <h2>Form in HTML</h2>
         <p>An HTML form is used to collect user input. Forms are often used for gathering data such as user information, feedback, or for submitting search queries. HTML forms are created using the <code>&lt;form&gt;</code> element, and form data can be sent to a server for processing using the <code>action</code> and <code>method</code> attributes.</p>
 
         <h2>Basic HTML Form Structure</h2>
@@ -121,73 +42,7 @@
             <li><strong>checkbox</strong>: Allows the user to select multiple options.</li>
             <li><strong>number</strong>: For numeric input, automatically ensures the value is a number.</li>
         </ul>
-
-        <h2>Form Validation</h2>
-        <p>HTML5 provides built-in form validation features that help ensure data is correctly formatted before submission. Some common validation attributes include:</p>
-        <ul>
-            <li><strong>required</strong>: Ensures that the field is filled out before submitting the form.</li>
-            <li><strong>pattern</strong>: Specifies a regular expression to match for input validation (e.g., phone numbers, zip codes).</li>
-            <li><strong>minlength</strong> / <strong>maxlength</strong>: Specifies the minimum and maximum number of characters allowed in the input field.</li>
-            <li><strong>type</strong>: Helps validate the type of input. For example, <code>type="email"</code> will ensure the input is a valid email address format.</li>
-        </ul>
-
-        <h3>Example of Form Validation</h3>
-        <p>Here is an example of a form that uses validation:</p>
-
-        <form id="contactForm" action="#" method="POST" onsubmit="return validateForm()">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <br>
-            <label for="phone">Phone Number:</label>
-            <input type="text" id="phone" name="phone" pattern="^\d{10}$" title="Phone number must be 10 digits" required>
-            <br>
-            <input type="submit" value="Submit">
-        </form>
-
-        <p class="error" id="error-message"></p>
-
-        <h2>JavaScript Form Validation</h2>
-        <p>Sometimes, HTML's built-in validation might not be sufficient for complex scenarios, and additional validation can be done using JavaScript.</p>
-
-        <p>Here is a simple JavaScript example that validates the form:</p>
-        
-        <script>
-            function validateForm() {
-                var username = document.getElementById("username").value;
-                var email = document.getElementById("email").value;
-                var phone = document.getElementById("phone").value;
-                var errorMessage = document.getElementById("error-message");
-
-                // Validate phone number
-                var phonePattern = /^\d{10}$/;
-                if (!phonePattern.test(phone)) {
-                    errorMessage.textContent = "Phone number must be exactly 10 digits.";
-                    return false;
-                }
-
-                // Validate username
-                if (username == "") {
-                    errorMessage.textContent = "Username is required.";
-                    return false;
-                }
-
-                // Validate email
-                if (email == "") {
-                    errorMessage.textContent = "Email is required.";
-                    return false;
-                }
-
-                // If all validations pass
-                errorMessage.textContent = "";
-                return true;
-            }
-        </script>
-
-    </section>
-
+    </section>        
     <footer>
         <p>© By Coding Hub. All Rights Reserved.</p>
     </footer>

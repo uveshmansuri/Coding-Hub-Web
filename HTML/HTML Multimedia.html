@@ -4,50 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multimedia in HTML (Audio & Video)</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-
         video, audio {
             width: 100%;
             max-width: 600px;
@@ -62,20 +20,31 @@
     </header>
 
     <section>
-        <h2>Introduction to Multimedia in HTML</h2>
-        <p>HTML provides native support for embedding multimedia such as audio and video using the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> tags. These tags make it easy to add multimedia content directly into a webpage without needing any external plugins or players.</p>
+        <h2>Multimedia in HTML</h2>
+        <p>HTML provides native support for embedding multimedia such as audio and video 
+            using the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> tags. 
+            These tags make it easy to add multimedia content directly into a webpage without needing any external 
+            plugins or players.
+        </p>
         
-        <p>With the introduction of HTML5, the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements offer extensive features for playback, controls, and customization. Additionally, they allow developers to specify multiple formats to ensure compatibility across different browsers and devices.</p>
-
-        <h2>1. Embedding Audio</h2>
+        <p>With the introduction of HTML5, the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements offer 
+            extensive features for playback, controls, and customization. Additionally, they allow developers to specify 
+            multiple formats to ensure compatibility across different browsers and devices.
+        </p>
+    </section>
+    
+    <section>
+        <h2>Embedding Audio</h2>
         <p>The <code>&lt;audio&gt;</code> element is used to embed audio content (like music, sound effects, podcasts, etc.) into a webpage. The audio file can be in various formats such as MP3, WAV, or Ogg. The element is simple to use and supports multiple file sources for broader browser support.</p>
 
         <h3>Basic Example of an Audio Player</h3>
-        <audio controls>
-            <source src="audio/song.mp3" type="audio/mp3">
-            <source src="audio/song.ogg" type="audio/ogg">
-            Your browser does not support the audio element.
-        </audio>
+        <pre>
+&lt;audio controls&gt;
+    &lt;source src="audio/song.mp3" type="audio/mp3"&gt;
+    &lt;source src="audio/song.ogg" type="audio/ogg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;        
+        </pre>
         <p>This is a basic audio player with the <code>controls</code> attribute, which allows users to play, pause, adjust the volume, and seek through the audio track. If the browser doesn't support the audio element, the text inside the tags will be displayed.</p>
 
         <h3>Attributes of the <code>&lt;audio&gt;</code> Element</h3>
@@ -96,17 +65,22 @@
             <li>Embedding podcasts or radio stations.</li>
             <li>Delivering audio tutorials or educational content.</li>
         </ul>
+    </section>
 
-        <h2>2. Embedding Video</h2>
-        <p>The <code>&lt;video&gt;</code> element is used to embed video files directly in a webpage. HTML5 introduced this element to simplify video embedding without requiring third-party plugins like Flash.</p>
+    <section>
+        <h2>Embedding Video</h2>
+        <p>The <code>&lt;video&gt;</code> element is used to embed video files directly in a webpage. 
+            HTML5 introduced this element to simplify video embedding without requiring third-party plugins like Flash.</p>
 
         <h3>Basic Example of a Video Player</h3>
-        <video controls>
-            <source src="video/sample.mp4" type="video/mp4">
-            <source src="video/sample.webm" type="video/webm">
-            <source src="video/sample.ogv" type="video/ogg">
-            Your browser does not support the video element.
-        </video>
+        <pre>
+&lt;video controls&gt;
+    &lt;source src="video/sample.mp4" type="video/mp4"&gt;
+    &lt;source src="video/sample.webm" type="video/webm"&gt;
+    &lt;source src="video/sample.ogv" type="video/ogg"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;
+        </pre>
         <p>This is a basic video player with the <code>controls</code> attribute, allowing users to play, pause, control volume, and toggle fullscreen mode. Multiple video formats are provided using the <code>&lt;source&gt;</code> element to ensure compatibility across browsers.</p>
 
         <h3>Attributes of the <code>&lt;video&gt;</code> Element</h3>
@@ -128,7 +102,9 @@
             <li>Live streaming or broadcasting events.</li>
             <li>Interactive content (e.g., video-based quizzes, games, or storytelling).</li>
         </ul>
+    </section>
 
+    <section>
         <h2>Advanced Features of Audio and Video</h2>
         <p>In addition to the basic usage, HTML5 allows for advanced features that enhance the multimedia experience:</p>
         
@@ -139,12 +115,14 @@
         <p>Both the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements support captions or subtitles using the <code>&lt;track&gt;</code> element. The <code>&lt;track&gt;</code> element allows you to specify text tracks for subtitles, captions, descriptions, and more.</p>
 
         <h4>Example: Adding Subtitles</h4>
-        <video controls>
-            <source src="video/sample.mp4" type="video/mp4">
-            <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">
-            <track src="subtitles_es.vtt" kind="subtitles" srclang="es" label="Spanish">
-            Your browser does not support the video element.
-        </video>
+        <pre>
+&lt;video controls>
+    &lt;source src="video/sample.mp4" type="video/mp4"&gt;
+    &lt;track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English"&gt;
+    &lt;track src="subtitles_es.vtt" kind="subtitles" srclang="es" label="Spanish"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;
+        </pre>
 
         <p>The <code>&lt;track&gt;</code> element defines the subtitle files and allows users to toggle between different languages for captions.</p>
         

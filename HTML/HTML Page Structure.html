@@ -4,91 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Page Structure</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.8;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        nav {
-            background: #333;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 15px;
-            margin: 0 5px;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            background: #0078d7;
-            border-radius: 5px;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #0078d7;
-        }
-
-        pre {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-size: 0.9em;
-        }
-
-        ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-
-        footer {
-            background: #0078d7;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            margin-top: 30px;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
         <h1>HTML Page Structure </h1>
     </header>
-    <section id="intro">
+    <section>
         <h2>Introduction</h2>
         <p>An HTML page structure serves as the foundation of any web document. It organizes content and metadata, enabling browsers to display the page correctly. The structure follows a hierarchy, starting from the document type declaration to the arrangement of the <strong>head</strong> and <strong>body</strong> sections.</p>
     </section>
-    <section id="basic-structure">
+
+    <section>
         <h2>Basic Structure of an HTML Page</h2>
         <p>The basic structure of an HTML page is standardized for consistency and readability. It includes:</p>
         <ul>
@@ -111,7 +38,8 @@
 &lt;/html&gt;
         </pre>
     </section>
-    <section id="head-section">
+
+    <section>
         <h2>Head Section</h2>
         <p>The <strong>&lt;head&gt;</strong> section contains information about the document that is not displayed directly on the page. It typically includes:</p>
         <ul>
@@ -131,7 +59,8 @@
 &lt;/head&gt;
         </pre>
     </section>
-    <section id="body-section">
+
+    <section>
         <h2>Body Section</h2>
         <p>The <strong>&lt;body&gt;</strong> section contains the visible content displayed to users, such as text, images, links, and other elements.</p>
         <p>Common elements inside the <strong>&lt;body&gt;</strong> include:</p>
@@ -158,6 +87,8 @@
 &lt;/body&gt;
         </pre>
     </section>
+
+    
     <footer id="footer">
         <p>© By Coding Hub. All Rights Reserved.</p>
     </footer>

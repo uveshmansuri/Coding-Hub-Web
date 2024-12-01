@@ -4,65 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detailed Note on HTML Lists</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 10px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-
-        pre {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-
-        ul {
-            margin: 10px 0;
-        }
+    <link rel="stylesheet" href="../styles.css">
     </style>
 </head>
 <body>
     <header>
-        <h1> HTML Lists</h1>
+        <h1>HTML Lists</h1>
     </header>
     <section>
         <h2>What are HTML Lists?</h2>
@@ -71,7 +18,9 @@
             <li>Ordered Lists (<code>&lt;ol&gt;</code>)</li>
             <li>Unordered Lists (<code>&lt;ul&gt;</code>)</li>
         </ul>
+    </section>
 
+    <section>
         <h2>1. Ordered List (<code>&lt;ol&gt;</code>)</h2>
         <p>An <strong>ordered list</strong> is used when the order of items matters. The items are usually numbered (default) or can use other markers such as Roman numerals or alphabets.</p>
         <h3>Example:</h3>
@@ -83,12 +32,16 @@
 &lt;/ol&gt;
         </pre>
         <h3>Rendered Output:</h3>
-        <ol>
-            <li>Step 1: Install HTML Editor</li>
-            <li>Step 2: Write Code</li>
-            <li>Step 3: Test the Code</li>
-        </ol>
+        <section>
+            <ol>
+                <li>Step 1: Install HTML Editor</li>
+                <li>Step 2: Write Code</li>
+                <li>Step 3: Test the Code</li>
+            </ol>
+        </section>
+    </section>
 
+    <section>
         <h2>2. Unordered List (<code>&lt;ul&gt;</code>)</h2>
         <p>An <strong>unordered list</strong> is used when the order of items is not important. Items are marked with bullets by default.</p>
         <h3>Example:</h3>
@@ -100,12 +53,16 @@
 &lt;/ul&gt;
         </pre>
         <h3>Rendered Output:</h3>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-        </ul>
+        <section>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </section>
+    </section>
 
+    <section>
         <h2>Key Differences:</h2>
         <ul>
             <li><strong>Ordered List:</strong> Used for sequential or ranked data.</li>

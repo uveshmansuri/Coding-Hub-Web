@@ -4,69 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Elements and Attributes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.8;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.8em;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #0078d7;
-        }
-
-        pre {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-size: 0.9em;
-        }
-
-        ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 30px;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
         <h1>HTML Elements and Attributes</h1>
     </header>
     <section>
-        <h2>What are HTML Elements?</h2>
+        <h2>HTML Elements</h2>
         <p>An <strong>HTML element</strong> is the building block of HTML. It consists of a start tag, content, and an end tag.</p>
         <p>The general syntax of an element is:</p>
         <pre>
@@ -102,8 +47,10 @@
                 </ul>
             </li>
         </ul>
+    </section>
 
-        <h2>What are HTML Attributes?</h2>
+    <section>
+        <h2>HTML Attributes</h2>
         <p>An <strong>attribute</strong> provides additional information about an HTML element. Attributes are always specified in the opening tag and come in name-value pairs like this:</p>
         <pre>
 &lt;tagname attribute="value"&gt;Content&lt;/tagname&gt;
@@ -128,7 +75,9 @@
         <pre>
 &lt;img src="example.jpg" alt="An example image" width="300" height="200"&gt;
         </pre>
+    </section>
 
+    <section>
         <h2>HTML Nested Elements</h2>
         <p>HTML allows nesting one element inside another to create a hierarchy. Example:</p>
         <pre>
@@ -137,7 +86,9 @@
     &lt;p&gt;This is a paragraph inside a &lt;strong&gt;div&lt;/strong&gt; element.&lt;/p&gt;
 &lt;/div&gt;
         </pre>
+    </section>
 
+    <section>
         <h2>HTML Global Attributes</h2>
         <p>Global attributes can be used with any HTML element. Some common global attributes include:</p>
         <ul>

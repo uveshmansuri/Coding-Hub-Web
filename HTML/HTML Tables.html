@@ -4,83 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Tables in Detail</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #0078d7;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 10px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #0078d7;
-            margin-top: 0;
-        }
-
-        pre {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        table th, table td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-
-        table th {
-            background-color: #0078d7;
-            color: white;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0078d7;
-            color: #fff;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
         <h1>HTML Tables</h1>
     </header>
-    <section>
-        <h2>What are HTML Tables?</h2>
-        <p>HTML tables are used to organize data in rows and columns, making it easy to present structured data such as schedules, reports, or comparisons. Tables are defined using the <code>&lt;table&gt;</code> tag, and rows and cells are defined with <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, and <code>&lt;td&gt;</code> tags.</p>
 
+    <section>
+        <h2> HTML Tables</h2>
+        <p>HTML tables are used to organize data in rows and columns, making it easy to present structured data such as schedules, reports, or comparisons. Tables are defined using the <code>&lt;table&gt;</code> tag, and rows and cells are defined with <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, and <code>&lt;td&gt;</code> tags.</p>
+    </section>
+
+    <section>
         <h2>Basic Structure of an HTML Table</h2>
         <p>Here is the basic syntax of an HTML table:</p>
         <pre>
@@ -96,17 +32,21 @@
 &lt;/table&gt;
         </pre>
         <h3>Rendered Output:</h3>
-        <table>
-            <tr>
-                <th>Header 1</th>
-                <th>Header 2</th>
-            </tr>
-            <tr>
-                <td>Data 1</td>
-                <td>Data 2</td>
-            </tr>
-        </table>
+        <section>
+            <table>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                </tr>
+            </table>
+        </section>
+    </section>
 
+    <section>
         <h2>Table Elements Explained</h2>
         <ul>
             <li><strong><code>&lt;table&gt;</code></strong>: The main container that defines the table.</li>
@@ -114,7 +54,9 @@
             <li><strong><code>&lt;th&gt;</code></strong>: Defines a header cell, which is bold and centered by default.</li>
             <li><strong><code>&lt;td&gt;</code></strong>: Defines a data cell that contains table content.</li>
         </ul>
+    </section>
 
+    <section>
         <h2>Adding Borders, Padding, and Alignment</h2>
         <p>You can enhance the appearance of tables using CSS to add borders, padding, and alignment:</p>
         <pre>
@@ -134,7 +76,9 @@ th {
     color: white;              /* Changes header text color to white */
 }
         </pre>
+    </section>
 
+    <section>
         <h2>Advanced Features</h2>
         <h3>Merging Cells Using <code>colspan</code> and <code>rowspan</code></h3>
         <p>You can merge cells horizontally or vertically using the <code>colspan</code> and <code>rowspan</code> attributes.</p>
@@ -146,32 +90,34 @@ th {
         &lt;th colspan="2"&gt;Details&lt;/th&gt; <!-- Merges two columns -->
     &lt;/tr&gt;
     &lt;tr&gt;
-        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;Uvesh&lt;/td&gt;
         &lt;td rowspan="2"&gt;Age: 25&lt;/td&gt; <!-- Merges two rows -->
-        &lt;td&gt;City: New York&lt;/td&gt;
+        &lt;td&gt;City: Bharuch&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-        &lt;td&gt;Anna&lt;/td&gt;
-        &lt;td&gt;City: London&lt;/td&gt;
+        &lt;td&gt;Sam&lt;/td&gt;
+        &lt;td&gt;City: Surat&lt;/td&gt;
     &lt;/tr&gt;
 &lt;/table&gt;
         </pre>
         <h4>Rendered Output:</h4>
-        <table>
-            <tr>
-                <th>Name</th>
-                <th colspan="2">Details</th>
-            </tr>
-            <tr>
-                <td>John</td>
-                <td rowspan="2">Age: 25</td>
-                <td>City: New York</td>
-            </tr>
-            <tr>
-                <td>Anna</td>
-                <td>City: London</td>
-            </tr>
-        </table>
+        <section>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th colspan="2">Details</th>
+                </tr>
+                <tr>
+                    <td>Uvesh</td>
+                    <td rowspan="2">Age: 19</td>
+                    <td>City: Bharuch</td>
+                </tr>
+                <tr>
+                    <td>Sam</td>
+                    <td>City: Suart</td>
+                </tr>
+            </table>
+        </section>
 
         <h3>Adding a Caption</h3>
         <p>You can add a title or description to your table using the <code>&lt;caption&gt;</code> tag.</p>
@@ -185,36 +131,38 @@ th {
         &lt;th&gt;Grade&lt;/th&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-        &lt;td&gt;Alice&lt;/td&gt;
+        &lt;td&gt;Uvesh&lt;/td&gt;
         &lt;td&gt;Math&lt;/td&gt;
         &lt;td&gt;A&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-        &lt;td&gt;Bob&lt;/td&gt;
+        &lt;td&gt;Muskan&lt;/td&gt;
         &lt;td&gt;Science&lt;/td&gt;
         &lt;td&gt;B&lt;/td&gt;
     &lt;/tr&gt;
 &lt;/table&gt;
         </pre>
         <h4>Rendered Output:</h4>
-        <table>
-            <caption>Student Grades</caption>
-            <tr>
-                <th>Name</th>
-                <th>Subject</th>
-                <th>Grade</th>
-            </tr>
-            <tr>
-                <td>Alice</td>
-                <td>Math</td>
-                <td>A</td>
-            </tr>
-            <tr>
-                <td>Bob</td>
-                <td>Science</td>
-                <td>B</td>
-            </tr>
-        </table>
+        <section>
+            <table>
+                <caption>Student Grades</caption>
+                <tr>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Grade</th>
+                </tr>
+                <tr>
+                    <td>Uvesh</td>
+                    <td>Math</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>Muskan</td>
+                    <td>Science</td>
+                    <td>B</td>
+                </tr>
+            </table>
+        </section>
     </section>
     <footer>
         <p>© By Coding Hub. All Rights Reserved.</p>
