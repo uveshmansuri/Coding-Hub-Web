@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Forms in HTML</title>
+    <link rel="stylesheet" href="../styles.css">
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Creating Forms in HTML</h1>
+    </header>
+    <section>
+        <h2>What is an HTML Form?</h2>
+        <p>An HTML form is a structure used to collect user inputs such as text, selections, or choices, and submit it to a server for processing. Forms consist of input fields, buttons, and other elements enclosed within the <code>&lt;form&gt;</code> tag.</p>
+    </section>
+
+    <section>
+        <h2>Basic Form Structure</h2>
+        <p>Here is a simple example of a form structure:</p>
+        <pre>
+&lt;form action="submit_page.html" method="POST"&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="user_name" required&gt;
+
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="user_email" required&gt;
+
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+        </pre>
+
+        <h2>Important Form Attributes</h2>
+        <ul>
+            <li><strong>action:</strong> Specifies the URL where form data will be sent.</li>
+            <li><strong>method:</strong> Defines the HTTP method to send the form data (<code>GET</code> or <code>POST</code>).</li>
+            <li><strong>name:</strong> Identifies the input field for server-side processing.</li>
+            <li><strong>required:</strong> Makes a field mandatory to fill out.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Input Types</h2>
+        <p>HTML provides various input types to handle different kinds of user inputs. Below is a detailed explanation and examples of common input types.</p>
+    </section>
+    
+    <section>
+        <h2>Common Input Types</h2>
+        
+        <section>
+        <h3><strong>Type:<code>text</code> — </strong></h3><p>Used for single-line text input.</p>
+        <pre>
+&lt;!-- Text --&gt;
+&lt;label for="text"&gt;Text:&lg;/label&gt;
+&lt;input type="text" id="text" name="text" placeholder="Enter text here"&gt;
+        </pre>
+        <h4>Output</h4>
+            <label for="text">Text:</label>
+            <input type="text" id="text" name="text" placeholder="Enter text here">
+        </section>
+
+
+        <section>
+            <h3><strong>Type:</strong> <code>password</code> — </h3>
+            <p>Masks the input for sensitive information like passwords.</p>
+            <pre>
+&lt;!-- Password --&gt;
+&lt;label for="password"&gt;Password:&lt;/label&gt;
+&lt;input type="password" id="password" name="password" placeholder="Enter your password"&gt;
+            </pre>       
+            <h4>Output</h4>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+        </section>
+
+        <section>
+            <h3><strong>Type:</strong> <code>email</code> — </h3>
+            <p>Ensures the entered value is a valid email address.</p>
+            <pre>
+&lt;!-- Email --&gt;
+&lt;label for="email">Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email" placeholder="Enter your email"&gt;
+            </pre>
+            <h4>Output</h4>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">     
+        </section>
+
+        <section>
+            <h3><strong>Type:</strong> <code>number</code> — </h3>
+            <p>Used for numeric input with optional range limits.</p>
+            <pre>
+&lt;!-- Number --&gt;
+&lt;label for="number"&gt;Number:&lt;/label&gt;
+&lt;input type="number" id="number" name="number" placeholder="Enter a number" min="1" max="1000000"&gt;                
+            </pre>       
+            <h4>Output</h4>
+            <label for="number">Number:</label>
+            <input type="number" id="number" name="number" placeholder="Enter a number" min="1" max="10000000000000">        
+        </section>
+
+        <section>
+            <h3><strong>Type:</strong> <code>date</code> — </h3>        
+            <p>Allows selection of a specific date.</p>
+            <pre>
+&lt;!-- Date --&gt;
+&lt;label for="date"&gt;Date:&lt;/label&gt;
+&lt;input type="date" id="date" name="date">&gt;              
+            </pre>
+            <h4>Output</h4>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+        </section>
+
+        <section>
+            <h3><strong>Type:</strong> <code>time</code> — </h3>
+            <p>Allows input of a specific time.</p>
+            <pre>
+&lt;!-- Time --&gt;
+&lt;label for="time"&gt;Time:&lt;/label&gt;
+&lt;input type="time" id="time" name="time">&gt;           
+            </pre>
+            <h4>Output</h4>
+            <!-- Time -->
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time">            
+        </section>
+
+        <section>
+            <h3><strong>Type:</strong> <code>file</code> — </h3>            
+            <p>Used to upload files.</p>
+            <pre>
+&lt;!-- File --&gt;
+&lt;label for="file"&gt;File:&lt;/label&gt;
+&lt;input type="file" id="file" name="file"&gt;                
+            </pre>
+            <h4>Output</h4>
+            <label for="file">File:</label>
+            <input type="file" id="file" name="file"/>
+        </section>
+        <section>
+            <h3><strong>Type:</strong> <code>color</code> — </h3>
+            <p>Allows selection of a color.</p>
+            <pre>
+&lt;!-- Color --&gt;
+&lt;label for="color"&gt;Color:&lt;/label&gt;
+&lt;input type="color" id="color" name="color"&gt;
+            </pre>
+            <h4>Output</h4>
+            <label for="color">Color:</label>
+            <input type="color" id="color" name="color" />
+        </section>
+        
+        <section>
+            <h3><strong>Type:</strong> <code>range</code> — </h3>
+            <p>Displays a slider to select a value within a range.</p>
+            <pre>
+&lt;!-- Range --&gt;
+&lt;label for="range"&gt;Range:&lt;/label&gt;
+&lt;input type="range" id="range" name="range" min="0" max="100"&gt;
+            </pre>
+            <h4>Output</h4>
+            <label for="range">Range:</label>
+            <input type="range" id="range" name="range" min="0" max="100" />
+        </section>
+        
+        <section>
+            <h3><strong>Type:</strong> <code>search</code> — </h3>
+            <p>Used for search input fields.</p>
+            <pre>
+&lt;!-- Search --&gt;
+&lt;label for="search"&gt;Search:&lt;/label&gt;
+&lt;input type="search" id="search" name="search" placeholder="Search here"&gt;
+            </pre>
+            <h4>Output</h4>
+            <label for="search">Search:</label>
+            <input type="search" id="search" name="search" placeholder="Search here" />
+        </section>
+        
+        <section>
+            <h3><strong>Type:</strong> <code>url</code> — </h3>
+            <p>Ensures the entered value is a valid URL.</p>
+            <pre>
+&lt;!-- URL --&gt;
+&lt;label for="url"&gt;URL:&lt;/label&gt;
+&lt;input type="url" id="url" name="url" placeholder="Enter a URL"&gt;
+            </pre>
+            <h4>Output</h4>
+            <label for="url">URL:</label>
+            <input type="url" id="url" name="url" placeholder="Enter a URL" />
+        </section>
+        
+        <section>
+            <h3><strong>Type:</strong> <code>tel</code> — </h3>
+            <p>Used for entering phone numbers.</p>
+            <pre>
+&lt;!-- Telephone --&gt;
+&lt;label for="tel"&gt;Telephone:&lt;/label&gt;
+&lt;input type="tel" id="tel" name="tel" placeholder="Enter your phone number"&gt;
+            </pre>
+            <h4>Output</h4>
+            <label for="tel">Telephone:</label>
+            <input type="tel" id="tel" name="tel" placeholder="Enter your phone number" />
+        </section>
+        
+        <section>
+            <h3><strong>Type:</strong> <code>submit</code> — </h3>
+            <p>Submits the form data.</p>
+            <pre>
+&lt;button type="submit"&gt;Submit&lt;/button&gt;
+            </pre>
+            <h4>Output</h4>
+            <button type="submit">Submit</button>
+        </section>
+    </section>
+
+    <section>
+        <h2>Form Elements Example</h2>
+        <pre>
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;form action="" method="POST"&gt;
+        &lt;!-- Text Input --&gt;
+        &lt;label for="name">Name:&lt;/label&gt;
+            &lt;input type="text" id="name" name="user_name" placeholder="Enter your name" required&gt;
+            &lt;!-- Email Input --&gt;
+            &lt;label for="email"&gt;Email:&lt;/label&gt;
+            &lt;input type="email" id="email" name="user_email" placeholder="Enter your email" required&gt;
+    
+            &lt;!-- Password Input --&gt;
+            &lt;label for="password">Password:&lt;/label>
+            &lt;input type="password" id="password" name="user_password" placeholder="Enter your password" required&gt;
+    
+            &lt;!-- Dropdown --&gt;
+            &lt;label for="country">Country:&lt;/label&gt;
+            &lt;select id="country" name="user_country"&gt;
+                    &lt;option value="india">India&lt;/option&gt;
+                    &lt;option value="usa">United States&lt;/option&gt;
+                    &lt;option value="uk">United Kingdom&lt;/option&gt;                    
+                    &lt;option value="australia">Australia&lt;/option&gt;
+            &lt;/select>
+    
+            &lt;!-- Radio Buttons --&gt;
+            &lt;label>Gender:&lt;/label&gt;
+            &lt;input type="radio" id="male" name="user_gender" value="male"&gt;
+            &lt;label for="male">Male&lt;/label&gt;
+            &lt;input type="radio" id="female" name="user_gender" value="female"&gt;
+            &lt;label for="female">Female&lt;/label&gt;
+    
+            &lt;!-- Checkboxes --&gt;
+            &lt;label>Hobbies:&lt;/label&gt;
+            &lt;input type="checkbox" id="hobby_reading" name="user_hobbies" value="reading"&gt;
+            &lt;label for="hobby_reading"&gt;Reading&lt;/label&gt;
+            &lt;input type="checkbox" id="hobby_traveling" name="user_hobbies" value="traveling"&gt;
+            &lt;label for="hobby_traveling"&gt;Traveling&lt;/label&gt;
+            &lt;input type="checkbox" id="hobby_gaming" name="user_hobbies" value="gaming"&gt;
+            &lt;label for="hobby_gaming"&gt;Gaming&lt;/label&gt;
+    
+            &lt;!-- Textarea --&gt;
+            &lt;label for="comments"&gt;Comments:&lt;/label&gt;
+            &lt;textarea id="comments" name="user_comments" placeholder="Write your comments here..." rows="4"&gt;&lt;/textarea&gt;
+    
+            &lt;!-- Submit Button --&gt;
+            &lt;button type="submit"&gt;Submit&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+        <h3>Form Desing</h3>
+        <section>
+            <form action="" method="POST">
+                <!-- Text Input -->
+                <label for="name">Name:</label>
+                    <input type="text" id="name" name="user_name" placeholder="Enter your name" required>
+                    <br>
+                    <!-- Email Input -->
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="user_email" placeholder="Enter your email" required>
+                    <br>            
+                    <!-- Password Input -->
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="user_password" placeholder="Enter your password" required>
+                    <br>
+                    <!-- Dropdown -->
+                    <label for="country">Country:</label>
+                    <select id="country" name="user_country">
+                            <option value="india">India</option>
+                            <option value="usa">United States</option>
+                            <option value="uk">United Kingdom</option>                            
+                            <option value="australia">Australia</option>
+                    </select>
+                    <br>
+                    <!-- Radio Buttons -->
+                    <label>Gender:</label>
+                    <input type="radio" id="male" name="user_gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="user_gender" value="female">
+                    <label for="female">Female</label>
+                    <br>
+                    <!-- Checkboxes -->
+                    <label>Hobbies:</label>
+                    <input type="checkbox" id="hobby_reading" name="user_hobbies" value="reading">
+                    <label for="hobby_reading">Reading</label>
+                    <input type="checkbox" id="hobby_traveling" name="user_hobbies" value="traveling">
+                    <label for="hobby_traveling">Traveling</label>
+                    <input type="checkbox" id="hobby_gaming" name="user_hobbies" value="gaming">
+                    <label for="hobby_gaming">Gaming</label>
+                    <br>
+                    <!-- Textarea -->
+                    <label for="comments">Comments:</label>
+                    <textarea id="comments" name="user_comments" placeholder="Write your comments here..." rows="4"></textarea>
+                    <br>
+                    <!-- Submit Button -->
+                    <button type="submit">Submit</button>
+                </form>        
+        </section>
+    </section>
+
+
+    <section>
+        <h2>Explanation of Common Input Types</h2>
+        <ul>
+            <li><strong>Text:</strong> Collects short text input (e.g., name).</li>
+            <li><strong>Email:</strong> Ensures valid email format.</li>
+            <li><strong>Password:</strong> Masks the input characters.</li>
+            <li><strong>Radio:</strong> Allows single selection from multiple options.</li>
+            <li><strong>Checkbox:</strong> Allows multiple selections.</li>
+            <li><strong>Textarea:</strong> Collects longer text inputs.</li>
+            <li><strong>Dropdown:</strong> Provides a list of options to choose from.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Form Validation</h2>
+        <p>HTML5 provides built-in form validation features that help ensure data is correctly formatted before submission. Some common validation attributes include:</p>
+        <ul>
+            <li><strong>required</strong>: Ensures that the field is filled out before submitting the form.</li>
+            <li><strong>pattern</strong>: Specifies a regular expression to match for input validation (e.g., phone numbers, zip codes).</li>
+            <li><strong>minlength</strong> / <strong>maxlength</strong>: Specifies the minimum and maximum number of characters allowed in the input field.</li>
+            <li><strong>type</strong>: Helps validate the type of input. For example, <code>type="email"</code> will ensure the input is a valid email address format.</li>
+        </ul>
+
+        <h3>Example of Form Validation</h3>
+        <p>Here is an example of a form that uses validation:</p>
+        <pre>
+&lt;form id="contactForm" action="#" method="POST" onsubmit="return validateForm()"&gt
+    &lt;label for="username"&gtUsername:&lt;/label&gt
+    &lt;input type="text" id="username" name="username" required&gt
+    &lt;br&gt
+    &lt;label for="email"&gtEmail:&lt;/label&gt
+    &lt;input type="email" id="email" name="email" required&gt
+    &lt;br&gt
+    &lt;label for="phone"&gtPhone Number:&lt;/label&gt
+    &lt;input type="text" id="phone" name="phone" pattern="^\d{10}$" title="Phone number must be 10 digits" required&gt
+    &lt;br&gt
+    &lt;input type="submit" value="Submit"&gt
+&lt;/form>
+&lt;p class="error" id="error-message"&gt;&lt;/p&gt
+        </pre>        
+    </section>
+
+    <section>
+        <h2>JavaScript Form Validation</h2>
+        <p>Sometimes, HTML's built-in validation might not be sufficient for complex scenarios, and additional validation can be done using JavaScript.</p>
+
+        <p>Here is a simple JavaScript example that validates the form:</p>
+        <pre>
+&lt;script&gt;
+    function validateForm() {
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var errorMessage = document.getElementById("error-message")
+        // Validate phone number
+        var phonePattern = /^\d{10}$/;
+        if (!phonePattern.test(phone)) {
+            errorMessage.textContent = "Phone number must be exactly 10 digits.";
+            return false;
+        
+        // Validate username
+        if (username == "") {
+            errorMessage.textContent = "Username is required.";
+            return false;
+        
+        // Validate email
+        if (email == "") {
+            errorMessage.textContent = "Email is required.";
+            return false;
+        
+        // If all validations pass
+        errorMessage.textContent = "";
+        return true;
+    }
+&lt;/script&gt;
+        </pre>                
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
