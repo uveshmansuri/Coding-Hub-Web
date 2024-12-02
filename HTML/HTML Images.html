@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Images in HTML</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
 </head>
 <body>
     <header>
@@ -20,7 +21,7 @@
         <h2>The &lt;img&gt; Tag</h2>
         <p>The <code>&lt;img&gt;</code> tag is used to embed images in an HTML document. It is an empty tag, meaning it does not have a closing tag. The basic syntax is:</p>
         <pre>
-<img src="url" alt="description" />
+&ltimg src="url" alt="description" /&gt
         </pre>
         <h3>Attributes of the &lt;img&gt; Tag</h3>
         <ul>
@@ -38,10 +39,14 @@
             <div class="code">
 <code>&lt;img src="image.jpg" alt="A beautiful scenery" width="500"&gt;</code>
             </div>
-            <p>This example displays an image with a specified width of 500 pixels.</p>
-            <div class="img-container">
-                <img src="https://via.placeholder.com/500" alt="A beautiful scenery">
-            </div>
+            <p>This example displays an image with a specified width of 300 pixels and height of 150 pixels.</p>
+            <pre>
+&lt;img src="../Images/fc.jpeg" alt="Computers" style="width: 100px; height: 100px;"&gt;
+            </pre>
+            <h4>Output</h4>
+            <section>
+                <img src="../Images/fc.jpeg" alt="Computers" style="width: 300px; height: 150px;">
+            </section>
         </div>
 
         <div class="example">
