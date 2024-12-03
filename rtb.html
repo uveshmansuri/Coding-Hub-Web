@@ -7,9 +7,11 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0px;
+      margin: 5px;
+      padding: 5px;
       background-color: #f9f9f9;
       color: #333;
+      height: auto;
     }
     h1 {
       text-align: center;
@@ -46,14 +48,15 @@
     }
     .editor {
       border: 1px solid #ccc;
+      margin: 10px;
       padding: 10px;
-      height: 200px;
+      height: 150px;
       overflow: auto;
       resize: none;
       white-space: nowrap;
       word-wrap: break-word;
       background-color: #fff;
-      border-radius: 5px;
+      border-radius: 10px;
     }
     .editor:focus {
       outline: none;
@@ -74,36 +77,43 @@
     .editor::-webkit-scrollbar-track {
       background-color: #f1f1f1;
     }
+    section {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: auto;
+    }
   </style>
 </head>
 <body>
   <!--h1>Rich Text Editor</h1-->
-  <div class="toolbar">
-    <!-- Text Formatting Buttons -->
-    <button id="boldBtn" onclick="toggleAndApply('bold')">Bold</button>
-    <button id="italicBtn" onclick="toggleAndApply('italic')">Italic</button>
-    <button id="underlineBtn" onclick="toggleAndApply('underline')">Underline</button>    
-    <button id="orderedListBtn" onclick="toggleAndApply('insertOrderedList')">Ordered List</button>
-    <button id="unorderedListBtn" onclick="toggleAndApply('insertUnorderedList')">Unordered List</button>
-    <button id="linkBtn" onclick="addLink()">Add Link</button>
-
-    <!-- Text Alignment -->
-    <button id="alignLeftBtn" onclick="toggleAndApply('justifyLeft')">Align Left</button>
-    <button id="alignCenterBtn" onclick="toggleAndApply('justifyCenter')">Align Center</button>
-    <button id="alignRightBtn" onclick="toggleAndApply('justifyRight')">Align Right</button>
-
-    <!-- Headings Dropdown -->
-    <select id="formatDropdown" onchange="applyHeading(this.value)">
-      <option value="p" selected>Normal Text</option>
-      <option value="h1">Heading 1</option>
-      <option value="h2">Heading 2</option>
-      <option value="h3">Heading 3</option>
-    </select>
-  </div>
-
-  <div class="editor" id="editor" contenteditable="true" onkeyup="updateToolbar()" onmouseup="updateToolbar()">
-    
-  </div>
+  <section>
+    <div class="toolbar">
+      <!-- Text Formatting Buttons -->
+      <button id="boldBtn" onclick="toggleAndApply('bold')">Bold</button>
+      <button id="italicBtn" onclick="toggleAndApply('italic')">Italic</button>
+      <button id="underlineBtn" onclick="toggleAndApply('underline')">Underline</button>    
+      <button id="orderedListBtn" onclick="toggleAndApply('insertOrderedList')">Ordered List</button>
+      <button id="unorderedListBtn" onclick="toggleAndApply('insertUnorderedList')">Unordered List</button>
+  
+      <!-- Text Alignment -->
+      <button id="alignLeftBtn" onclick="toggleAndApply('justifyLeft')">Align Left</button>
+      <button id="alignCenterBtn" onclick="toggleAndApply('justifyCenter')">Align Center</button>
+      <button id="alignRightBtn" onclick="toggleAndApply('justifyRight')">Align Right</button>
+  
+      <!-- Headings Dropdown -->
+      <select id="formatDropdown" onchange="applyHeading(this.value)">
+        <option value="p" selected>Normal Text</option>
+        <option value="h1">Heading 1</option>
+        <option value="h2">Heading 2</option>
+        <option value="h3">Heading 3</option>
+      </select>
+    </div>
+  
+    <div class="editor" id="editor" contenteditable="true" onkeyup="updateToolbar()" onmouseup="updateToolbar()">
+      
+    </div>
+  </section>
 
   <script>
     // Toggles a format, applies it, and highlights/unhighlights the button
@@ -111,13 +121,6 @@
       const isActive = document.queryCommandState(command);
       document.execCommand(command, false, '');
       updateToolbar(); // Update toolbar states
-    }
-
-    // Add a hyperlink
-    function addLink() {
-      const url = prompt('Enter URL:');
-      if (url) document.execCommand('createLink', false, url);
-      updateToolbar();
     }
 
     // Apply headings and reset toolbar state
