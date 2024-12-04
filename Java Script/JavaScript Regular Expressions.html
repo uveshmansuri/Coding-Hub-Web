@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Regular Expressions</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>JavaScript Regular Expressions</h1>
+</header>
+
+<section>
+    <h2>Regular Expression in JavaScript</h2>
+    <p>A regular expression (or regex) is a powerful tool used in JavaScript to search, match, and manipulate strings based on patterns. Regular expressions consist of characters and operators that form search patterns. These patterns can be used to check if a string contains a specific sequence of characters or to find, replace, or validate text.</p>
+    <p>In JavaScript, regular expressions are implemented using the <code>RegExp</code> object or through the regular expression literal syntax. Regular expressions can be used in a variety of situations, such as form validation, text parsing, and data extraction from strings.</p>
+</section>
+
+<section>
+    <h2>Creating a Regular Expression</h2>
+    <p>In JavaScript, you can create regular expressions in two ways:</p>
+    <ul>
+        <li><strong>Regular Expression Literals:</strong> Enclosed between forward slashes, <code>/pattern/</code>.</li>
+        <li><strong>RegExp Constructor:</strong> Using the <code>new RegExp()</code> syntax.</li>
+    </ul>
+
+    <h3>Example of Regular Expression Literal</h3>
+    <pre><code>let regex = /hello/;</code></pre>
+
+    <h3>Example using RegExp Constructor</h3>
+    <pre><code>let regex = new RegExp('hello');</code></pre>
+</section>
+
+<section>
+    <h2>Basic Syntax and Symbols</h2>
+    <p>Regular expressions have a set of special characters and syntax that define how patterns are matched. Below are the most commonly used symbols and syntax in JavaScript regular expressions:</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Meaning</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>.</code></td>
+                <td>Matches any character except newlines.</td>
+            </tr>
+            <tr>
+                <td><code>\d</code></td>
+                <td>Matches any digit (0-9).</td>
+            </tr>
+            <tr>
+                <td><code>\w</code></td>
+                <td>Matches any word character (alphanumeric & underscore).</td>
+            </tr>
+            <tr>
+                <td><code>\s</code></td>
+                <td>Matches any whitespace character (spaces, tabs, line breaks).</td>
+            </tr>
+            <tr>
+                <td><code>\b</code></td>
+                <td>Matches a word boundary.</td>
+            </tr>
+            <tr>
+                <td><code>^</code></td>
+                <td>Matches the start of a string.</td>
+            </tr>
+            <tr>
+                <td><code>$</code></td>
+                <td>Matches the end of a string.</td>
+            </tr>
+            <tr>
+                <td><code>[abc]</code></td>
+                <td>Matches any of the characters <code>a</code>, <code>b</code>, or <code>c</code>.</td>
+            </tr>
+            <tr>
+                <td><code>[^abc]</code></td>
+                <td>Matches any character except <code>a</code>, <code>b</code>, or <code>c</code>.</td>
+            </tr>
+            <tr>
+                <td><code>+</code></td>
+                <td>Matches one or more of the preceding element.</td>
+            </tr>
+            <tr>
+                <td><code>*</code></td>
+                <td>Matches zero or more of the preceding element.</td>
+            </tr>
+            <tr>
+                <td><code>?</code></td>
+                <td>Matches zero or one of the preceding element.</td>
+            </tr>
+            <tr>
+                <td><code>{n}</code></td>
+                <td>Matches exactly <code>n</code> occurrences of the preceding element.</td>
+            </tr>
+            <tr>
+                <td><code>{n,}</code></td>
+                <td>Matches <code>n</code> or more occurrences of the preceding element.</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section>
+    <h2>Using Regular Expressions in JavaScript</h2>
+    <p>In JavaScript, regular expressions can be used in various methods such as <code>test()</code>, <code>exec()</code>, <code>match()</code>, <code>replace()</code>, and more. Below are examples of using regular expressions with different JavaScript methods.</p>
+
+    <h3><code>test()</code> Method</h3>
+    <p>The <code>test()</code> method tests whether a string matches a given regular expression. It returns <code>true</code> if the string matches the pattern, or <code>false</code> otherwise.</p>
+    <pre><code>
+let regex = /hello/;
+console.log(regex.test('hello world'));  // Output: true
+console.log(regex.test('hi there'));     // Output: false
+    </code></pre>
+
+    <h3><code>exec()</code> Method</h3>
+    <p>The <code>exec()</code> method searches for a match in a string and returns an array of results. If no match is found, it returns <code>null</code>.</p>
+    <pre><code>
+let regex = /hello/;
+let result = regex.exec('hello world');
+console.log(result);  // Output: ["hello"]
+    </code></pre>
+
+    <h3><code>match()</code> Method</h3>
+    <p>The <code>match()</code> method is used to retrieve the result of matching a regular expression against a string. It returns an array of matches or <code>null</code> if no match is found.</p>
+    <pre><code>
+let str = 'hello world';
+let result = str.match(/world/);
+console.log(result);  // Output: ["world"]
+    </code></pre>
+
+    <h3><code>replace()</code> Method</h3>
+    <p>The <code>replace()</code> method is used to search for a pattern and replace it with a new string. It can also take a regular expression pattern.</p>
+    <pre><code>
+let str = 'hello world';
+let newStr = str.replace(/world/, 'JavaScript');
+console.log(newStr);  // Output: "hello JavaScript"
+    </code></pre>
+</section>
+
+<section>
+    <h2>Flags in Regular Expressions</h2>
+    <p>Regular expressions in JavaScript can include flags that modify their behavior. The most commonly used flags are:</p>
+    <ul>
+        <li><strong>g (global):</strong> Matches all occurrences of the pattern in the string, not just the first.</li>
+        <li><strong>i (case-insensitive):</strong> Makes the match case-insensitive.</li>
+        <li><strong>m (multiline):</strong> Changes the behavior of <code>^</code> and <code>$</code> to match the beginning and end of each line, not just the string.</li>
+    </ul>
+
+    <h3>Example with Flags</h3>
+    <pre><code>
+let regex = /hello/gi;
+let str = 'Hello world, hello world!';
+let result = str.match(regex);
+console.log(result);  // Output: ["Hello", "hello"]
+    </code></pre>
+</section>
+
+<section>
+    <h2>Regular Expression Groups and Capturing</h2>
+    <p>Groups allow you to group part of a regular expression together, and capturing allows you to extract these groups from the matched string.</p>
+
+    <h3>Example with Groups</h3>
+    <pre><code>
+let regex = /(\d{3})-(\d{3})-(\d{4})/;
+let str = '123-456-7890';
+let result = str.match(regex);
+console.log(result);  // Output: ["123-456-7890", "123", "456", "7890"]
+    </code></pre>
+
+    <p>The parentheses <code>( )</code> are used to define groups. When the regular expression matches, each group can be accessed using its index in the result array.</p>
+</section>
+
+<section>
+    <h2>Best Practices for Using Regular Expressions</h2>
+    <ul>
+        <li><strong>Keep it Simple:</strong> Use the simplest regular expression that meets your needs to ensure readability and maintainability.</li>
+        <li><strong>Test Regular Expressions:</strong> Regular expressions can sometimes be complex, so it is a good idea to test them using online tools like regex101 or regexr.</li>
+        <li><strong>Escape Special Characters:</strong> If you need to match special characters, remember to escape them with a backslash <code>\</code>.</li>
+    </ul>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

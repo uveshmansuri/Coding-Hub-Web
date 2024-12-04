@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Features in JavaScript</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>ES6 Features in JavaScript</h1>
+</header>
+
+<section>
+    <h2>Introduction</h2>
+    <p>ES6, also known as ECMAScript 2015, introduced several powerful features to JavaScript,
+         making the language more modern, efficient, and developer-friendly.</p>
+</section>
+
+<section>
+    <h2>Key Features of ES6</h2>
+
+    <h3>1. let and const</h3>
+    <p>
+        The <code>let</code> and <code>const</code> keywords are block-scoped variables that replace the need for <code>var</code> in most cases.
+    </p>
+    <pre><code>
+// Using let
+let name = "Alice";
+if (true) {
+    let name = "Bob"; // Block-scoped
+    console.log(name); // Bob
+}
+console.log(name); // Alice
+
+// Using const
+const pi = 3.14159; // Value cannot be reassigned
+console.log(pi);
+    </code></pre>
+
+    <h3>2. Template Literals</h3>
+    <p>
+        Template literals use backticks (<code>`</code>) for string interpolation and multi-line strings.
+    </p>
+    <pre><code>
+const name = "Alice";
+const greeting = `Hello, ${name}! Welcome to ES6.`;
+console.log(greeting);
+    </code></pre>
+
+    <h3>3. Arrow Functions</h3>
+    <p>
+        Arrow functions provide a more concise syntax for writing functions and inherit the <code>this</code> context from their parent scope.
+    </p>
+    <pre><code>
+// Regular function
+function add(a, b) {
+    return a + b;
+}
+
+// Arrow function
+const add = (a, b) => a + b;
+
+console.log(add(2, 3)); // 5
+    </code></pre>
+
+    <h3>4. Default Parameters</h3>
+    <p>
+        Functions can now have default parameter values.
+    </p>
+    <pre><code>
+function greet(name = "Guest") {
+    console.log(`Hello, ${name}!`);
+}
+
+greet(); // Hello, Guest!
+greet("Alice"); // Hello, Alice!
+    </code></pre>
+
+    <h3>5. Destructuring Assignment</h3>
+    <p>
+        Destructuring allows you to unpack values from arrays or properties from objects into distinct variables.
+    </p>
+    <pre><code>
+// Array destructuring
+const [a, b] = [1, 2];
+console.log(a, b); // 1 2
+
+// Object destructuring
+const person = { name: "Alice", age: 25 };
+const { name, age } = person;
+console.log(name, age); // Alice 25
+    </code></pre>
+
+    <h3>6. Spread and Rest Operators</h3>
+    <p>
+        The spread operator (<code>...</code>) expands arrays or objects, while the rest operator gathers remaining elements into an array.
+    </p>
+    <pre><code>
+// Spread operator
+const arr1 = [1, 2];
+const arr2 = [...arr1, 3, 4];
+console.log(arr2); // [1, 2, 3, 4]
+
+// Rest operator
+function sum(...numbers) {
+    return numbers.reduce((a, b) => a + b);
+}
+console.log(sum(1, 2, 3)); // 6
+    </code></pre>
+
+    <h3>7. Enhanced Object Literals</h3>
+    <p>
+        ES6 enhances object literals with features like shorthand properties and method definitions.
+    </p>
+    <pre><code>
+const name = "Alice";
+const age = 25;
+const person = {
+    name, // Shorthand property
+    age,
+    greet() { // Method definition
+        console.log(`Hello, ${this.name}`);
+    }
+};
+person.greet(); // Hello, Alice
+    </code></pre>
+
+    <h3>8. Promises</h3>
+    <p>
+        Promises make handling asynchronous operations easier by providing a cleaner syntax compared to callbacks.
+    </p>
+    <pre><code>
+const fetchData = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Data fetched"), 1000);
+});
+
+fetchData.then(data => console.log(data)).catch(err => console.error(err));
+    </code></pre>
+
+    <h3>9. Classes</h3>
+    <p>
+        ES6 introduces a class syntax for creating objects and managing inheritance.
+    </p>
+    <pre><code>
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    speak() {
+        console.log(`${this.name} makes a sound.`);
+    }
+}
+
+class Dog extends Animal {
+    speak() {
+        console.log(`${this.name} barks.`);
+    }
+}
+
+const dog = new Dog("Buddy");
+dog.speak(); // Buddy barks.
+    </code></pre>
+
+    <h3>10. Modules</h3>
+    <p>
+        ES6 introduces the <code>import</code> and <code>export</code> keywords for modular programming.
+    </p>
+    <pre><code>
+// file: math.js
+export function add(a, b) {
+    return a + b;
+}
+
+// file: main.js
+import { add } from './math.js';
+console.log(add(2, 3)); // 5
+    </code></pre>
+
+    <h3>11. Iterators and Generators</h3>
+    <p>
+        Generators provide a way to pause and resume functions.
+    </p>
+    <pre><code>
+function* generateSequence() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+const generator = generateSequence();
+console.log(generator.next().value); // 1
+console.log(generator.next().value); // 2
+    </code></pre>
+
+    <h3>12. Map and Set</h3>
+    <p>
+        New collection types like <code>Map</code> and <code>Set</code> were introduced for better data structures.
+    </p>
+    <pre><code>
+// Map
+const map = new Map();
+map.set('name', 'Alice');
+console.log(map.get('name')); // Alice
+
+// Set
+const set = new Set([1, 2, 2, 3]);
+console.log(set); // Set { 1, 2, 3 }
+    </code></pre>
+</section>
+
+<section>
+    <h2>Conclusion</h2>
+    <p>ES6 brings numerous features that enhance the functionality and readability of JavaScript code. Understanding and utilizing these features can make your development process more efficient and your code more maintainable.</p>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

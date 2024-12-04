@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Modules</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>JavaScript Modules</h1>
+</header>
+
+<section>
+    <h2>JavaScript Modules</h2>
+    <p>JavaScript modules are a way to break down your code into smaller, reusable pieces. They help organize your codebase and allow for better code management, especially in larger applications. A module is simply a JavaScript file that contains code that can be exported and imported into other files.</p>
+    <p>Modules in JavaScript are supported natively in modern browsers and Node.js. Using modules helps to avoid polluting the global namespace and improves code maintainability.</p>
+</section>
+
+<section>
+    <h2>Types of JavaScript Modules</h2>
+    <p>There are two main types of JavaScript modules: ES6 Modules and CommonJS. ES6 modules are the standard for modern JavaScript applications, while CommonJS is more common in Node.js environments.</p>
+    <h3>ES6 Modules</h3>
+    <p>ES6 modules (also known as ECMAScript modules) use the <code>import</code> and <code>export</code> keywords. They allow you to export functions, objects, or variables from one module and import them into another module.</p>
+
+    <h4>Exporting from a Module</h4>
+    <pre><code>
+// math.js
+
+export function add(a, b) {
+    return a + b;
+}
+
+export const pi = 3.14;
+    </code></pre>
+    <p>In the example above, the <code>add</code> function and the <code>pi</code> constant are exported from the <code>math.js</code> module.</p>
+
+    <h4>Importing into Another Module</h4>
+    <pre><code>
+// app.js
+
+import { add, pi } from './math.js';
+
+console.log(add(2, 3));  // Output: 5
+console.log(pi);         // Output: 3.14
+    </code></pre>
+    <p>In <code>app.js</code>, we import the <code>add</code> function and the <code>pi</code> constant from the <code>math.js</code> module and use them.</p>
+
+    <h3>CommonJS Modules</h3>
+    <p>CommonJS modules are primarily used in Node.js applications. They use the <code>module.exports</code> syntax for exporting and <code>require()</code> for importing.</p>
+
+    <h4>Exporting in CommonJS</h4>
+    <pre><code>
+// math.js
+
+module.exports = {
+    add: function(a, b) {
+        return a + b;
+    },
+    pi: 3.14
+};
+    </code></pre>
+    <p>In CommonJS, we export an object containing the function and constant we want to share with other modules.</p>
+
+    <h4>Importing in CommonJS</h4>
+    <pre><code>
+// app.js
+
+const math = require('./math.js');
+
+console.log(math.add(2, 3));  // Output: 5
+console.log(math.pi);         // Output: 3.14
+    </code></pre>
+    <p>In <code>app.js</code>, we use <code>require()</code> to import the <code>math.js</code> module.</p>
+</section>
+
+<section>
+    <h2>Advantages of Using JavaScript Modules</h2>
+    <ul>
+        <li><strong>Modularity:</strong> Organize code into smaller, reusable pieces.</li>
+        <li><strong>Encapsulation:</strong> Variables and functions are scoped to their respective modules, preventing them from interfering with the global scope.</li>
+        <li><strong>Maintainability:</strong> Modules make it easier to manage and scale large applications.</li>
+        <li><strong>Lazy Loading:</strong> You can import modules only when needed, improving performance in large apps.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Dynamic Imports</h2>
+    <p>In addition to static imports, JavaScript also supports dynamic imports. Dynamic imports allow you to load modules asynchronously at runtime, which can help improve performance by splitting your code into smaller chunks.</p>
+    <h3>Dynamic Import Example</h3>
+    <pre><code>
+async function loadMathModule() {
+    const mathModule = await import('./math.js');
+    console.log(mathModule.add(5, 7));  // Output: 12
+}
+
+loadMathModule();
+    </code></pre>
+    <p>In the example above, we use the <code>import()</code> function to dynamically load the <code>math.js</code> module and use it asynchronously. This is useful for large applications where you want to load certain parts of your code only when needed.</p>
+</section>
+
+<section>
+    <h2>Using Modules in the Browser</h2>
+    <p>In modern browsers, you can use JavaScript modules by setting the <code>type</code> attribute of the <code>script</code> tag to <code>module</code>.</p>
+    <h3>Browser Example</h3>
+    <pre><code>
+&lt;!-- index.html --&gt;
+&lt;script type="module"&gt;
+    import { add, pi } from './math.js';
+    console.log(add(2, 3));  // Output: 5
+    console.log(pi);         // Output: 3.14
+&lt;script&gt;
+    </code></pre>
+    <p>In this example, we directly import the <code>add</code> function and <code>pi</code> constant from the <code>math.js</code> module in the browser using the <code>type="module"</code> attribute.</p>
+</section>
+
+<section>
+    <h2>Module Exports: Named vs Default</h2>
+    <p>In JavaScript modules, you can export multiple items from a module using named exports, or you can export a single item as the default export.</p>
+
+    <h3>Named Exports</h3>
+    <pre><code>
+// math.js
+export function add(a, b) {
+    return a + b;
+}
+
+export const pi = 3.14;
+    </code></pre>
+    <p>Named exports allow you to export multiple items from a module. You can import each item by name.</p>
+
+    <h3>Default Exports</h3>
+    <pre><code>
+// math.js
+export default function add(a, b) {
+    return a + b;
+}
+    </code></pre>
+    <p>With default exports, you export a single item as the default. You can import it without using curly braces.</p>
+
+    <h4>Importing Default Exports</h4>
+    <pre><code>
+// app.js
+import add from './math.js';
+console.log(add(2, 3));  // Output: 5
+    </code></pre>
+    <p>In the example above, we import the default export <code>add</code> function directly.</p>
+</section>
+
+<section>
+    <h2>Common Module Errors</h2>
+    <p>When working with modules, there are some common errors that developers may encounter:</p>
+    <ul>
+        <li><strong>Incorrect module path:</strong> Ensure that the module file is located in the correct directory and the path is correctly specified in the import statement.</li>
+        <li><strong>Missing export:</strong> Make sure that the module is exporting the required functions, objects, or variables.</li>
+        <li><strong>Using modules in non-module environments:</strong> Some older browsers or Node.js versions may not support modules. In such cases, ensure that you use a transpiler like Babel to convert your module code.</li>
+    </ul>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

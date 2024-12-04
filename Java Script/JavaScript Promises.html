@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Promises</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>JavaScript Promises</h1>
+</header>
+
+<section>
+    <h2>What is a Promise in JavaScript?</h2>
+    <p>A <strong>Promise</strong> in JavaScript is a mechanism that allows asynchronous operations to return a value in the future. It represents an operation that hasn't completed yet but is expected to in the future. Promises are used to handle asynchronous code in a more manageable way compared to callbacks, helping to avoid callback hell.</p>
+    <p>A Promise can be in one of three states:</p>
+    <ul>
+        <li><strong>Pending:</strong> The initial state, neither fulfilled nor rejected.</li>
+        <li><strong>Fulfilled:</strong> The operation completed successfully.</li>
+        <li><strong>Rejected:</strong> The operation failed.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Creating a Promise</h2>
+    <p>Promises are created using the <code>new Promise()</code> constructor. It takes a function (called the executor function) that has two parameters: <code>resolve</code> and <code>reject</code>.</p>
+    <p>The <code>resolve</code> function is called when the promise is fulfilled, and <code>reject</code> is called when the promise is rejected.</p>
+
+    <h3>Syntax:</h3>
+    <pre><code>let promise = new Promise(function(resolve, reject) {
+  // Asynchronous code here
+});</code></pre>
+
+    <h3>Example of Creating a Promise</h3>
+    <pre><code>
+let promise = new Promise(function(resolve, reject) {
+    let success = true;
+
+    if (success) {
+        resolve("Operation was successful!");
+    } else {
+        reject("Operation failed!");
+    }
+});
+
+promise.then(function(result) {
+    console.log(result);  // Output: Operation was successful!
+}).catch(function(error) {
+    console.log(error);   // Output: Operation failed!
+});
+    </code></pre>
+</section>
+
+<section>
+    <h2>Using <code>then()</code> and <code>catch()</code></h2>
+    <p>Once a promise is created, you can handle its fulfillment or rejection using the <code>then()</code> and <code>catch()</code> methods:</p>
+    <ul>
+        <li><strong><code>then()</code>:</strong> This method is used to define what should happen when the promise is fulfilled (resolved).</li>
+        <li><strong><code>catch()</code>:</strong> This method is used to define what should happen when the promise is rejected.</li>
+    </ul>
+
+    <h3>Example:</h3>
+    <pre><code>
+let promise = new Promise(function(resolve, reject) {
+    let success = false;
+
+    if (success) {
+        resolve("Promise resolved!");
+    } else {
+        reject("Promise rejected!");
+    }
+});
+
+promise.then(function(result) {
+    console.log(result);  // Output: Promise resolved!
+}).catch(function(error) {
+    console.log(error);   // Output: Promise rejected!
+});
+    </code></pre>
+</section>
+
+<section>
+    <h2>Chaining Promises</h2>
+    <p>One of the most powerful features of promises is that they can be chained. This allows you to perform multiple asynchronous operations in sequence, with each subsequent operation starting only after the previous one has completed.</p>
+
+    <h3>Example of Chaining Promises:</h3>
+    <pre><code>
+let promise = new Promise(function(resolve, reject) {
+    let success = true;
+
+    if (success) {
+        resolve("Step 1 completed");
+    } else {
+        reject("Step 1 failed");
+    }
+});
+
+promise.then(function(result) {
+    console.log(result);  // Output: Step 1 completed
+    return "Step 2 completed";  // Returning a new value
+}).then(function(result) {
+    console.log(result);  // Output: Step 2 completed
+    return "Step 3 completed";  // Returning a new value
+}).catch(function(error) {
+    console.log(error);  // If any promise fails, this will catch the error
+});
+    </code></pre>
+</section>
+
+<section>
+    <h2>Using <code>finally()</code> Method</h2>
+    <p>The <code>finally()</code> method allows you to execute code after a promise has been fulfilled or rejected, regardless of the outcome. It is often used for cleanup tasks, such as closing resources or hiding loading indicators.</p>
+
+    <h3>Syntax:</h3>
+    <pre><code>promise.finally(function() {
+    // Code to run after the promise has completed
+});</code></pre>
+
+    <h3>Example of <code>finally()</code>:</h3>
+    <pre><code>
+let promise = new Promise(function(resolve, reject) {
+    let success = true;
+
+    if (success) {
+        resolve("Task completed successfully!");
+    } else {
+        reject("Task failed!");
+    }
+});
+
+promise.then(function(result) {
+    console.log(result);  // Output: Task completed successfully!
+}).catch(function(error) {
+    console.log(error);   // Output: Task failed!
+}).finally(function() {
+    console.log("Cleanup after task.");  // This will run no matter what
+});
+    </code></pre>
+</section>
+
+<section>
+    <h2>Promise.all() and Promise.race()</h2>
+    <p>JavaScript provides two methods for working with multiple promises at once: <code>Promise.all()</code> and <code>Promise.race()</code>.</p>
+    
+    <h3><code>Promise.all()</code></h3>
+    <p><code>Promise.all()</code> takes an array of promises and returns a single promise that resolves when all the promises in the array have been fulfilled, or rejects as soon as one promise is rejected.</p>
+
+    <h3>Example of <code>Promise.all()</code>:</h3>
+    <pre><code>
+let promise1 = Promise.resolve("First promise resolved");
+let promise2 = Promise.resolve("Second promise resolved");
+
+Promise.all([promise1, promise2]).then(function(values) {
+    console.log(values);  // Output: ["First promise resolved", "Second promise resolved"]
+}).catch(function(error) {
+    console.log(error);
+});
+    </code></pre>
+
+    <h3><code>Promise.race()</code></h3>
+    <p><code>Promise.race()</code> returns a promise that resolves or rejects as soon as the first promise in the array settles (either fulfilled or rejected).</p>
+
+    <h3>Example of <code>Promise.race()</code>:</h3>
+    <pre><code>
+let promise1 = new Promise((resolve, reject) => setTimeout(resolve, 500, "First promise"));
+let promise2 = new Promise((resolve, reject) => setTimeout(resolve, 100, "Second promise"));
+
+Promise.race([promise1, promise2]).then(function(value) {
+    console.log(value);  // Output: Second promise (since it resolves first)
+});
+    </code></pre>
+</section>
+
+<section>
+    <h2>Best Practices with Promises</h2>
+    <ul>
+        <li><strong>Use <code>catch()</code> to handle errors:</strong> Always handle potential errors in your promises using <code>catch()</code> to avoid unhandled rejections.</li>
+        <li><strong>Chain promises for better readability:</strong> Avoid deeply nested callbacks by chaining promises, making your code cleaner and easier to maintain.</li>
+        <li><strong>Use <code>finally()</code> for cleanup tasks:</strong> Even if a promise resolves or rejects, always use <code>finally()</code> for any cleanup actions that need to happen.</li>
+        <li><strong>Be careful with <code>Promise.all()</code>:</strong> If one of the promises in <code>Promise.all()</code> rejects, it will immediately reject the entire group of promises.</li>
+    </ul>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

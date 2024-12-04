@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON in JavaScript</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>JSON in JavaScript</h1>
+</header>
+
+<section>
+    <h2>JSON</h2>
+    <p>JSON stands for <strong>JavaScript Object Notation</strong>. It is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is primarily used to transmit data between a server and a web application as text.</p>
+    <p>JSON is a text format that uses a syntax that is a subset of JavaScript. It is primarily composed of key-value pairs, where each key is a string, and each value can be a string, number, object, array, boolean, or null.</p>
+</section>
+
+<section>
+    <h2>JSON Syntax</h2>
+    <p>JSON syntax is a collection of key-value pairs separated by commas. It starts and ends with curly braces (<code>{}</code>) and can contain nested objects or arrays. The keys are always enclosed in double quotes, while the values can be various data types.</p>
+
+    <h3>Basic JSON Structure</h3>
+    <pre><code>
+{
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+}
+    </code></pre>
+
+    <p>In this example, the JSON object has three properties: <code>name</code>, <code>age</code>, and <code>city</code>, with corresponding values.</p>
+</section>
+
+<section>
+    <h2>JSON Data Types</h2>
+    <p>JSON supports several data types. These include:</p>
+    <ul>
+        <li><strong>String</strong>: A sequence of characters enclosed in double quotes. Example: <code>"Hello, World!"</code></li>
+        <li><strong>Number</strong>: A numerical value without quotes. Example: <code>42</code></li>
+        <li><strong>Object</strong>: A collection of key-value pairs enclosed in curly braces. Example: <code>{ "key": "value" }</code></li>
+        <li><strong>Array</strong>: A collection of values enclosed in square brackets. Example: <code>[1, 2, 3, 4]</code></li>
+        <li><strong>Boolean</strong>: A value of either <code>true</code> or <code>false</code>.</li>
+        <li><strong>Null</strong>: A null value representing no value.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>JSON and JavaScript Objects</h2>
+    <p>JSON objects are similar to JavaScript objects in that they both consist of key-value pairs. However, the primary difference is that JSON data is strictly a string format, while JavaScript objects can hold various types of values, including methods and other complex objects.</p>
+
+    <h3>JavaScript Object Example</h3>
+    <pre><code>
+const person = {
+    name: "John",
+    age: 30,
+    city: "New York"
+};
+    </code></pre>
+    <p>This is a JavaScript object. It's similar in structure to JSON, but it can also include functions and methods. JSON does not support functions, only data.</p>
+
+    <h3>JSON Object Example</h3>
+    <pre><code>
+{
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+}
+    </code></pre>
+    <p>This is the same data, but it is formatted as a JSON string.</p>
+</section>
+
+<section>
+    <h2>JSON Methods in JavaScript</h2>
+    <p>JavaScript provides two important methods for working with JSON:</p>
+    <ul>
+        <li><strong>JSON.stringify()</strong>: Converts a JavaScript object into a JSON string.</li>
+        <li><strong>JSON.parse()</strong>: Converts a JSON string into a JavaScript object.</li>
+    </ul>
+
+    <h3>Example: JSON.stringify()</h3>
+    <pre><code>
+const person = {
+    name: "John",
+    age: 30,
+    city: "New York"
+};
+
+const jsonString = JSON.stringify(person);
+console.log(jsonString);  // Output: {"name":"John","age":30,"city":"New York"}
+    </code></pre>
+
+    <h3>Example: JSON.parse()</h3>
+    <pre><code>
+const jsonString = '{"name":"John","age":30,"city":"New York"}';
+const person = JSON.parse(jsonString);
+console.log(person.name);  // Output: John
+    </code></pre>
+</section>
+
+<section>
+    <h2>JSON Arrays</h2>
+    <p>Just like JavaScript arrays, JSON arrays are ordered collections of values. These values can be of any data type, including objects or even other arrays.</p>
+
+    <h3>Example of JSON Array</h3>
+    <pre><code>
+{
+    "people": [
+        {"name": "John", "age": 30},
+        {"name": "Jane", "age": 25},
+        {"name": "Mark", "age": 35}
+    ]
+}
+    </code></pre>
+    <p>This JSON structure contains an array of people, each of which is an object with <code>name</code> and <code>age</code> properties.</p>
+</section>
+
+<section>
+    <h2>Working with JSON in JavaScript</h2>
+    <p>JSON is commonly used to send and receive data from web servers. Typically, JSON is used in APIs to send data to the server and receive responses.</p>
+
+    <h3>Sending JSON with Fetch API</h3>
+    <pre><code>
+fetch('https://api.example.com/data', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        name: "John",
+        age: 30
+    })
+})
+.then(response => response.json())
+.then(data => console.log(data));
+    </code></pre>
+
+    <p>In this example, JSON data is sent to a server using the <code>fetch()</code> method, and the response is parsed into a JavaScript object using <code>response.json()</code>.</p>
+</section>
+
+<section>
+    <h2>Advantages of Using JSON</h2>
+    <p>JSON offers several advantages:</p>
+    <ul>
+        <li><strong>Lightweight</strong>: JSON is a lightweight data format that is easy to transmit over the network.</li>
+        <li><strong>Human-readable</strong>: JSON is a text-based format that is easy for humans to read and write.</li>
+        <li><strong>Language-independent</strong>: While JSON is based on JavaScript, it is language-independent and can be used in other programming languages like Python, Java, and PHP.</li>
+        <li><strong>Easy to parse</strong>: JavaScript provides built-in methods like <code>JSON.parse()</code> and <code>JSON.stringify()</code> to easily parse and generate JSON data.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Common Mistakes in JSON</h2>
+    <p>When working with JSON, it's important to avoid common mistakes:</p>
+    <ul>
+        <li><strong>Using single quotes</strong> instead of double quotes for keys and string values.</li>
+        <li><strong>Trailing commas</strong> after the last property or element in an object or array.</li>
+        <li><strong>Forgetting to escape special characters</strong> in strings (e.g., newline characters).</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Conclusion</h2>
+    <p>JSON is a versatile and widely-used data format in JavaScript and web development. Its simplicity and ease of use make it an essential tool for developers working with APIs, transmitting data, or storing structured data. Mastering JSON will help you interact with modern web technologies more efficiently.</p>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

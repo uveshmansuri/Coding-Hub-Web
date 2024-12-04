@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to JavaScript</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Introduction to JavaScript</h1>
+    </header>
+
+    <section>
+        <h2>JavaScript</h2>
+        <p>JavaScript is a versatile programming language that enables developers to create dynamic and interactive web content. It is widely used to enhance user interfaces and improve the functionality of websites. JavaScript is a client-side language, meaning it runs in the browser without needing server-side execution.</p>
+    </section>
+
+    <section>
+        <h2>Features of JavaScript</h2>
+        <ul>
+            <li>Lightweight and easy to learn</li>
+            <li>Supports object-oriented programming</li>
+            <li>Works seamlessly with HTML and CSS</li>
+            <li>Provides rich libraries and frameworks</li>
+            <li>Compatible with all modern web browsers</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Why Learn JavaScript?</h2>
+        <p>JavaScript is an essential tool for modern web development. By learning JavaScript, you can:</p>
+        <ul>
+            <li>Create interactive websites</li>
+            <li>Build web applications</li>
+            <li>Enhance user experiences</li>
+            <li>Develop games</li>
+            <li>Work with popular frameworks like React, Angular, and Vue</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Basic Syntax</h2>
+        <p>JavaScript syntax is simple and easy to understand. Here are some examples:</p>
+        <div class="example">
+            <h3>Declaring Variables</h3>
+            <pre>
+// Using let
+let name = "John";
+
+// Using const
+const PI = 3.14;
+
+// Using var (less common now)
+var age = 30;
+            </pre>
+        </div>
+
+        <div class="example">
+            <h3>Writing Functions</h3>
+            <pre>
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+console.log(greet("Alice"));
+            </pre>
+        </div>
+
+        <div class="example">
+            <h3>Control Structures</h3>
+            <pre>
+let score = 85;
+if (score > 90) {
+    console.log("Excellent");
+} else if (score > 70) {
+    console.log("Good Job");
+} else {
+    console.log("Keep Trying");
+}
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Core Concepts</h2>
+        <h3>1. Data Types</h3>
+        <p>JavaScript supports various data types:</p>
+        <ul>
+            <li>Primitive Types: String, Number, Boolean, Null, Undefined, Symbol</li>
+            <li>Complex Types: Object, Array</li>
+        </ul>
+
+        <h3>2. DOM Manipulation</h3>
+        <p>The Document Object Model (DOM) allows JavaScript to interact with and modify web pages.</p>
+        <div class="example">
+            <h3>Example: Changing Element Content</h3>
+            <pre>
+document.getElementById("demo").innerText = "Hello, JavaScript!";
+            </pre>
+        </div>
+
+        <h3>3. Events</h3>
+        <p>JavaScript can listen to and respond to user interactions:</p>
+        <div class="example">
+            <h3>Example: Handling a Button Click</h3>
+            <pre>
+const button = document.getElementById("myButton");
+button.addEventListener("click", () => {
+    alert("Button clicked!");
+});
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Popular Use Cases</h2>
+        <ul>
+            <li>Form Validation</li>
+            <li>Interactive Elements (e.g., sliders, modals)</li>
+            <li>Fetching Data from APIs</li>
+            <li>Building Single Page Applications (SPAs)</li>
+            <li>Developing Games</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p> 
+    </footer>
+</body>
+</html>

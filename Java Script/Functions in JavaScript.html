@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in JavaScript</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>Functions in JavaScript</h1>
+</header>
+
+<section>
+    <h2>Functions in JS</h2>
+    <p>In JavaScript, a <strong>function</strong> is a block of code designed to perform a particular task. Functions allow you to group code together to be executed later and are an essential building block in JavaScript programming. They help in avoiding repetition, improving modularity, and making code more maintainable.</p>
+    <p>Functions can be defined once and called many times, which makes them a powerful tool in any JavaScript application.</p>
+</section>
+
+<section>
+    <h2>Defining Functions</h2>
+    <p>In JavaScript, a function is defined using the <code>function</code> keyword followed by a name, a set of parentheses for parameters, and a code block enclosed in curly braces. The general syntax looks like this:</p>
+    <pre><code>
+function functionName(parameter1, parameter2) {
+    // code to be executed
+}
+    </code></pre>
+    <p>Here, <code>functionName</code> is the name of the function, and <code>parameter1</code> and <code>parameter2</code> are optional parameters that can be passed to the function. The code inside the curly braces is executed when the function is called.</p>
+</section>
+
+<section>
+    <h2>Example of a Function</h2>
+    <p>Here’s an example of a simple function that adds two numbers:</p>
+    <pre><code>
+function addNumbers(a, b) {
+    return a + b;
+}
+console.log(addNumbers(3, 4));  // Output: 7
+    </code></pre>
+    <p>In this example, the function <code>addNumbers</code> takes two arguments, <code>a</code> and <code>b</code>, and returns their sum. The function is called with arguments <code>3</code> and <code>4</code>, and it returns <code>7</code>.</p>
+</section>
+
+<section>
+    <h2>Function Parameters and Arguments</h2>
+    <p>Functions can accept parameters, which are placeholders for values that are passed into the function when it is called. These parameters are used within the function body to perform tasks or calculations.</p>
+    <p>When calling a function, you pass actual values, known as <strong>arguments</strong>, that correspond to the parameters in the function definition. For example:</p>
+    <pre><code>
+function greet(name) {
+    console.log("Hello, " + name);
+}
+greet("Alice");  // Output: Hello, Alice
+    </code></pre>
+    <p>In this case, <code>name</code> is the parameter, and <code>"Alice"</code> is the argument passed when calling the function.</p>
+</section>
+
+<section>
+    <h2>Function Return Values</h2>
+    <p>Functions in JavaScript can return values using the <code>return</code> statement. The <code>return</code> statement ends the execution of the function and sends the result back to the place where the function was called.</p>
+    <p>For example, here is a function that multiplies two numbers and returns the result:</p>
+    <pre><code>
+function multiply(a, b) {
+    return a * b;
+}
+console.log(multiply(2, 5));  // Output: 10
+    </code></pre>
+    <p>In this example, the <code>multiply</code> function returns the product of <code>a</code> and <code>b</code> when it is called.</p>
+</section>
+
+<section>
+    <h2>Types of Functions</h2>
+    <p>In JavaScript, there are different ways to define functions:</p>
+    <ul>
+        <li><strong>Function Declarations:</strong> The most common way to define a function (as shown above).</li>
+        <li><strong>Function Expressions:</strong> Functions can also be defined inside variables. These are often used with anonymous functions (functions without names).</li>
+    </ul>
+    <h3>Example of a Function Expression:</h3>
+    <pre><code>
+const subtract = function(a, b) {
+    return a - b;
+};
+console.log(subtract(10, 4));  // Output: 6
+    </code></pre>
+    <p>In this case, the function is assigned to the variable <code>subtract</code>, and it behaves similarly to the function declaration but can be used only after the assignment.</p>
+</section>
+
+<section>
+    <h2>Arrow Functions</h2>
+    <p>Arrow functions are a concise way to write functions in JavaScript. They are particularly useful for short functions and callbacks.</p>
+    <h3>Syntax:</h3>
+    <pre><code>
+const functionName = (parameters) => {
+    // code to be executed
+}
+    </code></pre>
+    <h3>Example of an Arrow Function:</h3>
+    <pre><code>
+const divide = (a, b) => a / b;
+console.log(divide(10, 2));  // Output: 5
+    </code></pre>
+    <p>Arrow functions are often used when you need a function for a short task or when you don’t need to use the <code>this</code> keyword.</p>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

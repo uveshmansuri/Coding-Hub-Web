@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling and Capturing in JavaScript</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+    <style>
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+        .box {
+            margin: 10px;
+            padding: 20px;
+            border: 2px solid black;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .parent {
+            background-color: #f9f9f9;
+        }
+        .child {
+            background-color: #cfe2f3;
+        }
+        .grandchild {
+            background-color: #ffdfba;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Event Bubbling and Capturing in JavaScript</h1>
+</header>
+
+<section>
+    <h2>Introduction</h2>
+    <p>In JavaScript, when an event occurs on an HTML element, it doesn't just affect that element. 
+        Instead, it follows a path through the DOM, which includes two phases:</p>
+    <ul>
+        <li><strong>Capturing Phase</strong> (Event Capturing): The event travels from the document root down to the target element.</li>
+        <li><strong>Bubbling Phase</strong> (Event Bubbling): The event travels from the target element back up to the document root.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Event Bubbling</h2>
+    <p>Event Bubbling is the process where the event starts from the target element and propagates upwards to its ancestors.</p>
+    <h3>Example</h3>
+    <section>
+        <div class="parent box">
+            Parent
+            <div class="child box">
+                Child
+                <div class="grandchild box">Grandchild</div>
+            </div>
+        </div>
+    </section>
+    <p>The event listeners for the above elements will trigger in reverse order (grandchild → child → parent) during the bubbling phase.</p>
+    <pre><code>
+// JavaScript for Event Bubbling
+document.querySelector('.parent').addEventListener('click', () => {
+    console.log('Parent clicked');
+});
+
+document.querySelector('.child').addEventListener('click', () => {
+    console.log('Child clicked');
+});
+
+document.querySelector('.grandchild').addEventListener('click', () => {
+    console.log('Grandchild clicked');
+});
+    </code></pre>
+    <p><strong>Result:</strong> Clicking on the <em>grandchild</em> will log:</p>
+    <ol>
+        <li>Grandchild clicked</li>
+        <li>Child clicked</li>
+        <li>Parent clicked</li>
+    </ol>
+</section>
+
+<section>
+    <h2>Event Capturing</h2>
+    <p>Event Capturing is the process where the event travels from the document root down to the target element.</p>
+    <h3>Example</h3>
+    <section>
+        <div class="parent box">
+            Parent
+            <div class="child box">
+                Child
+                <div class="grandchild box">Grandchild</div>
+            </div>
+        </div>
+    </section>
+    <p>When event listeners are set to trigger during the capturing phase, the order is reversed (parent → child → grandchild).</p>
+    <pre><code>
+// JavaScript for Event Capturing
+document.querySelector('.parent').addEventListener('click', () => {
+    console.log('Parent clicked (Capturing)');
+}, true);
+
+document.querySelector('.child').addEventListener('click', () => {
+    console.log('Child clicked (Capturing)');
+}, true);
+
+document.querySelector('.grandchild').addEventListener('click', () => {
+    console.log('Grandchild clicked (Capturing)');
+}, true);
+    </code></pre>
+    <p><strong>Result:</strong> Clicking on the <em>grandchild</em> will log:</p>
+    <ol>
+        <li>Parent clicked (Capturing)</li>
+        <li>Child clicked (Capturing)</li>
+        <li>Grandchild clicked (Capturing)</li>
+    </ol>
+</section>
+
+<section>
+    <h2>Combining Bubbling and Capturing</h2>
+    <p>You can mix both phases by using event listeners with and without the <code>capture</code> parameter.</p>
+    <pre><code>
+// Combining Bubbling and Capturing
+document.querySelector('.parent').addEventListener('click', () => {
+    console.log('Parent clicked (Bubbling)');
+});
+
+document.querySelector('.child').addEventListener('click', () => {
+    console.log('Child clicked (Capturing)');
+}, true);
+
+document.querySelector('.grandchild').addEventListener('click', () => {
+    console.log('Grandchild clicked (Bubbling)');
+});
+    </code></pre>
+    <p><strong>Result:</strong> Clicking on the <em>grandchild</em> will log:</p>
+    <ol>
+        <li>Child clicked (Capturing)</li>
+        <li>Grandchild clicked (Bubbling)</li>
+        <li>Parent clicked (Bubbling)</li>
+    </ol>
+</section>
+
+<section>
+    <h2>Stopping Propagation</h2>
+    <p>To stop the event from propagating further during either phase, you can use <code>event.stopPropagation()</code>.</p>
+    <pre><code>
+// Stopping Propagation
+document.querySelector('.parent').addEventListener('click', () => {
+    console.log('Parent clicked');
+});
+
+document.querySelector('.child').addEventListener('click', (event) => {
+    event.stopPropagation();
+    console.log('Child clicked');
+});
+
+document.querySelector('.grandchild').addEventListener('click', () => {
+    console.log('Grandchild clicked');
+});
+    </code></pre>
+    <p><strong>Result:</strong> Clicking on the <em>child</em> will log only:</p>
+    <ul>
+        <li>Child clicked</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Event Delegation</h2>
+    <p>Event delegation leverages event bubbling to handle events at a higher level in the DOM, making it more efficient.</p>
+    <pre><code>
+// Event Delegation Example
+document.querySelector('.parent').addEventListener('click', (event) => {
+    if (event.target.classList.contains('box')) {
+        console.log(`${event.target.className} clicked`);
+    }
+});
+    </code></pre>
+    <p><strong>Result:</strong> Clicking on any element with the class <code>box</code> will log its class name.</p>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

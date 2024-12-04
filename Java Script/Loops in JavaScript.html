@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in JavaScript</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>Loops in JavaScript</h1>
+</header>
+
+<section>
+    <h2>Loops in JS</h2>
+    <p>Loops are a fundamental programming concept used to repeatedly execute a block of code until a specified condition is met. JavaScript provides different types of loops to achieve this, including <code>for</code>, <code>while</code>, <code>do...while</code>, <code>for...in</code>, and <code>for...of</code> loops.</p>
+</section>
+
+<section>
+    <h2>1. The <code>for</code> Loop</h2>
+    <p>The <code>for</code> loop is used when you know in advance how many times you want to execute a statement or a block of statements.</p>
+    <h3>Syntax:</h3>
+    <pre><code>
+for (initialization; condition; increment/decrement) {
+    // code block to be executed
+}
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+    </code></pre>
+    <p>This loop will print numbers from 0 to 4. It starts with <code>i = 0</code> and checks the condition <code>i < 5</code>. After each iteration, it increments <code>i</code> by 1.</p>
+</section>
+
+<section>
+    <h2>2. The <code>while</code> Loop</h2>
+    <p>The <code>while</code> loop is used when the number of iterations is not known and continues as long as the condition is true.</p>
+    <h3>Syntax:</h3>
+    <pre><code>
+while (condition) {
+    // code block to be executed
+}
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+let i = 0;
+while (i < 5) {
+    console.log(i);
+    i++;
+}
+    </code></pre>
+    <p>This loop will also print numbers from 0 to 4. The loop runs while <code>i < 5</code> is true, and <code>i</code> is incremented each time.</p>
+</section>
+
+<section>
+    <h2>3. The <code>do...while</code> Loop</h2>
+    <p>The <code>do...while</code> loop guarantees that the code block will be executed at least once, regardless of the condition, because the condition is checked after the execution.</p>
+    <h3>Syntax:</h3>
+    <pre><code>
+do {
+    // code block to be executed
+} while (condition);
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+let i = 0;
+do {
+    console.log(i);
+    i++;
+} while (i < 5);
+    </code></pre>
+    <p>This loop also prints numbers from 0 to 4. The key difference is that it guarantees the block will be executed at least once, even if <code>i</code> is not initially less than 5.</p>
+</section>
+
+<section>
+    <h2>4. The <code>for...in</code> Loop</h2>
+    <p>The <code>for...in</code> loop is used to iterate over the keys or properties of an object. It is mainly used with objects.</p>
+    <h3>Syntax:</h3>
+    <pre><code>
+for (let key in object) {
+    // code block to be executed
+}
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+let person = {
+    name: "John",
+    age: 30,
+    city: "New York"
+};
+
+for (let key in person) {
+    console.log(key + ": " + person[key]);
+}
+    </code></pre>
+    <p>This loop will print each property of the <code>person</code> object along with its value.</p>
+</section>
+
+<section>
+    <h2>5. The <code>for...of</code> Loop</h2>
+    <p>The <code>for...of</code> loop is used to iterate over the values of iterable objects such as arrays and strings.</p>
+    <h3>Syntax:</h3>
+    <pre><code>
+for (let value of iterable) {
+    // code block to be executed
+}
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+let colors = ["red", "green", "blue"];
+for (let color of colors) {
+    console.log(color);
+}
+    </code></pre>
+    <p>This loop will print each color from the <code>colors</code> array: "red", "green", and "blue". The loop iterates over the values of the array.</p>
+</section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p> 
+    </footer>
+
+</body>
+</html>

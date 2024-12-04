@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Objects</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>JavaScript Objects</h1>
+</header>
+
+<section>
+    <h2>JavaScript Objects</h2>
+    <p>In JavaScript, objects are one of the fundamental data types. They allow us to group related data and functionalities into a single unit. An object is a collection of properties, where each property consists of a key (or name) and a value. The key is always a string, while the value can be any data type, including another object or even a function.</p>
+
+    <p>Objects are commonly used to represent real-world entities, such as a user, product, or a car, and store their properties and behaviors. For example, a "car" object could have properties like "color," "model," and "year," and behaviors like "start" and "stop."</p>
+</section>
+
+<section>
+    <h2>Creating JavaScript Objects</h2>
+    <p>Objects can be created using either the <code>object literal</code> syntax or the <code>new Object()</code> constructor.</p>
+
+    <h3>Using Object Literals</h3>
+    <pre><code>
+const car = {
+    brand: "Toyota",
+    model: "Corolla",
+    year: 2020,
+    start: function() {
+        console.log("The car is starting.");
+    }
+};
+    </code></pre>
+    <p>Here, the object <code>car</code> contains properties like <code>brand</code>, <code>model</code>, and <code>year</code>, and a method <code>start()</code> that prints a message.</p>
+
+    <h3>Using the Object Constructor</h3>
+    <pre><code>
+const car = new Object();
+car.brand = "Toyota";
+car.model = "Corolla";
+car.year = 2020;
+car.start = function() {
+    console.log("The car is starting.");
+};
+    </code></pre>
+    <p>The <code>new Object()</code> syntax is less common but is used for creating objects dynamically. Both methods will give the same result.</p>
+</section>
+
+<section>
+    <h2>Accessing Object Properties</h2>
+    <p>You can access an object's properties using either dot notation or bracket notation.</p>
+
+    <h3>Dot Notation</h3>
+    <pre><code>
+console.log(car.brand);  // Output: Toyota
+console.log(car.model);  // Output: Corolla
+    </code></pre>
+    <p>Dot notation is the most common way to access properties. You simply write the object name followed by a dot and the property name.</p>
+
+    <h3>Bracket Notation</h3>
+    <pre><code>
+console.log(car["brand"]);  // Output: Toyota
+console.log(car["model"]);  // Output: Corolla
+    </code></pre>
+    <p>Bracket notation is useful when the property name is dynamic (e.g., stored in a variable) or not a valid identifier (e.g., containing spaces or starting with a number).</p>
+</section>
+
+<section>
+    <h2>Modifying Object Properties</h2>
+    <p>You can modify the properties of an object using either dot notation or bracket notation as well.</p>
+
+    <h3>Using Dot Notation</h3>
+    <pre><code>
+car.model = "Camry";
+console.log(car.model);  // Output: Camry
+    </code></pre>
+
+    <h3>Using Bracket Notation</h3>
+    <pre><code>
+car["year"] = 2021;
+console.log(car.year);  // Output: 2021
+    </code></pre>
+
+    <p>If you try to access or modify a property that doesn't exist in the object, JavaScript will return <code>undefined</code> for reads and create a new property when assigning a value.</p>
+</section>
+
+<section>
+    <h2>Adding and Deleting Properties</h2>
+    <p>In JavaScript, you can add new properties to an object at any time and delete existing ones using the <code>delete</code> operator.</p>
+
+    <h3>Adding Properties</h3>
+    <pre><code>
+car.color = "Red";  // Adds a new property color to the object
+console.log(car.color);  // Output: Red
+    </code></pre>
+
+    <h3>Deleting Properties</h3>
+    <pre><code>
+delete car.year;
+console.log(car.year);  // Output: undefined
+    </code></pre>
+    <p>The <code>delete</code> operator removes a property from an object. If the property doesn't exist, it will have no effect.</p>
+</section>
+
+<section>
+    <h2>Object Methods</h2>
+    <p>Objects in JavaScript can have methods, which are functions associated with an object. These methods are typically used to define behaviors of the object.</p>
+
+    <h3>Example of an Object Method</h3>
+    <pre><code>
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+console.log(person.fullName());  // Output: John Doe
+    </code></pre>
+    <p>The <code>fullName()</code> method is a function defined within the object <code>person</code>, which accesses other properties of the object using <code>this</code>.</p>
+</section>
+
+<section>
+    <h2>Object Constructor Functions</h2>
+    <p>In JavaScript, you can create objects using constructor functions. A constructor function is a regular function used to create multiple objects with the same properties and methods.</p>
+
+    <h3>Example of Constructor Function</h3>
+    <pre><code>
+function Car(brand, model, year) {
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+    this.start = function() {
+        console.log("The car is starting.");
+    };
+}
+
+const myCar = new Car("Honda", "Civic", 2022);
+myCar.start();  // Output: The car is starting.
+    </code></pre>
+    <p>In this example, the function <code>Car</code> is used as a constructor to create a new car object with specific properties and methods.</p>
+</section>
+
+<section>
+    <h2>Inheritance and Prototypes</h2>
+    <p>JavaScript objects have a prototype chain, which allows objects to inherit properties and methods from other objects. The prototype is an internal property of an object that links it to another object (usually an ancestor in the prototype chain).</p>
+
+    <h3>Example of Prototypal Inheritance</h3>
+    <pre><code>
+function Animal(name) {
+    this.name = name;
+}
+
+Animal.prototype.sayHello = function() {
+    console.log(`Hello, my name is ${this.name}`);
+};
+
+const dog = new Animal("Buddy");
+dog.sayHello();  // Output: Hello, my name is Buddy
+    </code></pre>
+    <p>Here, the <code>sayHello</code> method is added to the <code>Animal</code> prototype, so it can be accessed by any object created using the <code>Animal</code> constructor.</p>
+</section>
+
+<section>
+    <h2>Working with Object Properties</h2>
+    <p>Objects in JavaScript can be accessed, modified, added, or deleted using various techniques. These operations are fundamental for manipulating data stored in objects.</p>
+
+    <h3>Object.keys(), Object.values(), and Object.entries()</h3>
+    <p>JavaScript provides built-in methods to interact with the keys, values, and entries of an object.</p>
+
+    <h4>Object.keys()</h4>
+    <pre><code>
+const person = { name: "John", age: 30 };
+console.log(Object.keys(person));  // Output: ["name", "age"]
+    </code></pre>
+
+    <h4>Object.values()</h4>
+    <pre><code>
+console.log(Object.values(person));  // Output: ["John", 30]
+    </code></pre>
+
+    <h4>Object.entries()</h4>
+    <pre><code>
+console.log(Object.entries(person));  // Output: [["name", "John"], ["age", 30]]
+    </code></pre>
+    <p><code>Object.keys()</code> returns an array of the object's keys, <code>Object.values()</code> returns an array of the object's values, and <code>Object.entries()</code> returns an array of key-value pairs.</p>
+</section>
+
+<section>
+    <h2>Conclusion</h2>
+    <p>JavaScript objects are powerful and essential for building dynamic applications. They allow you to store complex data and create custom structures that mirror real-world entities. Understanding how to create, modify, and manipulate objects will help you become more proficient in JavaScript programming.</p>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

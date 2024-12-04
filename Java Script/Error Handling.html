@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Error Handling</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>JavaScript Error Handling</h1>
+</header>
+
+<section>
+    <h2>Error Handling in JavaScript</h2>
+    <p>Error handling in JavaScript is the process of catching and responding to runtime errors in an efficient manner. Errors are unexpected issues or bugs in your code that can cause it to stop functioning as expected. In JavaScript, proper error handling allows you to manage exceptions (errors) gracefully, instead of letting the entire program break.</p>
+    <p>When an error occurs, JavaScript provides mechanisms for developers to catch and handle these errors without halting the execution of the program. This improves user experience by providing meaningful error messages and ensuring the application continues to run smoothly.</p>
+</section>
+
+<section>
+    <h2>Types of Errors in JavaScript</h2>
+    <p>There are various types of errors in JavaScript, each representing a different problem in your code:</p>
+    <ul>
+        <li><strong>Syntax Errors:</strong> Occur when the JavaScript code is not written correctly. For example, missing parentheses or brackets.</li>
+        <li><strong>Reference Errors:</strong> Happen when you try to access a variable that doesn’t exist.</li>
+        <li><strong>Type Errors:</strong> Occur when a value is not of the expected type, such as trying to call a non-function as a function.</li>
+        <li><strong>Range Errors:</strong> Occur when a value is outside an allowable range, such as an invalid array index.</li>
+        <li><strong>Eval Errors:</strong> Errors related to the <code>eval()</code> function.</li>
+        <li><strong>URI Errors:</strong> Occur when there are issues with encoding or decoding URI components.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>JavaScript Error Handling Methods</h2>
+    <p>In JavaScript, the primary tools for handling errors are <code>try</code>, <code>catch</code>, <code>finally</code>, and <code>throw</code>.</p>
+
+    <h3><code>try...catch</code></h3>
+    <p>The <code>try...catch</code> statement is the most common way to handle errors in JavaScript. The <code>try</code> block contains code that might throw an error, and the <code>catch</code> block contains code to handle that error if it occurs.</p>
+
+    <h4>Basic Example</h4>
+    <pre><code>
+try {
+    let result = 10 / 0;  // Code that might cause an error
+    console.log(result);
+} catch (error) {
+    console.log("An error occurred: " + error.message);
+}
+    </code></pre>
+    <p>In the above example, there is no actual error, but the <code>catch</code> block will still run in case any error is thrown. In a real case, an error will be caught and handled in the <code>catch</code> block.</p>
+
+    <h3><code>finally</code></h3>
+    <p>The <code>finally</code> block is optional and runs after the <code>try</code> block, regardless of whether an error was thrown or not. This is useful for code that needs to execute regardless of error occurrence (such as closing database connections, releasing resources, etc.).</p>
+
+    <h4>Example with <code>finally</code></h4>
+    <pre><code>
+try {
+    let num = 10;
+    console.log(num / 2);  // No error
+} catch (error) {
+    console.log("An error occurred: " + error.message);
+} finally {
+    console.log("This will always execute.");
+}
+    </code></pre>
+    <p>Even though no error occurs, the <code>finally</code> block is executed at the end, ensuring cleanup or logging is always performed.</p>
+
+    <h3><code>throw</code></h3>
+    <p>The <code>throw</code> statement allows you to manually throw an exception (error) when a condition is met. This is useful when you want to create custom error messages or conditions.</p>
+
+    <h4>Example of <code>throw</code></h4>
+    <pre><code>
+function checkNumber(num) {
+    if (num <= 0) {
+        throw new Error("Number must be greater than zero.");
+    } else {
+        return "Valid number";
+    }
+}
+
+try {
+    console.log(checkNumber(0));  // This will throw an error
+} catch (error) {
+    console.log("Error: " + error.message);
+}
+    </code></pre>
+    <p>In this example, a custom error is thrown if the number is less than or equal to zero. The <code>catch</code> block then handles it and displays the error message.</p>
+</section>
+
+<section>
+    <h2>Handling Asynchronous Errors</h2>
+    <p>In JavaScript, errors can also occur in asynchronous code, such as code involving <code>Promises</code> or <code>async/await</code>. Handling errors in these situations requires a different approach.</p>
+
+    <h3><code>Promises</code> with Error Handling</h3>
+    <p>When dealing with promises, you can use the <code>catch()</code> method to handle errors that occur during the promise's execution.</p>
+
+    <h4>Example with Promises</h4>
+    <pre><code>
+const promise = new Promise((resolve, reject) => {
+    let success = false;
+    if (success) {
+        resolve("Operation successful.");
+    } else {
+        reject("Operation failed.");
+    }
+});
+
+promise
+    .then(result => console.log(result))
+    .catch(error => console.log("Error: " + error));
+    </code></pre>
+    <p>If the promise is rejected, the <code>catch()</code> method handles the error, ensuring that the program doesn't break.</p>
+
+    <h3><code>async/await</code> with Error Handling</h3>
+    <p>The <code>async/await</code> syntax is a more modern way to handle asynchronous code. You can use a <code>try...catch</code> block with async functions to catch errors.</p>
+
+    <h4>Example with async/await</h4>
+    <pre><code>
+async function fetchData() {
+    try {
+        let response = await fetch('https://api.example.com/data');
+        let data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.log("Error fetching data: " + error.message);
+    }
+}
+
+fetchData();
+    </code></pre>
+    <p>In this example, if an error occurs during the asynchronous operation (e.g., a network failure), the <code>catch</code> block will handle the error.</p>
+</section>
+
+<section>
+    <h2>Custom Error Objects</h2>
+    <p>JavaScript allows you to create custom error objects that inherit from the built-in <code>Error</code> object. This is helpful when you need to throw errors with more specific details or context.</p>
+
+    <h3>Example of Custom Error</h3>
+    <pre><code>
+class ValidationError extends Error {
+    constructor(message) {
+        super(message);  // Call the parent constructor
+        this.name = "ValidationError";  // Custom error name
+    }
+}
+
+try {
+    throw new ValidationError("Invalid input.");
+} catch (error) {
+    console.log(`${error.name}: ${error.message}`);
+}
+    </code></pre>
+    <p>In this example, we create a custom error class <code>ValidationError</code> that extends the built-in <code>Error</code> object. This allows us to throw errors that are more specific and include custom details.</p>
+</section>
+
+<section>
+    <h2>Best Practices for Error Handling</h2>
+    <ul>
+        <li><strong>Be Specific:</strong> Always be specific about the errors you throw. Don't just throw generic errors like "Something went wrong." Provide enough detail to help debug.</li>
+        <li><strong>Don't Suppress Errors:</strong> Avoid swallowing errors without handling them. This can lead to unexpected behavior or make debugging difficult.</li>
+        <li><strong>Log Errors:</strong> Log errors to the console or an external service for tracking purposes, especially in production environments.</li>
+        <li><strong>Graceful Fallback:</strong> Provide a fallback or default behavior when an error occurs, especially for user-facing applications.</li>
+    </ul>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

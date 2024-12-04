@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Classes</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>JavaScript Classes</h1>
+</header>
+
+<section>
+    <h2>Classes in JavaScript</h2>
+    <p>In JavaScript, classes provide a convenient way to create and manage objects and their behavior. They are syntactic sugar over JavaScript’s prototype-based inheritance and are introduced in ECMAScript 6 (ES6). A class is essentially a blueprint for creating objects that share common properties and methods.</p>
+    <p>Classes are templates for creating instances (objects), and they allow you to encapsulate behavior and structure within the object itself.</p>
+</section>
+
+<section>
+    <h2>Creating a Basic Class</h2>
+    <p>To create a class in JavaScript, you use the <code>class</code> keyword followed by the class name, then a constructor function to initialize the object. Inside the class, you define methods to describe the actions that the class instances can perform.</p>
+
+    <h3>Basic Class Syntax</h3>
+    <pre><code>
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    greet() {
+        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+    }
+}
+    </code></pre>
+
+    <p>This is a basic class definition. The <code>constructor()</code> method is a special method for initializing new instances of the class.</p>
+</section>
+
+<section>
+    <h2>Creating Objects from a Class</h2>
+    <p>Once a class is defined, you can create objects (instances) from the class using the <code>new</code> keyword.</p>
+
+    <h3>Creating an Object Example</h3>
+    <pre><code>
+const person1 = new Person("John", 30);
+person1.greet();  // Output: Hello, my name is John and I am 30 years old.
+
+const person2 = new Person("Jane", 25);
+person2.greet();  // Output: Hello, my name is Jane and I am 25 years old.
+    </code></pre>
+
+    <p>In the example above, we created two instances of the <code>Person</code> class, <code>person1</code> and <code>person2</code>, each with its own properties and behavior.</p>
+</section>
+
+<section>
+    <h2>Class Inheritance</h2>
+    <p>JavaScript classes support inheritance, meaning that a class can extend another class, inheriting its properties and methods. This is useful when you want to create a more specific class based on a general class.</p>
+
+    <h3>Inheritance Example</h3>
+    <pre><code>
+class Student extends Person {
+    constructor(name, age, course) {
+        super(name, age);  // Call the parent class's constructor
+        this.course = course;
+    }
+
+    study() {
+        console.log(`${this.name} is studying ${this.course}.`);
+    }
+}
+
+const student1 = new Student("Alice", 20, "Computer Science");
+student1.greet();  // Output: Hello, my name is Alice and I am 20 years old.
+student1.study();  // Output: Alice is studying Computer Science.
+    </code></pre>
+
+    <p>Here, the <code>Student</code> class extends the <code>Person</code> class. The <code>super()</code> method is used to call the constructor of the parent class. The <code>Student</code> class adds a new property <code>course</code> and a method <code>study()</code> specific to students.</p>
+</section>
+
+<section>
+    <h2>Getter and Setter Methods</h2>
+    <p>In JavaScript classes, you can define getter and setter methods to interact with properties of an object. Getters allow you to access the property value, while setters allow you to modify it.</p>
+
+    <h3>Getter and Setter Example</h3>
+    <pre><code>
+class Car {
+    constructor(make, model) {
+        this.make = make;
+        this.model = model;
+    }
+
+    get carInfo() {
+        return `${this.make} ${this.model}`;
+    }
+
+    set carInfo(info) {
+        const [make, model] = info.split(" ");
+        this.make = make;
+        this.model = model;
+    }
+}
+
+const myCar = new Car("Toyota", "Corolla");
+console.log(myCar.carInfo);  // Output: Toyota Corolla
+
+myCar.carInfo = "Honda Civic";
+console.log(myCar.carInfo);  // Output: Honda Civic
+    </code></pre>
+
+    <p>In the example above, we define a getter method <code>carInfo</code> to retrieve the car’s make and model, and a setter to modify the values. The setter splits the input string and assigns the individual values to the <code>make</code> and <code>model</code> properties.</p>
+</section>
+
+<section>
+    <h2>Static Methods</h2>
+    <p>Static methods are called on the class itself, rather than instances of the class. These methods are not available on instances and are useful for utility functions or for operations that are independent of object state.</p>
+
+    <h3>Static Method Example</h3>
+    <pre><code>
+class MathOperations {
+    static add(a, b) {
+        return a + b;
+    }
+
+    static multiply(a, b) {
+        return a * b;
+    }
+}
+
+console.log(MathOperations.add(5, 10));  // Output: 15
+console.log(MathOperations.multiply(5, 10));  // Output: 50
+    </code></pre>
+
+    <p>In this example, the <code>MathOperations</code> class has two static methods: <code>add()</code> and <code>multiply()</code>, which can be called directly on the class without creating an instance.</p>
+</section>
+
+<section>
+    <h2>Method Chaining</h2>
+    <p>Method chaining is a technique where methods return the object itself, allowing multiple method calls to be chained together in a single statement.</p>
+
+    <h3>Method Chaining Example</h3>
+    <pre><code>
+class Builder {
+    constructor() {
+        this.value = 0;
+    }
+
+    add(num) {
+        this.value += num;
+        return this;  // Return the current instance
+    }
+
+    subtract(num) {
+        this.value -= num;
+        return this;
+    }
+
+    getValue() {
+        return this.value;
+    }
+}
+
+const result = new Builder().add(10).subtract(3).getValue();
+console.log(result);  // Output: 7
+    </code></pre>
+
+    <p>In this example, the <code>Builder</code> class allows method chaining by returning the current instance of the class after each method call. This allows us to chain <code>add()</code> and <code>subtract()</code> calls together in a single statement.</p>
+</section>
+
+<section>
+    <h2>Private Methods and Properties</h2>
+    <p>Starting with ES2022, JavaScript supports private fields and methods, which can only be accessed within the class itself. These fields and methods are defined using the <code>#</code> symbol.</p>
+
+    <h3>Private Methods and Properties Example</h3>
+    <pre><code>
+class Counter {
+    #count = 0;  // Private field
+
+    increment() {
+        this.#count++;
+        console.log(this.#count);
+    }
+
+    #reset() {  // Private method
+        this.#count = 0;
+    }
+
+    get count() {
+        return this.#count;
+    }
+}
+
+const counter = new Counter();
+counter.increment();  // Output: 1
+counter.increment();  // Output: 2
+// counter.#reset();  // SyntaxError: Private field '#reset' must be declared in an enclosing class
+    </code></pre>
+
+    <p>In this example, the <code>#count</code> field and the <code>#reset()</code> method are private. You cannot access or modify these directly outside of the class.</p>
+</section>
+
+<section>
+    <h2>Conclusion</h2>
+    <p>JavaScript classes provide a structured and powerful way to create objects and organize your code. They allow you to define behavior, inheritance, and encapsulate data in a way that is more intuitive than traditional constructor functions. Mastering classes will help you write more maintainable and organized JavaScript code, especially for larger applications.</p>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

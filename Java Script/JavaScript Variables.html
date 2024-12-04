@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Variables</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>JavaScript Variables</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>Variables are fundamental to programming in JavaScript. They allow developers to store, retrieve, and manipulate data efficiently. A variable is essentially a named container for a value.</p>
+    </section>
+
+    <section>
+        <h2>Declaring Variables</h2>
+        <p>In JavaScript, variables can be declared using three keywords: <code>var</code>, <code>let</code>, and <code>const</code>. Each serves a unique purpose and has specific characteristics.</p>
+
+        <div class="example">
+            <h3>Example: Declaring Variables</h3>
+            <pre>
+// Using var (function-scoped)
+var name = "John";
+
+// Using let (block-scoped)
+let age = 25;
+
+// Using const (block-scoped, immutable)
+const country = "India";
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Variable Scope</h2>
+        <p>Scope determines where a variable can be accessed in the code. JavaScript has two types of scopes:</p>
+        <ul>
+            <li><strong>Global Scope:</strong> Variables declared outside any function or block are globally scoped and accessible from anywhere in the code.</li>
+            <li><strong>Local Scope:</strong> Variables declared inside a function or block are locally scoped and accessible only within that function or block.</li>
+        </ul>
+
+        <div class="example">
+            <h3>Example: Global and Local Scope</h3>
+            <pre>
+// Global variable
+globalVar = "I am global";
+
+function exampleFunction() {
+    // Local variable
+    let localVar = "I am local";
+    console.log(globalVar); // Accessible
+    console.log(localVar);  // Accessible
+}
+
+console.log(globalVar); // Accessible
+console.log(localVar);  // Error: localVar is not defined
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>var, let, and const: Key Differences</h2>
+        <section class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>var</th>
+                        <th>let</th>
+                        <th>const</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Scope</td>
+                        <td>Function-scoped</td>
+                        <td>Block-scoped</td>
+                        <td>Block-scoped</td>
+                    </tr>
+                    <tr>
+                        <td>Reassignment</td>
+                        <td>Allowed</td>
+                        <td>Allowed</td>
+                        <td>Not Allowed</td>
+                    </tr>
+                    <tr>
+                        <td>Hoisting</td>
+                        <td>Yes, initialized to undefined</td>
+                        <td>Yes, but not initialized</td>
+                        <td>Yes, but not initialized</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+
+    <section>
+        <h2>Best Practices for Using Variables</h2>
+        <ul>
+            <li>Use <code>const</code> by default for values that do not change.</li>
+            <li>Use <code>let</code> for variables that will be reassigned.</li>
+            <li>Avoid using <code>var</code> to prevent scope-related issues.</li>
+            <li>Choose meaningful and descriptive variable names.</li>
+            <li>Follow camelCase convention for variable names (e.g., <code>userName</code>).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Dynamic Typing in JavaScript</h2>
+        <p>JavaScript is dynamically typed, meaning variables can hold values of any data type, and the type can change at runtime.</p>
+
+        <div class="example">
+            <h3>Example: Dynamic Typing</h3>
+            <pre>
+let dynamicVar = "Hello, World!"; // String
+dynamicVar = 42;                // Number
+dynamicVar = true;              // Boolean
+console.log(dynamicVar);
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <div class="img-container">
+            <img src="variable_lifecycle.jpg" alt="Variable Lifecycle">
+        </div>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p> 
+    </footer>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX with JavaScript</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>AJAX with JavaScript</h1>
+    </header>
+    <section>
+        <h2>Introduction</h2>
+        <p>AJAX (Asynchronous JavaScript and XML) is a technique for creating fast and dynamic web applications. AJAX allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes. This means that it is possible to update parts of a web page without reloading the whole page.</p>
+    </section>
+
+    <section>
+        <h2>How AJAX Works</h2>
+        <p>AJAX works by using an <code>XMLHttpRequest</code> object to send and receive data between a web browser and a server. Here are the steps:</p>
+        <ol>
+            <li>Create an <code>XMLHttpRequest</code> object.</li>
+            <li>Define a callback function to handle the server response.</li>
+            <li>Open a connection to the server.</li>
+            <li>Send the request to the server.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Example: Fetching Data with AJAX</h2>
+        <p>The following is an example of how to use AJAX to fetch data from a server:</p>
+        <div class="code">
+            <pre><code class="language-javascript">// Create a new XMLHttpRequest object
+var xhr = new XMLHttpRequest();
+
+// Configure it: GET-request for the URL /data.json
+xhr.open('GET', '/data.json', true);
+
+// Set up the callback function
+xhr.onload = function () {
+    if (xhr.status === 200) {
+        console.log('Response:', xhr.responseText);
+        document.getElementById('output').innerText = xhr.responseText;
+    } else {
+        console.error('Error:', xhr.status);
+    }
+};
+
+// Send the request
+xhr.send();</code></pre>
+        </div>
+        <p>Here, the script sends a GET request to a server to fetch data from <code>/data.json</code>.</p>
+    </section>
+
+    <section>
+        <h2>AJAX with JSON Data</h2>
+        <p>AJAX often works with JSON data as it is lightweight and easy to parse. Here is an example of parsing JSON data:</p>
+        <div class="code">
+            <pre><code class="language-javascript">xhr.onload = function () {
+    if (xhr.status === 200) {
+        var data = JSON.parse(xhr.responseText);
+        console.log(data);
+        var output = '';
+        data.forEach(function(item) {
+            output += `<li>${item.name}: ${item.value}</li>`;
+        });
+        document.getElementById('list').innerHTML = output;
+    }
+};</code></pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>AJAX and Fetch API</h2>
+        <p>The <code>Fetch API</code> is a modern alternative to <code>XMLHttpRequest</code> for making AJAX requests. Here is an example:</p>
+        <div class="code">
+            <pre><code class="language-javascript">fetch('/data.json')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        var output = '';
+        data.forEach(item => {
+            output += `<li>${item.name}: ${item.value}</li>`;
+        });
+        document.getElementById('list').innerHTML = output;
+    })
+    .catch(error => console.error('Error:', error));</code></pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Advantages of AJAX</h2>
+        <ul>
+            <li>Improves user experience by avoiding full-page reloads.</li>
+            <li>Reduces server load by transferring only the required data.</li>
+            <li>Allows for dynamic and interactive web applications.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Disadvantages of AJAX</h2>
+        <ul>
+            <li>Increased complexity in coding and debugging.</li>
+            <li>Depends on JavaScript, which might be disabled in some browsers.</li>
+            <li>SEO challenges since AJAX content is not immediately visible to search engines.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>AJAX is a powerful tool for creating responsive and interactive web applications. By understanding its workings and best practices, developers can enhance the user experience and performance of their websites.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p> 
+    </footer>
+</body>
+</html>

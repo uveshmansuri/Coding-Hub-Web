@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Data Types</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>JavaScript Data Types</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>JavaScript is a dynamically typed language, which means that variables do not need to declare a type explicitly. The type of a variable is determined based on the value assigned to it. Understanding data types is crucial for writing efficient and bug-free code.</p>
+    </section>
+
+    <section>
+        <h2>Primitive Data Types</h2>
+        <p>JavaScript has the following primitive data types:</p>
+        <ul>
+            <li><strong>String:</strong> Represents textual data. Strings are enclosed in single quotes, double quotes, or backticks.</li>
+            <li><strong>Number:</strong> Represents both integers and floating-point numbers.</li>
+            <li><strong>Boolean:</strong> Represents a logical value, either <code>true</code> or <code>false</code>.</li>
+            <li><strong>Undefined:</strong> A variable that has been declared but not assigned a value.</li>
+            <li><strong>Null:</strong> Represents the intentional absence of a value.</li>
+            <li><strong>Symbol:</strong> A unique and immutable primitive value introduced in ES6.</li>
+            <li><strong>BigInt:</strong> Represents integers with arbitrary precision, introduced in ES2020.</li>
+        </ul>
+
+        <div class="example">
+            <h3>Example: Primitive Data Types</h3>
+            <pre>
+let name = "Alice";        // String
+let age = 30;              // Number
+let isStudent = false;     // Boolean
+let job;                   // Undefined
+let salary = null;         // Null
+let uniqueId = Symbol();   // Symbol
+let bigNumber = 12345678901234567890n; // BigInt
+
+console.log(name, age, isStudent, job, salary, uniqueId, bigNumber);
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Reference Data Types</h2>
+        <p>Reference data types are objects that are used to store collections of data or more complex entities. The most commonly used reference types are:</p>
+        <ul>
+            <li><strong>Object:</strong> A collection of key-value pairs.</li>
+            <li><strong>Array:</strong> An ordered list of values, which can hold mixed data types.</li>
+            <li><strong>Function:</strong> A reusable block of code.</li>
+            <li><strong>Date:</strong> Used for working with dates and times.</li>
+            <li><strong>RegExp:</strong> Represents regular expressions.</li>
+        </ul>
+
+        <div class="example">
+            <h3>Example: Reference Data Types</h3>
+            <pre>
+let user = {             // Object
+    name: "Bob",
+    age: 28
+};
+
+let scores = [90, 85, 88]; // Array
+
+function greet() {        // Function
+    return "Hello!";
+}
+
+console.log(user, scores, greet());
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Type Conversion</h2>
+        <p>JavaScript provides mechanisms to convert data from one type to another, either explicitly or implicitly.</p>
+        <h3>Explicit Conversion</h3>
+        <p>Using functions like <code>String()</code>, <code>Number()</code>, or <code>Boolean()</code> to convert data types explicitly.</p>
+        <div class="example">
+            <pre>
+let num = 42;
+let str = String(num); // Explicit conversion to string
+let bool = Boolean(num); // Explicit conversion to boolean
+
+console.log(typeof str, typeof bool);
+            </pre>
+        </div>
+
+        <h3>Implicit Conversion</h3>
+        <p>Occurs when JavaScript automatically converts data types during operations.</p>
+        <div class="example">
+            <pre>
+let result = "5" + 2; // Implicitly converts 2 to "2"
+console.log(result);   // Outputs: "52"
+
+let sum = "5" * 2;    // Implicitly converts "5" to 5
+console.log(sum);      // Outputs: 10
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Checking Data Types</h2>
+        <p>You can use the <code>typeof</code> operator to determine the type of a variable.</p>
+        <div class="example">
+            <pre>
+let value = "Hello";
+console.log(typeof value); // Outputs: string
+
+value = 42;
+console.log(typeof value); // Outputs: number
+
+value = null;
+console.log(typeof value); // Outputs: object (this is a known JavaScript quirk)
+            </pre>
+        </div>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p> 
+    </footer>
+</body>
+</html>

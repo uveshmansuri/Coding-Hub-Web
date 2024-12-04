@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operators</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>Operators in JavaScript</h1>
+</header>
+
+<section>
+    <h2>1. Arithmetic Operators</h2>
+    <p>Arithmetic operators are used to perform mathematical operations such as addition, subtraction, etc.</p>
+    <ul>
+        <li><strong>+</strong> : Addition</li>
+        <li><strong>-</strong> : Subtraction</li>
+        <li><strong>*</strong> : Multiplication</li>
+        <li><strong>/</strong> : Division</li>
+        <li><strong>%</strong> : Modulus (remainder)</li>
+        <li><strong>++</strong> : Increment</li>
+        <li><strong>--</strong> : Decrement</li>
+    </ul>
+    <h3>Example:</h3>
+    <pre><code>
+let a = 10, b = 5;
+let sum = a + b; // sum = 15
+let difference = a - b; // difference = 5
+    </code></pre>
+</section>
+
+<section>
+    <h2>2. Assignment Operators</h2>
+    <p>Assignment operators are used to assign values to variables.</p>
+    <ul>
+        <li><strong>=</strong> : Assigns the value on the right to the variable on the left</li>
+        <li><strong>+=</strong> : Adds and assigns the value</li>
+        <li><strong>-=</strong> : Subtracts and assigns the value</li>
+        <li><strong>*=</strong> : Multiplies and assigns the value</li>
+        <li><strong>/=</strong> : Divides and assigns the value</li>
+        <li><strong>%=</strong> : Modulo and assigns the value</li>
+    </ul>
+    <h3>Example:</h3>
+    <pre><code>
+let x = 10;
+x += 5; // x = 15
+x *= 2; // x = 30
+    </code></pre>
+</section>
+
+<section>
+    <h2>3. Comparison Operators</h2>
+    <p>Comparison operators are used to compare two values. They return a Boolean value (true or false).</p>
+    <ul>
+        <li><strong>==</strong> : Equal to</li>
+        <li><strong>===</strong> : Strictly equal to (compares both value and type)</li>
+        <li><strong>!=</strong> : Not equal to</li>
+        <li><strong>!==</strong> : Strictly not equal to</li>
+        <li><strong>&gt;</strong> : Greater than</li>
+        <li><strong>&lt;</strong> : Less than</li>
+        <li><strong>&gt;=</strong> : Greater than or equal to</li>
+        <li><strong>&lt;=</strong> : Less than or equal to</li>
+    </ul>
+    <h3>Example:</h3>
+    <pre><code>
+let a = 5, b = '5';
+console.log(a == b); // true (loose equality)
+console.log(a === b); // false (strict equality)
+    </code></pre>
+</section>
+
+<section>
+    <h2>4. Logical Operators</h2>
+    <p>Logical operators are used to perform logical operations.</p>
+    <ul>
+        <li><strong>&&</strong> : Logical AND</li>
+        <li><strong>||</strong> : Logical OR</li>
+        <li><strong>!</strong> : Logical NOT</li>
+    </ul>
+    <h3>Example:</h3>
+    <pre><code>
+let a = true, b = false;
+console.log(a && b); // false
+console.log(a || b); // true
+console.log(!a); // false
+    </code></pre>
+</section>
+
+<section>
+    <h2>5. Conditional (Ternary) Operator</h2>
+    <p>The ternary operator is a shorthand for the if-else statement.</p>
+    <ul>
+        <li><strong>condition ? expr1 : expr2</strong></li>
+    </ul>
+    <h3>Example:</h3>
+    <pre><code>
+let age = 18;
+let canVote = age >= 18 ? "Yes" : "No";
+console.log(canVote); // "Yes"
+    </code></pre>
+</section>
+
+<section>
+    <h2>6. Typeof Operator</h2>
+    <p>The <code>typeof</code> operator is used to check the type of a variable.</p>
+    <h3>Example:</h3>
+    <pre><code>
+let a = 10;
+console.log(typeof a); // "number"
+
+let str = "Hello";
+console.log(typeof str); // "string"
+    </code></pre>
+</section>
+
+<section>
+    <h2>7. Bitwise Operators</h2>
+    <p>Bitwise operators perform operations on binary representations of numbers.</p>
+    <ul>
+        <li><strong>&</strong> : AND</li>
+        <li><strong>|</strong> : OR</li>
+        <li><strong>^</strong> : XOR</li>
+        <li><strong>~</strong> : NOT</li>
+        <li><strong>&lt;&lt;</strong> : Left shift</li>
+        <li><strong>&gt;&gt;</strong> : Right shift</li>
+        <li><strong>&gt;&gt;&gt;</strong> : Unsigned right shift</li>
+    </ul>
+    <h3>Example:</h3>
+    <pre><code>
+let x = 5, y = 3;
+console.log(x & y); // 1
+console.log(x | y); // 7
+    </code></pre>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

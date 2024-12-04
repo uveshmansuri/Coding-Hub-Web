@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage and SessionStorage in JavaScript</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>LocalStorage and SessionStorage in JavaScript</h1>
+</header>
+
+<section>
+    <p>Both <strong>LocalStorage</strong> and <strong>SessionStorage</strong> are part of the Web Storage API. They provide simple key-value storage mechanisms within the user's browser. These storage options are often used to store data on the client-side without involving a server.</p>
+</section>
+
+<section>
+    <h2>Key Features</h2>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>LocalStorage</th>
+                <th>SessionStorage</th>
+            </tr>
+            <tr>
+                <td>Data Persistence</td>
+                <td>Data persists even after the browser is closed.</td>
+                <td>Data is cleared when the browser or tab is closed.</td>
+            </tr>
+            <tr>
+                <td>Scope</td>
+                <td>Shared across all tabs and windows from the same origin.</td>
+                <td>Scoped to the tab or window where it was created.</td>
+            </tr>
+            <tr>
+                <td>Capacity</td>
+                <td>Approximately 5-10 MB depending on the browser.</td>
+                <td>Approximately 5-10 MB depending on the browser.</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section>
+    <h2>LocalStorage</h2>
+    <p><strong>LocalStorage</strong> allows you to store data with no expiration time. This means the data will remain available until explicitly deleted by your code or the user.</p>
+
+    <h3>Basic Operations</h3>
+    <pre><code>// Save data to LocalStorage
+localStorage.setItem('name', 'John Doe');
+
+// Retrieve data from LocalStorage
+let name = localStorage.getItem('name');
+console.log(name); // Outputs: John Doe
+
+// Remove a specific item
+localStorage.removeItem('name');
+
+// Clear all data from LocalStorage
+localStorage.clear();
+    </code></pre>
+
+    <h3>Example</h3>
+    <p>Run this code in the browser console:</p>
+    <pre><code>// Save user details
+localStorage.setItem('user', JSON.stringify({ name: 'Alice', age: 25 }));
+
+// Retrieve and parse user details
+let user = JSON.parse(localStorage.getItem('user'));
+console.log(user.name); // Outputs: Alice
+
+// Update data
+localStorage.setItem('user', JSON.stringify({ name: 'Alice', age: 26 }));
+
+// Clear all data
+localStorage.clear();
+    </code></pre>
+</section>
+
+<section>
+    <h2>SessionStorage</h2>
+    <p><strong>SessionStorage</strong> stores data for the duration of a page session. Once the browser tab or window is closed, the data is automatically cleared.</p>
+
+    <h3>Basic Operations</h3>
+    <pre><code>// Save data to SessionStorage
+sessionStorage.setItem('sessionId', '12345');
+
+// Retrieve data from SessionStorage
+let sessionId = sessionStorage.getItem('sessionId');
+console.log(sessionId); // Outputs: 12345
+
+// Remove a specific item
+sessionStorage.removeItem('sessionId');
+
+// Clear all data from SessionStorage
+sessionStorage.clear();
+    </code></pre>
+
+    <h3>Example</h3>
+    <p>Run this code in the browser console:</p>
+    <pre><code>// Store user preference
+sessionStorage.setItem('theme', 'dark');
+
+// Retrieve user preference
+let theme = sessionStorage.getItem('theme');
+console.log(theme); // Outputs: dark
+
+// Clear all session storage data
+sessionStorage.clear();
+    </code></pre>
+</section>
+
+<section>
+    <h2>Practical Differences</h2>
+    <p>To understand the differences between LocalStorage and SessionStorage:</p>
+    <ul>
+        <li><strong>LocalStorage:</strong> Use it to save data that should persist across sessions, such as user settings or themes.</li>
+        <li><strong>SessionStorage:</strong> Use it to store temporary data for a single session, such as form data that shouldn't persist after closing the tab.</li>
+    </ul>
+
+    <h2>Common Use Cases</h2>
+    <h3>LocalStorage</h3>
+    <ul>
+        <li>Saving user preferences like theme, language, or layout.</li>
+        <li>Storing authentication tokens.</li>
+        <li>Retaining shopping cart information between sessions.</li>
+    </ul>
+
+    <h3>SessionStorage</h3>
+    <ul>
+        <li>Storing form data temporarily during navigation.</li>
+        <li>Maintaining state during a single-page app session.</li>
+        <li>Tracking user interactions temporarily.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Limitations</h2>
+    <p>Both LocalStorage and SessionStorage share these limitations:</p>
+    <ul>
+        <li>Storage size is limited (usually 5-10 MB).</li>
+        <li>Stored data is accessible by JavaScript and therefore vulnerable to XSS attacks.</li>
+        <li>Cannot directly store complex objects; data must be serialized to strings (e.g., using <code>JSON.stringify</code>).</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Security Considerations</h2>
+    <p>As data stored in LocalStorage and SessionStorage is not encrypted, avoid storing sensitive information like passwords or credit card details.</p>
+</section>
+
+<section>
+    <h2>Testing in the Browser</h2>
+    <p>You can test these APIs in the browser's developer tools. Open the console and run the provided examples, or inspect stored data under the <strong>Application</strong> tab.</p>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

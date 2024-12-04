@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>JavaScript Events</h1>
+</header>
+
+<section>
+    <h2>JavaScript Events</h2>
+    <p>In JavaScript, an <strong>event</strong> is an action or occurrence that happens in the system you are working with, such as a user interacting with the page or an internal process in the browser. JavaScript provides the ability to interact with these events, making your web pages more dynamic and interactive.</p>
+    <p>Examples of events include user actions like clicking a button, submitting a form, or moving the mouse over an element. You can use JavaScript to listen for these events and execute code when they occur.</p>
+</section>
+
+<section>
+    <h2>Types of JavaScript Events</h2>
+    <p>There are many types of events in JavaScript. Some of the most common types include:</p>
+    <ul>
+        <li><strong>Mouse Events:</strong> Events like <code>click</code>, <code>dblclick</code>, <code>mouseover</code>, etc., that occur when the user interacts with the mouse.</li>
+        <li><strong>Keyboard Events:</strong> Events like <code>keydown</code>, <code>keyup</code>, and <code>keypress</code>, which occur when the user presses keys on the keyboard.</li>
+        <li><strong>Form Events:</strong> Events like <code>submit</code>, <code>change</code>, and <code>focus</code>, triggered by actions in form elements.</li>
+        <li><strong>Window Events:</strong> Events like <code>load</code>, <code>resize</code>, and <code>scroll</code>, triggered by actions on the browser window.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>How to Handle JavaScript Events</h2>
+    <p>There are three main ways to handle events in JavaScript:</p>
+    <ul>
+        <li><strong>Inline Event Handlers:</strong> You can specify event handlers directly in HTML attributes. This method is often discouraged as it mixes HTML and JavaScript code.</li>
+        <li><strong>DOM Event Handlers:</strong> You can assign event handlers to elements using JavaScript, which is the most common and recommended method.</li>
+        <li><strong>Event Listeners:</strong> The modern way to handle events, where you use the <code>addEventListener()</code> method to attach an event handler to an element.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Inline Event Handlers</h2>
+    <p>Inline event handlers involve placing event attributes within HTML elements. For example:</p>
+    <pre><code>
+<button onclick="alert('Button clicked!')">Click Me</button>
+    </code></pre>
+    <p>In this example, when the button is clicked, the <code>alert</code> function is triggered, showing a message to the user. However, it’s recommended to use the other methods to keep HTML and JavaScript separate for better maintainability.</p>
+</section>
+
+<section>
+    <h2>DOM Event Handlers</h2>
+    <p>Another method to handle events is by directly assigning event handlers in JavaScript. For example:</p>
+    <pre><code>
+document.getElementById("myButton").onclick = function() {
+    alert("Button clicked!");
+};
+    </code></pre>
+    <p>Here, we get the element with the ID <code>myButton</code> and assign an event handler to its <code>onclick</code> event.</p>
+</section>
+
+<section>
+    <h2>Using Event Listeners</h2>
+    <p>The <code>addEventListener()</code> method is the most flexible and modern approach to handle events. It allows you to add multiple event listeners to an element, without overwriting existing ones. For example:</p>
+    <pre><code>
+document.getElementById("myButton").addEventListener("click", function() {
+    alert("Button clicked!");
+});
+    </code></pre>
+    <p>In this example, we use the <code>addEventListener()</code> method to attach an event listener to the button. The event is specified as the first argument, and the function to run is the second argument.</p>
+    <p>The major advantage of using event listeners is that they allow multiple listeners for the same event on the same element. You can also remove event listeners when no longer needed using the <code>removeEventListener()</code> method.</p>
+</section>
+
+<section>
+    <h2>Event Object</h2>
+    <p>Whenever an event occurs, an event object is automatically passed to the event handler. This object contains details about the event, such as the type of event, the target element, and other useful properties.</p>
+    <p>Here is an example of accessing the event object:</p>
+    <pre><code>
+document.getElementById("myButton").addEventListener("click", function(event) {
+    console.log(event.target);  // logs the element that triggered the event
+    console.log(event.type);    // logs the event type (click)
+});
+    </code></pre>
+    <p>The <code>event.target</code> refers to the element that was clicked, and <code>event.type</code> returns the event type (e.g., "click").</p>
+</section>
+
+<section>
+    <h2>Event Propagation</h2>
+    <p>Event propagation describes the order in which events are triggered in the DOM hierarchy. It has two main phases:</p>
+    <ul>
+        <li><strong>Capturing Phase:</strong> The event is triggered from the root to the target element.</li>
+        <li><strong>Bubbling Phase:</strong> The event is triggered from the target element up to the root.</li>
+    </ul>
+    <p>By default, events propagate through the bubbling phase. You can stop propagation by calling <code>event.stopPropagation()</code> in the event handler.</p>
+    <pre><code>
+document.getElementById("myButton").addEventListener("click", function(event) {
+    event.stopPropagation();
+    alert("Event propagation stopped!");
+});
+    </code></pre>
+</section>
+
+<section>
+    <h2>Types of JavaScript Events</h2>
+    <p>There are many different types of events in JavaScript. Below are the most commonly used events:</p>
+    <ul>
+        <li><strong>Mouse Events:</strong> Triggered by mouse actions such as clicks, mouse movements, etc.</li>
+        <li><strong>Keyboard Events:</strong> Triggered by actions on the keyboard, such as key presses.</li>
+        <li><strong>Focus Events:</strong> Triggered when an element gains or loses focus.</li>
+        <li><strong>Form Events:</strong> Triggered by actions performed on form elements like input fields, buttons, etc.</li>
+        <li><strong>Window Events:</strong> Triggered by interactions with the browser window, such as resizing or loading.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Mouse Events</h2>
+    <p>Mouse events are triggered by user actions such as clicking or moving the mouse.</p>
+    <h3>Common Mouse Events:</h3>
+    <ul>
+        <li><strong>click:</strong> Triggered when a mouse button is pressed and released on an element.</li>
+        <li><strong>dblclick:</strong> Triggered when an element is double-clicked.</li>
+        <li><strong>mouseover:</strong> Triggered when the mouse pointer hovers over an element.</li>
+        <li><strong>mouseout:</strong> Triggered when the mouse pointer leaves an element.</li>
+    </ul>
+    <h3>Example of Mouse Event:</h3>
+    <pre><code>
+document.getElementById("myButton").addEventListener("click", function() {
+    alert("Button clicked!");
+});
+    </code></pre>
+    <p>In this example, when the button with the ID "myButton" is clicked, an alert is displayed.</p>
+</section>
+
+<section>
+    <h2>Keyboard Events</h2>
+    <p>Keyboard events are triggered when the user interacts with the keyboard.</p>
+    <h3>Common Keyboard Events:</h3>
+    <ul>
+        <li><strong>keydown:</strong> Triggered when a key is pressed down.</li>
+        <li><strong>keypress:</strong> Triggered when a key is pressed and holds.</li>
+        <li><strong>keyup:</strong> Triggered when a key is released.</li>
+    </ul>
+    <h3>Example of Keyboard Event:</h3>
+    <pre><code>
+document.addEventListener("keydown", function(event) {
+    console.log("Key pressed: " + event.key);
+});
+    </code></pre>
+    <p>In this example, whenever a key is pressed, the key name is logged in the console.</p>
+</section>
+
+<section>
+    <h2>Focus Events</h2>
+    <p>Focus events are triggered when an element gains or loses focus, such as when a user clicks inside an input field.</p>
+    <h3>Common Focus Events:</h3>
+    <ul>
+        <li><strong>focus:</strong> Triggered when an element gains focus.</li>
+        <li><strong>blur:</strong> Triggered when an element loses focus.</li>
+    </ul>
+    <h3>Example of Focus Event:</h3>
+    <pre><code>
+document.getElementById("myInput").addEventListener("focus", function() {
+    console.log("Input field focused.");
+});
+    </code></pre>
+    <p>In this example, when the input field with ID "myInput" gains focus, a message is logged.</p>
+</section>
+
+<section>
+    <h2>Form Events</h2>
+    <p>Form events are triggered when a user interacts with form elements such as input fields, text areas, or buttons.</p>
+    <h3>Common Form Events:</h3>
+    <ul>
+        <li><strong>submit:</strong> Triggered when a form is submitted.</li>
+        <li><strong>change:</strong> Triggered when the value of an input element changes.</li>
+        <li><strong>input:</strong> Triggered when the user enters input into a form field.</li>
+    </ul>
+    <h3>Example of Form Event:</h3>
+    <pre><code>
+document.getElementById("myForm").addEventListener("submit", function(event) {
+    alert("Form submitted!");
+    event.preventDefault(); // Prevents the form from being submitted
+});
+    </code></pre>
+    <p>In this example, when the form with the ID "myForm" is submitted, an alert is shown and the form submission is prevented.</p>
+</section>
+
+<section>
+    <h2>Window Events</h2>
+    <p>Window events are triggered by interactions with the browser window itself, such as resizing or loading a page.</p>
+    <h3>Common Window Events:</h3>
+    <ul>
+        <li><strong>load:</strong> Triggered when the page and its resources are fully loaded.</li>
+        <li><strong>resize:</strong> Triggered when the window is resized.</li>
+        <li><strong>scroll:</strong> Triggered when the user scrolls the window.</li>
+    </ul>
+    <h3>Example of Window Event:</h3>
+    <pre><code>
+window.addEventListener("resize", function() {
+    console.log("Window resized!");
+});
+    </code></pre>
+    <p>In this example, whenever the window is resized, a message is logged to the console.</p>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

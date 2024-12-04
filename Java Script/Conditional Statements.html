@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statements in JavaScript</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>Conditional Statements</h1>
+</header>
+
+<section>
+    <h2>Conditional Statements</h2>
+    <p>Conditional statements allow you to execute specific blocks of code based on certain conditions. They are essential for controlling the flow of execution in your program.</p>
+</section>
+
+<section>
+    <h2>The if Statement</h2>
+    <p>The <code>if</code> statement evaluates a condition and, if the condition is true, executes the code block within it.</p>
+    <h3>Syntax:</h3>
+    <pre><code>
+if (condition) {
+    // code block to be executed if condition is true
+}
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+let number = 10;
+if (number > 5) {
+    console.log("The number is greater than 5.");
+}
+    </code></pre>
+    <p>In this example, since <code>number</code> is 10, which is greater than 5, the message will be printed.</p>
+</section>
+
+<section>
+    <h2>The if-else Statement</h2>
+    <p>The <code>if-else</code> statement allows you to specify an alternative block of code to execute if the condition is false.</p>
+    <h3>Syntax:</h3>
+    <pre><code>
+if (condition) {
+    // code block if condition is true
+} else {
+    // code block if condition is false
+}
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+let number = 3;
+if (number > 5) {
+    console.log("The number is greater than 5.");
+} else {
+    console.log("The number is not greater than 5.");
+}
+    </code></pre>
+    <p>Here, since <code>number</code> is 3, which is not greater than 5, the second block of code is executed, and the message "The number is not greater than 5" is printed.</p>
+</section>
+
+<section>
+    <h2>The if-else if-else Statement</h2>
+    <p>The <code>if-else if-else</code> statement lets you check multiple conditions. It allows for more than one alternative block of code to be executed depending on the condition that is true.</p>
+    <h3>Syntax:</h3>
+    <pre><code>
+if (condition1) {
+    // code block if condition1 is true
+} else if (condition2) {
+    // code block if condition2 is true
+} else {
+    // code block if neither condition1 nor condition2 is true
+}
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+let number = 8;
+if (number > 10) {
+    console.log("The number is greater than 10.");
+} else if (number === 8) {
+    console.log("The number is equal to 8.");
+} else {
+    console.log("The number is less than 8.");
+}
+    </code></pre>
+    <p>In this case, since <code>number</code> is 8, the second condition is true, and the message "The number is equal to 8" will be printed.</p>
+</section>
+
+<section>
+    <h2>The switch Statement</h2>
+    <p>The <code>switch</code> statement is used to perform multiple comparisons based on the value of a single variable. It is an alternative to using many <code>if-else if</code> statements when comparing the same variable to different values.</p>
+    <h3>Syntax:</h3>
+    <pre><code>
+switch (expression) {
+    case value1:
+        // code block if expression === value1
+        break;
+    case value2:
+        // code block if expression === value2
+        break;
+    default:
+        // code block if expression does not match any case
+}
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+let fruit = "apple";
+switch (fruit) {
+    case "banana":
+        console.log("This is a banana.");
+        break;
+    case "apple":
+        console.log("This is an apple.");
+        break;
+    case "orange":
+        console.log("This is an orange.");
+        break;
+    default:
+        console.log("Unknown fruit.");
+}
+    </code></pre>
+    <p>In this case, since <code>fruit</code> is "apple", the corresponding case block will be executed, and "This is an apple" will be printed.</p>
+</section>
+
+<section>
+    <h2>Ternary (Conditional) Operator</h2>
+    <p>The <code>ternary</code> operator is a shorthand for <code>if-else</code> statements. It is a concise way to write conditional expressions.</p>
+    <h3>Syntax:</h3>
+    <pre><code>
+condition ? expression1 : expression2;
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+let age = 18;
+let canDrive = (age >= 16) ? "Yes" : "No";
+console.log(canDrive); // Output: Yes
+    </code></pre>
+    <p>Here, since <code>age</code> is 18, the condition evaluates to true, and the value "Yes" is assigned to <code>canDrive</code>.</p>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

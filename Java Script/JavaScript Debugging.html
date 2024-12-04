@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Debugging</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>JavaScript Debugging</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>Debugging is the process of identifying and fixing errors or bugs in a program. JavaScript debugging involves locating and resolving issues in your code to ensure it behaves as expected. Effective debugging improves code quality, performance, and reliability.</p>
+    </section>
+
+    <section>
+        <h2>Common Debugging Tools</h2>
+        <p>Modern browsers come equipped with powerful tools to help developers debug JavaScript. Some commonly used tools are:</p>
+        <ul>
+            <li><strong>Browser Developer Tools:</strong> Built-in tools in browsers like Chrome, Firefox, and Edge.</li>
+            <li><strong>Console:</strong> Displays errors, warnings, and debug messages.</li>
+            <li><strong>Debugger:</strong> Enables step-by-step execution of code.</li>
+            <li><strong>Linting Tools:</strong> Tools like ESLint catch errors and enforce coding standards.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Using the Console</h2>
+        <p>The console is one of the simplest and most effective tools for debugging JavaScript.</p>
+        <h3>Example</h3>
+        <pre><code class="language-javascript">// Logging to the console
+console.log('This is a log message');
+console.error('This is an error message');
+console.warn('This is a warning message');
+console.table([{name: 'Alice', age: 25}, {name: 'Bob', age: 30}]);
+        </code></pre>
+        <p>You can access the console by pressing <code>Ctrl+Shift+I</code> (Windows) or <code>Cmd+Option+I</code> (Mac) in most browsers.</p>
+    </section>
+
+    <section>
+        <h2>Using Breakpoints</h2>
+        <p>Breakpoints allow you to pause the execution of your code at specific points to inspect variables, functions, and the call stack.</p>
+        <h3>Steps to Use Breakpoints:</h3>
+        <ol>
+            <li>Open your browser's developer tools.</li>
+            <li>Go to the "Sources" or "Debugger" tab.</li>
+            <li>Find the JavaScript file you want to debug.</li>
+            <li>Click on the line number to set a breakpoint.</li>
+        </ol>
+        <h3>Example</h3>
+        <pre><code class="language-javascript">function calculateSum(a, b) {
+    let sum = a + b; // Set a breakpoint here
+    return sum;
+}
+console.log(calculateSum(5, 10));
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Debugging with the Debugger Statement</h2>
+        <p>The <code>debugger</code> statement pauses code execution and invokes the debugger if available.</p>
+        <h3>Example</h3>
+        <pre><code class="language-javascript">function debugExample() {
+    let x = 10;
+    debugger; // Execution will pause here
+    x += 5;
+    console.log(x);
+}
+debugExample();
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Analyzing Network Activity</h2>
+        <p>Network activity can provide insights into issues with API calls or data fetching. Use the "Network" tab in developer tools to inspect HTTP requests and responses.</p>
+        <h3>Steps:</h3>
+        <ol>
+            <li>Open the "Network" tab in your browser's developer tools.</li>
+            <li>Reload the page to capture all network activity.</li>
+            <li>Inspect the details of each request.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Linting Tools</h2>
+        <p>Linting tools like ESLint help identify syntax errors and enforce coding standards. They are particularly useful for catching potential bugs during development.</p>
+        <h3>Example Configuration:</h3>
+        <pre><code class="language-json">{
+    "rules": {
+        "no-console": "warn",
+        "no-unused-vars": "error",
+        "eqeqeq": "error"
+    }
+}
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Debugging Common Issues</h2>
+        <h3>1. Syntax Errors</h3>
+        <p>These occur when the code does not follow JavaScript syntax rules. Use the console to identify and fix them.</p>
+        <h3>2. Logical Errors</h3>
+        <p>These occur when the code executes but does not produce the expected results. Use breakpoints and inspect variables to find the issue.</p>
+        <h3>3. Runtime Errors</h3>
+        <p>These occur during execution, such as trying to access a property of <code>null</code>. Check the stack trace in the console for details.</p>
+    </section>
+
+    <section>
+        <h2>Best Practices for Debugging</h2>
+        <ul>
+            <li>Use meaningful variable names to make your code easier to understand.</li>
+            <li>Keep functions small and focused to isolate errors more easily.</li>
+            <li>Comment your code to clarify intent.</li>
+            <li>Write unit tests to catch errors early.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p> 
+    </footer>
+</body>
+</html>

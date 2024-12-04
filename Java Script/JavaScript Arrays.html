@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrays and Methods</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>JavaScript Arrays and Methods</h1>
+</header>
+
+<section>
+    <h2>JavaScript Arrays</h2>
+    <p>Arrays in JavaScript are used to store multiple values in a single variable. An array is a special type of object that allows storing elements in an ordered list. These elements can be of any data type, such as strings, numbers, or even other arrays. Arrays are zero-indexed, meaning the first element is accessed using index 0.</p>
+    <p>Arrays are commonly used for storing lists of data, such as a list of students, items in a cart, or even elements that need to be processed together.</p>
+</section>
+
+<section>
+    <h2>Creating Arrays</h2>
+    <p>Arrays can be created in two ways:</p>
+    <ul>
+        <li><strong>Using Array Literal:</strong> <code>let array = [1, 2, 3, 4];</code></li>
+        <li><strong>Using the Array Constructor:</strong> <code>let array = new Array(1, 2, 3, 4);</code></li>
+    </ul>
+    <p>Both methods create an array with the same values. However, the array literal is generally preferred because it is more concise and easier to read.</p>
+</section>
+
+<section>
+    <h2>Accessing Array Elements</h2>
+    <p>To access an element in an array, you use the index of that element. Array indices start at 0.</p>
+    <h3>Example:</h3>
+    <pre><code>
+let fruits = ['Apple', 'Banana', 'Cherry'];
+let firstFruit = fruits[0];  // Apple
+    </code></pre>
+    <p>In this example, <code>fruits[0]</code> accesses the first element in the array, which is "Apple".</p>
+</section>
+
+<section>
+    <h2>Array Methods</h2>
+    <p>JavaScript provides a variety of methods to manipulate and interact with arrays. Below are the most commonly used methods:</p>
+
+    <h3>1. <strong>push()</strong> - Adds elements to the end of an array</h3>
+    <pre><code>
+let numbers = [1, 2, 3];
+numbers.push(4);  // Adds 4 to the end of the array
+    </code></pre>
+    <p>The <code>push()</code> method adds one or more elements to the end of an array and returns the new length of the array.</p>
+
+    <h3>2. <strong>pop()</strong> - Removes the last element of an array</h3>
+    <pre><code>
+let numbers = [1, 2, 3];
+let last = numbers.pop();  // Removes 3
+    </code></pre>
+    <p>The <code>pop()</code> method removes the last element of an array and returns that element.</p>
+
+    <h3>3. <strong>shift()</strong> - Removes the first element of an array</h3>
+    <pre><code>
+let numbers = [1, 2, 3];
+let first = numbers.shift();  // Removes 1
+    </code></pre>
+    <p>The <code>shift()</code> method removes the first element of an array and returns that element.</p>
+
+    <h3>4. <strong>unshift()</strong> - Adds elements to the beginning of an array</h3>
+    <pre><code>
+let numbers = [2, 3];
+numbers.unshift(1);  // Adds 1 to the beginning of the array
+    </code></pre>
+    <p>The <code>unshift()</code> method adds one or more elements to the beginning of an array and returns the new length of the array.</p>
+
+    <h3>5. <strong>splice()</strong> - Adds or removes elements from an array at a specific position</h3>
+    <pre><code>
+let numbers = [1, 2, 3, 4];
+numbers.splice(2, 1, 'a', 'b');  // Removes 3 and adds 'a' and 'b'
+    </code></pre>
+    <p>The <code>splice()</code> method can be used to remove elements, add elements, or both at a specific position in an array.</p>
+
+    <h3>6. <strong>slice()</strong> - Returns a shallow copy of a portion of an array</h3>
+    <pre><code>
+let numbers = [1, 2, 3, 4, 5];
+let newArray = numbers.slice(1, 4);  // [2, 3, 4]
+    </code></pre>
+    <p>The <code>slice()</code> method extracts a shallow copy of a portion of an array into a new array without modifying the original array.</p>
+
+    <h3>7. <strong>forEach()</strong> - Executes a function on each element of the array</h3>
+    <pre><code>
+let numbers = [1, 2, 3];
+numbers.forEach(function(num) {
+    console.log(num * 2);
+});
+// Output: 2, 4, 6
+    </code></pre>
+    <p>The <code>forEach()</code> method executes a provided function once for each element in the array.</p>
+
+    <h3>8. <strong>map()</strong> - Creates a new array with the results of applying a function to each element</h3>
+    <pre><code>
+let numbers = [1, 2, 3];
+let doubled = numbers.map(num => num * 2);
+// doubled = [2, 4, 6]
+    </code></pre>
+    <p>The <code>map()</code> method creates a new array with the results of calling a provided function on every element in the calling array.</p>
+
+    <h3>9. <strong>filter()</strong> - Creates a new array with all elements that pass a test</h3>
+    <pre><code>
+let numbers = [1, 2, 3, 4, 5];
+let evenNumbers = numbers.filter(num => num % 2 === 0);
+// evenNumbers = [2, 4]
+    </code></pre>
+    <p>The <code>filter()</code> method creates a new array with all elements that pass the test implemented by the provided function.</p>
+
+    <h3>10. <strong>reduce()</strong> - Applies a function to each element in the array (left to right) to reduce it to a single value</h3>
+    <pre><code>
+let numbers = [1, 2, 3];
+let sum = numbers.reduce((total, num) => total + num, 0);
+// sum = 6
+    </code></pre>
+    <p>The <code>reduce()</code> method applies a function to each element in the array (left to right) to reduce it to a single value.</p>
+
+    <h3>11. <strong>concat()</strong> - Combines two or more arrays</h3>
+    <pre><code>
+let array1 = [1, 2];
+let array2 = [3, 4];
+let combined = array1.concat(array2);
+// combined = [1, 2, 3, 4]
+    </code></pre>
+    <p>The <code>concat()</code> method is used to combine two or more arrays into one new array.</p>
+
+    <h3>12. <strong>indexOf()</strong> - Returns the first index of an element in an array</h3>
+    <pre><code>
+let numbers = [1, 2, 3];
+let index = numbers.indexOf(2);
+// index = 1
+    </code></pre>
+    <p>The <code>indexOf()</code> method returns the first index at which a specified element is found in the array. Returns -1 if the element is not found.</p>
+
+    <h3>13. <strong>join()</strong> - Joins all elements of an array into a string</h3>
+    <pre><code>
+let numbers = [1, 2, 3];
+let joined = numbers.join('-');
+// joined = '1-2-3'
+    </code></pre>
+    <p>The <code>join()</code> method joins all elements of an array into a single string, separated by the specified separator.</p>
+</section>
+
+<section>
+    <h2>Conclusion</h2>
+    <p>JavaScript arrays are versatile and can be manipulated with a variety of methods. The methods discussed above provide powerful ways to work with arrays, whether it's adding/removing elements, transforming data, or reducing values.</p>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>
