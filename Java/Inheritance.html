@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Inheritance</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <h1>Java Inheritance</h1>
+    </header>
+
+    <section>
+        <h2>What is Inheritance?</h2>
+        <p>Inheritance in Java is a mechanism where one class acquires the properties and behavior (methods) of another class. The class that inherits is called the <strong>subclass</strong>, and the class from which it inherits is called the <strong>superclass</strong>.</p>
+        <div class="example">
+            <h3>Real-world Example:</h3>
+            <p>Consider a parent-child relationship. A child inherits traits like eye color or hair color from the parent. Similarly, in Java, a subclass can inherit methods and properties from its superclass.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Why Use Inheritance?</h2>
+        <ul>
+            <li>To promote code reuse.</li>
+            <li>To achieve runtime polymorphism.</li>
+            <li>To organize code in a hierarchical structure.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Syntax of Inheritance</h2>
+        <pre>
+class Superclass {
+    // fields and methods
+}
+
+class Subclass extends Superclass {
+    // additional fields and methods
+}
+        </pre>
+    </section>
+
+    <section>
+        <h2>Types of Inheritance in Java</h2>
+        <ul>
+            <li>Single Inheritance</li>
+            <li>Multilevel Inheritance</li>
+            <li>Hierarchical Inheritance</li>
+        </ul>
+        <div class="example">
+            <h3>Note:</h3>
+            <p>Java does not support multiple inheritance with classes to avoid ambiguity. Instead, interfaces are used to achieve multiple inheritance.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Example: Single Inheritance</h2>
+        <pre>
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat(); // inherited from Animal
+        dog.bark(); // defined in Dog
+    }
+}
+        </pre>
+        <div class="img-container">
+            <img src="java-inheritance-example.png" alt="Java Inheritance Diagram">
+        </div>
+    </section>
+
+    <section>
+        <h2>Example: Multilevel Inheritance</h2>
+        <pre>
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+class Mammal extends Animal {
+    void walk() {
+        System.out.println("This mammal walks.");
+    }
+}
+
+class Dog extends Mammal {
+    void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat(); // inherited from Animal
+        dog.walk(); // inherited from Mammal
+        dog.bark(); // defined in Dog
+    }
+}
+        </pre>
+    </section>
+
+    <section>
+        <h2>Key Points</h2>
+        <ul>
+            <li>The <code>extends</code> keyword is used to implement inheritance.</li>
+            <li>A subclass can override methods of the superclass.</li>
+            <li><strong>Constructors</strong> of a superclass are not inherited but can be accessed using <code>super()</code>.</li>
+            <li>Java uses single inheritance for classes but supports multiple inheritance through interfaces.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Learn more about Java programming and enhance your coding skills!</p>
+    </footer>
+</body>
+</html>

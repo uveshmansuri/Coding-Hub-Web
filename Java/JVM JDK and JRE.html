@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JVM, JDK, and JRE</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>JVM, JDK, and JRE</h1>
+    </header>
+    <section>
+        <h2>JVM (Java Virtual Machine)</h2>
+        <p>
+            The Java Virtual Machine (JVM) is an abstract computing machine that enables a computer to run a Java program. It provides the runtime environment in which Java bytecode can be executed.
+        </p>
+        <h3>Main Responsibilities of JVM:</h3>
+        <ul>
+            <li>Loads, verifies, and executes Java bytecode.</li>
+            <li>Manages system memory and provides a secure execution environment.</li>
+            <li>Handles garbage collection to reclaim unused memory.</li>
+        </ul>
+        <div class="example">
+            <strong>Example:</strong> JVM interprets bytecode and converts it into machine code specific to the host system.
+        </div>
+    </section>
+    <section>
+        <h2>JDK (Java Development Kit)</h2>
+        <p>
+            The Java Development Kit (JDK) is a software development environment used to develop Java applications and applets. It includes the JRE, an interpreter/loader (Java), a compiler (javac), an archiver (jar), a documentation generator (javadoc), and other tools needed for Java development.
+        </p>
+        <h3>Key Components of JDK:</h3>
+        <ul>
+            <li><strong>javac:</strong> The Java compiler used to compile Java source code into bytecode.</li>
+            <li><strong>java:</strong> The JVM launcher for running Java applications.</li>
+            <li><strong>javadoc:</strong> A tool for generating API documentation in HTML format.</li>
+            <li><strong>jar:</strong> A tool to package Java classes into a single JAR file.</li>
+        </ul>
+        <div class="example">
+            <strong>Example:</strong> If you write and compile a Java program using `javac`, you need the JDK.
+        </div>
+    </section>
+    <section>
+        <h2>JRE (Java Runtime Environment)</h2>
+        <p>
+            The Java Runtime Environment (JRE) provides the libraries, Java Virtual Machine (JVM), and other components necessary to run Java applications. It does not contain development tools like a compiler or debugger; it is designed for users who only want to run Java applications.
+        </p>
+        <h3>Main Features of JRE:</h3>
+        <ul>
+            <li>Includes the JVM for executing Java applications.</li>
+            <li>Provides core libraries required for running Java programs.</li>
+            <li>Does not include tools for developing Java programs.</li>
+        </ul>
+        <div class="example">
+            <strong>Example:</strong> If you download and install a Java-based software, you typically need the JRE to run it.
+        </div>
+    </section>
+    <section>
+        <h2>Comparison: JVM vs JDK vs JRE</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>JVM</th>
+                        <th>JDK</th>
+                        <th>JRE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Definition</td>
+                        <td>An abstract machine that provides a runtime environment for Java bytecode execution.</td>
+                        <td>A software development environment for building Java applications.</td>
+                        <td>A runtime environment that includes JVM and libraries to run Java applications.</td>
+                    </tr>
+                    <tr>
+                        <td>Includes</td>
+                        <td>Just the JVM.</td>
+                        <td>JRE + Development tools (javac, jar, javadoc, etc.).</td>
+                        <td>JVM + Core libraries.</td>
+                    </tr>
+                    <tr>
+                        <td>Used For</td>
+                        <td>Executing Java bytecode.</td>
+                        <td>Developing and executing Java programs.</td>
+                        <td>Running Java applications.</td>
+                    </tr>
+                    <tr>
+                        <td>Audience</td>
+                        <td>Users and developers.</td>
+                        <td>Developers.</td>
+                        <td>End-users running Java applications.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section>
+        <h2>Conclusion</h2>
+        <p>
+            Understanding JVM, JDK, and JRE is fundamental for anyone working with Java. While the JVM focuses on running Java programs, the JDK is essential for development, and the JRE serves as the runtime environment for end-users. Together, they form the backbone of the Java ecosystem, enabling robust application development and seamless execution across platforms.
+        </p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p> 
+    </footer>
+</body>
+</html>

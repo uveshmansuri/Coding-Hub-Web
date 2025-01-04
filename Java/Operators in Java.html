@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators in Java</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Operators in Java</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>In Java, operators are special symbols or keywords used to perform operations on operands. These operands can be variables, literals, or expressions. Operators are used in expressions to perform various tasks, such as arithmetic, logical, or relational operations. Understanding how operators work is fundamental to writing Java programs.</p>
+        
+        <h3>Categories of Operators</h3>
+        <p>Operators in Java can be classified into the following categories:</p>
+        <div class="example">
+            <ol>
+                <li>Arithmetic Operators</li>
+                <li>Relational Operators</li>
+                <li>Logical Operators</li>
+                <li>Bitwise Operators</li>
+                <li>Assignment Operators</li>
+                <li>Unary Operators</li>
+                <li>Conditional (Ternary) Operator</li>
+                <li>Instanceof Operator</li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h2>Arithmetic Operators</h2>
+        <p>Arithmetic operators are used to perform basic mathematical operations. Java provides the following arithmetic operators:</p>
+        <ul>
+            <li><b>Addition (+)</b>: Adds two operands.</li>
+            <li><b>Subtraction (-)</b>: Subtracts the right operand from the left operand.</li>
+            <li><b>Multiplication (*)</b>: Multiplies two operands.</li>
+            <li><b>Division (/)</b>: Divides the left operand by the right operand.</li>
+            <li><b>Modulus (%)</b>: Returns the remainder when the left operand is divided by the right operand.</li>
+        </ul>
+
+        <h3>Example:</h3>
+        <div class="example">
+            <pre>
+int a = 10;
+int b = 5;
+
+System.out.println("a + b = " + (a + b));  // Output: 15
+System.out.println("a - b = " + (a - b));  // Output: 5
+System.out.println("a * b = " + (a * b));  // Output: 50
+System.out.println("a / b = " + (a / b));  // Output: 2
+System.out.println("a % b = " + (a % b));  // Output: 0
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Relational Operators</h2>
+        <p>Relational operators are used to compare two operands. The result of the operation is a boolean value: true or false.</p>
+        <ul>
+            <li><b>Equal to (==)</b>: Returns true if the left operand is equal to the right operand.</li>
+            <li><b>Not equal to (!=)</b>: Returns true if the left operand is not equal to the right operand.</li>
+            <li><b>Greater than (>)</b>: Returns true if the left operand is greater than the right operand.</li>
+            <li><b>Less than (<)</b>: Returns true if the left operand is less than the right operand.</li>
+            <li><b>Greater than or equal to (>=)</b>: Returns true if the left operand is greater than or equal to the right operand.</li>
+            <li><b>Less than or equal to (<=)</b>: Returns true if the left operand is less than or equal to the right operand.</li>
+        </ul>
+
+        <h3>Example:</h3>
+        <div class="example">
+            <pre>
+int a = 10;
+int b = 5;
+
+System.out.println("a == b: " + (a == b));  // Output: false
+System.out.println("a != b: " + (a != b));  // Output: true
+System.out.println("a > b: " + (a > b));    // Output: true
+System.out.println("a < b: " + (a < b));    // Output: false
+System.out.println("a >= b: " + (a >= b));  // Output: true
+System.out.println("a <= b: " + (a <= b));  // Output: false
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Logical Operators</h2>
+        <p>Logical operators are used to perform logical operations, primarily with boolean values. The result is always a boolean value.</p>
+        <ul>
+            <li><b>Logical AND (&&)</b>: Returns true if both operands are true.</li>
+            <li><b>Logical OR (||)</b>: Returns true if at least one operand is true.</li>
+            <li><b>Logical NOT (!)</b>: Reverses the logical state of its operand. If the condition is true, it becomes false, and vice versa.</li>
+        </ul>
+
+        <h3>Example:</h3>
+        <div class="example">
+            <pre>
+boolean a = true;
+boolean b = false;
+
+System.out.println("a && b: " + (a && b));  // Output: false
+System.out.println("a || b: " + (a || b));  // Output: true
+System.out.println("!a: " + (!a));          // Output: false
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Bitwise Operators</h2>
+        <p>Bitwise operators are used to perform operations on individual bits of integer values.</p>
+        <ul>
+            <li><b>Bitwise AND (&)</b>: Performs a bitwise AND operation on two operands.</li>
+            <li><b>Bitwise OR (|)</b>: Performs a bitwise OR operation on two operands.</li>
+            <li><b>Bitwise XOR (^)</b>: Performs a bitwise XOR operation on two operands.</li>
+            <li><b>Bitwise Complement (~)</b>: Inverts all the bits of the operand.</li>
+            <li><b>Left Shift (<<)</b>: Shifts the bits of the operand to the left by the specified number of positions.</li>
+            <li><b>Right Shift (>>)</b>: Shifts the bits of the operand to the right by the specified number of positions.</li>
+            <li><b>Unsigned Right Shift (>>>)</b>: Similar to the right shift, but shifts zero into the leftmost bits.</li>
+        </ul>
+
+        <h3>Example:</h3>
+        <div class="example">
+            <pre>
+int a = 5;    // Binary: 0101
+int b = 3;    // Binary: 0011
+
+System.out.println("a & b: " + (a & b));  // Output: 1
+System.out.println("a | b: " + (a | b));  // Output: 7
+System.out.println("a ^ b: " + (a ^ b));  // Output: 6
+System.out.println("~a: " + (~a));        // Output: -6
+System.out.println("a << 1: " + (a << 1)); // Output: 10
+System.out.println("a >> 1: " + (a >> 1)); // Output: 2
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Assignment Operators</h2>
+        <p>Assignment operators are used to assign values to variables.</p>
+        <ul>
+            <li><b>Assignment (=)</b>: Assigns the right operand value to the left operand.</li>
+            <li><b>Addition Assignment (+=)</b>: Adds the right operand to the left operand and assigns the result to the left operand.</li>
+            <li><b>Subtraction Assignment (-=)</b>: Subtracts the right operand from the left operand and assigns the result to the left operand.</li>
+            <li><b>Multiplication Assignment (*=)</b>: Multiplies the left operand by the right operand and assigns the result to the left operand.</li>
+            <li><b>Division Assignment (/=)</b>: Divides the left operand by the right operand and assigns the result to the left operand.</li>
+            <li><b>Modulus Assignment (%=)</b>: Takes the modulus of the left operand by the right operand and assigns the result to the left operand.</li>
+        </ul>
+
+        <h3>Example:</h3>
+        <div class="example">
+            <pre>
+int a = 10;
+a += 5;   // a = a + 5
+System.out.println("a += 5: " + a);  // Output: 15
+
+a -= 3;   // a = a - 3
+System.out.println("a -= 3: " + a);  // Output: 12
+
+a *= 2;   // a = a * 2
+System.out.println("a *= 2: " + a);  // Output: 24
+
+a /= 4;   // a = a / 4
+System.out.println("a /= 4: " + a);  // Output: 6
+
+a %= 5;   // a = a % 5
+System.out.println("a %= 5: " + a);  // Output: 1
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Unary Operators</h2>
+        <p>Unary operators are used to perform operations on a single operand.</p>
+        <ul>
+            <li><b>Unary Plus (+)</b>: Indicates a positive value.</li>
+            <li><b>Unary Minus (-)</b>: Negates the value of the operand.</li>
+            <li><b>Increment (++)</b>: Increases the operand by 1.</li>
+            <li><b>Decrement (--)</b>: Decreases the operand by 1.</li>
+            <li><b>Logical NOT (!)</b>: Reverses the logical value.</li>
+        </ul>
+
+        <h3>Example:</h3>
+        <div class="example">
+            <pre>
+int a = 5;
+System.out.println("++a: " + (++a));  // Output: 6
+System.out.println("a++: " + (a++));  // Output: 6 (but a becomes 7 after this line)
+System.out.println("--a: " + (--a));  // Output: 6
+System.out.println("a--: " + (a--));  // Output: 6 (but a becomes 5 after this line)
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Conditional (Ternary) Operator</h2>
+        <p>The conditional operator (also known as the ternary operator) is used to evaluate a boolean expression and return a value based on the result. It is the only operator in Java that takes three operands.</p>
+        <ul>
+            <li><b>Syntax:</b> <code>condition ? expression1 : expression2;</code></li>
+            <li>If the condition is true, <code>expression1</code> is evaluated and returned; otherwise, <code>expression2</code> is evaluated and returned.</li>
+        </ul>
+    
+        <h3>Example:</h3>
+        <div class="example">
+            <pre>
+    int a = 10;
+    int b = 5;
+    int result = (a > b) ? a : b;  // If a is greater than b, result = a; otherwise, result = b
+    System.out.println("Result: " + result);  // Output: 10
+            </pre>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Instanceof Operator</h2>
+        <p>The <code>instanceof</code> operator is used to test whether an object is an instance of a specific class or subclass or implements a particular interface.</p>
+        <ul>
+            <li><b>Syntax:</b> <code>object instanceof ClassName</code></li>
+            <li>Returns <code>true</code> if the object is an instance of the class or subclass; otherwise, returns <code>false</code>.</li>
+        </ul>
+    
+        <h3>Example:</h3>
+        <div class="example">
+            <pre>
+    String str = "Hello";
+    System.out.println(str instanceof String);  // Output: true
+    
+    Object obj = new Object();
+    System.out.println(obj instanceof String);  // Output: false
+            </pre>
+        </div>
+    </section>
+
+<section>
+    <h2>Operator Precedence in Java</h2>
+        <p>Operator precedence determines the order in which operators are evaluated in an expression. Operators with higher precedence are evaluated before operators with lower precedence. Below is a list of common operators in Java, ordered from highest to lowest precedence:</p>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Precedence</th>
+                        <th>Associativity</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Parentheses ( )</td>
+                        <td>Highest</td>
+                        <td>Left to Right</td>
+                        <td>(a + b) * c</td>
+                    </tr>
+                    <tr>
+                        <td>Unary Operators (+, -, ++, --, !)</td>
+                        <td>2nd</td>
+                        <td>Right to Left</td>
+                        <td>++a, !b</td>
+                    </tr>
+                    <tr>
+                        <td>Multiplicative Operators (*, /, %)</td>
+                        <td>3rd</td>
+                        <td>Left to Right</td>
+                        <td>a * b / c</td>
+                    </tr>
+                    <tr>
+                        <td>Additive Operators (+, -)</td>
+                        <td>4th</td>
+                        <td>Left to Right</td>
+                        <td>a + b - c</td>
+                    </tr>
+                    <tr>
+                        <td>Relational Operators (>, <, >=, <=)</td>
+                        <td>5th</td>
+                        <td>Left to Right</td>
+                        <td>a > b</td>
+                    </tr>
+                    <tr>
+                        <td>Equality Operators (==, !=)</td>
+                        <td>6th</td>
+                        <td>Left to Right</td>
+                        <td>a == b</td>
+                    </tr>
+                    <tr>
+                        <td>Logical AND (&&)</td>
+                        <td>7th</td>
+                        <td>Left to Right</td>
+                        <td>a && b</td>
+                    </tr>
+                    <tr>
+                        <td>Logical OR (||)</td>
+                        <td>8th</td>
+                        <td>Left to Right</td>
+                        <td>a || b</td>
+                    </tr>
+                    <tr>
+                        <td>Assignment (=, +=, -=, *=, /=, %=)</td>
+                        <td>Lowest</td>
+                        <td>Right to Left</td>
+                        <td>a = b</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Example:</h3>
+        <p>Consider the following expression:</p>
+        <pre>
+int a = 5;
+int b = 10;
+int c = 3;
+
+int result = a + b * c;  // The multiplication is performed before addition.
+System.out.println("Result: " + result);  // Output: 35 (10 * 3 = 30, then 5 + 30 = 35)
+        </pre>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>Operators in Java are essential tools for manipulating data. Understanding the different categories of operators helps you write more efficient and effective programs. Practice using these operators in different situations to enhance your programming skills.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p> 
+    </footer>
+
+</body>
+</html>

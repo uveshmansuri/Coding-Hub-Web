@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Methods</title>    
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Functions in Java</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>In Java, functions (referred to as methods) are blocks of code designed to perform specific tasks. They are a fundamental building block in Java programming, allowing code to be reused, modularized, and organized effectively.</p>
+
+        <h3>Key Characteristics of Java Methods:</h3>
+        <ul>
+            <li><strong>Definition:</strong>
+                <ul>
+                    <li>A method contains a group of statements that perform a specific operation.</li>
+                    <li>It is defined within a class.</li>
+                </ul>
+            </li>
+            <li><strong>Structure:</strong>
+                <ul>
+                    <li>Methods may or may not return a value.</li>
+                    <li>Methods can have parameters (inputs).</li>
+                </ul>
+            </li>
+            <li><strong>Purpose:</strong>
+                <ul>
+                    <li>Code reusability.</li>
+                    <li>Breaking a program into smaller, manageable parts.</li>
+                </ul>
+            </li>
+            <li><strong>Invocation:</strong> Can be invoked directly (for static methods) or via an object (for instance methods).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Syntax of a Method in Java</h2>
+        <pre><code>access_modifier return_type method_name(parameters) {
+    // Method body (code to execute)
+    return value; // Optional (required if return_type is not void)
+}</code></pre>
+        <h3>Components:</h3>
+        <ul>
+            <li><strong>Access Modifier:</strong> Defines the visibility (e.g., public, private, protected, or default).</li>
+            <li><strong>Return Type:</strong> Specifies the data type of the value returned by the method (void if it doesn't return anything).</li>
+            <li><strong>Method Name:</strong> Follows camelCase conventions.</li>
+            <li><strong>Parameters:</strong> Optional. Specifies the inputs for the method.</li>
+            <li><strong>Method Body:</strong> Contains the logic of the method.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Examples of Methods</h2>
+
+        <h3>Example 1: Method Without Parameters and Return Value</h3>
+        <div class="example">
+            <pre><code>public class Greeting {
+    public void sayHello() {  // No parameters, no return value
+        System.out.println("Hello, Welcome to Java!");
+    }
+
+    public static void main(String[] args) {
+        Greeting obj = new Greeting();  // Create object
+        obj.sayHello();  // Call method
+    }
+}</code></pre>
+            <h4>Output:</h4>
+            <pre><code>Hello, Welcome to Java!</code></pre>
+        </div>
+
+        <h3>Example 2: Method With Parameters</h3>
+        <div class="example">
+            <pre><code>public class Calculator {
+    public void addNumbers(int a, int b) {  // Parameters
+        int sum = a + b;
+        System.out.println("Sum: " + sum);
+    }
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        calc.addNumbers(10, 20);  // Passing arguments
+    }
+}</code></pre>
+            <h4>Output:</h4>
+            <pre><code>Sum: 30</code></pre>
+        </div>
+
+        <h3>Example 3: Method With a Return Value</h3>
+        <div class="example">
+            <pre><code>public class SquareCalculator {
+    public int square(int num) {  // Returns an integer
+        return num * num;
+    }
+
+    public static void main(String[] args) {
+        SquareCalculator sc = new SquareCalculator();
+        int result = sc.square(5);  // Capture returned value
+        System.out.println("Square: " + result);
+    }
+}</code></pre>
+            <h4>Output:</h4>
+            <pre><code>Square: 25</code></pre>
+        </div>
+
+        <h3>Example 4: Static Method</h3>
+        <div class="example">
+            <pre><code>public class Utility {
+    public static void printMessage(String message) {  // Static method
+        System.out.println("Message: " + message);
+    }
+
+    public static void main(String[] args) {
+        Utility.printMessage("Hello from a static method!");  // Direct call
+    }
+}</code></pre>
+            <h4>Output:</h4>
+            <pre><code>Message: Hello from a static method!</code></pre>
+        </div>
+
+        <h3>Example 5: Method Overloading</h3>
+        <div class="example">
+            <pre><code>public class OverloadedMethods {
+    public void greet() {
+        System.out.println("Hello!");
+    }
+
+    public void greet(String name) {  // Overloaded method
+        System.out.println("Hello, " + name + "!");
+    }
+
+    public static void main(String[] args) {
+        OverloadedMethods om = new OverloadedMethods();
+        om.greet();  // Calls greet()
+        om.greet("Alice");  // Calls greet(String)
+    }
+}</code></pre>
+            <h4>Output:</h4>
+            <pre><code>Hello!
+Hello, Alice!</code></pre>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Recursion in Java</h2>
+        <p>Recursion is a programming technique where a method calls itself to solve a smaller version of the original problem. It is particularly useful for problems that can be divided into similar subproblems, such as factorial calculation, Fibonacci series, and tree traversals.</p>
+    
+        <h3>Structure of Recursive Methods</h3>
+        <ul>
+            <li><strong>Base Case:</strong> A condition that stops the recursion to prevent infinite calls.</li>
+            <li><strong>Recursive Step:</strong> The method calls itself with modified arguments, gradually converging towards the base case.</li>
+        </ul>
+    
+        <h3>Example 1: Factorial Calculation</h3>
+        <div class="example">
+            <pre><code>public class Factorial {
+        public int factorial(int n) {
+            if (n == 0 || n == 1) {  // Base case
+                return 1;
+            }
+            return n * factorial(n - 1);  // Recursive step
+        }
+    
+        public static void main(String[] args) {
+            Factorial fact = new Factorial();
+            int result = fact.factorial(5);
+            System.out.println("Factorial of 5 is: " + result);
+        }
+    }</code></pre>
+            <h4>Output:</h4>
+            <pre><code>Factorial of 5 is: 120</code></pre>
+        </div>
+    
+        <h3>Example 2: Fibonacci Series</h3>
+        <div class="example">
+            <pre><code>public class Fibonacci {
+        public int fibonacci(int n) {
+            if (n == 0) {  // Base case 1
+                return 0;
+            } else if (n == 1) {  // Base case 2
+                return 1;
+            }
+            return fibonacci(n - 1) + fibonacci(n - 2);  // Recursive step
+        }
+    
+        public static void main(String[] args) {
+            Fibonacci fib = new Fibonacci();
+            for (int i = 0; i < 10; i++) {
+                System.out.print(fib.fibonacci(i) + " ");
+            }
+        }
+    }</code></pre>
+            <h4>Output:</h4>
+            <pre><code>0 1 1 2 3 5 8 13 21 34</code></pre>
+        </div>
+    
+        <h3>Example 3: Sum of Digits</h3>
+        <div class="example">
+            <pre><code>public class SumOfDigits {
+        public int sumDigits(int num) {
+            if (num == 0) {  // Base case
+                return 0;
+            }
+            return num % 10 + sumDigits(num / 10);  // Recursive step
+        }
+    
+        public static void main(String[] args) {
+            SumOfDigits sod = new SumOfDigits();
+            int result = sod.sumDigits(12345);
+            System.out.println("Sum of digits: " + result);
+        }
+    }</code></pre>
+            <h4>Output:</h4>
+            <pre><code>Sum of digits: 15</code></pre>
+        </div>
+    
+        <h3>Important Points about Recursion</h3>
+        <ul>
+            <li>Ensure a base case exists to avoid infinite recursion and stack overflow errors.</li>
+            <li>Recursion can sometimes be less efficient than iterative solutions due to repeated computations and higher memory usage for stack frames.</li>
+            <li>For large problems, consider dynamic programming or memoization to optimize recursive solutions.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Mind Map</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Explanation</th>                    
+                        <th>Key Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Definition</strong></td>
+                        <td>A block of code performing a specific task within a class.</td>                
+                        <td>Reusable and modular code.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Components</strong></td>
+                        <td>Access modifier, return type, method name, parameters, body, and return statement (optional).</td>                
+                        <td>Must belong to a class; return required if return type is not void.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Types</strong></td>
+                        <td>Built-in (predefined), user-defined, static, instance, overloaded, recursive.</td>                
+                        <td>Built-in for common tasks; user-defined for specific use cases.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Invocation</strong></td>
+                        <td>Static methods: Called via class name. Instance methods: Called via objects.</td>                        
+                        <td>Static for shared behavior; instance for object-specific tasks.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Examples</strong></td>
+                        <td>1. No parameters: void display()<br>2. With return: int square(int x)<br>3. Recursive: factorial()</td>                        
+                        <td>Return matches return type; recursion for repetitive tasks.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Best Practices</strong></td>
+                        <td>1. Use meaningful names.<br>2. Keep methods small and focused.<br>3. Reuse code with modular functions.</td>                        
+                        <td>Follow DRY (Don't Repeat Yourself) principle.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p> 
+    </footer>
+</body>
+</html>

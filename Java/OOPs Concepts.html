@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-Oriented Programming (OOP) in Java</title>    
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Object-Oriented Programming (OOP) in Java</h1>
+    </header>
+
+    <section>
+        <h2>OOPs in Java</h2>
+        <p>Object-Oriented Programming (OOP) is a programming paradigm that organizes software design around data, or objects, rather than functions and logic. OOP focuses on defining the objects, which have attributes (fields) and behaviors (methods), and interacting with these objects to achieve desired outcomes. In Java, OOP is fundamental, and its four main features are:</p>
+        <div class="img-container">
+            <img src="java-oops-concepts.jpg"/>
+        </div>
+    </section>
+
+    <section>
+        <h2>1. Class</h2>
+        <p>A class is a blueprint or template for creating objects. It defines the properties (fields) and methods (behaviors) that the objects created from the class will have. A class doesn’t allocate memory for an object; instead, it describes how objects of that type should behave.</p>
+        
+        <p>Here, Car is a class that has two properties: model and year, and two methods: start() and stop(). It is just a template for creating car objects.</p>
+
+        <h3>Real-World Example:</h3>
+        <p>Think of a blueprint for a house. The blueprint itself is like a class; it defines how a house should be structured, but it is not the house itself. When we follow the blueprint to build a house, we create objects (instances) of the house class.</p>
+    </section>
+
+    <section>
+        <h2>2. Object</h2>
+        <p>An object is an instance of a class. While a class is just a blueprint, an object is a concrete instance that occupies memory and can perform actions defined in the class. Each object has its own set of data (properties) and can interact with methods (behaviors).</p>
+
+        <h3>Real-World Example:</h3>
+        <p>Think of a car as an object. While the blueprint for a car defines how all cars should be, each individual car (object) can have different models, colors, and other features.</p>
+    </section>
+
+    <section>
+        <h3>3. Encapsulation</h3>
+        <p>Encapsulation is the concept of wrapping data (variables) and methods into a single unit, a class, and restricting access to some of the object's components. It is achieved by using access modifiers like private, public, and protected. The idea is to keep fields private and provide public getter and setter methods to access and update those fields.</p>
+
+        <h3>Real-World Example:</h3>
+        <p>Think of encapsulation as a security guard at a building. The guard controls who can enter and exit the building (the methods), but only authorized people can access specific rooms (data) inside. This keeps the data secure and prevents unauthorized access.</p>
+    </section>
+
+    <section>
+        <h2>4. Inheritance</h2>
+        <p>Inheritance is the mechanism by which one class (child class) can inherit properties and behaviors from another class (parent class). It allows for the reuse of code and a hierarchical relationship between classes. In Java, the extends keyword is used to inherit from a parent class.</p>
+
+        <h3>Real-World Example:</h3>
+        <p>Inheritance is like a child inheriting traits from their parents. For instance, a child inherits the ability to speak from their parents but may also have unique traits of their own, like the ability to play the piano.</p>
+    </section>
+
+    <section>
+        <h2>5. Abstraction</h2>
+        <p>Abstraction involves hiding the complexity of a system and exposing only the essential features. It allows you to define the structure of something without specifying the details. In Java, abstraction is achieved using abstract classes and interfaces. An abstract class cannot be instantiated directly but can have abstract methods (methods without a body) that must be implemented by subclasses.</p>
+        <h3>Real-World Example:</h3>
+        <p>Abstraction is like driving a car. You don’t need to know how the engine works (the complexity) to drive it; you just need to know how to use the steering wheel, pedals, etc. The internal workings of the engine are abstracted away from the user.</p>
+    </section>
+
+    <section>
+        <h2>6. Polymorphism</h2>
+        <p>Polymorphism means "many forms" and allows a single action or method to behave differently depending on the object it is acting upon. In Java, polymorphism can be achieved through method overloading and method overriding.</p>
+
+        <h4>Method Overloading:</h4>
+        <p>Defining multiple methods with the same name but different parameters.</p>
+
+        <h4>Method Overriding:</h4>
+        <p>A subclass provides a specific implementation of a method that is already defined in its superclass.</p>
+        <h3>Real-World Example:</h3>
+        <p>Polymorphism is like a person who can perform different tasks depending on the situation. For instance, a person can be a teacher, a driver, or a cook—each task is handled differently, but the person is still the same.</p>
+    </section>
+
+    <section>
+        <h2>Mind Map</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Explanation</th>                        
+                        <th>Key Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Class</td>
+                        <td>Blueprint or template to create objects. Contains fields (attributes) and methods (functions).</td>                        
+                        <td>Defines properties and behavior of objects; can be instantiated into objects.</td>
+                    </tr>
+                    <tr>
+                        <td>Object</td>
+                        <td>Instance of a class; an entity that holds data and methods defined in the class.</td>                        
+                        <td>Represents real-world entities; stores state and behavior.</td>
+                    </tr>
+                    <tr>
+                        <td>Encapsulation</td>
+                        <td>Bundling data (attributes) and methods that operate on the data into a single unit (class).</td>                        
+                        <td>Protects data from outside modification; access via getters and setters.</td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td>Mechanism where one class acquires the attributes and methods of another class.</td>                        
+                        <td>Promotes code reuse; subclass inherits from superclass.</td>
+                    </tr>
+                    <tr>
+                        <td>Polymorphism</td>
+                        <td>Ability of an object to take many forms; can be achieved via method overloading and overriding.</td>                        
+                        <td>Same method name but different behavior based on object type.</td>
+                    </tr>
+                    <tr>
+                        <td>Abstraction</td>
+                        <td>Hiding implementation details and showing only essential features.</td>                        
+                        <td>Simplifies interaction by hiding complex implementation.</td>
+                    </tr>
+                    <tr>
+                        <td>Method Overloading</td>
+                        <td>Same method name, but different parameter types or numbers.</td>                        
+                        <td>Increases method flexibility based on input type.</td>
+                    </tr>
+                    <tr>
+                        <td>Method Overriding</td>
+                        <td>Redefining a superclass method in the subclass to provide specific behavior.</td>                        
+                        <td>Enables dynamic method dispatch based on object type.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>OOP in Java is a powerful paradigm that helps create structured, reusable, and maintainable code. By using classes and objects, and implementing features like encapsulation, inheritance, abstraction, and polymorphism, developers can model real-world problems effectively and manage complexity in large applications. Each of the OOP concepts plays a crucial role in achieving these goals and making the code more modular and flexible.</p>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p> 
+    </footer>
+</body>
+</html>

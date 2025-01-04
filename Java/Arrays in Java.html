@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in Java</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>Arrays in Java</h1>
+</header>
+
+<section>
+    <h2>Introduction to Arrays</h2>
+    <p>Arrays are fundamental data structures in Java that allow you to store multiple elements of the same type in a single variable. Java arrays are fixed in size, meaning once they are created, their size cannot be changed. They can be one-dimensional (1-D), two-dimensional (2-D), or multi-dimensional arrays.</p>
+    
+    <h3>Key Points:</h3>
+    <ul>
+        <li><strong>Array Basics:</strong> Arrays store elements of a single type (e.g., int, float, String).</li>
+        <li><strong>Size:</strong> The size of an array is defined at the time of creation and cannot be changed later.</li>
+        <li><strong>Indexing:</strong> Java arrays are zero-indexed, meaning the first element of an array is accessed using index 0.</li>
+        <li><strong>Memory Representation:</strong> Arrays in Java are objects, meaning they are stored in heap memory.</li>
+    </ul>
+    
+    <h2>One-Dimensional Arrays (1-D Arrays)</h2>
+    <p>A 1-D array in Java is a simple list of elements of the same type, indexed sequentially from 0 to n-1 (where n is the size of the array).</p>
+
+    <h3>Creation of a 1-D Array</h3>
+    <h4>Declaration and Initialization in One Step:</h4>
+    <pre><code>int[] arr = {1, 2, 3, 4, 5};</code></pre>
+
+    <h4>Declaration First, Then Initialization:</h4>
+    <pre><code>int[] arr = new int[5];  // Declare an array of size 5
+arr[0] = 1;  // Assign value 1 to index 0
+arr[1] = 2;  // Assign value 2 to index 1
+arr[2] = 3;  // Assign value 3 to index 2
+arr[3] = 4;  // Assign value 4 to index 3
+arr[4] = 5;  // Assign value 5 to index 4</code></pre>
+
+    <h3>Accessing and Modifying Elements</h3>
+    <h4>Accessing Elements:</h4>
+    <pre><code>int value = arr[2];  // Access element at index 2 (output will be 3)</code></pre>
+
+    <h4>Modifying Elements:</h4>
+    <pre><code>arr[1] = 10;  // Modify element at index 1 (value will be changed to 10)</code></pre>
+
+    <h3>Example: Sum of Elements in a 1-D Array</h3>
+    <pre><code>public class ArrayExample {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int sum = 0;
+        
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        
+        System.out.println("Sum of elements: " + sum);  // Output: Sum of elements: 15
+    }
+}</code></pre>
+
+    <h3>Built-in Functions for 1-D Arrays</h3>
+    <ul>
+        <li><strong>length:</strong> The length property gives the size of the array.</li>
+        <pre><code>int size = arr.length;  // Get the size of the array</code></pre>
+
+        <li><strong>Arrays.toString():</strong> Converts an array into a string for easy display.</li>
+        <pre><code>import java.util.Arrays;
+System.out.println(Arrays.toString(arr));  // Output: [1, 2, 3, 4, 5]</code></pre>
+
+        <li><strong>Arrays.sort():</strong> Sorts the array in ascending order.</li>
+        <pre><code>Arrays.sort(arr);
+System.out.println(Arrays.toString(arr));  // Output: [1, 2, 3, 4, 5]</code></pre>
+
+        <li><strong>Arrays.copyOf():</strong> Copies an array into a new one.</li>
+        <pre><code>int[] copyArr = Arrays.copyOf(arr, arr.length);
+System.out.println(Arrays.toString(copyArr));  // Output: [1, 2, 3, 4, 5]</code></pre>
+    </ul>
+</section>
+
+<section>
+    <h2>Two-Dimensional Arrays (2-D Arrays)</h2>
+    <p>A 2-D array in Java can be thought of as a matrix or table with rows and columns. Each element is accessed by two indices: one for the row and one for the column.</p>
+
+    <h3>Creation of a 2-D Array</h3>
+    <h4>Declaration and Initialization:</h4>
+    <pre><code>int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};</code></pre>
+
+    <h4>Declaration and Initialization Later:</h4>
+    <pre><code>int[][] matrix = new int[3][3];  // Create a 3x3 matrix
+matrix[0][0] = 1;
+matrix[0][1] = 2;
+matrix[0][2] = 3;
+matrix[1][0] = 4;
+matrix[1][1] = 5;
+matrix[1][2] = 6;
+matrix[2][0] = 7;
+matrix[2][1] = 8;
+matrix[2][2] = 9;</code></pre>
+
+    <h3>Accessing and Modifying Elements</h3>
+    <h4>Accessing Elements:</h4>
+    <pre><code>int value = matrix[1][2];  // Access element at row 1, column 2 (output will be 6)</code></pre>
+
+    <h4>Modifying Elements:</h4>
+    <pre><code>matrix[0][0] = 10;  // Modify element at row 0, column 0 (value will be changed to 10)</code></pre>
+
+    <h3>Example: Printing a 2-D Array</h3>
+    <pre><code>public class MatrixExample {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}</code></pre>
+
+    <h3>Built-in Functions for 2-D Arrays</h3>
+    <pre><code>System.out.println(Arrays.deepToString(matrix));  // Output: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]</code></pre>
+</section>
+
+<section>
+    <h2>Multi-Dimensional Arrays</h2>
+    <p>A multi-dimensional array is an array with more than two dimensions. You can create a multi-dimensional array by adding additional dimensions beyond the first two.</p>
+
+    <h3>Creation of a Multi-Dimensional Array</h3>
+    <h4>Three-Dimensional Array (3-D):</h4>
+    <pre><code>int[][][] cube = new int[3][3][3];  // Create a 3x3x3 cube
+cube[0][0][0] = 1;
+cube[0][0][1] = 2;
+cube[0][0][2] = 3;
+// And so on...</code></pre>
+
+    <h3>Accessing and Modifying Elements</h3>
+    <h4>Accessing Elements:</h4>
+    <pre><code>int value = cube[0][1][2];  // Access element at [0][1][2]</code></pre>
+
+    <h4>Modifying Elements:</h4>
+    <pre><code>cube[1][1][1] = 10;  // Modify element at [1][1][1]</code></pre>
+
+    <h3>Use Case for Multi-Dimensional Arrays</h3>
+    <p>Multi-dimensional arrays are commonly used in scientific computing, simulations, and complex data representations, such as 3D modeling or storing large datasets like temperature grids across time periods or 3D space.</p>
+</section>
+
+<section>
+    <h2>Array Operations and Built-in Methods</h2>
+    <p>Java provides several built-in methods for working with arrays through the <code>Arrays</code> class. These methods make it easier to manipulate, search, and modify arrays.</p>
+
+<h3>Commonly Used Array Methods</h3>
+<ul>
+    <li><strong>Arrays.toString():</strong> Converts an array to a string representation.</li>
+    <pre><code>int[] arr = {1, 2, 3, 4};
+System.out.println(Arrays.toString(arr));  // Output: [1, 2, 3, 4]</code></pre>
+
+    <li><strong>Arrays.deepToString():</strong> Converts a multi-dimensional array to a string representation.</li>
+    <pre><code>int[][] matrix = {{1, 2}, {3, 4}};
+System.out.println(Arrays.deepToString(matrix));  // Output: [[1, 2], [3, 4]]</code></pre>
+
+    <li><strong>Arrays.copyOf():</strong> Copies an array, possibly resizing it.</li>
+    <pre><code>int[] arr = {1, 2, 3, 4};
+int[] newArr = Arrays.copyOf(arr, 6);  // Output: [1, 2, 3, 4, 0, 0]</code></pre>
+
+    <li><strong>Arrays.copyOfRange():</strong> Copies a portion of an array.</li>
+    <pre><code>int[] arr = {1, 2, 3, 4, 5};
+int[] newArr = Arrays.copyOfRange(arr, 1, 4);  // Output: [2, 3, 4]</code></pre>
+
+    <li><strong>Arrays.fill():</strong> Fills an array with the specified value.</li>
+    <pre><code>int[] arr = new int[5];
+Arrays.fill(arr, 10);  // Output: [10, 10, 10, 10, 10]</code></pre>
+
+    <li><strong>Arrays.equals():</strong> Compares two arrays for equality.</li>
+    <pre><code>int[] arr1 = {1, 2, 3};
+int[] arr2 = {1, 2, 3};
+System.out.println(Arrays.equals(arr1, arr2));  // Output: true</code></pre>
+
+    <li><strong>Arrays.binarySearch():</strong> Searches for a value in a sorted array.</li>
+    <pre><code>int[] arr = {1, 2, 3, 4, 5};
+System.out.println(Arrays.binarySearch(arr, 3));  // Output: 2</code></pre>
+
+    <li><strong>Arrays.sort():</strong> Sorts the array in ascending order.</li>
+    <pre><code>int[] arr = {5, 2, 3, 1, 4};
+Arrays.sort(arr);
+System.out.println(Arrays.toString(arr));  // Output: [1, 2, 3, 4, 5]</code></pre>
+
+    <li><strong>Arrays.asList():</strong> Converts an array to a list.</li>
+    <pre><code>String[] arr = {"a", "b", "c"};
+List<String> list = Arrays.asList(arr);
+System.out.println(list);  // Output: [a, b, c]</code></pre>
+
+    <li><strong>Arrays.setAll():</strong> Initializes each element of the array using the specified generator function.</li>
+    <pre><code>int[] arr = new int[5];
+Arrays.setAll(arr, i -> i * 2);
+System.out.println(Arrays.toString(arr));  // Output: [0, 2, 4, 6, 8]</code></pre>
+
+    <li><strong>Arrays.parallelSort():</strong> Sorts the array using parallel processing (for large arrays).</li>
+    <pre><code>int[] arr = {5, 2, 3, 1, 4};
+Arrays.parallelSort(arr);
+System.out.println(Arrays.toString(arr));  // Output: [1, 2, 3, 4, 5]</code></pre>
+
+    <li><strong>Arrays.stream():</strong> Converts an array to a stream for functional operations (like filtering, mapping, etc.).</li>
+    <pre><code>int[] arr = {1, 2, 3, 4, 5};
+int sum = Arrays.stream(arr).sum();  // Output: 15
+System.out.println("Sum: " + sum);  // Output: Sum: 15</code></pre>
+</ul>
+</section>
+
+<section>
+    <h2>Key Points to Remember</h2>
+<p>Arrays in Java are a fundamental data structure used to store multiple values in a single variable. Here are some important points to remember when working with arrays in Java:</p>
+
+<h3>1. Fixed Size</h3>
+<p>Once an array is created, its size is fixed and cannot be changed. If you need a dynamic size, consider using other data structures like <code>ArrayList</code>.</p>
+
+<h3>2. Zero-based Indexing</h3>
+<p>Arrays in Java are indexed starting from 0. The first element is at index 0, the second at index 1, and so on.</p>
+<pre><code>int[] arr = {10, 20, 30};
+System.out.println(arr[0]);  // Output: 10</code></pre>
+
+<h3>3. Default Values</h3>
+<p>If an array is created but not initialized, each element gets a default value based on its data type:
+    <ul>
+        <li>For numeric types, the default value is 0.</li>
+        <li>For boolean, the default value is <code>false</code>.</li>
+        <li>For object references, the default value is <code>null</code>.</li>
+    </ul>
+</p>
+<pre><code>int[] arr = new int[3];
+System.out.println(arr[0]);  // Output: 0</code></pre>
+
+<h3>4. Multidimensional Arrays</h3>
+<p>Java supports multidimensional arrays, such as 2D arrays. These arrays can be visualized as arrays of arrays.</p>
+<pre><code>int[][] matrix = {{1, 2, 3}, {4, 5, 6}};
+System.out.println(matrix[0][1]);  // Output: 2</code></pre>
+
+<h3>5. Arrays Can Hold Any Data Type</h3>
+<p>Arrays can hold primitive types (e.g., <code>int</code>, <code>char</code>, etc.) or reference types (e.g., objects or arrays). However, arrays are type-specific, meaning you can't mix different types in the same array.</p>
+
+<h3>6. Length Property</h3>
+<p>Arrays in Java have a <code>length</code> property, which gives the number of elements in the array. Note that <code>length</code> is a property, not a method (i.e., no parentheses are needed).</p>
+<pre><code>int[] arr = {1, 2, 3};
+System.out.println(arr.length);  // Output: 3</code></pre>
+
+<h3>7. Accessing Elements</h3>
+<p>Array elements are accessed by their index. Be cautious of <code>ArrayIndexOutOfBoundsException</code> when trying to access an index outside the array bounds.</p>
+
+<h3>8. Arrays and Memory</h3>
+<p>Arrays are stored in contiguous memory locations. This allows for efficient access but can lead to performance issues if arrays are frequently resized. Always prefer arrays with a predefined size when the number of elements is known in advance.</p>
+
+<h3>9. Passing Arrays to Methods</h3>
+<p>Arrays are passed by reference to methods, meaning changes made to the array inside the method will affect the original array.</p>
+<pre><code>void modifyArray(int[] arr) {
+    arr[0] = 99;
+}
+int[] arr = {1, 2, 3};
+modifyArray(arr);
+System.out.println(arr[0]);  // Output: 99</code></pre>
+
+<h3>10. Arrays Are Objects</h3>
+<p>Arrays in Java are objects, meaning they can be assigned to a variable of type 
+    <code>Object</code> and passed to methods expecting objects. However, their methods and properties are specific to arrays.</p>
+
+<h3>11. No Bounds Checking in For-Each Loop</h3>
+<p>While using a <code>for-each</code> loop to iterate over an array, bounds checking is implicitly handled, making the code cleaner and less prone to errors.</p>
+<pre><code>int[] arr = {1, 2, 3};
+for (int num : arr) {
+    System.out.println(num);  // Output: 1 2 3
+}</code></pre>
+
+<h3>12. Array Initialization</h3>
+<p>Arrays can be initialized using:
+    <ul>
+        <li>Array initialization syntax: <code>int[] arr = {1, 2, 3};</code></li>
+        <li>Explicit array creation: <code>int[] arr = new int[3];</code></li>
+    </ul>
+</p>
+
+<h3>13. Arrays and Garbage Collection</h3>
+<p>Since arrays are objects, they are subject to garbage collection. If there are no references to an array, the array is eligible for garbage collection.</p>
+
+</ul>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+
+</body>
+</html>

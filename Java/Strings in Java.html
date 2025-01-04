@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings in Java</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Strings in Java</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>A <strong>String</strong> in Java is a sequence of characters. Strings are objects that are instances of the <code>java.lang.String</code> class. Java Strings are immutable, meaning that once a String object is created, its value cannot be changed.</p>
+    </section>
+
+    <section>
+        <h2>Creating Strings</h2>
+        <h3>Using String literals</h3>
+        <div class="example">
+            <pre>String str1 = "Hello, World!";</pre>
+            <p>This creates a string in the String pool.</p>
+        </div>
+        <h3>Using the <code>new</code> keyword</h3>
+        <div class="example">
+            <pre>String str2 = new String("Hello, World!");</pre>
+            <p>This creates a string object in the heap memory.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Important Characteristics</h2>
+        <ul>
+            <li><strong>Immutable:</strong> Modifying a string creates a new object.
+                <div class="example">
+                    <pre>
+String str = "Hello";
+str = str + " World"; // A new string object is created
+                    </pre>
+                </div>
+            </li>
+            <li><strong>Stored in String Pool:</strong> String literals are stored in a special memory area called the String pool for reusability.</li>
+            <li><strong>Implements CharSequence Interface:</strong> A string is a sequence of characters.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>String Methods</h2>
+        <ol>
+            <li><strong>length():</strong> Returns the number of characters in the string.
+                <div class="example">
+                    <pre>
+String str = "Hello";
+System.out.println(str.length()); // Output: 5
+                    </pre>
+                </div>
+            </li>
+            <li><strong>charAt(int index):</strong> Returns the character at the specified index.
+                <div class="example">
+                    <pre>
+String str = "Hello";
+System.out.println(str.charAt(1)); // Output: 'e'
+                    </pre>
+                </div>
+            </li>
+            <li><strong>substring(int start, int end):</strong> Extracts a substring from the string.
+                <div class="example">
+                    <pre>
+String str = "Hello, World!";
+System.out.println(str.substring(7, 12)); // Output: "World"
+                    </pre>
+                </div>
+            </li>
+            <li><strong>toUpperCase():</strong> Converts all characters to uppercase.
+                <div class="example">
+                    <pre>
+String str = "hello";
+System.out.println(str.toUpperCase()); // Output: "HELLO"
+                    </pre>
+                </div>
+            </li>
+            <li><strong>toLowerCase():</strong> Converts all characters to lowercase.
+                <div class="example">
+                    <pre>
+String str = "HELLO";
+System.out.println(str.toLowerCase()); // Output: "hello"
+                    </pre>
+                </div>
+            </li>
+            <li><strong>equals(Object another):</strong> Compares the string with another string for equality.
+                <div class="example">
+                    <pre>
+String str1 = "Hello";
+String str2 = "Hello";
+System.out.println(str1.equals(str2)); // Output: true
+                    </pre>
+                </div>
+            </li>
+            <li><strong>equalsIgnoreCase(String another):</strong> Compares two strings ignoring case considerations.
+                <div class="example">
+                    <pre>
+String str1 = "HELLO";
+String str2 = "hello";
+System.out.println(str1.equalsIgnoreCase(str2)); // Output: true
+                    </pre>
+                </div>
+            </li>
+            <li><strong>contains(CharSequence sequence):</strong> Checks if the string contains a sequence of characters.
+                <div class="example">
+                    <pre>
+String str = "Hello, World!";
+System.out.println(str.contains("World")); // Output: true
+                    </pre>
+                </div>
+            </li>
+            <li><strong>replace(char oldChar, char newChar):</strong> Replaces all occurrences of a character with another.
+                <div class="example">
+                    <pre>
+String str = "Hello";
+System.out.println(str.replace('l', 'p')); // Output: "Heppo"
+                    </pre>
+                </div>
+            </li>
+            <li><strong>replaceAll(String regex, String replacement):</strong> Replaces all substrings matching a regex with a replacement.
+                <div class="example">
+                    <pre>
+String str = "apple, banana, cherry";
+System.out.println(str.replaceAll(", ", " & ")); // Output: "apple & banana & cherry"
+                    </pre>
+                </div>
+            </li>
+            <li><strong>startsWith(String prefix):</strong> Checks if the string starts with a specific prefix.
+                <div class="example">
+                    <pre>
+String str = "Hello, World!";
+System.out.println(str.startsWith("Hello")); // Output: true
+                    </pre>
+                </div>
+            </li>
+            <li><strong>endsWith(String suffix):</strong> Checks if the string ends with a specific suffix.
+                <div class="example">
+                    <pre>
+String str = "Hello, World!";
+System.out.println(str.endsWith("World!")); // Output: true
+                    </pre>
+                </div>
+            </li>
+            <li><strong>trim():</strong> Removes leading and trailing whitespaces.
+                <div class="example">
+                    <pre>
+String str = "   Hello   ";
+System.out.println(str.trim()); // Output: "Hello"
+                    </pre>
+                </div>
+            </li>
+            <li><strong>split(String regex):</strong> Splits the string into an array based on a regex delimiter.
+                <div class="example">
+                    <pre>
+String str = "apple,banana,cherry";
+String[] fruits = str.split(",");
+for (String fruit : fruits) {
+    System.out.println(fruit);
+}
+// Output:
+// apple
+// banana
+// cherry
+                    </pre>
+                </div>
+            </li>
+            <li><strong>indexOf(String str):</strong> Returns the index of the first occurrence of the specified substring.
+                <div class="example">
+                    <pre>
+String str = "Hello, World!";
+System.out.println(str.indexOf("World")); // Output: 7
+                    </pre>
+                </div>
+            </li>
+            <li><strong>lastIndexOf(String str):</strong> Returns the index of the last occurrence of the specified substring.
+                <div class="example">
+                    <pre>
+String str = "Hello, Hello!";
+System.out.println(str.lastIndexOf("Hello")); // Output: 7
+                    </pre>
+                </div>
+            </li>
+            <li><strong>isEmpty():</strong> Checks if the string is empty.
+                <div class="example">
+                    <pre>
+String str = "";
+System.out.println(str.isEmpty()); // Output: true
+                    </pre>
+                </div>
+            </li>
+            <li><strong>valueOf(Object obj):</strong> Converts any object to a string.
+                <div class="example">
+                    <pre>
+int num = 100;
+String str = String.valueOf(num);
+System.out.println(str); // Output: "100"
+                    </pre>
+                </div>
+            </li>
+            <li><strong>concat(String str):</strong> Concatenates the specified string to the end of this string.
+                <div class="example">
+                    <pre>
+String str1 = "Hello";
+String str2 = " World";
+System.out.println(str1.concat(str2)); // Output: "Hello World"
+                    </pre>
+                </div>
+            </li>
+            <li><strong>compareTo(String anotherString):</strong> Compares two strings lexicographically.
+                <div class="example">
+                    <pre>
+String str1 = "abc";
+String str2 = "abd";
+System.out.println(str1.compareTo(str2)); // Output: -1
+                    </pre>
+                </div>
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>StringBuffer in Java</h2>
+        <p>The <code>StringBuffer</code> class in Java is used to create <strong>mutable</strong> (modifiable) strings. Unlike <code>String</code>, which is immutable, <code>StringBuffer</code> allows you to modify the string without creating a new object for every modification. It is part of the <code>java.lang</code> package.</p>
+    </section>
+
+    <section>
+        <h2>Difference Between String and StringBuffer</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>String</th>
+                        <th>StringBuffer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mutability</td>
+                        <td>Immutable (cannot be modified).</td>
+                        <td>Mutable (can be modified).</td>
+                    </tr>
+                    <tr>
+                        <td>Storage</td>
+                        <td>Stored in the String Pool (if literal).</td>
+                        <td>Stored in the heap memory.</td>
+                    </tr>
+                    <tr>
+                        <td>Thread Safety</td>
+                        <td>Not thread-safe.</td>
+                        <td>Thread-safe (synchronized methods).</td>
+                    </tr>
+                    <tr>
+                        <td>Performance</td>
+                        <td>Faster for read-only operations.</td>
+                        <td>Slower due to synchronization.</td>
+                    </tr>
+                    <tr>
+                        <td>Modification</td>
+                        <td>Creates a new object for every modification.</td>
+                        <td>Modifications are done in the same object.</td>
+                    </tr>
+                    <tr>
+                        <td>Methods</td>
+                        <td>Provides methods like length(), charAt().</td>
+                        <td>Provides methods like append(), insert().</td>
+                    </tr>
+                    <tr>
+                        <td>Use Case</td>
+                        <td>Suitable for fixed or constant strings.</td>
+                        <td>Suitable for strings requiring frequent changes.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h2>Features of StringBuffer</h2>
+        <ul>
+            <li><strong>Mutable:</strong> You can change the content of a StringBuffer object without creating a new object.</li>
+            <li><strong>Thread-Safe:</strong> StringBuffer methods are synchronized, meaning it is safe to use in multi-threaded environments.</li>
+            <li><strong>Performance:</strong> While thread-safe, it is slightly slower than StringBuilder due to synchronization.</li>
+        </ul>
+
+        </section>
+
+        <section>
+        <h2>Common Methods of StringBuffer</h2>
+        <ol>
+            <li><strong>append(String str)</strong>
+                <p>Appends the specified string to the end of the buffer.</p>
+                <pre><code>
+StringBuffer sb = new StringBuffer("Hello");
+sb.append(" World");
+System.out.println(sb); // Output: Hello World
+                </code></pre>
+            </li>
+            <li><strong>insert(int offset, String str)</strong>
+                <p>Inserts the string at the specified position.</p>
+                <pre><code>
+StringBuffer sb = new StringBuffer("Hello");
+sb.insert(5, ", World");
+System.out.println(sb); // Output: Hello, World
+                </code></pre>
+            </li>
+            <li><strong>replace(int start, int end, String str)</strong>
+                <p>Replaces the characters in the specified range with the given string.</p>
+                <pre><code>
+StringBuffer sb = new StringBuffer("Hello, World");
+sb.replace(7, 12, "Java");
+System.out.println(sb); // Output: Hello, Java
+                </code></pre>
+            </li>
+            <li><strong>delete(int start, int end)</strong>
+                <p>Deletes characters in the specified range.</p>
+                <pre><code>
+StringBuffer sb = new StringBuffer("Hello, World");
+sb.delete(5, 7);
+System.out.println(sb); // Output: HelloWorld
+                </code></pre>
+            </li>
+            <li><strong>reverse()</strong>
+                <p>Reverses the characters in the buffer.</p>
+                <pre><code>
+StringBuffer sb = new StringBuffer("Hello");
+sb.reverse();
+System.out.println(sb); // Output: olleH
+                </code></pre>
+            </li>
+            <li><strong>capacity()</strong>
+                <p>Returns the current capacity of the buffer.</p>
+                <pre><code>
+StringBuffer sb = new StringBuffer();
+System.out.println(sb.capacity()); // Default: 16
+                </code></pre>
+            </li>
+            <li><strong>ensureCapacity(int minimumCapacity)</strong>
+                <p>Ensures the capacity of the buffer is at least the specified minimum.</p>
+                <pre><code>
+StringBuffer sb = new StringBuffer();
+sb.ensureCapacity(50);
+System.out.println(sb.capacity()); // Output: 50
+                </code></pre>
+            </li>
+            <li><strong>setLength(int newLength)</strong>
+                <p>Sets the length of the buffer. If the new length is less than the current length, the buffer is truncated.</p>
+                <pre><code>
+StringBuffer sb = new StringBuffer("Hello");
+sb.setLength(3);
+System.out.println(sb); // Output: Hel
+                </code></pre>
+            </li>
+        </ol>
+    </section>
+    
+    <section>
+        <h2>Memory Map</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>String</th>
+                        <th>StringBuffer</th>
+                        <th>Key Facts</th>
+                        <th>Key Concept</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Definition</td>
+                        <td>Immutable sequence of characters.</td>
+                        <td>Mutable sequence of characters.</td>
+                        <td>String content cannot be modified.</td>
+                        <td>Immutability vs. Mutability</td>
+                    </tr>
+                    <tr>
+                        <td>Memory Storage</td>
+                        <td>Stored in the String Pool (if created as literals) or heap (via new).</td>
+                        <td>Stored in the Heap Memory.</td>
+                        <td>String Pool optimizes memory usage.</td>
+                        <td>Memory Management</td>
+                    </tr>
+                    <tr>
+                        <td>Thread-Safety</td>
+                        <td>Not thread-safe.</td>
+                        <td>Thread-safe (synchronized methods).</td>
+                        <td>StringBuffer is safe for multi-threading.</td>
+                        <td>Threading and Concurrency</td>
+                    </tr>
+                    <tr>
+                        <td>Performance</td>
+                        <td>Faster for read-only operations.</td>
+                        <td>Slower due to synchronization overhead.</td>
+                        <td>StringBuffer ensures safe multi-threaded access.</td>
+                        <td>Performance Implications</td>
+                    </tr>
+                    <tr>
+                        <td>Modifications</td>
+                        <td>Creates a new object for every change.</td>
+                        <td>Modifications occur in the same object.</td>
+                        <td>Reduces memory overhead for modifications.</td>
+                        <td>Immutability and Object Creation</td>
+                    </tr>
+                    <tr>
+                        <td>Methods (Key)</td>
+                        <td>length(), charAt(), substring(), toUpperCase(), etc.</td>
+                        <td>append(), insert(), replace(), delete(), reverse(), etc.</td>
+                        <td>String focuses on retrieving data.</td>
+                        <td>Functional Focus</td>
+                    </tr>
+                    <tr>
+                        <td>Example</td>
+                        <td>String str = "Hello";</td>
+                        <td>StringBuffer sb = new StringBuffer("Hello");</td>
+                        <td>Syntax reflects usage intent.</td>
+                        <td>Syntax</td>
+                    </tr>
+                    <tr>
+                        <td>Use Case</td>
+                        <td>Constant strings or where immutability is required.</td>
+                        <td>Frequently modified strings in a single thread.</td>
+                        <td>Use StringBuffer for thread-safe modification.</td>
+                        <td>Suitability</td>
+                    </tr>
+                    <tr>
+                        <td>Comparison</td>
+                        <td>Immutable objects save memory for duplicates.</td>
+                        <td>Mutable objects save memory when modified repeatedly.</td>
+                        <td>Choose based on modification requirements.</td>
+                        <td>Practical Application</td>
+                    </tr>
+                    <tr>
+                        <td>Special Feature</td>
+                        <td>String Pool reuses identical literals to save memory.</td>
+                        <td>Synchronized methods ensure thread safety.</td>
+                        <td>Choose String for constants and light tasks.</td>
+                        <td>Advanced Features</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p> 
+    </footer>
+</body>
+</html>

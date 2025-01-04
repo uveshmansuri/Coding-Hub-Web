@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class and Object in Java</title>    
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Class and Object in Java</h1>
+    </header>
+    <section>
+        <h2>Class and Object in Java</h2>
+        <p>In Java, Class and Object are fundamental concepts of Object-Oriented Programming (OOP). They are the building blocks for creating reusable, modular code and help in modeling real-world entities in software.</p>
+        <div class="img-container">
+            <img src="class_obj.png"/>
+        </div>
+    </section>
+    <section>
+        <h2>Class in Java</h2>
+        <p>A Class is a blueprint or template for creating objects. It defines a type of object according to the data it stores (called attributes or fields) and the operations it can perform (called methods). A class can contain constructors, fields, and methods to define the behavior of the objects it creates.</p>
+        <h3>Components of a Class:</h3>
+        <ul>
+            <li><strong>Fields/Attributes:</strong> Variables that store data for the object.</li>
+            <li><strong>Methods:</strong> Functions that define the behavior of the object.</li>
+            <li><strong>Constructor:</strong> A special method used to initialize objects.</li>
+        </ul>
+        <h3>Syntax of a Class:</h3>
+        <pre>
+<code>
+class ClassName {
+    // Fields (attributes)
+    int attribute1;
+    String attribute2;
+
+    // Constructor (optional)
+    public ClassName(int attribute1, String attribute2) {
+        this.attribute1 = attribute1;
+        this.attribute2 = attribute2;
+    }
+
+    // Methods (functions)
+    public void display() {
+        System.out.println("Attribute1: " + attribute1);
+        System.out.println("Attribute2: " + attribute2);
+    }
+}
+</code>
+        </pre>
+        <ul>
+            <li><strong>Field/Attribute:</strong> <code>int attribute1</code>, <code>String attribute2</code></li>
+            <li><strong>Constructor:</strong> <code>public ClassName(int attribute1, String attribute2)</code></li>
+            <li><strong>Method:</strong> <code>public void display()</code></li>
+        </ul>
+    </section>
+    <section>
+        <h2>Object in Java</h2>
+        <p>An Object is an instance of a class. When a class is defined, no memory is allocated. Memory is allocated only when an object of that class is created. An object has state (attributes/fields) and behavior (methods).</p>
+        <h3>Creating Objects:</h3>
+        <pre>
+<code>
+ClassName objectName = new ClassName(parameter1, parameter2);
+</code>
+        </pre>
+        <ul>
+            <li><strong>ClassName:</strong> Name of the class.</li>
+            <li><strong>objectName:</strong> Reference variable that will hold the memory address of the created object.</li>
+            <li><strong>new ClassName(parameter1, parameter2):</strong> This is the constructor of the class, which creates and initializes the object.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Detailed Example: Class and Object</h2>
+        <h3>Step 1: Define the Class</h3>
+        <pre>
+<code>
+class Car {
+    // Fields (attributes)
+    String make;
+    String model;
+    int year;
+
+    // Constructor to initialize the object
+    public Car(String make, String model, int year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+
+    // Method to display car details
+    public void displayDetails() {
+        System.out.println("Make: " + make);
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+    }
+}
+</code>
+        </pre>
+        <ul>
+            <li><strong>Fields:</strong> <code>String make</code>, <code>String model</code>, <code>int year</code></li>
+            <li><strong>Constructor:</strong> Initializes the values of <code>make</code>, <code>model</code>, and <code>year</code> when a new <code>Car</code> object is created.</li>
+            <li><strong>Method:</strong> <code>displayDetails()</code> displays the details of the car.</li>
+        </ul>
+        <h3>Step 2: Create Objects and Use the Class</h3>
+        <pre>
+<code>
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects of the Car class
+        Car car1 = new Car("Toyota", "Corolla", 2020);  // Object car1
+        Car car2 = new Car("Honda", "Civic", 2022);    // Object car2
+
+        // Calling method using objects
+        car1.displayDetails();
+        System.out.println();
+        car2.displayDetails();
+    }
+}
+</code>
+        </pre>
+        <h3>Output:</h3>
+        <pre>
+Make: Toyota
+Model: Corolla
+Year: 2020
+
+Make: Honda
+Model: Civic
+Year: 2022
+        </pre>
+    </section>
+
+    <section>
+        <h2>Explanation of the Example</h2>
+        <h3>Class Definition (Car)</h3>
+        <p>
+            The <strong>Car</strong> class has three fields (<code>make</code>, <code>model</code>, <code>year</code>), 
+            a constructor that initializes these fields, and a method (<code>displayDetails</code>) that prints the car's information.
+        </p>
+
+        <h3>Object Creation</h3>
+        <p>
+            In the <code>main</code> method, two objects (<code>car1</code> and <code>car2</code>) are created using the Car class constructor.
+        </p>
+        <pre>
+<code>new Car("Toyota", "Corolla", 2020)</code>
+        </pre>
+        <p>
+            This creates an object and initializes the fields <code>make</code>, <code>model</code>, and <code>year</code>.
+        </p>
+
+        <h3>Calling Methods</h3>
+        <p>
+            We call the <code>displayDetails()</code> method on each object (<code>car1</code> and <code>car2</code>) to display the car details.
+        </p>
+    </section>
+
+    <section>
+        <h2>Key Points about Classes and Objects in Java</h2>
+        <ul>
+            <li><strong>Class as a Blueprint:</strong> A class defines a structure, but no memory is allocated until an object is created.</li>
+            <li><strong>Object as an Instance:</strong> An object is an instance of a class. Each object has its own state (attributes) and can perform actions (methods).</li>
+            <li><strong>Constructor:</strong> A constructor is used to initialize the object's state when it is created. It has the same name as the class and does not have a return type.</li>
+            <li><strong>Methods:</strong> Methods define the behavior of the class. Objects use these methods to perform actions on their data (attributes).</li>
+            <li><strong>Accessing Objects:</strong> Objects are accessed via reference variables. They can be passed around in methods or returned from functions.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Encapsulation with Objects</h2>
+        <p>
+            Objects support encapsulation, which means the internal state (attributes) of an object is hidden from the outside, and access is controlled via public methods (getters/setters). 
+            This ensures data security and controlled access.
+        </p>
+        <p>For example, to protect the <code>year</code> attribute, you can use:</p>
+        <pre>
+<code>class Car {
+    private int year;  // Private field
+
+    public void setYear(int year) {  // Setter
+        if (year > 1900 && year <= 2024) {
+            this.year = year;
+        } else {
+            System.out.println("Invalid year");
+        }
+    }
+
+    public int getYear() {  // Getter
+        return year;
+    }
+}
+</code>
+        </pre>
+        <p>
+            In this case, the <code>year</code> field is private, and can only be accessed or modified using the <code>getYear()</code> and <code>setYear()</code> methods, 
+            providing control over how it is accessed.
+        </p>
+    </section>
+
+    <section>
+        <h2>Summary</h2>
+        <p>
+            In summary, a <strong>Class</strong> is a template that defines the structure and behavior of objects, while an <strong>Object</strong> is an instance of that class. 
+            Classes contain attributes and methods, and objects use those methods to operate on their data. Together, they represent the core concepts of Object-Oriented Programming (OOP) in Java, enabling modular, reusable, and organized code.
+        </p>
+    </section>
+
+    <section>
+        <h2>Mind Map</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Definition</th>
+                        <th>Key Characteristics</th>
+                        <th>Examples</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Class</td>
+                        <td>Blueprint or template for creating objects.</td>
+                        <td>
+                            <ul>
+                                <li>Contains attributes (fields).</li>
+                                <li>Defines methods (behavior).</li>
+                                <li>May include constructors.</li>
+                            </ul>
+                        </td>
+                        <td><code>class Car { String model; void drive() { } }</code></td>
+                        <td>A class is not instantiated until an object is created.</td>
+                    </tr>
+                    <tr>
+                        <td>Attributes (Fields)</td>
+                        <td>Variables defined within a class to store data.</td>
+                        <td>
+                            <ul>
+                                <li>Represents the state of an object.</li>
+                                <li>Can be private, protected, or public.</li>
+                                <li>Default values are provided.</li>
+                            </ul>
+                        </td>
+                        <td><code>String color; int speed;</code></td>
+                        <td>Declared at class level and used via object instances.</td>
+                    </tr>
+                    <tr>
+                        <td>Methods</td>
+                        <td>Functions within a class to define object behavior.</td>
+                        <td>
+                            <ul>
+                                <li>Can be void or return a value.</li>
+                                <li>Used to manipulate object data.</li>
+                                <li>Supports overloading.</li>
+                            </ul>
+                        </td>
+                        <td><code>void start() { } int getSpeed() { return speed; }</code></td>
+                        <td>Accessed using the object, e.g., <code>car.start();</code></td>
+                    </tr>
+                    <tr>
+                        <td>Object</td>
+                        <td>Instance of a class that holds state and behavior.</td>
+                        <td>
+                            <ul>
+                                <li>Allocates memory when created.</li>
+                                <li>Each object has unique attributes.</li>
+                                <li>Accessed via reference variables.</li>
+                            </ul>
+                        </td>
+                        <td><code>Car car = new Car("Honda"); car.drive();</code></td>
+                        <td>Objects interact with each other via methods.</td>
+                    </tr>
+                    <tr>
+                        <td>Encapsulation</td>
+                        <td>Bundling data and methods in a class and restricting access to the internals.</td>
+                        <td>
+                            <ul>
+                                <li>Use private for fields.</li>
+                                <li>Provide public getters and setters.</li>
+                                <li>Ensures data security.</li>
+                            </ul>
+                        </td>
+                        <td><code>private String model; public String getModel() { return model; }</code></td>
+                        <td>Promotes data hiding and controlled access.</td>
+                    </tr>
+                    <tr>
+                        <td>Accessing Objects</td>
+                        <td>Using object references to invoke methods and access fields.</td>
+                        <td>
+                            <ul>
+                                <li>Dot operator (.) used.</li>
+                                <li>Memory released when no longer referenced.</li>
+                            </ul>
+                        </td>
+                        <td><code>car.color = "Red"; car.start();</code></td>
+                        <td>Multiple objects can coexist, each with its own state.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p> 
+    </footer>
+</body>
+</html>

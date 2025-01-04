@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables and Data Types in Java</title>    
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Variables and Data Types in Java</h1>
+    </header>
+    <section>
+        <h2>Introduction</h2>
+        <p>
+            Variables and data types are the foundation of programming in Java. They enable developers to store, manipulate, and process data efficiently. Understanding these concepts is essential to mastering Java and developing robust applications.
+        </p>
+    </section>
+    
+    <section>
+        <h2>Variables</h2>
+        <p>
+            A variable in Java is a named memory location used to store data temporarily. Each variable has a type that determines the size and layout of its memory, the range of values it can hold, and the operations that can be performed on it.
+        </p>
+        <h3>Declaration and Initialization</h3>
+        <ul>
+            <li>
+                <strong>Declaration:</strong> Declaring a variable means specifying its type and name. For example: <code>int age;</code>
+            </li>
+            <li>
+                <strong>Initialization:</strong> Assigning an initial value to a variable. For example: <code>age = 25;</code>
+            </li>
+        </ul>
+        <pre>
+<strong>Example:</strong>
+int age; // Declaration
+age = 25; // Initialization
+int salary = 50000; // Declaration and Initialization
+        </pre>
+    </section>
+    
+    <section>
+        <h2>Types of Variables in Java</h2>
+        <p>Java supports three types of variables:</p>
+        <ol>
+            <li><strong>Local Variables:</strong>
+                <p>
+                    Declared inside methods, constructors, or blocks. These variables are created when the method is called and destroyed after the method execution ends.
+                </p>
+                <pre>
+<strong>Example:</strong>
+void display() {
+    int num = 10; // Local variable
+    System.out.println(num);
+}
+                </pre>
+            </li>
+            <li><strong>Instance Variables:</strong>
+                <p>
+                    Declared inside a class but outside any method. They are associated with objects and are initialized to default values if not explicitly initialized.
+                </p>
+                <pre>
+<strong>Example:</strong>
+class Employee {
+    String name; // Instance variable
+    int age;
+}
+                </pre>
+            </li>
+            <li><strong>Static Variables:</strong>
+                <p>
+                    Declared using the <code>static</code> keyword. These variables are shared among all instances of a class and belong to the class, not individual objects.
+                </p>
+                <pre>
+<strong>Example:</strong>
+class Company {
+    static String companyName = "Tech Corp"; // Static variable
+}
+                </pre>
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Data Types</h2>
+        <p>
+            Data types specify the type of data a variable can hold. Java is a strongly-typed language, which means every variable must have a defined type.
+        </p>
+        <h3>Categories of Data Types</h3>
+        <ul>
+            <li><strong>Primitive Data Types:</strong> These are predefined by the language and serve as the building blocks for data manipulation.
+                <ul>
+                    <li>byte</li>
+                    <li>short</li>
+                    <li>int</li>
+                    <li>long</li>
+                    <li>float</li>
+                    <li>double</li>
+                    <li>char</li>
+                    <li>boolean</li>
+                </ul>
+            </li>
+            <li><strong>Non-Primitive Data Types:</strong> These include classes, interfaces, and arrays.
+                <ul>
+                    <li>String</li>
+                    <li>Array</li>
+                    <li>Object</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>1.Primitive Data Types</h2>
+        <h3>Details of Primitive Data Types:</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Size</th>
+                        <th>Default Value</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>byte</td>
+                        <td>1 byte</td>
+                        <td>0</td>
+                        <td><code>byte b = 100;</code></td>
+                    </tr>
+                    <tr>
+                        <td>short</td>
+                        <td>2 bytes</td>
+                        <td>0</td>
+                        <td><code>short s = 5000;</code></td>
+                    </tr>
+                    <tr>
+                        <td>int</td>
+                        <td>4 bytes</td>
+                        <td>0</td>
+                        <td><code>int i = 100000;</code></td>
+                    </tr>
+                    <tr>
+                        <td>long</td>
+                        <td>8 bytes</td>
+                        <td>0L</td>
+                        <td><code>long l = 15000000000L;</code></td>
+                    </tr>
+                    <tr>
+                        <td>float</td>
+                        <td>4 bytes</td>
+                        <td>0.0f</td>
+                        <td><code>float f = 5.75f;</code></td>
+                    </tr>
+                    <tr>
+                        <td>double</td>
+                        <td>8 bytes</td>
+                        <td>0.0d</td>
+                        <td><code>double d = 19.99;</code></td>
+                    </tr>
+                    <tr>
+                        <td>char</td>
+                        <td>2 bytes</td>
+                        <td>'\u0000'</td>
+                        <td><code>char c = 'A';</code></td>
+                    </tr>
+                    <tr>
+                        <td>boolean</td>
+                        <td>1 bit</td>
+                        <td>false</td>
+                        <td><code>boolean isTrue = true;</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h2>2.Non-Primitive Data Types</h2>
+        <p>
+            Non-primitive data types are also called reference types. Unlike primitive types, these do not store values directly; instead, they store references to the memory location where the actual data is stored.
+        </p>
+        <h3>Common Non-Primitive Data Types:</h3>
+        <ul>
+            <li>
+                <strong>String:</strong> Used to store a sequence of characters. Strings are immutable in Java.
+                <pre>
+<strong>Example:</strong>
+String name = "John";
+System.out.println(name);
+                </pre>
+            </li>
+            <li>
+                <strong>Array:</strong> A collection of variables of the same type.
+                <pre>
+<strong>Example:</strong>
+int[] numbers = {1, 2, 3, 4, 5};
+System.out.println(numbers[0]); // Outputs 1
+                </pre>
+            </li>
+            <li>
+                <strong>Object:</strong> Instances of classes.
+                <pre>
+<strong>Example:</strong>
+class Car {
+    String brand;
+    int speed;
+}
+Car myCar = new Car();
+myCar.brand = "Toyota";
+myCar.speed = 120;
+                </pre>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Scope of Variables</h2>
+        <p>In Java, the scope of a variable refers to the part of the program where the variable is accessible. Java has different types of variable scopes based on where they are declared:</p>
+        <h3>1. Local Variables</h3>
+    <p>Local variables are declared inside methods, constructors, or blocks. They are only accessible within the method, constructor, or block where they are declared. Once the method or block ends, the local variable is destroyed, and it cannot be accessed outside its scope.</p>
+
+    <div class="example">
+        <p><strong>Example:</strong></p>
+        <pre>
+public class LocalVariableExample {
+    public void exampleMethod() {
+        int localVariable = 10;  // Local variable
+        System.out.println(localVariable);  // Accessible here
+    }
+
+    public static void main(String[] args) {
+        LocalVariableExample obj = new LocalVariableExample();
+        obj.exampleMethod();
+        // System.out.println(localVariable);  // Error! localVariable is not accessible here
+    }
+}
+        </pre>
+    </div>
+
+    <h3>2. Instance Variables</h3>
+    <p>Instance variables are declared within a class, but outside any method or constructor. They belong to an object of the class and are accessible throughout the class. Each object of the class has its own copy of instance variables.</p>
+
+    <div class="example">
+        <p><strong>Example:</strong></p>
+        <pre>
+public class InstanceVariableExample {
+    int instanceVariable = 5;  // Instance variable
+
+    public void displayValue() {
+        System.out.println(instanceVariable);  // Accessible within the class
+    }
+
+    public static void main(String[] args) {
+        InstanceVariableExample obj1 = new InstanceVariableExample();
+        obj1.displayValue();  // Output: 5
+
+        InstanceVariableExample obj2 = new InstanceVariableExample();
+        obj2.instanceVariable = 10;
+        obj2.displayValue();  // Output: 10
+    }
+}
+        </pre>
+    </div>
+
+    <h3>3. Class Variables (Static Variables)</h3>
+    <p>Class variables are declared with the <code>static</code> keyword. These variables are shared among all instances of a class. They are accessible throughout the class and can be accessed using the class name or through instances.</p>
+
+    <div class="example">
+        <p><strong>Example:</strong></p>
+        <pre>
+public class ClassVariableExample {
+    static int classVariable = 100;  // Static (class) variable
+
+    public void displayValue() {
+        System.out.println(classVariable);  // Accessible throughout the class
+    }
+
+    public static void main(String[] args) {
+        ClassVariableExample obj1 = new ClassVariableExample();
+        obj1.displayValue();  // Output: 100
+
+        ClassVariableExample obj2 = new ClassVariableExample();
+        obj2.classVariable = 200;
+        obj2.displayValue();  // Output: 200
+        System.out.println(ClassVariableExample.classVariable);  // Access via class name: Output: 200
+    }
+}
+        </pre>
+    </div>
+
+    <h3>4. Parameters</h3>
+    <p>Parameters are variables that are passed to methods or constructors. They exist only within the method or constructor they are passed to and are used to hold the data passed to the method.</p>
+
+    <div class="example">
+        <p><strong>Example:</strong></p>
+        <pre>
+public class ParameterExample {
+    public void displaySum(int num1, int num2) {  // Parameters
+        int sum = num1 + num2;
+        System.out.println("Sum: " + sum);
+    }
+
+    public static void main(String[] args) {
+        ParameterExample obj = new ParameterExample();
+        obj.displaySum(5, 10);  // Output: Sum: 15
+    }
+}
+        </pre>
+    </div>
+
+    <h3>5. Global Variables</h3>
+    <p>In Java, there is no direct concept of global variables. However, instance and class variables can be used to mimic global variables when they are declared at the class level and accessed throughout the application.</p>
+    <div class="example">
+        <p><strong>Example:</strong></p>
+        <pre>
+public class GlobalVariableExample {
+    static int globalVariable = 50;  // Simulated global variable
+
+    public void displayValue() {
+        System.out.println("Global Variable: " + globalVariable);  // Accessible throughout the class
+    }
+
+    public static void main(String[] args) {
+        GlobalVariableExample obj1 = new GlobalVariableExample();
+        obj1.displayValue();  // Output: Global Variable: 50
+
+        GlobalVariableExample obj2 = new GlobalVariableExample();
+        obj2.globalVariable = 100;
+        obj2.displayValue();  // Output: Global Variable: 100
+        System.out.println(GlobalVariableExample.globalVariable);  // Access via class name: Output: 100
+    }
+}
+        </pre>
+    </div>
+    </section>
+
+    <footer>
+        <p>© By Coding Hub. All Rights Reserved.</p> 
+    </footer>
+
+    </body>
+</html>

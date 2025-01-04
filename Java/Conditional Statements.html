@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statements in Java</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../test.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>Conditional Statements in Java</h1>
+</header>
+
+<section>
+    <h2>Introduction</h2>
+    <p>
+        Conditional statements allow a program to make decisions and execute specific blocks of code based on certain conditions. 
+        These statements help control the flow of execution in a program.
+    </p>
+</section>
+
+<section>
+    <h2>Types of Conditional Statements</h2>
+    <ol>
+        <li>if Statement</li>
+        <li>if-else Statement</li>
+        <li>if-else-if Ladder</li>
+        <li>Nested if Statement</li>
+        <li>switch Statement</li>
+    </ol>
+</section>
+
+<section>
+    <h2>1. if Statement</h2>
+    <p>The if statement executes a block of code only if a specified condition is true.</p>
+    <h3>Syntax:</h3>
+    <pre><code>
+if (condition) {
+    // code to be executed if condition is true
+}
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+int number = 10;
+
+if (number > 0) {
+    System.out.println("The number is positive.");
+}
+    </code></pre>
+    <div class="example">
+        <h3>Explanation:</h3>
+        <p>
+            The condition <code>number &gt; 0</code> is evaluated:
+        </p>
+        <ul>
+            <li>Here, <code>number</code> is 10, so <code>10 &gt; 0</code> evaluates to true.</li>
+            <li>Since the condition is true, the code inside the <code>if</code> block is executed.</li>
+        </ul>
+        <p>Output:</p>
+        <pre><code>The number is positive.</code></pre>
+    </div>
+</section>
+
+<section>
+    <h2>2. if-else Statement</h2>
+    <p>
+        The if-else statement provides an alternative block of code to execute when the condition is false.
+    </p>
+    <h3>Syntax:</h3>
+    <pre><code>
+if (condition) {
+    // code to be executed if condition is true
+} else {
+    // code to be executed if condition is false
+}
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+int number = -5;
+
+if (number > 0) {
+    System.out.println("The number is positive.");
+} else {
+    System.out.println("The number is not positive.");
+}
+    </code></pre>
+    <div class="example">
+        <h3>Explanation:</h3>
+        <p>
+            The condition <code>number &gt; 0</code> is evaluated:
+        </p>
+        <ul>
+            <li>Here, <code>number</code> is -5, so <code>-5 &gt; 0</code> evaluates to false.</li>
+            <li>Since the condition is false, the <code>else</code> block is executed.</li>
+        </ul>
+        <p>Output:</p>
+        <pre><code>The number is not positive.</code></pre>
+    </div>
+</section>
+
+<section>
+    <h2>3. if-else-if Ladder</h2>
+    <p>
+        The if-else-if ladder is used when multiple conditions need to be tested sequentially. 
+        Only the first true condition is executed.
+    </p>
+    <h3>Syntax:</h3>
+    <pre><code>
+if (condition1) {
+    // code to be executed if condition1 is true
+} else if (condition2) {
+    // code to be executed if condition2 is true
+} else {
+    // code to be executed if all conditions are false
+}
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+int number = 0;
+
+if (number > 0) {
+    System.out.println("The number is positive.");
+} else if (number < 0) {
+    System.out.println("The number is negative.");
+} else {
+    System.out.println("The number is zero.");
+}
+    </code></pre>
+    <div class="example">
+        <h3>Explanation:</h3>
+        <p>
+            The first condition <code>number &gt; 0</code> is evaluated:
+        </p>
+        <ul>
+            <li>Here, <code>number</code> is 0, so <code>0 &gt; 0</code> evaluates to false.</li>
+            <li>The second condition <code>number &lt; 0</code> is evaluated: <code>0 &lt; 0</code> also evaluates to false.</li>
+            <li>Since both conditions are false, the <code>else</code> block is executed.</li>
+        </ul>
+        <p>Output:</p>
+        <pre><code>The number is zero.</code></pre>
+    </div>
+</section>
+
+<section>
+    <h2>4. Nested if Statement</h2>
+    <p>
+        A nested if statement is an if statement inside another if or else block.
+    </p>
+    <h3>Syntax:</h3>
+    <pre><code>
+if (condition1) {
+    if (condition2) {
+        // code to be executed if both condition1 and condition2 are true
+    }
+}
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+int number = 15;
+
+if (number > 0) {
+    if (number % 2 == 0) {
+        System.out.println("The number is positive and even.");
+    } else {
+        System.out.println("The number is positive and odd.");
+    }
+}
+    </code></pre>
+    <div class="example">
+        <h3>Explanation:</h3>
+        <ul>
+            <li>The first condition <code>number &gt; 0</code> is true because <code>15 &gt; 0</code>.</li>
+            <li>Inside the outer <code>if</code>, the nested condition <code>number % 2 == 0</code> is false.</li>
+            <li>The code inside the nested <code>else</code> block is executed.</li>
+        </ul>
+        <p>Output:</p>
+        <pre><code>The number is positive and odd.</code></pre>
+    </div>
+</section>
+
+<section>
+    <h2>5. switch Statement</h2>
+    <p>
+        The switch statement evaluates an expression and executes a block of code corresponding to the matching case label.
+    </p>
+    <h3>Syntax:</h3>
+    <pre><code>
+switch (expression) {
+    case value1:
+        // code to be executed if expression == value1
+        break;
+    // other cases
+    default:
+        // code to be executed if none of the cases match
+}
+    </code></pre>
+    <h3>Example:</h3>
+    <pre><code>
+int day = 3;
+
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    case 3:
+        System.out.println("Wednesday");
+        break;
+    default:
+        System.out.println("Invalid day");
+}
+    </code></pre>
+    <div class="example">
+        <h3>Explanation:</h3>
+        <ul>
+            <li>The expression <code>day</code> matches <code>case 3</code>.</li>
+            <li>The code inside <code>case 3</code> is executed.</li>
+            <li>The <code>break</code> prevents execution from falling through to other cases.</li>
+        </ul>
+        <p>Output:</p>
+        <pre><code>Wednesday</code></pre>
+    </div>
+</section>
+
+<section>
+    <h2>Difference Between if-else and switch</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>if-else</th>
+                    <th>switch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Usage</strong></td>
+                    <td>Used for checking conditions with relational or logical operators.</td>
+                    <td>Used for checking a single variable against multiple constant values.</td>
+                </tr>
+                <tr>
+                    <td><strong>Conditions</strong></td>
+                    <td>Can evaluate complex conditions using relational and logical operators.</td>
+                    <td>Can only evaluate expressions with constant values (e.g., int, char, string, enums).</td>
+                </tr>
+                <tr>
+                    <td><strong>Efficiency</strong></td>
+                    <td>Less efficient for a large number of conditions because all conditions are checked sequentially.</td>
+                    <td>More efficient for a large number of cases because it uses a jump table internally.</td>
+                </tr>
+                <tr>
+                    <td><strong>Flexibility</strong></td>
+                    <td>More flexible as it supports conditions, ranges, and logical operators.</td>
+                    <td>Limited flexibility as it only supports equality checks against constants.</td>
+                </tr>
+                <tr>
+                    <td><strong>Default Case</strong></td>
+                    <td>No default case; conditions must be explicitly written in the <code>else</code> block.</td>
+                    <td>Has a <code>default</code> case to handle unmatched values.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3>if else Example</h3>
+    <pre><code>
+int number = 5;
+if (number > 0) {
+    System.out.println("Positive");
+} else {
+    System.out.println("Negative or Zero");
+}
+    </code></pre>
+    <h3>swith Example</h3>
+    <pre><code>
+int day = 3;
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    default:
+        System.out.println("Other Day");
+}
+        </code></pre>
+    <p><strong>Conclusion:</strong> Use <code>if-else</code> for complex conditions and <code>switch</code> for simpler value-based checks.</p>
+</section>
+
+
+<section>
+    <h2>Key Points to Remember</h2>
+    <ul>
+        <li><strong>if vs. switch:</strong> Use <code>if</code> for complex conditions or ranges. Use <code>switch</code> for fixed, discrete values.</li>
+        <li><strong>Curly Braces:</strong> Always use <code>{}</code> even for single statements in <code>if</code>, <code>else</code>, or <code>case</code> for clarity and to avoid errors.</li>
+        <li><strong>Break in switch:</strong> The <code>break</code> statement prevents fall-through. Omitting <code>break</code> causes the execution to continue to the next case.</li>
+        <li><strong>default Case:</strong> Always include a <code>default</code> case in <code>switch</code> to handle unexpected values.</li>
+    </ul>
+</section>
+
+<footer>
+    <p>© By Coding Hub. All Rights Reserved.</p> 
+</footer>
+</body>
+</html>
